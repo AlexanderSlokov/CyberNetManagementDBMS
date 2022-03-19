@@ -65,7 +65,7 @@ namespace InternetCafeManagement
         private void formLogin_Load(object sender, EventArgs e)
         {
             textBoxUsername.Select();
-            textBoxUsername.Text = "user01";
+            textBoxUsername.Text = "admin1";
             textBoxPassword.Text = "123";
         }
     }
