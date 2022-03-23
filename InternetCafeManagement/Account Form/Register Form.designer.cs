@@ -61,6 +61,7 @@
             this.label1.Size = new System.Drawing.Size(155, 27);
             this.label1.TabIndex = 0;
             this.label1.Text = "Get Started";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label2
             // 
@@ -70,6 +71,7 @@
             this.label2.Size = new System.Drawing.Size(69, 17);
             this.label2.TabIndex = 1;
             this.label2.Text = "Username";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // textBoxUsername
             // 
@@ -81,6 +83,7 @@
             this.textBoxUsername.Name = "textBoxUsername";
             this.textBoxUsername.Size = new System.Drawing.Size(216, 28);
             this.textBoxUsername.TabIndex = 2;
+            this.textBoxUsername.TextChanged += new System.EventHandler(this.textBoxUsername_TextChanged);
             // 
             // label3
             // 
@@ -90,6 +93,7 @@
             this.label3.Size = new System.Drawing.Size(66, 17);
             this.label3.TabIndex = 1;
             this.label3.Text = "Password";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // textBoxPassword
             // 
@@ -102,6 +106,7 @@
             this.textBoxPassword.PasswordChar = '•';
             this.textBoxPassword.Size = new System.Drawing.Size(216, 28);
             this.textBoxPassword.TabIndex = 2;
+            this.textBoxPassword.TextChanged += new System.EventHandler(this.textBoxPassword_TextChanged);
             // 
             // label4
             // 
@@ -111,6 +116,7 @@
             this.label4.Size = new System.Drawing.Size(120, 17);
             this.label4.TabIndex = 1;
             this.label4.Text = "Confirm Password";
+            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // textBoxConfirmPassword
             // 
@@ -123,6 +129,7 @@
             this.textBoxConfirmPassword.PasswordChar = '•';
             this.textBoxConfirmPassword.Size = new System.Drawing.Size(216, 28);
             this.textBoxConfirmPassword.TabIndex = 2;
+            this.textBoxConfirmPassword.TextChanged += new System.EventHandler(this.textBoxConfirmPassword_TextChanged);
             // 
             // checkBoxShowPassword
             // 
@@ -159,6 +166,7 @@
             this.label5.Size = new System.Drawing.Size(163, 17);
             this.label5.TabIndex = 5;
             this.label5.Text = "Already Have an Account";
+            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // labelBackToLogIn
             // 
@@ -179,6 +187,7 @@
             this.labelErrorUsername.Name = "labelErrorUsername";
             this.labelErrorUsername.Size = new System.Drawing.Size(0, 17);
             this.labelErrorUsername.TabIndex = 6;
+            this.labelErrorUsername.Click += new System.EventHandler(this.labelErrorUsername_Click);
             // 
             // labelErrorPassword
             // 
@@ -187,6 +196,7 @@
             this.labelErrorPassword.Name = "labelErrorPassword";
             this.labelErrorPassword.Size = new System.Drawing.Size(0, 17);
             this.labelErrorPassword.TabIndex = 7;
+            this.labelErrorPassword.Click += new System.EventHandler(this.labelErrorPassword_Click);
             // 
             // labelErrorPasswordConfirm
             // 
@@ -195,6 +205,7 @@
             this.labelErrorPasswordConfirm.Name = "labelErrorPasswordConfirm";
             this.labelErrorPasswordConfirm.Size = new System.Drawing.Size(0, 17);
             this.labelErrorPasswordConfirm.TabIndex = 8;
+            this.labelErrorPasswordConfirm.Click += new System.EventHandler(this.labelErrorPasswordConfirm_Click);
             // 
             // buttonRegister
             // 
@@ -222,6 +233,7 @@
             this.textBoxName.Name = "textBoxName";
             this.textBoxName.Size = new System.Drawing.Size(216, 28);
             this.textBoxName.TabIndex = 11;
+            this.textBoxName.TextChanged += new System.EventHandler(this.textBoxName_TextChanged);
             // 
             // labelName
             // 
@@ -231,6 +243,7 @@
             this.labelName.Size = new System.Drawing.Size(71, 17);
             this.labelName.TabIndex = 10;
             this.labelName.Text = "Full Name";
+            this.labelName.Click += new System.EventHandler(this.labelName_Click);
             // 
             // textBoxEmail
             // 
@@ -242,6 +255,7 @@
             this.textBoxEmail.Name = "textBoxEmail";
             this.textBoxEmail.Size = new System.Drawing.Size(216, 28);
             this.textBoxEmail.TabIndex = 13;
+            this.textBoxEmail.TextChanged += new System.EventHandler(this.textBoxEmail_TextChanged);
             // 
             // labelEmail
             // 
@@ -251,6 +265,7 @@
             this.labelEmail.Size = new System.Drawing.Size(42, 17);
             this.labelEmail.TabIndex = 12;
             this.labelEmail.Text = "Email";
+            this.labelEmail.Click += new System.EventHandler(this.labelEmail_Click);
             // 
             // textBoxPhone
             // 
@@ -262,6 +277,7 @@
             this.textBoxPhone.Name = "textBoxPhone";
             this.textBoxPhone.Size = new System.Drawing.Size(216, 28);
             this.textBoxPhone.TabIndex = 15;
+            this.textBoxPhone.TextChanged += new System.EventHandler(this.textBoxPhone_TextChanged);
             // 
             // labelPhone
             // 
@@ -271,6 +287,7 @@
             this.labelPhone.Size = new System.Drawing.Size(47, 17);
             this.labelPhone.TabIndex = 14;
             this.labelPhone.Text = "Phone";
+            this.labelPhone.Click += new System.EventHandler(this.labelPhone_Click);
             // 
             // formRegister
             // 
@@ -306,6 +323,7 @@
             this.Name = "formRegister";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.formRegister_FormClosed);
+            this.Load += new System.EventHandler(this.formRegister_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

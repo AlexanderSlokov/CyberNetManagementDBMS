@@ -68,6 +68,18 @@
     <Compile Include="Account Form\Login Form.designer.cs">
       <DependentUpon>Login Form.cs</DependentUpon>
     </Compile>
+    <Compile Include="Account Form\Password Update Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Account Form\Password Update Form.Designer.cs">
+      <DependentUpon>Password Update Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Account Form\Profile Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Account Form\Profile Form.Designer.cs">
+      <DependentUpon>Profile Form.cs</DependentUpon>
+    </Compile>
     <Compile Include="Account Form\Register Form.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -75,6 +87,8 @@
       <DependentUpon>Register Form.cs</DependentUpon>
     </Compile>
     <Compile Include="Class\Account.cs" />
+    <Compile Include="Class\CurrentUser.cs" />
+    <Compile Include="Class\DataValidate.cs" />
     <Compile Include="Class\DBConnection.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
@@ -97,6 +111,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Account Form\Login Form.resx">
       <DependentUpon>Login Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Account Form\Password Update Form.resx">
+      <DependentUpon>Password Update Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Account Form\Profile Form.resx">
+      <DependentUpon>Profile Form.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Account Form\Register Form.resx">
       <DependentUpon>Register Form.cs</DependentUpon>

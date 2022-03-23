@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using InternetCafeManagement.Account_Form;
 
 namespace InternetCafeManagement
 {
@@ -15,6 +16,12 @@ namespace InternetCafeManagement
         public formMain()
         {
             InitializeComponent();
+        }
+
+        private void buttonProfile_Click(object sender, EventArgs e)
+        {
+            formProfile fProfile = new formProfile();
+            fProfile.Show(this);
         }
     }
 }

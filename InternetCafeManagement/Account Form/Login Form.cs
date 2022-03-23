@@ -52,6 +52,7 @@ namespace InternetCafeManagement
             {
                 this.DialogResult = DialogResult.OK;
                 MessageBox.Show("Login Success");
+                CurrentUser.Id = account.getUserID(username);
                 formMain dashBoard = new formMain();
                 dashBoard.Show(this);
                 this.Hide();

@@ -39,6 +39,96 @@ namespace InternetCafeManagement
             textBoxUsername.Focus();
         }
 
+        private void formRegister_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBoxUsername_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBoxPassword_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBoxConfirmPassword_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void labelErrorUsername_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void labelErrorPassword_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void labelErrorPasswordConfirm_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBoxName_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void labelName_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBoxEmail_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void labelEmail_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBoxPhone_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void labelPhone_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void formRegister_FormClosed(object sender, FormClosedEventArgs e)
         {
             formLogin login = new formLogin();
