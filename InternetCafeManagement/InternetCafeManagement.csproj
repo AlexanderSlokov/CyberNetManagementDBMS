@@ -8,7 +8,7 @@
     <OutputType>WinExe</OutputType>
     <RootNamespace>InternetCafeManagement</RootNamespace>
     <AssemblyName>InternetCafeManagement</AssemblyName>
-    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
@@ -27,6 +27,7 @@
     <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -86,10 +87,29 @@
     <Compile Include="Account Form\Register Form.designer.cs">
       <DependentUpon>Register Form.cs</DependentUpon>
     </Compile>
+    <Compile Include="AdminForm\ComputerDetailForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminForm\ComputerDetailForm.Designer.cs">
+      <DependentUpon>ComputerDetailForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminForm\ComputerRoomManageForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminForm\ComputerRoomManageForm.Designer.cs">
+      <DependentUpon>ComputerRoomManageForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Class\Account.cs" />
+    <Compile Include="Class\Computer.cs" />
+    <Compile Include="Class\ComputerRoom.cs" />
     <Compile Include="Class\CurrentUser.cs" />
     <Compile Include="Class\DataValidate.cs" />
     <Compile Include="Class\DBConnection.cs" />
+    <Compile Include="Class\Employee.cs" />
+    <Compile Include="Class\Salary.cs" />
+    <Compile Include="Class\Service.cs" />
+    <Compile Include="Class\Task.cs" />
+    <Compile Include="Class\WorkCalculation.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -121,6 +141,9 @@
     <EmbeddedResource Include="Account Form\Register Form.resx">
       <DependentUpon>Register Form.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AdminForm\ComputerRoomManageForm.resx">
+      <DependentUpon>ComputerRoomManageForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -132,6 +155,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="InternetCafeDataSet.xsc">
       <DependentUpon>InternetCafeDataSet.xsd</DependentUpon>
@@ -177,7 +201,14 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>InternetCafe.mdf</DependentUpon>
     </Content>
+    <None Include="Resources\icons8-imac-settings-50.png" />
+    <None Include="Resources\icons8-approved-delivery-64.png" />
+    <None Include="Resources\icons8-system-report-96.png" />
+    <None Include="Resources\icons8-system-report-48.png" />
+    <None Include="Resources\workstation.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="UserForm\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

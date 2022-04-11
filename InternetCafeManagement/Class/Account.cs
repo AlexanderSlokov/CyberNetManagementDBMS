@@ -161,7 +161,7 @@ namespace InternetCafeManagement.Class
             }
 
         }
-        // Hàm đăng nhập, kiểm tra tên tài khoản và mật khẩu
+        // Hàm lấy ID của User hiện tại
         public int getUserID(string username)
         {
             int id = 0;

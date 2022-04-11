@@ -8,7 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using InternetCafeManagement.Account_Form;
-
+using InternetCafeManagement.Class;
+using InternetCafeManagement.AdminForm;
 namespace InternetCafeManagement
 {
     public partial class formMain : Form
@@ -22,6 +23,12 @@ namespace InternetCafeManagement
         {
             formProfile fProfile = new formProfile();
             fProfile.Show(this);
+        }
+
+        private void Manager_Click(object sender, EventArgs e)
+        {
+            ComputerRoomManageForm computerRoomManageForm = new ComputerRoomManageForm();
+            computerRoomManageForm.Show(this);
         }
     }
 }
