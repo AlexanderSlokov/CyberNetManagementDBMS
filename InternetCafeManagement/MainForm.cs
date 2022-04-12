@@ -34,13 +34,13 @@ namespace InternetCafeManagement
 
         private void button1_Click(object sender, EventArgs e)
         {
-            FormServer server = new FormServer();
+            ServerForm server = new ServerForm();
             server.Show(this);
         }
 
         private void buttonClient_Click(object sender, EventArgs e)
         {
-            FormClient  client = new FormClient();
+            ClientForm client = new ClientForm();
             client.Show(this);
         }
     }
