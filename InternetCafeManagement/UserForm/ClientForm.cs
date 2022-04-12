@@ -43,7 +43,7 @@ namespace InternetCafeManagement.UserForm
         void Connect()
         {   
             //IP địa chỉ của server
-            IP = new IPEndPoint(IPAddress.Parse("127.0.0.1"), 9999);
+            IP = new IPEndPoint(IPAddress.Parse("192.168.1.14"), 9999);
             client = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.IP);
             try
             {
