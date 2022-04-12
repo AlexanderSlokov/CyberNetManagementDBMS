@@ -30,11 +30,13 @@
         {
             this.buttonProfile = new System.Windows.Forms.Button();
             this.Manager = new System.Windows.Forms.Button();
+            this.buttonServer = new System.Windows.Forms.Button();
+            this.buttonClient = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // buttonProfile
             // 
-            this.buttonProfile.Location = new System.Drawing.Point(143, 153);
+            this.buttonProfile.Location = new System.Drawing.Point(12, 2);
             this.buttonProfile.Name = "buttonProfile";
             this.buttonProfile.Size = new System.Drawing.Size(75, 23);
             this.buttonProfile.TabIndex = 0;
@@ -44,19 +46,41 @@
             // 
             // Manager
             // 
-            this.Manager.Location = new System.Drawing.Point(433, 135);
+            this.Manager.Location = new System.Drawing.Point(12, 54);
             this.Manager.Name = "Manager";
-            this.Manager.Size = new System.Drawing.Size(156, 23);
+            this.Manager.Size = new System.Drawing.Size(75, 23);
             this.Manager.TabIndex = 1;
-            this.Manager.Text = "buttonManager";
+            this.Manager.Text = "Room Manager";
             this.Manager.UseVisualStyleBackColor = true;
             this.Manager.Click += new System.EventHandler(this.Manager_Click);
+            // 
+            // buttonServer
+            // 
+            this.buttonServer.Location = new System.Drawing.Point(12, 101);
+            this.buttonServer.Name = "buttonServer";
+            this.buttonServer.Size = new System.Drawing.Size(75, 23);
+            this.buttonServer.TabIndex = 2;
+            this.buttonServer.Text = "Server";
+            this.buttonServer.UseVisualStyleBackColor = true;
+            this.buttonServer.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // buttonClient
+            // 
+            this.buttonClient.Location = new System.Drawing.Point(12, 157);
+            this.buttonClient.Name = "buttonClient";
+            this.buttonClient.Size = new System.Drawing.Size(75, 23);
+            this.buttonClient.TabIndex = 3;
+            this.buttonClient.Text = "Cllient";
+            this.buttonClient.UseVisualStyleBackColor = true;
+            this.buttonClient.Click += new System.EventHandler(this.buttonClient_Click);
             // 
             // formMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.buttonClient);
+            this.Controls.Add(this.buttonServer);
             this.Controls.Add(this.Manager);
             this.Controls.Add(this.buttonProfile);
             this.Name = "formMain";
@@ -69,5 +93,7 @@
 
         private System.Windows.Forms.Button buttonProfile;
         private System.Windows.Forms.Button Manager;
+        private System.Windows.Forms.Button buttonServer;
+        private System.Windows.Forms.Button buttonClient;
     }
 }

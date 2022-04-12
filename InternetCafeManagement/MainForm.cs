@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using InternetCafeManagement.Account_Form;
 using InternetCafeManagement.Class;
 using InternetCafeManagement.AdminForm;
+using InternetCafeManagement.UserForm;
 namespace InternetCafeManagement
 {
     public partial class formMain : Form
@@ -29,6 +30,18 @@ namespace InternetCafeManagement
         {
             ComputerRoomManageForm computerRoomManageForm = new ComputerRoomManageForm();
             computerRoomManageForm.Show(this);
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            FormServer server = new FormServer();
+            server.Show(this);
+        }
+
+        private void buttonClient_Click(object sender, EventArgs e)
+        {
+            FormClient  client = new FormClient();
+            client.Show(this);
         }
     }
 }
