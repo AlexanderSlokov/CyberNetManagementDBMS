@@ -19,7 +19,7 @@ namespace InternetCafeManagement.Account_Form
             InitializeComponent();
         }
 
-        string username, fullname, email, phone;
+        string username, gender, fullname, email, phone;
         AccountDB account = new AccountDB();
         private void formProfile_Load(object sender, EventArgs e)
         {
@@ -41,6 +41,7 @@ namespace InternetCafeManagement.Account_Form
         {
             username = account.getUsername();
             fullname = account.getUserFullName();
+            gender = comboBoxGender.Text;
             email = account.getUserEmail();
             phone = account.getUserPhone();
             textBoxUsername.Text = username;
@@ -53,7 +54,7 @@ namespace InternetCafeManagement.Account_Form
 
             if (dataValidate())
             {
-                account.updateUserData(CurrentUser.Id, fullname, email, phone);
+                account.updateUserData(CurrentUser.Id, gender, fullname, email, phone);
                 loadData();
                 MessageBox.Show("Information Updated", "", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
             }

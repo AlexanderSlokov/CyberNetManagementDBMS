@@ -13,46 +13,43 @@ namespace InternetCafeManagement.Database
     {
         DBConnection connection = new DBConnection();
         // Hàm đăng ký tài khoản mới, trả vể true nếu đăng ký thành công, trả về false nếu đăng ký thất bại
-        public bool register(string name, string email, string phone, string username, string password)
+        public bool register(string name, string gender, string phone, string email, string username, string password)
         {
+            SqlCommand command = new SqlCommand("INSERT INTO account (id, name, gender, phone, balance, email, username, password)"
+                + " VALUES ((SELECT MAX(id) FROM account) + 1, @name, @gender, @phone, @balance, @email, @username, @password)", connection.getConnection);
+
+            command.Parameters.Add("@name", SqlDbType.VarChar).Value = name;
+            command.Parameters.Add("@gender", SqlDbType.VarChar).Value = gender;
+            command.Parameters.Add("@balance", SqlDbType.Float).Value = 0;
+            command.Parameters.Add("@email", SqlDbType.VarChar).Value = email;
+            command.Parameters.Add("@phone", SqlDbType.VarChar).Value = phone;
+            command.Parameters.Add("@username", SqlDbType.VarChar).Value = username;
+            command.Parameters.Add("@password", SqlDbType.VarChar).Value = password;
+            connection.openConnection();
             try
             {
-                SqlCommand command = new SqlCommand("INSERT INTO account (id, name, email, phone, username, password)"
-                + " VALUES ((SELECT MAX(id) FROM account) + 1, @name, @email, @phone,@username, @password)", connection.getConnection);
-
-                command.Parameters.Add("@name", SqlDbType.VarChar).Value = name;
-                command.Parameters.Add("@email", SqlDbType.VarChar).Value = email;
-                command.Parameters.Add("@phone", SqlDbType.VarChar).Value = phone;
-                command.Parameters.Add("@username", SqlDbType.VarChar).Value = username;
-                command.Parameters.Add("@password", SqlDbType.VarChar).Value = password;
-                connection.openConnection();
-                try
+                if ((command.ExecuteNonQuery() == 1))
                 {
-                    if ((command.ExecuteNonQuery() == 1))
-                    {
-                        connection.closeConnection();
-                        return true;
+                    connection.closeConnection();
+                    return true;
 
-                    }
-                    else
-                    {
-                        connection.closeConnection();
-                        return false;
-                    }
                 }
-                catch
+                else
                 {
+                    connection.closeConnection();
                     return false;
                 }
             }
             catch
             {
                 int id = 1;
-                SqlCommand command = new SqlCommand("INSERT INTO account (id, name, email, phone, username, password)"
-                + " VALUES (@id, @name, @email, @phone,@username, @password)", connection.getConnection);
+                command = new SqlCommand("INSERT INTO account (id, name, gender, phone, balance, email, username, password)"
+                + " VALUES (@id, @name, @gender, @phone, @balance, @email, @username, @password)", connection.getConnection);
 
                 command.Parameters.Add("@id", SqlDbType.Int).Value = id;
                 command.Parameters.Add("@name", SqlDbType.VarChar).Value = name;
+                command.Parameters.Add("@gender", SqlDbType.VarChar).Value = gender;
+                command.Parameters.Add("@balance", SqlDbType.Float).Value = 0;
                 command.Parameters.Add("@email", SqlDbType.VarChar).Value = email;
                 command.Parameters.Add("@phone", SqlDbType.VarChar).Value = phone;
                 command.Parameters.Add("@username", SqlDbType.VarChar).Value = username;
@@ -77,10 +74,10 @@ namespace InternetCafeManagement.Database
                     return false;
                 }
             }
-
-        }
+        }       
+        
         // Hàm cập nhật thông tin căn bản của người dùng
-        public bool updateUserData(int ID, string fullname, string email, string phone)
+        public bool updateUserData(int ID, string fullname, string gender, string phone, string email)
         {
             try
             {
@@ -88,8 +85,9 @@ namespace InternetCafeManagement.Database
 
                 command.Parameters.Add("@id", SqlDbType.Int).Value = ID;
                 command.Parameters.Add("@name", SqlDbType.VarChar).Value = fullname;
-                command.Parameters.Add("@email", SqlDbType.VarChar).Value = email;
+                command.Parameters.Add("@gender", SqlDbType.VarChar).Value = gender;
                 command.Parameters.Add("@phone", SqlDbType.VarChar).Value = phone;
+                command.Parameters.Add("@email", SqlDbType.VarChar).Value = email;
 
                 connection.openConnection();
                 if ((command.ExecuteNonQuery() == 1))

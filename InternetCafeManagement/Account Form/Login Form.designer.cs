@@ -1,4 +1,4 @@
-﻿namespace InternetCafeManagement
+﻿namespace InternetCafeManagement.Account_Form
 {
     partial class formLogin
     {

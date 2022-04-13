@@ -4,7 +4,7 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 using InternetCafeManagement.Database;
 
-namespace InternetCafeManagement
+namespace InternetCafeManagement.Account_Form
 {
     public partial class formRegister : Form
     {
@@ -14,9 +14,9 @@ namespace InternetCafeManagement
             InitializeComponent();
 
         }
-        string name, email, phone, username, password, passwordConfirm;
+        string name, gender, email, phone, username, password, passwordConfirm;
         DBConnection connection = new DBConnection();
-        AccountDB account = new AccountDB();
+        AccountDB accountdb = new AccountDB();
 
         private void checkBoxShowPassword_CheckedChanged(object sender, EventArgs e)
         {
@@ -44,6 +44,7 @@ namespace InternetCafeManagement
             formLogin login = new formLogin();
             login.Show();
             this.Hide();
+            comboBoxGender.Items.Add(gender);
         }
 
         private void labelBackToLogIn_Click(object sender, EventArgs e)
@@ -69,6 +70,7 @@ namespace InternetCafeManagement
             bool usernameCheck = false, passwordCheck = false;
             bool passwordTyped = false, passwordConfirmed = false;
             name = textBoxName.Text;
+            gender = comboBoxGender.Text;
             email = textBoxEmail.Text;
             phone = textBoxPhone.Text;
             username = textBoxUsername.Text;
@@ -82,7 +84,7 @@ namespace InternetCafeManagement
             }
             else
             {
-                if (account.isUserExist_By_Username(username))
+                if (accountdb.isUserExist_By_Username(username))
                 {
                     labelErrorUsername.Text = ("Existed Username");
                     usernameCheck = false;
@@ -136,7 +138,7 @@ namespace InternetCafeManagement
             {
                 labelErrorPassword.Text = string.Empty;
 
-                if(account.register(name, email, phone, username, password))
+                if(accountdb.register(name, gender, email, phone, username, password))
                 {
                     MessageBox.Show("Successfuly Registed");
                     this.Close();

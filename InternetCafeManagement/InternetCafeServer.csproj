@@ -199,14 +199,5 @@
     <None Include="Resources\icons8-system-report-96.png" />
     <None Include="Resources\workstation.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Content Include="internetcafedb.mdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="internetcafedb_log.ldf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      <DependentUpon>internetcafedb.mdf</DependentUpon>
-    </Content>
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -5,7 +5,7 @@ using System.Data.SqlClient;
 using InternetCafeManagement.Database;
 using InternetCafeManagement.Utility;
 
-namespace InternetCafeManagement
+namespace InternetCafeManagement.Account_Form
 {
     public partial class formLogin : Form
     {
@@ -58,7 +58,6 @@ namespace InternetCafeManagement
                 formMain dashBoard = new formMain();
                 dashBoard.Show(this);
                 this.Hide();
-                this.Close();
             }
             else
             {
@@ -70,7 +69,7 @@ namespace InternetCafeManagement
         {
             textBoxUsername.Select();
             textBoxUsername.Text = "admin1";
-            textBoxPassword.Text = "123";
+            textBoxPassword.Text = "12345";
         }
     }
 }
