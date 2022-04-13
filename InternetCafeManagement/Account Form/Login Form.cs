@@ -56,6 +56,7 @@ namespace InternetCafeManagement
                 formMain dashBoard = new formMain();
                 dashBoard.Show(this);
                 this.Hide();
+                this.Close();
             }
             else
             {
