@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using InternetCafeManagement.Account_Form;
-using InternetCafeManagement.Class;
+using InternetCafeManagement.Database;
 using InternetCafeManagement.AdminForm;
 using InternetCafeManagement.UserForm;
 namespace InternetCafeManagement

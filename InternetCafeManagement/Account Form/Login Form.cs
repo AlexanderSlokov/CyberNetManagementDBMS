@@ -2,7 +2,9 @@
 using System.Data;
 using System.Windows.Forms;
 using System.Data.SqlClient;
-using InternetCafeManagement.Class;
+using InternetCafeManagement.Database;
+using InternetCafeManagement.Utility;
+
 namespace InternetCafeManagement
 {
     public partial class formLogin : Form
@@ -12,7 +14,7 @@ namespace InternetCafeManagement
             InitializeComponent();
         }
         DBConnection db = new DBConnection();
-        Account account = new Account();
+        AccountDB accountDB = new AccountDB();
 
         private void buttonClear_Click(object sender, EventArgs e)
         {
@@ -48,11 +50,11 @@ namespace InternetCafeManagement
             string password = textBoxPassword.Text;
             
 
-            if (account.login(username, password))
+            if (accountDB.login(username, password))
             {
                 this.DialogResult = DialogResult.OK;
                 MessageBox.Show("Login Success");
-                CurrentUser.Id = account.getUserID(username);
+                CurrentUser.Id = accountDB.getUserID(username);
                 formMain dashBoard = new formMain();
                 dashBoard.Show(this);
                 this.Hide();

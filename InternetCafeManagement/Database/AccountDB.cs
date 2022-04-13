@@ -5,6 +5,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using InternetCafeManagement.Utility;
 
 namespace InternetCafeManagement.Database
 {
@@ -192,7 +193,7 @@ namespace InternetCafeManagement.Database
             try
             {
                 SqlCommand command = new SqlCommand("SELECT * FROM account WHERE id = @id", connection.getConnection);
-                command.Parameters.Add("@id", SqlDbType.NVarChar).Value = CurrentUserDB.Id;
+                command.Parameters.Add("@id", SqlDbType.NVarChar).Value = CurrentUser.Id;
 
                 connection.openConnection();
                 SqlDataReader reader = command.ExecuteReader();
@@ -216,7 +217,7 @@ namespace InternetCafeManagement.Database
             try
             {
                 SqlCommand command = new SqlCommand("SELECT * FROM account WHERE id = @id", connection.getConnection);
-                command.Parameters.Add("@id", SqlDbType.NVarChar).Value = CurrentUserDB.Id;
+                command.Parameters.Add("@id", SqlDbType.NVarChar).Value = CurrentUser.Id;
 
                 connection.openConnection();
                 SqlDataReader reader = command.ExecuteReader();
@@ -240,7 +241,7 @@ namespace InternetCafeManagement.Database
             try
             {
                 SqlCommand command = new SqlCommand("SELECT * FROM account WHERE id = @id", connection.getConnection);
-                command.Parameters.Add("@id", SqlDbType.NVarChar).Value = CurrentUserDB.Id;
+                command.Parameters.Add("@id", SqlDbType.NVarChar).Value = CurrentUser.Id;
 
                 connection.openConnection();
                 SqlDataReader reader = command.ExecuteReader();
@@ -264,7 +265,7 @@ namespace InternetCafeManagement.Database
             try
             {
                 SqlCommand command = new SqlCommand("SELECT * FROM account WHERE id = @id", connection.getConnection);
-                command.Parameters.Add("@id", SqlDbType.NVarChar).Value = CurrentUserDB.Id;
+                command.Parameters.Add("@id", SqlDbType.NVarChar).Value = CurrentUser.Id;
 
                 connection.openConnection();
                 SqlDataReader reader = command.ExecuteReader();
@@ -288,7 +289,7 @@ namespace InternetCafeManagement.Database
             try
             {
                 SqlCommand command = new SqlCommand("SELECT * FROM account WHERE id = @id", connection.getConnection);
-                command.Parameters.Add("@id", SqlDbType.NVarChar).Value = CurrentUserDB.Id;
+                command.Parameters.Add("@id", SqlDbType.NVarChar).Value = CurrentUser.Id;
 
                 connection.openConnection();
                 SqlDataReader reader = command.ExecuteReader();

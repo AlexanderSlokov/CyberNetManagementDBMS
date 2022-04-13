@@ -7,7 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using InternetCafeManagement.Class;
+using InternetCafeManagement.Database;
+using InternetCafeManagement.Utility;
 
 namespace InternetCafeManagement.Account_Form
 {
@@ -18,7 +19,7 @@ namespace InternetCafeManagement.Account_Form
             InitializeComponent();
         }
         string oldPass, newPass, confirmPass;
-        Account account = new Account();
+        AccountDB account = new AccountDB();
         private void buttonCancel_Click(object sender, EventArgs e)
         {
             this.Close();

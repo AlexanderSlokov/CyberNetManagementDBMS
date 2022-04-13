@@ -7,12 +7,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using InternetCafeManagement.Class;
+using InternetCafeManagement.Database;
 namespace InternetCafeManagement.AdminForm
 {
     public partial class ComputerRoomManageForm : Form
     {
-        ComputerRoom computerRoom = new ComputerRoom();   
+        ComputerRoomDB computerRoom = new ComputerRoomDB();   
         public ComputerRoomManageForm()
         {
             InitializeComponent();

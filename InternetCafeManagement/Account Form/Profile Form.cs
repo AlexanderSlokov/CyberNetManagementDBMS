@@ -7,7 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using InternetCafeManagement.Class;
+using InternetCafeManagement.Database;
+using InternetCafeManagement.Utility;
 
 namespace InternetCafeManagement.Account_Form
 {
@@ -19,7 +20,7 @@ namespace InternetCafeManagement.Account_Form
         }
 
         string username, fullname, email, phone;
-        Account account = new Account();
+        AccountDB account = new AccountDB();
         private void formProfile_Load(object sender, EventArgs e)
         {
             loadData();
