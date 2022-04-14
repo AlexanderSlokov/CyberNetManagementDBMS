@@ -99,6 +99,12 @@
     <Compile Include="Database\AccountDB.cs" />
     <Compile Include="Database\ComputerDB.cs" />
     <Compile Include="Database\ComputerRoomDB.cs" />
+    <Compile Include="Employees Form\Employees Timekeeping Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Employees Form\Employees Timekeeping Form.Designer.cs">
+      <DependentUpon>Employees Timekeeping Form.cs</DependentUpon>
+    </Compile>
     <Compile Include="Utility\CurrentUser.cs" />
     <Compile Include="Utility\DataValidate.cs" />
     <Compile Include="Database\DBConnection.cs" />
@@ -147,6 +153,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AdminForm\ComputerRoomManageForm.resx">
       <DependentUpon>ComputerRoomManageForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Employees Form\Employees Timekeeping Form.resx">
+      <DependentUpon>Employees Timekeeping Form.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
