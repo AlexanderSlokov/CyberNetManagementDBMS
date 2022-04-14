@@ -49,6 +49,7 @@
             this.label7 = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label8 = new System.Windows.Forms.Label();
+            this.buttonUnfinnishedTasksSave = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -123,7 +124,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(454, 147);
+            this.label3.Location = new System.Drawing.Point(454, 158);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(158, 16);
             this.label3.TabIndex = 7;
@@ -225,11 +226,21 @@
             this.label8.TabIndex = 19;
             this.label8.Text = "Thank you for your contribution!";
             // 
+            // buttonUnfinnishedTasksSave
+            // 
+            this.buttonUnfinnishedTasksSave.Location = new System.Drawing.Point(618, 155);
+            this.buttonUnfinnishedTasksSave.Name = "buttonUnfinnishedTasksSave";
+            this.buttonUnfinnishedTasksSave.Size = new System.Drawing.Size(133, 23);
+            this.buttonUnfinnishedTasksSave.TabIndex = 20;
+            this.buttonUnfinnishedTasksSave.Text = "Save";
+            this.buttonUnfinnishedTasksSave.UseVisualStyleBackColor = true;
+            // 
             // Timekeeping_Timer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(764, 378);
+            this.Controls.Add(this.buttonUnfinnishedTasksSave);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.label7);
@@ -278,5 +289,6 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Button buttonUnfinnishedTasksSave;
     }
 }
