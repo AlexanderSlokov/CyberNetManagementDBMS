@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{7021ADB9-67F1-41A5-93A6-7194A8A7B585}</ProjectGuid>
+    <ProjectGuid>{5B3BB0A7-F34B-4D88-91DF-8F513F1657DE}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>InternetCafeClient</RootNamespace>
     <AssemblyName>InternetCafeClient</AssemblyName>
@@ -46,23 +46,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ClientAccountForm\Register Form.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ClientAccountForm\Register Form.designer.cs">
-      <DependentUpon>Register Form.cs</DependentUpon>
-    </Compile>
     <Compile Include="ClientAccountForm\Login Form.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ClientAccountForm\Login Form.designer.cs">
       <DependentUpon>Login Form.cs</DependentUpon>
     </Compile>
+    <Compile Include="ClientAccountForm\Register Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ClientAccountForm\Register Form.designer.cs">
+      <DependentUpon>Register Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ClientSendingObject\AccountCSO.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="ClientAccountForm\Register Form.resx">
-      <DependentUpon>Register Form.cs</DependentUpon>
-    </EmbeddedResource>
+    <Compile Include="SocketConnection\ClientSending.cs" />
+    <Compile Include="Utility\CurrentUser.cs" />
+    <Compile Include="Utility\DataValidate.cs" />
     <EmbeddedResource Include="ClientAccountForm\Login Form.aa.resx">
       <DependentUpon>Login Form.cs</DependentUpon>
     </EmbeddedResource>
@@ -71,6 +72,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ClientAccountForm\Login Form.resx">
       <DependentUpon>Login Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ClientAccountForm\Register Form.resx">
+      <DependentUpon>Register Form.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -95,7 +99,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <WCFMetadata Include="Connected Services\" />
+    <Folder Include="ClientReceivedObject\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

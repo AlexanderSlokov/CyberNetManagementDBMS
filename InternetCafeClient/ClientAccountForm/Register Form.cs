@@ -2,7 +2,7 @@
 using System.Data;
 using System.Windows.Forms;
 using System.Data.SqlClient;
-using InternetCafeManagement;
+using InternetCafeManagement.Database;
 
 namespace InternetCafeManagement.ClientAccountForm
 {
@@ -14,9 +14,9 @@ namespace InternetCafeManagement.ClientAccountForm
             InitializeComponent();
 
         }
-        string name, email, phone, username, password, passwordConfirm;
+        string name, gender, email, phone, username, password, passwordConfirm;
         DBConnection connection = new DBConnection();
-        Account account = new Account();
+        AccountDB accountdb = new AccountDB();
 
         private void checkBoxShowPassword_CheckedChanged(object sender, EventArgs e)
         {
@@ -39,101 +39,12 @@ namespace InternetCafeManagement.ClientAccountForm
             textBoxUsername.Focus();
         }
 
-        private void formRegister_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBoxUsername_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBoxPassword_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBoxConfirmPassword_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void labelErrorUsername_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void labelErrorPassword_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void labelErrorPasswordConfirm_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBoxName_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void labelName_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBoxEmail_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void labelEmail_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBoxPhone_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void labelPhone_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void formRegister_FormClosed(object sender, FormClosedEventArgs e)
         {
             formLogin login = new formLogin();
             login.Show();
             this.Hide();
+            comboBoxGender.Items.Add(gender);
         }
 
         private void labelBackToLogIn_Click(object sender, EventArgs e)
@@ -159,6 +70,7 @@ namespace InternetCafeManagement.ClientAccountForm
             bool usernameCheck = false, passwordCheck = false;
             bool passwordTyped = false, passwordConfirmed = false;
             name = textBoxName.Text;
+            gender = comboBoxGender.Text;
             email = textBoxEmail.Text;
             phone = textBoxPhone.Text;
             username = textBoxUsername.Text;
@@ -172,7 +84,7 @@ namespace InternetCafeManagement.ClientAccountForm
             }
             else
             {
-                if (account.isUserExist_By_Username(username))
+                if (accountdb.isUserExist_By_Username(username))
                 {
                     labelErrorUsername.Text = ("Existed Username");
                     usernameCheck = false;
@@ -226,7 +138,7 @@ namespace InternetCafeManagement.ClientAccountForm
             {
                 labelErrorPassword.Text = string.Empty;
 
-                if(account.register(name, email, phone, username, password))
+                if(accountdb.register(name, gender, email, phone, username, password))
                 {
                     MessageBox.Show("Successfuly Registed");
                     this.Close();

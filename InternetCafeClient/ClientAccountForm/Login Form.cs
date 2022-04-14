@@ -2,18 +2,17 @@
 using System.Data;
 using System.Windows.Forms;
 using System.Data.SqlClient;
-usin
-namespace InternetCafeManagement.ClientAccountForm
+using InternetCafeManagement.Utility;
+using InternetCafeManagement.ClientAccountForm;
+
+namespace InternetCafeManagement.Account_Form
 {
-    public partial class formClientLogin : Form
+    public partial class formLogin : Form
     {
-        public formClientLogin()
+        public formLogin()
         {
             InitializeComponent();
         }
-
-        DBConnection db = new DBConnection();
-        Account account = new Account();
 
         private void buttonClear_Click(object sender, EventArgs e)
         {
@@ -24,7 +23,7 @@ namespace InternetCafeManagement.ClientAccountForm
 
         private void labelCreateAccount_Click(object sender, EventArgs e)
         {
-            formRegister formRegister = new formRegister();
+            formClientRegister formRegister = new formClientRegister();
             formRegister.Show(this);
             this.Hide();
         }
@@ -47,13 +46,13 @@ namespace InternetCafeManagement.ClientAccountForm
         {
             string username = textBoxUsername.Text;
             string password = textBoxPassword.Text;
+            
 
-
-            if (account.login(username, password))
+            if (accountDB.login(username, password))
             {
                 this.DialogResult = DialogResult.OK;
                 MessageBox.Show("Login Success");
-                CurrentUser.Id = account.getUserID(username);
+                CurrentUser.Id = accountDB.getUserID(username);
                 formMain dashBoard = new formMain();
                 dashBoard.Show(this);
                 this.Hide();
@@ -67,8 +66,8 @@ namespace InternetCafeManagement.ClientAccountForm
         private void formLogin_Load(object sender, EventArgs e)
         {
             textBoxUsername.Select();
-            textBoxUsername.Text = "user1";
-            textBoxPassword.Text = "123";
+            textBoxUsername.Text = "admin1";
+            textBoxPassword.Text = "12345";
         }
     }
 }

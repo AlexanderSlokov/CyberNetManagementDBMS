@@ -1,6 +1,6 @@
-﻿namespace InternetCafeManagement.ClientAccountForm
+﻿namespace InternetCafeManagement.Account_Form
 {
-    partial class formClientLogin
+    partial class formLogin
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formClientLogin));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formLogin));
             this.labelCreateAccount = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.buttonClear = new System.Windows.Forms.Button();
@@ -113,7 +113,7 @@
             this.label1.ForeColor = System.Drawing.Color.BlueViolet;
             this.label1.Name = "label1";
             // 
-            // formClientLogin
+            // formLogin
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -129,7 +129,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(165)))), ((int)(((byte)(169)))));
-            this.Name = "formClientLogin";
+            this.Name = "formLogin";
             this.Load += new System.EventHandler(this.formLogin_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

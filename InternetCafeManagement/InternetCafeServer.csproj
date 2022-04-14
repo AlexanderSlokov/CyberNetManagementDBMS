@@ -199,5 +199,8 @@
     <None Include="Resources\icons8-system-report-96.png" />
     <None Include="Resources\workstation.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="SQL Scripts\dbo.account.sql" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

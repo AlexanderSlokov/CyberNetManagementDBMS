@@ -5,6 +5,8 @@ VisualStudioVersion = 17.1.32210.238
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InternetCafeServer", "InternetCafeManagement\InternetCafeServer.csproj", "{C01A6C73-60BA-462C-A7BF-DBFBE2BF294A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InternetCafeClient", "InternetCafeClient\InternetCafeClient.csproj", "{5B3BB0A7-F34B-4D88-91DF-8F513F1657DE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{C01A6C73-60BA-462C-A7BF-DBFBE2BF294A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C01A6C73-60BA-462C-A7BF-DBFBE2BF294A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C01A6C73-60BA-462C-A7BF-DBFBE2BF294A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5B3BB0A7-F34B-4D88-91DF-8F513F1657DE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5B3BB0A7-F34B-4D88-91DF-8F513F1657DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5B3BB0A7-F34B-4D88-91DF-8F513F1657DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5B3BB0A7-F34B-4D88-91DF-8F513F1657DE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
