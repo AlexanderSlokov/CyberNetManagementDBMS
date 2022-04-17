@@ -1,4 +1,4 @@
-﻿namespace InternetCafeManagement.UserForm
+﻿namespace InternetCafeManagement.TesingForm
 {
     partial class ServerForm
     {

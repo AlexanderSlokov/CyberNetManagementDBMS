@@ -6,13 +6,51 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using InternetCafeManagement.Utility;
-
+using InternetCafeManagement.ServerSendingObject;
+using InternetCafeManagement.ServerReceivedObject;
 namespace InternetCafeManagement.Database
 {
     class AccountDB
     {
         DBConnection connection = new DBConnection();
         // Hàm đăng ký tài khoản mới, trả vể true nếu đăng ký thành công, trả về false nếu đăng ký thất bại
+
+        
+        public AccountSSO GetAccountSSO(AccountSRO accountSRO)
+        {
+            AccountSSO accountSSO = new AccountSSO();
+            string username = accountSRO.Username;
+            string password = accountSRO.Password;
+            try
+            {
+                SqlCommand command = new SqlCommand("SELECT * FROM account WHERE username = @username AND password = @password", connection.getConnection);
+                command.Parameters.Add("@username", SqlDbType.NVarChar).Value = username;
+                command.Parameters.Add("@password", SqlDbType.NVarChar).Value = password;
+                connection.openConnection();
+                SqlDataReader reader = command.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    accountSSO.Id = Int32.Parse(reader["id"].ToString());
+                    accountSSO.Name = reader["name"].ToString();
+                    accountSSO.Gender = reader["gender"].ToString();
+                    accountSSO.Phone = reader["phone"].ToString();
+                    accountSSO.Balance = reader["balance"].ToString();
+                    accountSSO.Email = reader["email"].ToString();
+                    accountSSO.Username = reader["username"].ToString();
+                    accountSSO.Password = reader["password"].ToString();
+                    accountSSO.Role = reader["role"].ToString();
+                }
+                reader.Close();
+                connection.closeConnection();
+                return accountSSO;
+            }
+            catch
+            {
+                return null;
+            }
+            
+        }
         public bool register(string name, string gender, string phone, string email, string username, string password)
         {
             SqlCommand command = new SqlCommand("INSERT INTO account (id, name, gender, phone, balance, email, username, password)"

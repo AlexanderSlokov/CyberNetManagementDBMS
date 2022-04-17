@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Net;
@@ -13,37 +10,23 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace InternetCafeManagement.UserForm
+namespace InternetCafeClient.SocketConnection
 {
-    public partial class ClientForm : Form
+    public  class Client
     {
-        public ClientForm()
-        {
-            InitializeComponent();
+        private  IPEndPoint IP;
+        private  Socket client;
+        private object obj;
 
-            CheckForIllegalCrossThreadCalls = false;
-            Connect();
-        }
-        IPEndPoint IP;
-        Socket client;
-        
-        /// <summary>
-        /// gửi tin đi
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void buttonSend_Click(object sender, EventArgs e)
-        {
-            Send();
-            AddMessage(textBoxMessage.Text);
-        }
+        public  object Obj { get => obj; set => obj = value; }
+
         /// <summary>
         /// kết nối tới server
         /// </summary>
-        void Connect()
-        {   
+        public  void Connect()
+        {
             //IP địa chỉ của server
-            IP = new IPEndPoint(IPAddress.Parse("192.168.1.14"), 9999);
+            IP = new IPEndPoint(IPAddress.Parse("127.0.0.1"), 9999);
             client = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.IP);
             try
             {
@@ -51,35 +34,27 @@ namespace InternetCafeManagement.UserForm
             }
             catch
             {
-                MessageBox.Show("Không thể kết nối server!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            
-
             Thread listen = new Thread(Receive);
             listen.IsBackground = true;
             listen.Start();
         }
         /// <summary>
-        /// đóng kết nối hiện thời
-        /// </summary>
-        void Close()
-        {
-            client.Close();
-        }
-        /// <summary>
         /// gửi tin
         /// </summary>
-        void Send()
+        public  void Send(object obj)
         {
-            if(textBoxMessage.Text != string.Empty)
-                client.Send(Serialize(textBoxMessage.Text));
+            if(obj != null && client.Connected == true)
+                client.Send(Serialize(obj));
         }
+
         /// <summary>
         /// nhận tin
         /// </summary>
-        void Receive()
+        public void Receive()
         {
+
             try
             {
                 while (true)
@@ -87,29 +62,28 @@ namespace InternetCafeManagement.UserForm
                     byte[] data = new byte[1024 * 5000];
                     client.Receive(data);
 
-                    string meessage = (string)Deserialize(data);
-
-                    AddMessage(meessage);
+                    object message = (object)Deserialize(data);
+                    this.obj = message;
                 }
             }
             catch
             {
                 Close();
             }
-          
         }
-
-        void AddMessage(string s)
+        /// <summary>
+        /// đóng kết nối hiện thời
+        /// </summary>
+        public  void Close()
         {
-            listView.Items.Add(new ListViewItem() { Text = s });
-            textBoxMessage.Clear();
+            client.Close();
         }
         /// <summary>
         /// phân mảnh data
         /// </summary>
         /// <param name="obj"></param>
         /// <returns></returns>
-        byte[] Serialize(object obj)
+        public  byte[] Serialize(object obj)
         {
             MemoryStream stream = new MemoryStream();
             BinaryFormatter formatter = new BinaryFormatter();
@@ -123,21 +97,12 @@ namespace InternetCafeManagement.UserForm
         /// </summary>
         /// <param name="data"></param>
         /// <returns></returns>
-        object Deserialize(byte[] data)
+        public  object Deserialize(byte[] data)
         {
             MemoryStream stream = new MemoryStream(data);
             BinaryFormatter formatter = new BinaryFormatter();
 
             return formatter.Deserialize(stream);
-        }
-        /// <summary>
-        /// đóng kết nối khi đóng form
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void ClientForm_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            Close();
         }
     }
 }

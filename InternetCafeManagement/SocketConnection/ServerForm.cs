@@ -13,7 +13,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace InternetCafeManagement.UserForm
+namespace InternetCafeManagement.TesingForm
 {
     public partial class ServerForm : Form
     {

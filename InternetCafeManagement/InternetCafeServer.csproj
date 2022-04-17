@@ -115,18 +115,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UserForm\ServerForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="UserForm\ServerForm.Designer.cs">
-      <DependentUpon>ServerForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UserForm\ClientForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="UserForm\ClientForm.Designer.cs">
-      <DependentUpon>ClientForm.cs</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="Account Form\Login Form.aa.resx">
       <DependentUpon>Login Form.cs</DependentUpon>
     </EmbeddedResource>
@@ -161,12 +149,6 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="UserForm\ClientForm.resx">
-      <DependentUpon>ClientForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UserForm\ServerForm.resx">
-      <DependentUpon>ServerForm.cs</DependentUpon>
-    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -201,6 +183,11 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="SQL Scripts\dbo.account.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Employee Form\" />
+    <Folder Include="Testing Form\" />
+    <Folder Include="User Form\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

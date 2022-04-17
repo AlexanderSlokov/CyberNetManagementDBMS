@@ -1,5 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Net;
@@ -10,18 +13,35 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace InternetCafeClient.SocketConnection
+namespace InternetCafeManagement.TesingForm
 {
-    public static class ClientSending
+    public partial class ClientForm : Form
     {
-        private static IPEndPoint IP;
-        private static Socket client;
+        public ClientForm()
+        {
+            InitializeComponent();
 
+            CheckForIllegalCrossThreadCalls = false;
+            Connect();
+        }
+        IPEndPoint IP;
+        Socket client;
+        
+        /// <summary>
+        /// gửi tin đi
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void buttonSend_Click(object sender, EventArgs e)
+        {
+            Send();
+            AddMessage(textBoxMessage.Text);
+        }
         /// <summary>
         /// kết nối tới server
         /// </summary>
-        static void Connect()
-        {
+        void Connect()
+        {   
             //IP địa chỉ của server
             IP = new IPEndPoint(IPAddress.Parse("192.168.1.14"), 9999);
             client = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.IP);
@@ -31,18 +51,34 @@ namespace InternetCafeClient.SocketConnection
             }
             catch
             {
+                MessageBox.Show("Không thể kết nối server!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-
+            
 
             Thread listen = new Thread(Receive);
             listen.IsBackground = true;
             listen.Start();
         }
         /// <summary>
+        /// đóng kết nối hiện thời
+        /// </summary>
+        void Close()
+        {
+            client.Close();
+        }
+        /// <summary>
+        /// gửi tin
+        /// </summary>
+        void Send()
+        {
+            if(textBoxMessage.Text != string.Empty)
+                client.Send(Serialize(textBoxMessage.Text));
+        }
+        /// <summary>
         /// nhận tin
         /// </summary>
-        static void Receive()
+        void Receive()
         {
             try
             {
@@ -52,26 +88,28 @@ namespace InternetCafeClient.SocketConnection
                     client.Receive(data);
 
                     string meessage = (string)Deserialize(data);
+
+                    AddMessage(meessage);
                 }
             }
             catch
             {
                 Close();
             }
+          
         }
-        /// <summary>
-        /// đóng kết nối hiện thời
-        /// </summary>
-        static void Close()
+
+        void AddMessage(string s)
         {
-            client.Close();
+            listView.Items.Add(new ListViewItem() { Text = s });
+            textBoxMessage.Clear();
         }
         /// <summary>
         /// phân mảnh data
         /// </summary>
         /// <param name="obj"></param>
         /// <returns></returns>
-        static byte[] Serialize(object obj)
+        byte[] Serialize(object obj)
         {
             MemoryStream stream = new MemoryStream();
             BinaryFormatter formatter = new BinaryFormatter();
@@ -85,12 +123,21 @@ namespace InternetCafeClient.SocketConnection
         /// </summary>
         /// <param name="data"></param>
         /// <returns></returns>
-        static object Deserialize(byte[] data)
+        object Deserialize(byte[] data)
         {
             MemoryStream stream = new MemoryStream(data);
             BinaryFormatter formatter = new BinaryFormatter();
 
             return formatter.Deserialize(stream);
+        }
+        /// <summary>
+        /// đóng kết nối khi đóng form
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void ClientForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Close();
         }
     }
 }

@@ -10,7 +10,9 @@ using System.Windows.Forms;
 using InternetCafeManagement.Account_Form;
 using InternetCafeManagement.Database;
 using InternetCafeManagement.AdminForm;
-using InternetCafeManagement.UserForm;
+using InternetCafeManagement.TesingForm;
+using InternetCafeManagement.SocketConnection;
+
 namespace InternetCafeManagement
 {
     public partial class formMain : Form
@@ -42,6 +44,17 @@ namespace InternetCafeManagement
         {
             ClientForm client = new ClientForm();
             client.Show(this);
+        }
+
+        private void buttonLogin_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void formMain_Load(object sender, EventArgs e)
+        {
+            AccountAuthentication accountAuthentication = new AccountAuthentication();
+            accountAuthentication.LoginAuthentication();
         }
     }
 }

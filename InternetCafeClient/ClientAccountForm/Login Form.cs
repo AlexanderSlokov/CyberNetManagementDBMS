@@ -1,11 +1,8 @@
 ﻿using System;
-using System.Data;
 using System.Windows.Forms;
-using System.Data.SqlClient;
-using InternetCafeManagement.Utility;
-using InternetCafeManagement.ClientAccountForm;
-
-namespace InternetCafeManagement.Account_Form
+using InternetCafeClient.ClientSendingObject;
+using InternetCafeClient; 
+namespace InternetCafeManagement.ClientAccountForm
 {
     public partial class formLogin : Form
     {
@@ -13,7 +10,7 @@ namespace InternetCafeManagement.Account_Form
         {
             InitializeComponent();
         }
-
+        AccountCSO accountCSO = new AccountCSO();  
         private void buttonClear_Click(object sender, EventArgs e)
         {
             textBoxUsername.Text = "";
@@ -23,9 +20,10 @@ namespace InternetCafeManagement.Account_Form
 
         private void labelCreateAccount_Click(object sender, EventArgs e)
         {
-            formClientRegister formRegister = new formClientRegister();
+            /*formClientRegister formRegister = new formClientRegister();
             formRegister.Show(this);
             this.Hide();
+            */
         }
 
         private void checkBoxShowPassword_CheckedChanged(object sender, EventArgs e)
@@ -46,21 +44,10 @@ namespace InternetCafeManagement.Account_Form
         {
             string username = textBoxUsername.Text;
             string password = textBoxPassword.Text;
-            
-
-            if (accountDB.login(username, password))
-            {
-                this.DialogResult = DialogResult.OK;
-                MessageBox.Show("Login Success");
-                CurrentUser.Id = accountDB.getUserID(username);
-                formMain dashBoard = new formMain();
-                dashBoard.Show(this);
-                this.Hide();
-            }
-            else
-            {
-                MessageBox.Show("Invalid Username or Password", "Login Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            accountCSO.Username = username;
+            accountCSO.Password = password;
+            accountCSO.Action = "login";
+            accountCSO.login();
         }
 
         private void formLogin_Load(object sender, EventArgs e)
