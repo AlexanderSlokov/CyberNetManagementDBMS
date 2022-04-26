@@ -117,9 +117,11 @@
             // label4
             // 
             this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold);
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(165)))), ((int)(((byte)(169)))));
             this.label4.Location = new System.Drawing.Point(38, 188);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(91, 13);
+            this.label4.Size = new System.Drawing.Size(120, 17);
             this.label4.TabIndex = 11;
             this.label4.Text = "Confirm Password";
             // 
@@ -137,9 +139,11 @@
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold);
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(165)))), ((int)(((byte)(169)))));
             this.label3.Location = new System.Drawing.Point(38, 126);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(78, 13);
+            this.label3.Size = new System.Drawing.Size(97, 17);
             this.label3.TabIndex = 12;
             this.label3.Text = "New Password";
             // 
@@ -188,9 +192,11 @@
             // label7
             // 
             this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold);
+            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(165)))), ((int)(((byte)(169)))));
             this.label7.Location = new System.Drawing.Point(38, 65);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(72, 13);
+            this.label7.Size = new System.Drawing.Size(92, 17);
             this.label7.TabIndex = 23;
             this.label7.Text = "Old Password";
             // 

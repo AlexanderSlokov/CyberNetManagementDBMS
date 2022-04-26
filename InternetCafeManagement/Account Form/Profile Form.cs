@@ -32,6 +32,16 @@ namespace InternetCafeManagement.Account_Form
             fPassword.Show(this);
         }
 
+        private void labelEmail_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void labelPhone_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void labelExit_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -41,23 +51,29 @@ namespace InternetCafeManagement.Account_Form
         {
             username = account.getUsername();
             fullname = account.getUserFullName();
-            gender = comboBoxGender.Text;
+            gender = account.GetUserGender();
             email = account.getUserEmail();
             phone = account.getUserPhone();
             textBoxUsername.Text = username;
             textBoxName.Text = fullname;
             textBoxEmail.Text = email;
             textBoxPhone.Text = phone;
+            comboBoxGender.Text = gender;
         }
         private void buttonUpdate_Click(object sender, EventArgs e)
         {
+            username = textBoxUsername.Text;
+            fullname = textBoxName.Text;
+            gender = comboBoxGender.Text;
+            email = textBoxEmail.Text;
+            phone = textBoxPhone.Text;
 
             if (dataValidate())
             {
-                account.updateUserData(CurrentUser.Id, gender, fullname, email, phone);
-                loadData();
+                account.updateUserData(CurrentUser.Id, fullname, gender, phone, email);
                 MessageBox.Show("Information Updated", "", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
             }
+            loadData();
         }
 
         public bool dataValidate()

@@ -1,4 +1,4 @@
-﻿namespace InternetCafeManagement.Employees_Form
+﻿namespace InternetCafeManagement.Employee_Form
 {
     partial class Timekeeping_Timer
     {

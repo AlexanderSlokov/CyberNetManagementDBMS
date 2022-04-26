@@ -91,6 +91,16 @@ namespace InternetCafeManagement.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap reload {
+            get {
+                object obj = ResourceManager.GetObject("reload", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to {&quot;icon&quot;:{&quot;id&quot;:&quot;XMpWLL82RuKb&quot;,&quot;name&quot;:&quot;System Report&quot;,&quot;commonName&quot;:&quot;system-report&quot;,&quot;category&quot;:&quot;Programming&quot;,&quot;platform&quot;:&quot;fluent&quot;},&quot;id&quot;:&quot;XMpWLL82RuKb&quot;}.
         /// </summary>
         internal static string String {

@@ -10,8 +10,6 @@ using System.Windows.Forms;
 using InternetCafeManagement.Account_Form;
 using InternetCafeManagement.Database;
 using InternetCafeManagement.AdminForm;
-using InternetCafeManagement.TesingForm;
-using InternetCafeManagement.SocketConnection;
 
 namespace InternetCafeManagement
 {
@@ -36,25 +34,8 @@ namespace InternetCafeManagement
 
         private void button1_Click(object sender, EventArgs e)
         {
-            ServerForm server = new ServerForm();
-            server.Show(this);
-        }
-
-        private void buttonClient_Click(object sender, EventArgs e)
-        {
-            ClientForm client = new ClientForm();
-            client.Show(this);
-        }
-
-        private void buttonLogin_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void formMain_Load(object sender, EventArgs e)
-        {
-            AccountAuthentication accountAuthentication = new AccountAuthentication();
-            accountAuthentication.LoginAuthentication();
+            ComputerRoomManagerForm computerRoomManagerForm = new ComputerRoomManagerForm();
+            computerRoomManagerForm.Show(this);
         }
     }
 }

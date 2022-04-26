@@ -90,19 +90,43 @@
     <Compile Include="Account Form\Register Form.designer.cs">
       <DependentUpon>Register Form.cs</DependentUpon>
     </Compile>
+    <Compile Include="AdminForm\AddComputerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminForm\AddComputerForm.Designer.cs">
+      <DependentUpon>AddComputerForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminForm\AddComputerRoomForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminForm\AddComputerRoomForm.Designer.cs">
+      <DependentUpon>AddComputerRoomForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminForm\ComputerDetailForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminForm\ComputerDetailForm.designer.cs">
+      <DependentUpon>ComputerDetailForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="AdminForm\ComputerRoomManageForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="AdminForm\ComputerRoomManageForm.Designer.cs">
       <DependentUpon>ComputerRoomManageForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="AdminForm\ComputerRoomManagerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminForm\ComputerRoomManagerForm.Designer.cs">
+      <DependentUpon>ComputerRoomManagerForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Database\AccountDB.cs" />
     <Compile Include="Database\ComputerDB.cs" />
     <Compile Include="Database\ComputerRoomDB.cs" />
-    <Compile Include="Employees Form\Employees Timekeeping Form.cs">
+    <Compile Include="Employee Form\Employees Timekeeping Form.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Employees Form\Employees Timekeeping Form.Designer.cs">
+    <Compile Include="Employee Form\Employees Timekeeping Form.Designer.cs">
       <DependentUpon>Employees Timekeeping Form.cs</DependentUpon>
     </Compile>
     <Compile Include="Utility\CurrentUser.cs" />
@@ -139,10 +163,22 @@
     <EmbeddedResource Include="Account Form\Register Form.resx">
       <DependentUpon>Register Form.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AdminForm\AddComputerForm.resx">
+      <DependentUpon>AddComputerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminForm\AddComputerRoomForm.resx">
+      <DependentUpon>AddComputerRoomForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminForm\ComputerDetailForm.resx">
+      <DependentUpon>ComputerDetailForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AdminForm\ComputerRoomManageForm.resx">
       <DependentUpon>ComputerRoomManageForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Employees Form\Employees Timekeeping Form.resx">
+    <EmbeddedResource Include="AdminForm\ComputerRoomManagerForm.resx">
+      <DependentUpon>ComputerRoomManagerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Employee Form\Employees Timekeeping Form.resx">
       <DependentUpon>Employees Timekeeping Form.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
@@ -191,10 +227,11 @@
     <None Include="Resources\workstation.png" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Resources\reload.png" />
     <Content Include="SQL Scripts\dbo.account.sql" />
+    <Content Include="SQL Scripts\dbo.computer.sql" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Employee Form\" />
     <Folder Include="Testing Form\" />
     <Folder Include="User Form\" />
   </ItemGroup>

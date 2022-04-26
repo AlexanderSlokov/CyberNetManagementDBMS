@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace InternetCafeManagement.Employees_Form
+namespace InternetCafeManagement.Employee_Form
 {
     public partial class Timekeeping_Timer : Form
     {

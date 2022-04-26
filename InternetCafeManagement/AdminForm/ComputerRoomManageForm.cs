@@ -89,6 +89,11 @@ namespace InternetCafeManagement.AdminForm
         {
             addAllButtons(30);
         }
-        
+
+        private void buttonUpdate_Click(object sender, EventArgs e)
+        {
+            AddNewComputerForm addNewComputerForm = new AddNewComputerForm();
+            addNewComputerForm.Show(this);
+        }
     }
 }

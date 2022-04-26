@@ -11,10 +11,8 @@ namespace InternetCafeManagement.Database
     class AccountDB
     {
         DBConnection connection = new DBConnection();
-        // Hàm đăng ký tài khoản mới, trả vể true nếu đăng ký thành công, trả về false nếu đăng ký thất bại
 
-        
-       
+        // Hàm đăng ký tài khoản mới, trả vể true nếu đăng ký thành công, trả về false nếu đăng ký thất bại
         public bool register(string name, string gender, string phone, string email, string username, string password)
         {
             SqlCommand command = new SqlCommand("INSERT INTO account (id, name, gender, phone, balance, email, username, password)"
@@ -83,7 +81,7 @@ namespace InternetCafeManagement.Database
         {
             try
             {
-                SqlCommand command = new SqlCommand("UPDATE account SET name = @name, email = @email, phone = @phone WHERE id = @id", connection.getConnection);
+                SqlCommand command = new SqlCommand("UPDATE account SET name = @name, gender = @gender, email = @email, phone = @phone WHERE id = @id", connection.getConnection);
 
                 command.Parameters.Add("@id", SqlDbType.Int).Value = ID;
                 command.Parameters.Add("@name", SqlDbType.VarChar).Value = fullname;
@@ -386,6 +384,30 @@ namespace InternetCafeManagement.Database
                 return false;
             }
         }
-        
+        // Hàm lấy giới tính của người dùng bằng ID hiện tại
+        public string GetUserGender()
+        {
+            string gender = String.Empty;
+            try
+            {
+                SqlCommand command = new SqlCommand("SELECT * FROM account WHERE id = @id", connection.getConnection);
+                command.Parameters.Add("@id", SqlDbType.NVarChar).Value = CurrentUser.Id;
+
+                connection.openConnection();
+                SqlDataReader reader = command.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    gender = reader["gender"].ToString();
+                }
+                reader.Close();
+                connection.closeConnection();
+                return gender;
+            }
+            catch
+            {
+                return null;
+            }
+        }
     }
 }
