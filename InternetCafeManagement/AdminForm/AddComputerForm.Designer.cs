@@ -39,6 +39,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.comboBoxBulkAdd = new System.Windows.Forms.ComboBox();
+            this.buttonAssignLocalPC = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // comboBoxRoomID
@@ -74,7 +75,7 @@
             this.labelExit.Cursor = System.Windows.Forms.Cursors.Hand;
             this.labelExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelExit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(86)))), ((int)(((byte)(174)))));
-            this.labelExit.Location = new System.Drawing.Point(140, 472);
+            this.labelExit.Location = new System.Drawing.Point(145, 515);
             this.labelExit.Name = "labelExit";
             this.labelExit.Size = new System.Drawing.Size(28, 16);
             this.labelExit.TabIndex = 66;
@@ -160,11 +161,26 @@
             this.comboBoxBulkAdd.Size = new System.Drawing.Size(286, 21);
             this.comboBoxBulkAdd.TabIndex = 76;
             // 
+            // buttonAssignLocalPC
+            // 
+            this.buttonAssignLocalPC.BackColor = System.Drawing.Color.White;
+            this.buttonAssignLocalPC.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonAssignLocalPC.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonAssignLocalPC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(86)))), ((int)(((byte)(174)))));
+            this.buttonAssignLocalPC.Location = new System.Drawing.Point(18, 462);
+            this.buttonAssignLocalPC.Margin = new System.Windows.Forms.Padding(4);
+            this.buttonAssignLocalPC.Name = "buttonAssignLocalPC";
+            this.buttonAssignLocalPC.Size = new System.Drawing.Size(289, 46);
+            this.buttonAssignLocalPC.TabIndex = 77;
+            this.buttonAssignLocalPC.Text = "Assign This PC";
+            this.buttonAssignLocalPC.UseVisualStyleBackColor = false;
+            // 
             // AddNewComputerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(324, 506);
+            this.ClientSize = new System.Drawing.Size(324, 549);
+            this.Controls.Add(this.buttonAssignLocalPC);
             this.Controls.Add(this.comboBoxBulkAdd);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label4);
@@ -198,5 +214,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox comboBoxBulkAdd;
+        private System.Windows.Forms.Button buttonAssignLocalPC;
     }
 }

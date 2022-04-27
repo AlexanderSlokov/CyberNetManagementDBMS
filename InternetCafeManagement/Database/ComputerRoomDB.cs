@@ -52,7 +52,7 @@ namespace InternetCafeManagement.Database
             connection.openConnection();
             try
             {
-                if ((command.ExecuteNonQuery() == 1))
+                if ((command.ExecuteNonQuery() >= 1))
                 {
                     connection.closeConnection();
                     return true;

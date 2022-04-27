@@ -129,6 +129,8 @@
     <Compile Include="Employee Form\Employees Timekeeping Form.Designer.cs">
       <DependentUpon>Employees Timekeeping Form.cs</DependentUpon>
     </Compile>
+    <Compile Include="Model\Computer.cs" />
+    <Compile Include="Utility\CurrentPC.cs" />
     <Compile Include="Utility\CurrentUser.cs" />
     <Compile Include="Utility\DataValidate.cs" />
     <Compile Include="Database\DBConnection.cs" />
@@ -231,6 +233,7 @@
     <Content Include="Resources\reload.png" />
     <Content Include="SQL Scripts\dbo.account.sql" />
     <Content Include="SQL Scripts\dbo.computer.sql" />
+    <Content Include="SQL Scripts\dbo.computer_room.sql" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Testing Form\" />

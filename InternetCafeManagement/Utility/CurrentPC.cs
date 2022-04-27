@@ -6,10 +6,7 @@ using System.Threading.Tasks;
 
 namespace InternetCafeManagement.Utility
 {
-    static public class Status
+    internal class CurrentPC
     {
-        public static string available = "Available";
-        public static string busy = "Busy";
-        public static string in_use = "In Use";
     }
 }

@@ -30,6 +30,8 @@
         {
             this.panelMain = new System.Windows.Forms.Panel();
             this.panelAdminControl = new System.Windows.Forms.Panel();
+            this.buttonReload = new System.Windows.Forms.Button();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.buttonUpdate = new System.Windows.Forms.Button();
             this.panelComputerGrid = new System.Windows.Forms.Panel();
             this.panelRoomInformation = new System.Windows.Forms.Panel();
@@ -37,11 +39,13 @@
             this.labelRoomID = new System.Windows.Forms.Label();
             this.panelMain.SuspendLayout();
             this.panelAdminControl.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panelRoomInformation.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelMain
             // 
+            this.panelMain.Controls.Add(this.buttonReload);
             this.panelMain.Controls.Add(this.panelAdminControl);
             this.panelMain.Controls.Add(this.panelComputerGrid);
             this.panelMain.Controls.Add(this.panelRoomInformation);
@@ -53,11 +57,39 @@
             // 
             // panelAdminControl
             // 
+            this.panelAdminControl.Controls.Add(this.dataGridView1);
             this.panelAdminControl.Controls.Add(this.buttonUpdate);
             this.panelAdminControl.Location = new System.Drawing.Point(819, 92);
             this.panelAdminControl.Name = "panelAdminControl";
             this.panelAdminControl.Size = new System.Drawing.Size(375, 642);
             this.panelAdminControl.TabIndex = 2;
+            // 
+            // buttonReload
+            // 
+            this.buttonReload.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.buttonReload.BackColor = System.Drawing.Color.Gainsboro;
+            this.buttonReload.BackgroundImage = global::InternetCafeManagement.Properties.Resources.reload;
+            this.buttonReload.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.buttonReload.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonReload.FlatAppearance.BorderSize = 0;
+            this.buttonReload.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonReload.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonReload.ForeColor = System.Drawing.Color.RosyBrown;
+            this.buttonReload.Location = new System.Drawing.Point(785, 56);
+            this.buttonReload.Margin = new System.Windows.Forms.Padding(4);
+            this.buttonReload.Name = "buttonReload";
+            this.buttonReload.Size = new System.Drawing.Size(28, 29);
+            this.buttonReload.TabIndex = 89;
+            this.buttonReload.UseVisualStyleBackColor = false;
+            this.buttonReload.Click += new System.EventHandler(this.buttonReload_Click);
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(3, 171);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(361, 150);
+            this.dataGridView1.TabIndex = 0;
             // 
             // buttonUpdate
             // 
@@ -122,6 +154,7 @@
             this.Load += new System.EventHandler(this.ComputerRoomManageForm_Load);
             this.panelMain.ResumeLayout(false);
             this.panelAdminControl.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panelRoomInformation.ResumeLayout(false);
             this.panelRoomInformation.PerformLayout();
             this.ResumeLayout(false);
@@ -137,5 +170,7 @@
         private System.Windows.Forms.Panel panelComputerGrid;
         private System.Windows.Forms.Panel panelAdminControl;
         private System.Windows.Forms.Button buttonUpdate;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button buttonReload;
     }
 }
