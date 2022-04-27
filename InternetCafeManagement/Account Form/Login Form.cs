@@ -55,6 +55,7 @@ namespace InternetCafeManagement.Account_Form
                 this.DialogResult = DialogResult.OK;
                 MessageBox.Show("Login Success");
                 CurrentUser.Id = accountDB.getUserID(username);
+                CurrentUser.LoginTime = DateTime.Now;
                 formMain dashBoard = new formMain();
                 dashBoard.Show(this);
                 this.Hide();

@@ -28,174 +28,218 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.buttonChangePassword = new System.Windows.Forms.Button();
+            this.label23 = new System.Windows.Forms.Label();
+            this.textBoxInfo = new System.Windows.Forms.TextBox();
+            this.labelComputerID = new System.Windows.Forms.Label();
+            this.labelRoomID = new System.Windows.Forms.Label();
+            this.labelUserFullName = new System.Windows.Forms.Label();
+            this.labelBalance = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.labeLoginTime = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.txt_ThongTinMayTinh = new System.Windows.Forms.TextBox();
-            this.txt_SoPhongMay = new System.Windows.Forms.TextBox();
-            this.txt_SoIDMayTinh = new System.Windows.Forms.TextBox();
-            this.txt_TenNguoiSuDung = new System.Windows.Forms.TextBox();
-            this.btn_DichVu = new System.Windows.Forms.Button();
-            this.btn_DangXuat = new System.Windows.Forms.Button();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.button2 = new System.Windows.Forms.Button();
             this.SuspendLayout();
+            // 
+            // buttonChangePassword
+            // 
+            this.buttonChangePassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.buttonChangePassword.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonChangePassword.FlatAppearance.BorderSize = 0;
+            this.buttonChangePassword.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonChangePassword.ForeColor = System.Drawing.Color.White;
+            this.buttonChangePassword.Location = new System.Drawing.Point(307, 341);
+            this.buttonChangePassword.Name = "buttonChangePassword";
+            this.buttonChangePassword.Size = new System.Drawing.Size(93, 38);
+            this.buttonChangePassword.TabIndex = 22;
+            this.buttonChangePassword.Text = "MAKE UNAVAILABLE";
+            this.buttonChangePassword.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.buttonChangePassword.UseVisualStyleBackColor = false;
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold);
+            this.label23.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(165)))), ((int)(((byte)(169)))));
+            this.label23.Location = new System.Drawing.Point(7, 66);
+            this.label23.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(103, 17);
+            this.label23.TabIndex = 84;
+            this.label23.Text = "PC Description:";
+            // 
+            // textBoxInfo
+            // 
+            this.textBoxInfo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(231)))), ((int)(((byte)(233)))));
+            this.textBoxInfo.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxInfo.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxInfo.Location = new System.Drawing.Point(10, 95);
+            this.textBoxInfo.Multiline = true;
+            this.textBoxInfo.Name = "textBoxInfo";
+            this.textBoxInfo.Size = new System.Drawing.Size(390, 137);
+            this.textBoxInfo.TabIndex = 85;
+            // 
+            // labelComputerID
+            // 
+            this.labelComputerID.AutoSize = true;
+            this.labelComputerID.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold);
+            this.labelComputerID.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(165)))), ((int)(((byte)(169)))));
+            this.labelComputerID.Location = new System.Drawing.Point(7, 9);
+            this.labelComputerID.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelComputerID.Name = "labelComputerID";
+            this.labelComputerID.Size = new System.Drawing.Size(48, 17);
+            this.labelComputerID.TabIndex = 86;
+            this.labelComputerID.Text = "PC no:";
+            // 
+            // labelRoomID
+            // 
+            this.labelRoomID.AutoSize = true;
+            this.labelRoomID.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold);
+            this.labelRoomID.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(165)))), ((int)(((byte)(169)))));
+            this.labelRoomID.Location = new System.Drawing.Point(7, 40);
+            this.labelRoomID.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelRoomID.Name = "labelRoomID";
+            this.labelRoomID.Size = new System.Drawing.Size(52, 17);
+            this.labelRoomID.TabIndex = 87;
+            this.labelRoomID.Text = "Room: ";
+            // 
+            // labelUserFullName
+            // 
+            this.labelUserFullName.AutoSize = true;
+            this.labelUserFullName.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold);
+            this.labelUserFullName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(165)))), ((int)(((byte)(169)))));
+            this.labelUserFullName.Location = new System.Drawing.Point(422, 9);
+            this.labelUserFullName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelUserFullName.Name = "labelUserFullName";
+            this.labelUserFullName.Size = new System.Drawing.Size(44, 17);
+            this.labelUserFullName.TabIndex = 88;
+            this.labelUserFullName.Text = "User: ";
+            // 
+            // labelBalance
+            // 
+            this.labelBalance.AutoSize = true;
+            this.labelBalance.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold);
+            this.labelBalance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(165)))), ((int)(((byte)(169)))));
+            this.labelBalance.Location = new System.Drawing.Point(613, 9);
+            this.labelBalance.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelBalance.Name = "labelBalance";
+            this.labelBalance.Size = new System.Drawing.Size(63, 17);
+            this.labelBalance.TabIndex = 89;
+            this.labelBalance.Text = "Balance: ";
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(86)))), ((int)(((byte)(174)))));
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(208, 341);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(93, 38);
+            this.button1.TabIndex = 90;
+            this.button1.Text = "SERVICE REQUIRED";
+            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.button1.UseVisualStyleBackColor = false;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(154, 19);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold);
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(165)))), ((int)(((byte)(169)))));
+            this.label1.Location = new System.Drawing.Point(422, 137);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(96, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Thông tin máy tính";
+            this.label1.Size = new System.Drawing.Size(82, 17);
+            this.label1.TabIndex = 91;
+            this.label1.Text = "Login Time:";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(284, 19);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold);
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(165)))), ((int)(((byte)(169)))));
+            this.label2.Location = new System.Drawing.Point(613, 137);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(99, 13);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Số ID của máy tính";
+            this.label2.Size = new System.Drawing.Size(78, 17);
+            this.label2.TabIndex = 92;
+            this.label2.Text = "Using Time";
+            // 
+            // labeLoginTime
+            // 
+            this.labeLoginTime.AutoSize = true;
+            this.labeLoginTime.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold);
+            this.labeLoginTime.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(165)))), ((int)(((byte)(169)))));
+            this.labeLoginTime.Location = new System.Drawing.Point(422, 179);
+            this.labeLoginTime.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labeLoginTime.Name = "labeLoginTime";
+            this.labeLoginTime.Size = new System.Drawing.Size(58, 17);
+            this.labeLoginTime.TabIndex = 93;
+            this.labeLoginTime.Text = "20:20:00";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(398, 19);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label3.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold);
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(165)))), ((int)(((byte)(169)))));
+            this.label3.Location = new System.Drawing.Point(13, 246);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(75, 13);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Số phòng máy";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(506, 19);
-            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(96, 13);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "Tên người sử dụng";
-            // 
-            // txt_ThongTinMayTinh
-            // 
-            this.txt_ThongTinMayTinh.Location = new System.Drawing.Point(156, 50);
-            this.txt_ThongTinMayTinh.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.txt_ThongTinMayTinh.Name = "txt_ThongTinMayTinh";
-            this.txt_ThongTinMayTinh.Size = new System.Drawing.Size(84, 20);
-            this.txt_ThongTinMayTinh.TabIndex = 4;
-            // 
-            // txt_SoPhongMay
-            // 
-            this.txt_SoPhongMay.Location = new System.Drawing.Point(401, 50);
-            this.txt_SoPhongMay.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.txt_SoPhongMay.Name = "txt_SoPhongMay";
-            this.txt_SoPhongMay.Size = new System.Drawing.Size(84, 20);
-            this.txt_SoPhongMay.TabIndex = 5;
-            // 
-            // txt_SoIDMayTinh
-            // 
-            this.txt_SoIDMayTinh.Location = new System.Drawing.Point(286, 50);
-            this.txt_SoIDMayTinh.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.txt_SoIDMayTinh.Name = "txt_SoIDMayTinh";
-            this.txt_SoIDMayTinh.Size = new System.Drawing.Size(84, 20);
-            this.txt_SoIDMayTinh.TabIndex = 6;
-            // 
-            // txt_TenNguoiSuDung
-            // 
-            this.txt_TenNguoiSuDung.Location = new System.Drawing.Point(508, 50);
-            this.txt_TenNguoiSuDung.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.txt_TenNguoiSuDung.Name = "txt_TenNguoiSuDung";
-            this.txt_TenNguoiSuDung.Size = new System.Drawing.Size(84, 20);
-            this.txt_TenNguoiSuDung.TabIndex = 7;
-            // 
-            // btn_DichVu
-            // 
-            this.btn_DichVu.Location = new System.Drawing.Point(11, 9);
-            this.btn_DichVu.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.btn_DichVu.Name = "btn_DichVu";
-            this.btn_DichVu.Size = new System.Drawing.Size(87, 32);
-            this.btn_DichVu.TabIndex = 8;
-            this.btn_DichVu.Text = "Dịch vụ";
-            this.btn_DichVu.UseVisualStyleBackColor = true;
-            // 
-            // btn_DangXuat
-            // 
-            this.btn_DangXuat.Location = new System.Drawing.Point(11, 45);
-            this.btn_DangXuat.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.btn_DangXuat.Name = "btn_DangXuat";
-            this.btn_DangXuat.Size = new System.Drawing.Size(86, 32);
-            this.btn_DangXuat.TabIndex = 9;
-            this.btn_DangXuat.Text = "Đăng xuất";
-            this.btn_DangXuat.UseVisualStyleBackColor = true;
-            this.btn_DangXuat.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(741, 19);
-            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(94, 13);
-            this.label5.TabIndex = 10;
-            this.label5.Text = "Số giờ đã sử dụng";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(624, 19);
-            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(74, 13);
-            this.label6.TabIndex = 11;
-            this.label6.Text = "Số giờ đã nạp";
-            this.label6.Click += new System.EventHandler(this.label6_Click);
+            this.label3.Size = new System.Drawing.Size(93, 17);
+            this.label3.TabIndex = 94;
+            this.label3.Text = "Fee Per Hour:";
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(627, 50);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(231)))), ((int)(((byte)(233)))));
+            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox1.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.Location = new System.Drawing.Point(10, 275);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(84, 20);
-            this.textBox1.TabIndex = 12;
+            this.textBox1.Size = new System.Drawing.Size(390, 24);
+            this.textBox1.TabIndex = 95;
             // 
-            // textBox2
+            // button2
             // 
-            this.textBox2.Location = new System.Drawing.Point(744, 50);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(84, 20);
-            this.textBox2.TabIndex = 13;
+            this.button2.BackColor = System.Drawing.Color.Turquoise;
+            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button2.FlatAppearance.BorderSize = 0;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.ForeColor = System.Drawing.Color.Black;
+            this.button2.Location = new System.Drawing.Point(10, 341);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(192, 38);
+            this.button2.TabIndex = 96;
+            this.button2.Text = "UPDATE INFORMATION";
+            this.button2.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.button2.UseVisualStyleBackColor = false;
             // 
             // ComputerDetailForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1014, 107);
-            this.Controls.Add(this.textBox2);
+            this.ClientSize = new System.Drawing.Size(791, 391);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.btn_DangXuat);
-            this.Controls.Add(this.btn_DichVu);
-            this.Controls.Add(this.txt_TenNguoiSuDung);
-            this.Controls.Add(this.txt_SoIDMayTinh);
-            this.Controls.Add(this.txt_SoPhongMay);
-            this.Controls.Add(this.txt_ThongTinMayTinh);
-            this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
+            this.Controls.Add(this.labeLoginTime);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.labelBalance);
+            this.Controls.Add(this.labelUserFullName);
+            this.Controls.Add(this.labelRoomID);
+            this.Controls.Add(this.labelComputerID);
+            this.Controls.Add(this.textBoxInfo);
+            this.Controls.Add(this.label23);
+            this.Controls.Add(this.buttonChangePassword);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "ComputerDetailForm";
-            this.Text = "ComputerDetailForm";
+            this.Text = "Computer Detail";
             this.Load += new System.EventHandler(this.ComputerDetailForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -203,20 +247,19 @@
         }
 
         #endregion
-
+        private System.Windows.Forms.Button buttonChangePassword;
+        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.TextBox textBoxInfo;
+        private System.Windows.Forms.Label labelComputerID;
+        private System.Windows.Forms.Label labelRoomID;
+        private System.Windows.Forms.Label labelUserFullName;
+        private System.Windows.Forms.Label labelBalance;
+        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label labeLoginTime;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txt_ThongTinMayTinh;
-        private System.Windows.Forms.TextBox txt_SoPhongMay;
-        private System.Windows.Forms.TextBox txt_SoIDMayTinh;
-        private System.Windows.Forms.TextBox txt_TenNguoiSuDung;
-        private System.Windows.Forms.Button btn_DichVu;
-        private System.Windows.Forms.Button btn_DangXuat;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Button button2;
     }
 }

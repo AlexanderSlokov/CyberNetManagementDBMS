@@ -36,6 +36,8 @@
             this.textBoxRoomID = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.textBoxFloor = new System.Windows.Forms.TextBox();
+            this.textBoxMaxComputer = new System.Windows.Forms.TextBox();
+            this.labelMaxRoom = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label3
@@ -79,7 +81,7 @@
             this.labelExit.Cursor = System.Windows.Forms.Cursors.Hand;
             this.labelExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelExit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(86)))), ((int)(((byte)(174)))));
-            this.labelExit.Location = new System.Drawing.Point(205, 259);
+            this.labelExit.Location = new System.Drawing.Point(204, 312);
             this.labelExit.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelExit.Name = "labelExit";
             this.labelExit.Size = new System.Drawing.Size(28, 16);
@@ -94,7 +96,7 @@
             this.buttonAdd.FlatAppearance.BorderSize = 0;
             this.buttonAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonAdd.ForeColor = System.Drawing.Color.White;
-            this.buttonAdd.Location = new System.Drawing.Point(28, 191);
+            this.buttonAdd.Location = new System.Drawing.Point(27, 244);
             this.buttonAdd.Margin = new System.Windows.Forms.Padding(4);
             this.buttonAdd.Name = "buttonAdd";
             this.buttonAdd.Size = new System.Drawing.Size(385, 46);
@@ -140,11 +142,37 @@
             this.textBoxFloor.Size = new System.Drawing.Size(385, 24);
             this.textBoxFloor.TabIndex = 86;
             // 
+            // textBoxMaxComputer
+            // 
+            this.textBoxMaxComputer.AllowDrop = true;
+            this.textBoxMaxComputer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(231)))), ((int)(((byte)(233)))));
+            this.textBoxMaxComputer.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxMaxComputer.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxMaxComputer.Location = new System.Drawing.Point(27, 202);
+            this.textBoxMaxComputer.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxMaxComputer.Name = "textBoxMaxComputer";
+            this.textBoxMaxComputer.Size = new System.Drawing.Size(385, 24);
+            this.textBoxMaxComputer.TabIndex = 88;
+            // 
+            // labelMaxRoom
+            // 
+            this.labelMaxRoom.AutoSize = true;
+            this.labelMaxRoom.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold);
+            this.labelMaxRoom.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(165)))), ((int)(((byte)(169)))));
+            this.labelMaxRoom.Location = new System.Drawing.Point(28, 181);
+            this.labelMaxRoom.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelMaxRoom.Name = "labelMaxRoom";
+            this.labelMaxRoom.Size = new System.Drawing.Size(205, 17);
+            this.labelMaxRoom.TabIndex = 87;
+            this.labelMaxRoom.Text = "Maximum Capacity (computers)";
+            // 
             // AddComputerRoomForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(440, 290);
+            this.ClientSize = new System.Drawing.Size(440, 337);
+            this.Controls.Add(this.textBoxMaxComputer);
+            this.Controls.Add(this.labelMaxRoom);
             this.Controls.Add(this.textBoxFloor);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label23);
@@ -172,5 +200,7 @@
         private System.Windows.Forms.TextBox textBoxRoomID;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBoxFloor;
+        private System.Windows.Forms.TextBox textBoxMaxComputer;
+        private System.Windows.Forms.Label labelMaxRoom;
     }
 }

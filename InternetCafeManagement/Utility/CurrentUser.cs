@@ -11,7 +11,9 @@ namespace InternetCafeManagement.Utility
     {
         private static int id;
         private static string role;
+        private static DateTime loginTime;
         public static int Id { get => id; set => id = value; }
         public static string Role { get => role; set => role = value; }
+        public static DateTime LoginTime { get => loginTime; set => loginTime = value; }
     }
 }

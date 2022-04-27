@@ -13,10 +13,12 @@ namespace InternetCafeManagement.AdminForm
     public partial class ComputerRoomManageForm : Form
     {
         ComputerRoomDB computerRoom = new ComputerRoomDB();   
+        ComputerDB computerDB = new ComputerDB();
         public ComputerRoomManageForm()
         {
             InitializeComponent();
         }
+        public int current_room_id;
         public void addAllButtons(int buttonNumber)
         {
             string buttonName = "button";
@@ -87,13 +89,20 @@ namespace InternetCafeManagement.AdminForm
         }
         private void ComputerRoomManageForm_Load(object sender, EventArgs e)
         {
-            addAllButtons(30);
+            LoadData();
         }
-
+        public void LoadData()
+        {
+            ComputerRoomManagerForm computerRoomManagerForm = (ComputerRoomManagerForm)(this.Owner);
+            current_room_id = computerRoomManagerForm.transit_room_id;
+            labelRoomID.Text = "Room 0" + current_room_id.ToString();
+            labelComputerNumber.Text = "Computers Number: " + computerDB.ComputerCountByID(current_room_id).ToString();
+            addAllButtons(computerDB.ComputerCountByID(current_room_id));
+        }
         private void buttonUpdate_Click(object sender, EventArgs e)
         {
             AddNewComputerForm addNewComputerForm = new AddNewComputerForm();
-            addNewComputerForm.Show(this);
+            addNewComputerForm.ShowDialog(this);
         }
     }
 }

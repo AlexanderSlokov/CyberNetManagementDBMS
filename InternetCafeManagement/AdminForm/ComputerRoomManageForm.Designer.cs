@@ -79,7 +79,7 @@
             // 
             this.panelComputerGrid.Location = new System.Drawing.Point(3, 92);
             this.panelComputerGrid.Name = "panelComputerGrid";
-            this.panelComputerGrid.Size = new System.Drawing.Size(810, 642);
+            this.panelComputerGrid.Size = new System.Drawing.Size(810, 842);
             this.panelComputerGrid.TabIndex = 1;
             // 
             // panelRoomInformation
@@ -94,20 +94,20 @@
             // labelComputerNumber
             // 
             this.labelComputerNumber.AutoSize = true;
-            this.labelComputerNumber.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelComputerNumber.Location = new System.Drawing.Point(9, 44);
+            this.labelComputerNumber.Font = new System.Drawing.Font("Nirmala UI", 14.25F, System.Drawing.FontStyle.Bold);
+            this.labelComputerNumber.Location = new System.Drawing.Point(9, 31);
             this.labelComputerNumber.Name = "labelComputerNumber";
-            this.labelComputerNumber.Size = new System.Drawing.Size(134, 17);
+            this.labelComputerNumber.Size = new System.Drawing.Size(195, 25);
             this.labelComputerNumber.TabIndex = 1;
             this.labelComputerNumber.Text = "Computers Number:";
             // 
             // labelRoomID
             // 
             this.labelRoomID.AutoSize = true;
-            this.labelRoomID.Font = new System.Drawing.Font("Segoe UI", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelRoomID.Location = new System.Drawing.Point(4, 4);
+            this.labelRoomID.Font = new System.Drawing.Font("Nirmala UI", 14.25F, System.Drawing.FontStyle.Bold);
+            this.labelRoomID.Location = new System.Drawing.Point(9, 6);
             this.labelRoomID.Name = "labelRoomID";
-            this.labelRoomID.Size = new System.Drawing.Size(140, 40);
+            this.labelRoomID.Size = new System.Drawing.Size(91, 25);
             this.labelRoomID.TabIndex = 0;
             this.labelRoomID.Text = "Room 01";
             // 

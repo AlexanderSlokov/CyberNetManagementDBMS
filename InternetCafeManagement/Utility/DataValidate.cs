@@ -22,6 +22,22 @@ namespace InternetCafeManagement.Utility
                 return false;
             }
         }
+        // trả về true nếu kiểm tra nếu input nhập vào một số nguyên dương lớn hơn không
+        public static bool TextBoxNumInputCheck(string text)
+        {
+            try
+            {
+                int num = Int32.Parse(text);
+                if(num <= 0)
+                    return false;
+                else
+                    return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
         // Hàm check chuỗi có phải là email hay không, trả về true nếu là email, trả về false nếu không phải là email.
         public static bool emailCheck(string email)
         {
