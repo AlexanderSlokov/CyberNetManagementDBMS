@@ -123,13 +123,21 @@
     <Compile Include="Database\AccountDB.cs" />
     <Compile Include="Database\ComputerDB.cs" />
     <Compile Include="Database\ComputerRoomDB.cs" />
+    <Compile Include="Database\EmployeeManagementDB.cs" />
     <Compile Include="Employee Form\Employees Timekeeping Form.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Employee Form\Employees Timekeeping Form.Designer.cs">
       <DependentUpon>Employees Timekeeping Form.cs</DependentUpon>
     </Compile>
+    <Compile Include="Employee Management Form\EmployeeManagement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Employee Management Form\EmployeeManagement.Designer.cs">
+      <DependentUpon>EmployeeManagement.cs</DependentUpon>
+    </Compile>
     <Compile Include="Model\Computer.cs" />
+    <Compile Include="Model\NhanVien.cs" />
     <Compile Include="Utility\CurrentPC.cs" />
     <Compile Include="Utility\CurrentUser.cs" />
     <Compile Include="Utility\DataValidate.cs" />
@@ -184,6 +192,9 @@
     <EmbeddedResource Include="Employee Form\Employees Timekeeping Form.resx">
       <DependentUpon>Employees Timekeeping Form.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Employee Management Form\EmployeeManagement.resx">
+      <DependentUpon>EmployeeManagement.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -234,6 +245,9 @@
     <Content Include="SQL Scripts\dbo.account.sql" />
     <Content Include="SQL Scripts\dbo.computer.sql" />
     <Content Include="SQL Scripts\dbo.computer_room.sql" />
+    <Content Include="SQL Scripts\dbo.employeemanagement.sql" />
+    <Content Include="Triggers\tr_computer_ForDelete.sql" />
+    <Content Include="Triggers\tr_computer_ForInsert.sql" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Testing Form\" />

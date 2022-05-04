@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using InternetCafeManagement.Account_Form;
 using InternetCafeManagement.Database;
 using InternetCafeManagement.AdminForm;
+using InternetCafeManagement.Employee_Management_Form;
 
 namespace InternetCafeManagement
 {
@@ -36,6 +37,12 @@ namespace InternetCafeManagement
         {
             ComputerRoomManagerForm computerRoomManagerForm = new ComputerRoomManagerForm();
             computerRoomManagerForm.Show(this);
+        }
+
+        private void btnEmployeeManagement_Click(object sender, EventArgs e)
+        {
+            EmployeeManagementForm employeeManagementForm = new EmployeeManagementForm();
+            employeeManagementForm.Show(this);  
         }
     }
 }

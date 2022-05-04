@@ -31,6 +31,7 @@
             this.buttonProfile = new System.Windows.Forms.Button();
             this.Manager = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.btnEmployeeManagement = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // buttonProfile
@@ -63,11 +64,22 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // btnEmployeeManagement
+            // 
+            this.btnEmployeeManagement.Location = new System.Drawing.Point(22, 161);
+            this.btnEmployeeManagement.Name = "btnEmployeeManagement";
+            this.btnEmployeeManagement.Size = new System.Drawing.Size(75, 23);
+            this.btnEmployeeManagement.TabIndex = 3;
+            this.btnEmployeeManagement.Text = "EmployeeManagement";
+            this.btnEmployeeManagement.UseVisualStyleBackColor = true;
+            this.btnEmployeeManagement.Click += new System.EventHandler(this.btnEmployeeManagement_Click);
+            // 
             // formMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnEmployeeManagement);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.Manager);
             this.Controls.Add(this.buttonProfile);
@@ -82,5 +94,6 @@
         private System.Windows.Forms.Button buttonProfile;
         private System.Windows.Forms.Button Manager;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnEmployeeManagement;
     }
 }
