@@ -1,13 +1,13 @@
 ﻿CREATE TABLE [dbo].[account] (
-    [id]       INT           NOT NULL,
-    [name]     NCHAR (50)    NULL,
-    [gender]   NCHAR (50)    NULL,
-    [phone]    NVARCHAR (50) NULL,
+    [id]       INT  IDENTITY(1,1)   NOT NULL,
+    [name]     NCHAR (50)    NOT NULL,
+    [gender]   NCHAR (50)    NOT NULL,
+    [phone]    NVARCHAR (50) NOT NULL,
 	[balance]  FLOAT NULL,
-    [email]    NVARCHAR (50) NULL,
-    [username] NVARCHAR (50) NULL,
-    [password] NVARCHAR (50) NULL,
-	[role]     NCHAR (50)    NULL,
+    [email]    NVARCHAR (50) NOT NULL,
+    [username] NVARCHAR (50) NOT NULL,
+    [password] NVARCHAR (50) NOT NULL,
+	[role]     NCHAR (50)    NOT NULL,
     PRIMARY KEY CLUSTERED ([id] ASC)
 );
 
