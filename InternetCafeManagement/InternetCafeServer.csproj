@@ -155,6 +155,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utility\SqlConnectionStringBuilderUtil.cs" />
     <Compile Include="Utility\Status.cs" />
     <EmbeddedResource Include="Account Form\Login Form.aa.resx">
       <DependentUpon>Login Form.cs</DependentUpon>
