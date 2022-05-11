@@ -243,10 +243,13 @@
     <Content Include="SQL Scripts\ALL_TABLES.sql" />
     <Content Include="SQL Scripts\computer.sql" />
     <Content Include="SQL Scripts\computer_room.sql" />
+    <Content Include="SQL Scripts\Employee Permission.sql" />
     <Content Include="SQL Scripts\employee.sql" />
+    <Content Include="SQL Scripts\Manager Permission.sql" />
     <Content Include="SQL Scripts\order.sql" />
     <Content Include="SQL Scripts\service.sql" />
     <Content Include="SQL Scripts\shift.sql" />
+    <Content Include="SQL Scripts\User Permission.sql" />
     <Content Include="SQL Scripts\working_schedule.sql" />
     <Content Include="Triggers\tr_computer_ForDelete.sql" />
     <Content Include="Triggers\tr_computer_ForInsert.sql" />

@@ -23,7 +23,10 @@ namespace InternetCafeManagement.Model
         private int age;
         public Employee()
         {
-
+            DateTime now = DateTime.Today;
+            this.age = now.Year - birthDate.Year;
+            if (now < birthDate.AddYears(age))
+                this.age--;
         }
         public Employee(int id, string name, string position, DateTime birthDate, string gender, string phoneNum, string email, Image image, float salary_per_hour, string username, string password)
         {
@@ -44,7 +47,13 @@ namespace InternetCafeManagement.Model
             if (now < birthDate.AddYears(age))
                 this.age--;
         }
-
+        public void SetAge()
+        {
+            DateTime now = DateTime.Today;
+            this.age = now.Year - birthDate.Year;
+            if (now < birthDate.AddYears(age))
+                this.age--;
+        }
         public int Id { get => id; set => id = value; }
         public string Name { get => name; set => name = value; }
         public string Position { get => position; set => position = value; }
@@ -56,6 +65,9 @@ namespace InternetCafeManagement.Model
         public float Salary_per_hour { get => salary_per_hour; set => salary_per_hour = value; }
         public string Username { get => username; set => username = value; }
         public string Password { get => password; set => password = value; }
-        public int Age { get => age; }
+        public int Age 
+        { 
+            get => age; 
+        }
     }
 }

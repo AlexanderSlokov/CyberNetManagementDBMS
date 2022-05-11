@@ -14,15 +14,14 @@ namespace InternetCafeManagement.Database
     {
         private const string connectionString = "Data Source=DESKTOP-OB2KPUE;Initial Catalog=InternetCafeDB;Integrated Security=True";
         private string role;
+        private byte[] _appRoleEnableCookie;
 
         // Phần data source này các bạn MySQL server lấy tên của server  máy local để vào dưới, mỗi máy khác nhau
-        private SqlConnection con;
+        private SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-OB2KPUE;Initial Catalog=InternetCafeDB;Integrated Security=True");
 
         public DBConnection()
         {
-            this.con = new SqlConnection(@"Data Source=DESKTOP-OB2KPUE;Initial Catalog=InternetCafeDB;Integrated Security=True");
             this.role = CurrentUser.Role;
-            
 
         }
         public void GetPermission()
@@ -68,6 +67,7 @@ namespace InternetCafeManagement.Database
             if ((con.State == ConnectionState.Closed))
             {   
                 con.Open();
+                GetPermission();
             }
         }
 
@@ -77,6 +77,7 @@ namespace InternetCafeManagement.Database
         {
             if ((con.State == ConnectionState.Open))
             {
+                DisablePermission();
                 con.Close();
             }
         }
@@ -103,6 +104,13 @@ namespace InternetCafeManagement.Database
             paramAppRolePwd.Value = "12345";
             cmd.Parameters.Add(paramAppRolePwd);
 
+            SqlParameter paramCreateCookie = new SqlParameter();
+            paramCreateCookie.Direction = ParameterDirection.Input;
+            paramCreateCookie.ParameterName = "@fCreateCookie";
+            paramCreateCookie.DbType = DbType.Boolean;
+            paramCreateCookie.Value = 1;
+            cmd.Parameters.Add(paramCreateCookie);
+
             SqlParameter paramEncrypt = new SqlParameter();
             paramEncrypt.Direction = ParameterDirection.Input;
             paramEncrypt.ParameterName = "@encrypt";
@@ -111,8 +119,10 @@ namespace InternetCafeManagement.Database
 
             try
             {
-                this.openConnection();
                 cmd.ExecuteNonQuery();
+                SqlParameter outVal = cmd.Parameters["@cookie"];
+                // Store the enabled cookie so that approle  can be disabled with the cookie.
+                _appRoleEnableCookie = (byte[])outVal.Value;
             }
             catch (Exception ex)
             {
@@ -143,6 +153,13 @@ namespace InternetCafeManagement.Database
             paramAppRolePwd.Value = "12345";
             cmd.Parameters.Add(paramAppRolePwd);
 
+            SqlParameter paramCreateCookie = new SqlParameter();
+            paramCreateCookie.Direction = ParameterDirection.Input;
+            paramCreateCookie.ParameterName = "@fCreateCookie";
+            paramCreateCookie.DbType = DbType.Boolean;
+            paramCreateCookie.Value = 1;
+            cmd.Parameters.Add(paramCreateCookie);
+
             SqlParameter paramEncrypt = new SqlParameter();
             paramEncrypt.Direction = ParameterDirection.Input;
             paramEncrypt.ParameterName = "@encrypt";
@@ -151,8 +168,10 @@ namespace InternetCafeManagement.Database
 
             try
             {
-                this.openConnection();
                 cmd.ExecuteNonQuery();
+                SqlParameter outVal = cmd.Parameters["@cookie"];
+                // Store the enabled cookie so that approle  can be disabled with the cookie.
+                _appRoleEnableCookie = (byte[])outVal.Value;
             }
             catch (Exception ex)
             {
@@ -183,16 +202,31 @@ namespace InternetCafeManagement.Database
             paramAppRolePwd.Value = "12345";
             cmd.Parameters.Add(paramAppRolePwd);
 
+            SqlParameter paramCreateCookie = new SqlParameter();
+            paramCreateCookie.Direction = ParameterDirection.Input;
+            paramCreateCookie.ParameterName = "@fCreateCookie";
+            paramCreateCookie.DbType = DbType.Boolean;
+            paramCreateCookie.Value = 1;
+            cmd.Parameters.Add(paramCreateCookie);
+
             SqlParameter paramEncrypt = new SqlParameter();
             paramEncrypt.Direction = ParameterDirection.Input;
             paramEncrypt.ParameterName = "@encrypt";
             paramEncrypt.Value = "none";
             cmd.Parameters.Add(paramEncrypt);
 
+            SqlParameter paramEnableCookie = new SqlParameter();
+            paramEnableCookie.ParameterName = "@cookie";
+            paramEnableCookie.DbType = DbType.Binary;
+            paramEnableCookie.Direction = ParameterDirection.Output;
+            paramEnableCookie.Size = 1000;
+            cmd.Parameters.Add(paramEnableCookie);
             try
             {
-                this.openConnection();
                 cmd.ExecuteNonQuery();
+                SqlParameter outVal = cmd.Parameters["@cookie"];
+                // Store the enabled cookie so that approle  can be disabled with the cookie.
+                _appRoleEnableCookie = (byte[])outVal.Value;
             }
             catch (Exception ex)
             {
@@ -201,6 +235,29 @@ namespace InternetCafeManagement.Database
 
             return result;
         }
-        
+        public void DisablePermission()
+        {
+            string procName = "sp_unsetapprole";
+
+            SqlCommand cmd = new SqlCommand(procName);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Connection = this.getConnection;
+
+            SqlParameter paramEnableCookie = new SqlParameter();
+            paramEnableCookie.Direction = ParameterDirection.Input;
+            paramEnableCookie.ParameterName = "@cookie";
+            paramEnableCookie.Value = this._appRoleEnableCookie;
+            cmd.Parameters.Add(paramEnableCookie);
+
+            try
+            {
+                cmd.ExecuteNonQuery();
+                _appRoleEnableCookie = null;
+            }
+            catch (Exception ex)
+            {
+
+            }
+        }
     }
 }
