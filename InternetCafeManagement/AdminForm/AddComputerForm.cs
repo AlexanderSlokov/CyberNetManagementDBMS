@@ -11,7 +11,7 @@ using InternetCafeManagement.Database;
 using InternetCafeManagement.Utility;
 namespace InternetCafeManagement.AdminForm
 {
-    public partial class AddNewComputerForm : Form
+    public partial class AddNewComputerForm : System.Windows.Forms.Form
     {
         public AddNewComputerForm()
         {

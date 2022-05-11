@@ -10,11 +10,10 @@ using System.Windows.Forms;
 using InternetCafeManagement.Account_Form;
 using InternetCafeManagement.Database;
 using InternetCafeManagement.AdminForm;
-using InternetCafeManagement.Employee_Management_Form;
 
 namespace InternetCafeManagement
 {
-    public partial class formMain : Form
+    public partial class formMain : System.Windows.Forms.Form
     {
         public formMain()
         {
@@ -43,6 +42,12 @@ namespace InternetCafeManagement
         {
             EmployeeManagementForm employeeManagementForm = new EmployeeManagementForm();
             employeeManagementForm.Show(this);  
+        }
+
+        private void buttonCheckList_Click(object sender, EventArgs e)
+        {
+            EmployeeManagementForm employeeManagementForm = new EmployeeManagementForm();
+            employeeManagementForm.Show(this);
         }
     }
 }

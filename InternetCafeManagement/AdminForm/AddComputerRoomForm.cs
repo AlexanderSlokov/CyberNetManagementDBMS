@@ -12,7 +12,7 @@ using InternetCafeManagement.Utility;
 
 namespace InternetCafeManagement.AdminForm
 {
-    public partial class AddComputerRoomForm : Form
+    public partial class AddComputerRoomForm : System.Windows.Forms.Form
     {
         public AddComputerRoomForm()
         {

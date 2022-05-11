@@ -13,9 +13,8 @@ namespace InternetCafeManagement.Account_Form
         {
             InitializeComponent();
         }
-        DBConnection db = new DBConnection();
         AccountDB accountDB = new AccountDB();
-
+        EmployeeDB employeeDB = new EmployeeDB();
         private void buttonClear_Click(object sender, EventArgs e)
         {
             textBoxUsername.Text = "";
@@ -48,22 +47,50 @@ namespace InternetCafeManagement.Account_Form
         {
             string username = textBoxUsername.Text;
             string password = textBoxPassword.Text;
-            
-
-            if (accountDB.login(username, password))
+            if (radioButtonUser.Checked)
             {
-                this.DialogResult = DialogResult.OK;
-                MessageBox.Show("Login Success");
-                CurrentUser.Id = accountDB.getUserID(username);
-                CurrentUser.LoginTime = DateTime.Now;
-                formMain dashBoard = new formMain();
-                dashBoard.Show(this);
-                this.Hide();
+                CurrentUser.LoginRequest = "employee";
+                if (accountDB.login(username, password))
+                {
+
+                    this.DialogResult = DialogResult.OK;
+                    MessageBox.Show("Login Success");
+                    CurrentUser.Id = accountDB.getUserID(username);
+                    CurrentUser.LoginTime = DateTime.Now;
+                    CurrentUser.Role = "manager";
+                    formMain dashBoard = new formMain();
+                    dashBoard.Show(this);
+                    this.Hide();
+                }
+                else
+                {
+                    MessageBox.Show("Invalid Username or Password", "Login Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
             else
             {
-                MessageBox.Show("Invalid Username or Password", "Login Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                if (radioButtonEmployee.Checked)
+                {
+                    CurrentUser.LoginRequest = "employee";
+                    if (accountDB.login(username, password))
+                    {
+
+                        this.DialogResult = DialogResult.OK;
+                        MessageBox.Show("Login Success");
+                        CurrentUser.Id = accountDB.getUserID(username);
+                        CurrentUser.LoginTime = DateTime.Now;
+                        formMain dashBoard = new formMain();
+                        dashBoard.Show(this);
+                        this.Hide();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Invalid Username or Password", "Login Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+                   
             }
+           
         }
 
         private void formLogin_Load(object sender, EventArgs e)
@@ -71,6 +98,11 @@ namespace InternetCafeManagement.Account_Form
             textBoxUsername.Select();
             textBoxUsername.Text = "admin";
             textBoxPassword.Text = "12345";
+        }
+
+        private void radioButtonEmployee_CheckedChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

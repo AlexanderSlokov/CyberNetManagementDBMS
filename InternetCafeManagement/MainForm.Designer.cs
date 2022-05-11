@@ -28,10 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formMain));
             this.buttonProfile = new System.Windows.Forms.Button();
             this.Manager = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.btnEmployeeManagement = new System.Windows.Forms.Button();
+            this.buttonCheckList = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // buttonProfile
@@ -74,11 +76,27 @@
             this.btnEmployeeManagement.UseVisualStyleBackColor = true;
             this.btnEmployeeManagement.Click += new System.EventHandler(this.btnEmployeeManagement_Click);
             // 
+            // buttonCheckList
+            // 
+            this.buttonCheckList.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.buttonCheckList.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonCheckList.BackgroundImage")));
+            this.buttonCheckList.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.buttonCheckList.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonCheckList.Location = new System.Drawing.Point(225, 76);
+            this.buttonCheckList.Name = "buttonCheckList";
+            this.buttonCheckList.Size = new System.Drawing.Size(157, 56);
+            this.buttonCheckList.TabIndex = 108;
+            this.buttonCheckList.Text = "Check";
+            this.buttonCheckList.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.buttonCheckList.UseVisualStyleBackColor = false;
+            this.buttonCheckList.Click += new System.EventHandler(this.buttonCheckList_Click);
+            // 
             // formMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.buttonCheckList);
             this.Controls.Add(this.btnEmployeeManagement);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.Manager);
@@ -95,5 +113,6 @@
         private System.Windows.Forms.Button Manager;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button btnEmployeeManagement;
+        private System.Windows.Forms.Button buttonCheckList;
     }
 }

@@ -12,7 +12,7 @@ using InternetCafeManagement.Utility;
 
 namespace InternetCafeManagement.AdminForm
 {
-    public partial class ComputerDetailForm : Form
+    public partial class ComputerDetailForm : System.Windows.Forms.Form
     {
         public ComputerDetailForm()
         {
@@ -86,6 +86,7 @@ namespace InternetCafeManagement.AdminForm
             TimeSpan using_time = (DateTime.Now.Subtract(CurrentUser.LoginTime));
 
             labelUsingTime.Text = using_time.ToString(@"hh\:mm\:ss");
+
         }
 
         public void LoadData()

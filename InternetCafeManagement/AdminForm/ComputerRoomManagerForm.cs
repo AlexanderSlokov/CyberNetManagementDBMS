@@ -11,7 +11,7 @@ using InternetCafeManagement.Database;
 
 namespace InternetCafeManagement.AdminForm
 {
-    public partial class ComputerRoomManagerForm : Form
+    public partial class ComputerRoomManagerForm : System.Windows.Forms.Form
     {
         public ComputerRoomManagerForm()
         {

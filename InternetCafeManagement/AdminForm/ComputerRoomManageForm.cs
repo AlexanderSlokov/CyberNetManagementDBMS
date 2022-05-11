@@ -13,7 +13,7 @@ using InternetCafeManagement.Utility;
 
 namespace InternetCafeManagement.AdminForm
 {
-    public partial class ComputerRoomManageForm : Form
+    public partial class ComputerRoomManageForm : System.Windows.Forms.Form
     {
         ComputerRoomDB computerRoom = new ComputerRoomDB();   
         ComputerDB computerDB = new ComputerDB();

@@ -15,9 +15,9 @@ namespace InternetCafeManagement.Database
         // Hàm đăng ký tài khoản mới, trả vể true nếu đăng ký thành công, trả về false nếu đăng ký thất bại
         public bool register(string name, string gender, string phone, string email, string username, string password)
         {
-            SqlCommand command = new SqlCommand("INSERT INTO account (id, name, gender, phone, balance, email, username, password)"
-                + " VALUES ((SELECT MAX(id) FROM account) + 1, @name, @gender, @phone, @balance, @email, @username, @password)", connection.getConnection);
-
+            SqlCommand command = new SqlCommand("INSERT INTO account (name, gender, phone, balance, email, username, password)"
+                + " VALUES (@name, @gender, @phone, @balance, @email, @username, @password)", connection.getConnection);
+            
             command.Parameters.Add("@name", SqlDbType.VarChar).Value = name;
             command.Parameters.Add("@gender", SqlDbType.VarChar).Value = gender;
             command.Parameters.Add("@balance", SqlDbType.Float).Value = 0;
