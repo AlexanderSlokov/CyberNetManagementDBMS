@@ -60,7 +60,6 @@
             this.buttonAddEmployee = new System.Windows.Forms.Button();
             this.label12 = new System.Windows.Forms.Label();
             this.comboBoxPosition = new System.Windows.Forms.ComboBox();
-            this.ButtonToEXcelFileList = new System.Windows.Forms.Button();
             this.buttonRefreshList = new System.Windows.Forms.Button();
             this.textBoxID = new System.Windows.Forms.TextBox();
             this.buttonSwitchEmployee = new System.Windows.Forms.Button();
@@ -364,9 +363,9 @@
             this.buttonDelete.FlatAppearance.BorderSize = 0;
             this.buttonDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonDelete.ForeColor = System.Drawing.Color.White;
-            this.buttonDelete.Location = new System.Drawing.Point(22, 624);
+            this.buttonDelete.Location = new System.Drawing.Point(296, 460);
             this.buttonDelete.Name = "buttonDelete";
-            this.buttonDelete.Size = new System.Drawing.Size(187, 38);
+            this.buttonDelete.Size = new System.Drawing.Size(135, 38);
             this.buttonDelete.TabIndex = 101;
             this.buttonDelete.Text = "DELETE";
             this.buttonDelete.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
@@ -380,9 +379,9 @@
             this.buttonUpdateInformation.FlatAppearance.BorderSize = 0;
             this.buttonUpdateInformation.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonUpdateInformation.ForeColor = System.Drawing.Color.Black;
-            this.buttonUpdateInformation.Location = new System.Drawing.Point(216, 624);
+            this.buttonUpdateInformation.Location = new System.Drawing.Point(154, 460);
             this.buttonUpdateInformation.Name = "buttonUpdateInformation";
-            this.buttonUpdateInformation.Size = new System.Drawing.Size(188, 38);
+            this.buttonUpdateInformation.Size = new System.Drawing.Size(136, 38);
             this.buttonUpdateInformation.TabIndex = 100;
             this.buttonUpdateInformation.Text = "UPDATE INFORMATION";
             this.buttonUpdateInformation.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
@@ -396,9 +395,9 @@
             this.buttonAddEmployee.FlatAppearance.BorderSize = 0;
             this.buttonAddEmployee.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonAddEmployee.ForeColor = System.Drawing.Color.Linen;
-            this.buttonAddEmployee.Location = new System.Drawing.Point(410, 624);
+            this.buttonAddEmployee.Location = new System.Drawing.Point(12, 460);
             this.buttonAddEmployee.Name = "buttonAddEmployee";
-            this.buttonAddEmployee.Size = new System.Drawing.Size(170, 38);
+            this.buttonAddEmployee.Size = new System.Drawing.Size(136, 38);
             this.buttonAddEmployee.TabIndex = 99;
             this.buttonAddEmployee.Text = "ADD NEW";
             this.buttonAddEmployee.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
@@ -432,29 +431,15 @@
             this.comboBoxPosition.Size = new System.Drawing.Size(141, 21);
             this.comboBoxPosition.TabIndex = 103;
             // 
-            // ButtonToEXcelFileList
-            // 
-            this.ButtonToEXcelFileList.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("ButtonToEXcelFileList.BackgroundImage")));
-            this.ButtonToEXcelFileList.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.ButtonToEXcelFileList.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ButtonToEXcelFileList.Location = new System.Drawing.Point(300, 687);
-            this.ButtonToEXcelFileList.Name = "ButtonToEXcelFileList";
-            this.ButtonToEXcelFileList.Size = new System.Drawing.Size(280, 56);
-            this.ButtonToEXcelFileList.TabIndex = 108;
-            this.ButtonToEXcelFileList.Text = "To EXcel File";
-            this.ButtonToEXcelFileList.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.ButtonToEXcelFileList.UseVisualStyleBackColor = true;
-            // 
             // buttonRefreshList
             // 
             this.buttonRefreshList.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonRefreshList.BackgroundImage")));
             this.buttonRefreshList.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.buttonRefreshList.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonRefreshList.Location = new System.Drawing.Point(27, 687);
+            this.buttonRefreshList.Location = new System.Drawing.Point(437, 460);
             this.buttonRefreshList.Name = "buttonRefreshList";
-            this.buttonRefreshList.Size = new System.Drawing.Size(274, 56);
+            this.buttonRefreshList.Size = new System.Drawing.Size(136, 38);
             this.buttonRefreshList.TabIndex = 106;
-            this.buttonRefreshList.Text = "Refresh";
             this.buttonRefreshList.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.buttonRefreshList.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.buttonRefreshList.UseVisualStyleBackColor = true;
@@ -508,7 +493,6 @@
             this.ClientSize = new System.Drawing.Size(1331, 755);
             this.Controls.Add(this.buttonSwitchEmployee);
             this.Controls.Add(this.buttonSwitchManagers);
-            this.Controls.Add(this.ButtonToEXcelFileList);
             this.Controls.Add(this.buttonRefreshList);
             this.Controls.Add(this.comboBoxPosition);
             this.Controls.Add(this.label12);
@@ -586,7 +570,6 @@
         private System.Windows.Forms.Button buttonAddEmployee;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.ComboBox comboBoxPosition;
-        private System.Windows.Forms.Button ButtonToEXcelFileList;
         private System.Windows.Forms.Button buttonRefreshList;
         private System.Windows.Forms.TextBox textBoxID;
         private System.Windows.Forms.Button buttonSwitchEmployee;

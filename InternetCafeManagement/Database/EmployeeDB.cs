@@ -60,13 +60,11 @@ namespace InternetCafeManagement.Database
                     employee.Gender = reader["gender"].ToString();
                     employee.PhoneNum = reader["phoneNum"].ToString();
                     employee.Email = reader["email"].ToString();
-
-                    MemoryStream stream;
                     try
                     {
-                        stream = (MemoryStream)reader["image"];
-                        employee.Image = Image.FromStream(stream);
-                        //employee.Image = Image.FromStream((MemoryStream)reader["image"]);
+                        MemoryStream stream = new MemoryStream((byte[])reader["image"]);
+                        Image RetImage = Image.FromStream(stream);
+                        employee.Image = RetImage;
                     }
                     catch (Exception ex)
                     {
@@ -449,7 +447,7 @@ namespace InternetCafeManagement.Database
         }
         public bool DeleteEmployee(int ID)
         {
-            SqlCommand command = new SqlCommand("DELETE FROM EMPLOYEE WHERE id = @id");
+            SqlCommand command = new SqlCommand("DELETE FROM EMPLOYEE WHERE id = @id", connection.getConnection);
             command.Parameters.Add("@id", SqlDbType.Int).Value = ID;
             connection.openConnection();
             try

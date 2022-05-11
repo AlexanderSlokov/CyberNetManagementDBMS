@@ -25,6 +25,7 @@ namespace InternetCafeManagement.AdminForm
         EmployeeDB employeeDB = new EmployeeDB();
         int oldID;
         string oldUsername;
+        string inTable;
         private void EmployeeManagementForm_Load(object sender, EventArgs e)
         {
             Init();
@@ -34,9 +35,18 @@ namespace InternetCafeManagement.AdminForm
         {
             dateTimePicker.Value = new DateTime(1999, 1, 1);
             dataGridViewEmployee.DataSource = employeeDB.GetEmployeesDataTable();
+            inTable = "Employee";
         }
         void FillGrid()
         {
+            if(inTable == "Employee")
+            {
+                dataGridViewEmployee.DataSource = employeeDB.GetEmployeesDataTable();
+            }
+            else
+            {
+                dataGridViewEmployee.DataSource = employeeDB.GetManagersDataTable();
+            }
             dataGridViewEmployee.RowHeadersVisible = false;
             dataGridViewEmployee.AllowUserToAddRows = false;
 
@@ -191,11 +201,13 @@ namespace InternetCafeManagement.AdminForm
         private void buttonSwitchEmployee_Click(object sender, EventArgs e)
         {
             dataGridViewEmployee.DataSource = employeeDB.GetEmployeesDataTable();
+            inTable = "Employee";
         }
 
         private void buttonSwitchManagers_Click(object sender, EventArgs e)
         {
             dataGridViewEmployee.DataSource = employeeDB.GetManagersDataTable();
+            inTable = "Manager";
         }
 
        
@@ -215,12 +227,50 @@ namespace InternetCafeManagement.AdminForm
 
         private void buttonUpdateInformation_Click(object sender, EventArgs e)
         {
-            UpdateEmployee();
-        }
+            try
+            {
+                if( dataGridViewEmployee.CurrentRow != null){
+                    Employee employee = employeeDB.GetEmployeeByID(Int32.Parse(dataGridViewEmployee.CurrentRow.Cells["id"].Value.ToString()));
+                    if (employee.Id != oldID)
+                    {
+                        MessageBox.Show("Please select a row in the table to Update", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    else
+                    {
+                        UpdateEmployee();
+                        FillGrid();
+                    }
+                }
+                
+            }
+            catch (Exception ex)
+            {
 
+            }
+        }
+        public void DeleteEmployee()
+        {
+            if(dataGridViewEmployee.CurrentRow != null)
+            {
+                Employee employee = employeeDB.GetEmployeeByID(Int32.Parse(dataGridViewEmployee.CurrentRow.Cells["id"].Value.ToString()));
+                if (employee.Id != oldID)
+                {
+                    MessageBox.Show("Please select a row in the table to delete", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    if (employeeDB.DeleteEmployee(oldID))
+                    {
+                        MessageBox.Show("Delete Successfully", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    }
+                }
+            }
+            
+        }
         private void buttonDelete_Click(object sender, EventArgs e)
         {
-
+            DeleteEmployee();
         }
 
         private void buttonRefreshList_Click(object sender, EventArgs e)
@@ -229,25 +279,40 @@ namespace InternetCafeManagement.AdminForm
         }
         public void GetDataFromGridView()
         {
-            Employee employee = employeeDB.GetEmployeeByID(Int32.Parse(dataGridViewEmployee.CurrentRow.Cells["id"].Value.ToString()));
-            oldID = employee.Id;
-            textBoxID.Text = employee.Id.ToString();
-            textBoxFullName.Text = employee.Name.ToString();
-            oldUsername = employee.Username;
-            textBoxEMAIL.Text = employee.Email.ToString();
-            textBoxPassword.Text = employee.Password.ToString();
-            textBoxPhone.Text = employee.PhoneNum.ToString();
-            textBoxUsername.Text = employee.Username.ToString();
-            comboBoxPosition.Text = employee.Position.ToString();
-            if (employee.Gender.ToString() == "female")
+            try
             {
-                radioButtonFEMALE.Checked = true;
+                if(dataGridViewEmployee.CurrentRow != null)
+                {
+                    Employee employee = employeeDB.GetEmployeeByID(Int32.Parse(dataGridViewEmployee.CurrentRow.Cells["id"].Value.ToString()));
+                    oldID = employee.Id;
+                    textBoxID.Text = employee.Id.ToString();
+                    textBoxFullName.Text = employee.Name.ToString();
+                    oldUsername = employee.Username;
+                    textBoxEMAIL.Text = employee.Email.ToString();
+                    textBoxPassword.Text = employee.Password.ToString();
+                    textBoxPhone.Text = employee.PhoneNum.ToString();
+                    textBoxUsername.Text = employee.Username.ToString();
+                    comboBoxPosition.Text = employee.Position.ToString();
+                    if (employee.Gender.ToString() == "female")
+                    {
+                        radioButtonFEMALE.Checked = true;
+                        radioButtonMALE.Checked = false;
+                    }
+                    else
+                        radioButtonMALE.Checked = true;
+                    dateTimePicker.Text = employee.BirthDate.ToString();
+                    dateTimePicker.Value = employee.BirthDate;
+                    textBoxSalary.Text = employee.Salary_per_hour.ToString();
+                    textBoxAge.Text = employee.Age.ToString();
+                    pictureBoxEMPLOYEE.Image = employee.Image;
+                }
+                
             }
-            radioButtonMALE.Checked = true;
-            dateTimePicker.Text = employee.BirthDate.ToString();
-            dateTimePicker.Value = employee.BirthDate;
-            textBoxSalary.Text = employee.Salary_per_hour.ToString();
-            textBoxAge.Text = employee.Age.ToString();
+            catch (Exception ex)
+            {
+                oldID = 0;
+            }
+            
         }
         private void dataGridViewEmployee_Click(object sender, EventArgs e)
         {
