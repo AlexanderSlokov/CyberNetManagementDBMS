@@ -29,7 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.buttonMakeBusy = new System.Windows.Forms.Button();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ComputerDetailForm));
+            this.buttonChangeStatus = new System.Windows.Forms.Button();
             this.label23 = new System.Windows.Forms.Label();
             this.textBoxInfo = new System.Windows.Forms.TextBox();
             this.labelComputerID = new System.Windows.Forms.Label();
@@ -46,30 +47,32 @@
             this.buttonDelete = new System.Windows.Forms.Button();
             this.labelUsingTime = new System.Windows.Forms.Label();
             this.timerUsingTime = new System.Windows.Forms.Timer(this.components);
+            this.label4 = new System.Windows.Forms.Label();
+            this.buttonDisplayStatus = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // buttonMakeBusy
+            // buttonChangeStatus
             // 
-            this.buttonMakeBusy.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.buttonMakeBusy.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonMakeBusy.FlatAppearance.BorderSize = 0;
-            this.buttonMakeBusy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonMakeBusy.ForeColor = System.Drawing.Color.White;
-            this.buttonMakeBusy.Location = new System.Drawing.Point(307, 341);
-            this.buttonMakeBusy.Name = "buttonMakeBusy";
-            this.buttonMakeBusy.Size = new System.Drawing.Size(93, 38);
-            this.buttonMakeBusy.TabIndex = 22;
-            this.buttonMakeBusy.Text = "MAKE UNAVAILABLE";
-            this.buttonMakeBusy.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.buttonMakeBusy.UseVisualStyleBackColor = false;
-            this.buttonMakeBusy.Click += new System.EventHandler(this.buttonMakeBusy_Click);
+            this.buttonChangeStatus.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.buttonChangeStatus.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonChangeStatus.FlatAppearance.BorderSize = 0;
+            this.buttonChangeStatus.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonChangeStatus.ForeColor = System.Drawing.Color.White;
+            this.buttonChangeStatus.Location = new System.Drawing.Point(307, 408);
+            this.buttonChangeStatus.Name = "buttonChangeStatus";
+            this.buttonChangeStatus.Size = new System.Drawing.Size(93, 38);
+            this.buttonChangeStatus.TabIndex = 22;
+            this.buttonChangeStatus.Text = "CHANGE STATUS";
+            this.buttonChangeStatus.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.buttonChangeStatus.UseVisualStyleBackColor = false;
+            this.buttonChangeStatus.Click += new System.EventHandler(this.buttonMakeBusy_Click);
             // 
             // label23
             // 
             this.label23.AutoSize = true;
             this.label23.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.label23.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(165)))), ((int)(((byte)(169)))));
-            this.label23.Location = new System.Drawing.Point(7, 66);
+            this.label23.Location = new System.Drawing.Point(9, 158);
             this.label23.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(103, 17);
@@ -81,7 +84,7 @@
             this.textBoxInfo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(231)))), ((int)(((byte)(233)))));
             this.textBoxInfo.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBoxInfo.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxInfo.Location = new System.Drawing.Point(10, 95);
+            this.textBoxInfo.Location = new System.Drawing.Point(12, 187);
             this.textBoxInfo.Multiline = true;
             this.textBoxInfo.Name = "textBoxInfo";
             this.textBoxInfo.Size = new System.Drawing.Size(390, 137);
@@ -142,7 +145,7 @@
             this.buttonServiceList.FlatAppearance.BorderSize = 0;
             this.buttonServiceList.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonServiceList.ForeColor = System.Drawing.Color.White;
-            this.buttonServiceList.Location = new System.Drawing.Point(208, 341);
+            this.buttonServiceList.Location = new System.Drawing.Point(208, 408);
             this.buttonServiceList.Name = "buttonServiceList";
             this.buttonServiceList.Size = new System.Drawing.Size(93, 38);
             this.buttonServiceList.TabIndex = 90;
@@ -156,7 +159,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(165)))), ((int)(((byte)(169)))));
-            this.label1.Location = new System.Drawing.Point(422, 40);
+            this.label1.Location = new System.Drawing.Point(422, 87);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(82, 17);
@@ -168,7 +171,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(165)))), ((int)(((byte)(169)))));
-            this.label2.Location = new System.Drawing.Point(613, 40);
+            this.label2.Location = new System.Drawing.Point(613, 87);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(78, 17);
@@ -181,7 +184,7 @@
             this.labelLoginTime.AutoSize = true;
             this.labelLoginTime.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.labelLoginTime.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(165)))), ((int)(((byte)(169)))));
-            this.labelLoginTime.Location = new System.Drawing.Point(422, 66);
+            this.labelLoginTime.Location = new System.Drawing.Point(422, 113);
             this.labelLoginTime.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelLoginTime.Name = "labelLoginTime";
             this.labelLoginTime.Size = new System.Drawing.Size(58, 17);
@@ -193,7 +196,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(165)))), ((int)(((byte)(169)))));
-            this.label3.Location = new System.Drawing.Point(13, 246);
+            this.label3.Location = new System.Drawing.Point(15, 338);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(93, 17);
@@ -205,7 +208,7 @@
             this.textBoxFee.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(231)))), ((int)(((byte)(233)))));
             this.textBoxFee.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBoxFee.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxFee.Location = new System.Drawing.Point(10, 275);
+            this.textBoxFee.Location = new System.Drawing.Point(12, 367);
             this.textBoxFee.Name = "textBoxFee";
             this.textBoxFee.Size = new System.Drawing.Size(390, 24);
             this.textBoxFee.TabIndex = 95;
@@ -217,9 +220,9 @@
             this.buttonUpdateInformation.FlatAppearance.BorderSize = 0;
             this.buttonUpdateInformation.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonUpdateInformation.ForeColor = System.Drawing.Color.Black;
-            this.buttonUpdateInformation.Location = new System.Drawing.Point(10, 341);
+            this.buttonUpdateInformation.Location = new System.Drawing.Point(8, 408);
             this.buttonUpdateInformation.Name = "buttonUpdateInformation";
-            this.buttonUpdateInformation.Size = new System.Drawing.Size(192, 38);
+            this.buttonUpdateInformation.Size = new System.Drawing.Size(93, 38);
             this.buttonUpdateInformation.TabIndex = 96;
             this.buttonUpdateInformation.Text = "UPDATE INFORMATION";
             this.buttonUpdateInformation.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
@@ -233,9 +236,9 @@
             this.buttonDelete.FlatAppearance.BorderSize = 0;
             this.buttonDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonDelete.ForeColor = System.Drawing.Color.White;
-            this.buttonDelete.Location = new System.Drawing.Point(307, 61);
+            this.buttonDelete.Location = new System.Drawing.Point(109, 408);
             this.buttonDelete.Name = "buttonDelete";
-            this.buttonDelete.Size = new System.Drawing.Size(93, 22);
+            this.buttonDelete.Size = new System.Drawing.Size(93, 38);
             this.buttonDelete.TabIndex = 97;
             this.buttonDelete.Text = "DELETE";
             this.buttonDelete.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
@@ -248,7 +251,7 @@
             this.labelUsingTime.AutoSize = true;
             this.labelUsingTime.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.labelUsingTime.ForeColor = System.Drawing.Color.Teal;
-            this.labelUsingTime.Location = new System.Drawing.Point(613, 66);
+            this.labelUsingTime.Location = new System.Drawing.Point(613, 113);
             this.labelUsingTime.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelUsingTime.Name = "labelUsingTime";
             this.labelUsingTime.Size = new System.Drawing.Size(58, 17);
@@ -260,11 +263,47 @@
             this.timerUsingTime.Interval = 1000;
             this.timerUsingTime.Tick += new System.EventHandler(this.timerUsingTime_Tick);
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold);
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(165)))), ((int)(((byte)(169)))));
+            this.label4.Location = new System.Drawing.Point(7, 93);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(50, 17);
+            this.label4.TabIndex = 99;
+            this.label4.Text = "Status:";
+            // 
+            // buttonDisplayStatus
+            // 
+            this.buttonDisplayStatus.BackColor = System.Drawing.Color.White;
+            this.buttonDisplayStatus.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.buttonDisplayStatus.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonDisplayStatus.FlatAppearance.BorderSize = 0;
+            this.buttonDisplayStatus.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonDisplayStatus.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold);
+            this.buttonDisplayStatus.ForeColor = System.Drawing.Color.Red;
+            this.buttonDisplayStatus.Image = ((System.Drawing.Image)(resources.GetObject("buttonDisplayStatus.Image")));
+            this.buttonDisplayStatus.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonDisplayStatus.Location = new System.Drawing.Point(10, 113);
+            this.buttonDisplayStatus.Margin = new System.Windows.Forms.Padding(90);
+            this.buttonDisplayStatus.Name = "buttonDisplayStatus";
+            this.buttonDisplayStatus.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
+            this.buttonDisplayStatus.Size = new System.Drawing.Size(390, 28);
+            this.buttonDisplayStatus.TabIndex = 100;
+            this.buttonDisplayStatus.Text = "AVAILABLE";
+            this.buttonDisplayStatus.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.buttonDisplayStatus.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.buttonDisplayStatus.UseVisualStyleBackColor = false;
+            // 
             // ComputerDetailForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(791, 391);
+            this.ClientSize = new System.Drawing.Size(815, 458);
+            this.Controls.Add(this.buttonDisplayStatus);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.labelUsingTime);
             this.Controls.Add(this.buttonDelete);
             this.Controls.Add(this.buttonUpdateInformation);
@@ -280,7 +319,7 @@
             this.Controls.Add(this.labelComputerID);
             this.Controls.Add(this.textBoxInfo);
             this.Controls.Add(this.label23);
-            this.Controls.Add(this.buttonMakeBusy);
+            this.Controls.Add(this.buttonChangeStatus);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "ComputerDetailForm";
             this.Text = "Computer Detail";
@@ -292,7 +331,7 @@
         }
 
         #endregion
-        private System.Windows.Forms.Button buttonMakeBusy;
+        private System.Windows.Forms.Button buttonChangeStatus;
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.TextBox textBoxInfo;
         private System.Windows.Forms.Label labelComputerID;
@@ -309,5 +348,7 @@
         public System.Windows.Forms.Label labelLoginTime;
         public System.Windows.Forms.Label labelUsingTime;
         private System.Windows.Forms.Timer timerUsingTime;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button buttonDisplayStatus;
     }
 }

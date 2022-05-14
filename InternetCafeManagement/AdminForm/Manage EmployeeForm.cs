@@ -178,6 +178,7 @@ namespace InternetCafeManagement.AdminForm
         private void buttonAddEmployee_Click(object sender, EventArgs e)
         {
             AddEmployee();
+            FillGrid();
         }
 
         private void buttonUploadImage_Click(object sender, EventArgs e)
@@ -262,6 +263,7 @@ namespace InternetCafeManagement.AdminForm
                     if (employeeDB.DeleteEmployee(oldID))
                     {
                         MessageBox.Show("Delete Successfully", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        FillGrid();
 
                     }
                 }
@@ -271,6 +273,7 @@ namespace InternetCafeManagement.AdminForm
         private void buttonDelete_Click(object sender, EventArgs e)
         {
             DeleteEmployee();
+            FillGrid();
         }
 
         private void buttonRefreshList_Click(object sender, EventArgs e)

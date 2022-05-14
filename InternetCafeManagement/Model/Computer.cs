@@ -14,6 +14,8 @@ namespace InternetCafeManagement.Model
         private int roomID;
         private string status;
         private float fee_per_hour;
+        private string macAddress;
+
         private ComputerDB computerDB = new ComputerDB();
         public Computer()
         {
@@ -34,5 +36,6 @@ namespace InternetCafeManagement.Model
         public int RoomID { get => roomID; set => roomID = value; }
         public string Status { get => status; set => status = value; }
         public float Fee_per_hour { get => fee_per_hour; set => fee_per_hour = value; }
+        public string MacAddress { get => macAddress; set => macAddress = value; }
     }
 }

@@ -5,7 +5,9 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using InternetCafeManagement.Model;
+using InternetCafeManagement.Utility;
 
 namespace InternetCafeManagement.Database
 {
@@ -39,10 +41,11 @@ namespace InternetCafeManagement.Database
         }
 
         // Hàm thêm thông tin máy tính vào DB, trả về true nếu thêm thành công, false nếu thêm không thành công
+        
         public bool AddNewComputer(int roomID, string info, string status, float fee)
         {
-            SqlCommand command = new SqlCommand("INSERT INTO computer (id, info, roomID, status, fee_per_hour)"
-                + " VALUES ((SELECT MAX(id) FROM computer) + 1, @info, @roomID, @status, @fee_per_hour)", connection.getConnection);
+            SqlCommand command = new SqlCommand("INSERT INTO computer (info, roomID, status, fee_per_hour)"
+                + " VALUES (@info, @roomID, @status, @fee_per_hour)", connection.getConnection);
 
             command.Parameters.Add("@info", SqlDbType.VarChar).Value = info;
             command.Parameters.Add("@roomID", SqlDbType.Int).Value = roomID;
@@ -61,36 +64,39 @@ namespace InternetCafeManagement.Database
                     return false;
                 }
             }
-            catch
+            catch(Exception ex)
             {
-                int id = 1;
-                command = new SqlCommand("INSERT INTO computer (id, info, roomID, status, fee_per_hour)"
-                + " VALUES (@id, @info, @roomID, @status, @fee_per_hour)", connection.getConnection);
+                MessageBox.Show(ex.Message);
+                return false;
+            }
+        }
+        public bool AddNewComputer(int roomID, string info, string status, float fee, string macAddress)
+        {
+            SqlCommand command = new SqlCommand("INSERT INTO computer (info, roomID, status, fee_per_hour, macAddress)"
+                + " VALUES (@info, @roomID, @status, @fee_per_hour, @macAddress)", connection.getConnection);
 
-                command.Parameters.Add("@id", SqlDbType.Int).Value = id;
-                command.Parameters.Add("@info", SqlDbType.VarChar).Value = info;
-                command.Parameters.Add("@roomID", SqlDbType.Int).Value = roomID;
-                command.Parameters.Add("@status", SqlDbType.VarChar).Value = status;
-                command.Parameters.Add("@fee_per_hour", SqlDbType.VarChar).Value = fee;
-                connection.openConnection();
-                try
+            command.Parameters.Add("@info", SqlDbType.VarChar).Value = info;
+            command.Parameters.Add("@roomID", SqlDbType.Int).Value = roomID;
+            command.Parameters.Add("@status", SqlDbType.VarChar).Value = status;
+            command.Parameters.Add("@fee_per_hour", SqlDbType.Real).Value = fee;
+            command.Parameters.Add("@macAddress", SqlDbType.NChar).Value = macAddress;
+            connection.openConnection();
+            try
+            {
+                if ((command.ExecuteNonQuery() >= 1))
                 {
-                    if ((command.ExecuteNonQuery() >= 1))
-                    {
-                        connection.closeConnection();
-                        return true;
-
-                    }
-                    else
-                    {
-                        connection.closeConnection();
-                        return false;
-                    }
+                    connection.closeConnection();
+                    return true;
                 }
-                catch
+                else
                 {
                     return false;
                 }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return false;
             }
         }
         // Hàm trả về số máy tính của một phòng
@@ -290,6 +296,84 @@ namespace InternetCafeManagement.Database
                 return false;
             }
         }
+        public bool MakeBusy(int id)
+        {
+            try
+            {
+                SqlCommand command = new SqlCommand("UPDATE computer SET status = @status WHERE id = @id", connection.getConnection);
+
+                command.Parameters.Add("@id", SqlDbType.Int).Value = id;
+                command.Parameters.Add("@status", SqlDbType.NVarChar).Value = Status.busy;
+
+                connection.openConnection();
+                if ((command.ExecuteNonQuery() >= 1))
+                {
+                    connection.closeConnection();
+                    return true;
+                }
+                else
+                {
+                    connection.closeConnection();
+                    return false;
+                }
+            }
+            catch
+            {
+                return false;
+            }
+        }
+        public bool MakeAvailable(int id)
+        {
+            try
+            {
+                SqlCommand command = new SqlCommand("UPDATE computer SET status = @status WHERE id = @id", connection.getConnection);
+
+                command.Parameters.Add("@id", SqlDbType.Int).Value = id;
+                command.Parameters.Add("@status", SqlDbType.NVarChar).Value = Status.available;
+
+                connection.openConnection();
+                if ((command.ExecuteNonQuery() >= 1))
+                {
+                    connection.closeConnection();
+                    return true;
+                }
+                else
+                {
+                    connection.closeConnection();
+                    return false;
+                }
+            }
+            catch
+            {
+                return false;
+            }
+        }
+        public bool MakeInUse(int id)
+        {
+            try
+            {
+                SqlCommand command = new SqlCommand("UPDATE computer SET status = @status WHERE id = @id", connection.getConnection);
+
+                command.Parameters.Add("@id", SqlDbType.Int).Value = id;
+                command.Parameters.Add("@status", SqlDbType.NVarChar).Value = Status.in_use;
+
+                connection.openConnection();
+                if ((command.ExecuteNonQuery() >= 1))
+                {
+                    connection.closeConnection();
+                    return true;
+                }
+                else
+                {
+                    connection.closeConnection();
+                    return false;
+                }
+            }
+            catch
+            {
+                return false;
+            }
+        }
         // hàm xoá máy tính khỏi db, trả về true nếu cập nhật thành công, trả về false nếu cập nhật ko thành công
         public bool DeleteComputer(int id)
         {
@@ -316,9 +400,9 @@ namespace InternetCafeManagement.Database
                 return false;
             }
         }
-        public DataTable GetDataTableAllComputer(int roomID)
+        public DataTable GetDataTableAllComputerByRoomID(int roomID)
         {
-            SqlCommand command = new SqlCommand("SELECT * FROM computer as c INNER JOIN computer_room as cr " +
+            SqlCommand command = new SqlCommand("SELECT c.id, c.info, c.roomID, c.status, c.fee_per_hour, c.macAddress FROM computer as c INNER JOIN computer_room as cr " +
                     "ON c.roomID = cr.id WHERE c.roomID = @roomID", connection.getConnection);
             command.Parameters.Add("@roomID", SqlDbType.Int).Value = roomID;
             command.Connection = connection.getConnection;
@@ -332,6 +416,36 @@ namespace InternetCafeManagement.Database
 
             connection.closeConnection();
             return dataTable;
+        }
+        public Computer GetComputerByMacAddress(string macAddress)
+        {
+            Computer computer = new Computer();
+            try
+            {
+                SqlCommand command = new SqlCommand("SELECT * FROM computer WHERE macAddress = @macAdress", connection.getConnection);
+                command.Parameters.Add("@macAdress", SqlDbType.NVarChar).Value = macAddress;
+
+                connection.openConnection();
+                SqlDataReader reader = command.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    computer.Id = Int32.Parse(reader["id"].ToString());
+                    computer.Info = reader["info"].ToString();
+                    computer.RoomID = Int32.Parse(reader["roomID"].ToString());
+                    computer.Status = reader["status"].ToString();
+                    computer.Fee_per_hour = float.Parse(reader["fee_per_hour"].ToString());
+                    computer.MacAddress = reader["macAddress"].ToString();
+
+                }
+                reader.Close();
+                connection.closeConnection();
+                return computer;
+            }
+            catch
+            {
+                return null;
+            }
         }
     }
 }

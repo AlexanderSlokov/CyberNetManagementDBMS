@@ -7,14 +7,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using InternetCafeManagement.Account_Form;
 using InternetCafeManagement.Database;
 using InternetCafeManagement.Utility;
 
-namespace InternetCafeManagement.Account_Form
+namespace InternetCafeManagement.User_Form
 {
-    public partial class formProfile : Form
+    public partial class UCProfile : UserControl
     {
-        public formProfile()
+        public UCProfile()
         {
             InitializeComponent();
         }
@@ -32,21 +33,7 @@ namespace InternetCafeManagement.Account_Form
             fPassword.Show(this);
         }
 
-        private void labelEmail_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void labelPhone_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void labelExit_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
+      
         private void loadData()
         {
             username = account.getUsername();

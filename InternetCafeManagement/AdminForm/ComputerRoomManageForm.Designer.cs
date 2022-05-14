@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.panelMain = new System.Windows.Forms.Panel();
-            this.panelAdminControl = new System.Windows.Forms.Panel();
             this.buttonReload = new System.Windows.Forms.Button();
+            this.panelAdminControl = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.buttonUpdate = new System.Windows.Forms.Button();
             this.panelComputerGrid = new System.Windows.Forms.Panel();
@@ -52,17 +52,8 @@
             this.panelMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelMain.Location = new System.Drawing.Point(0, 0);
             this.panelMain.Name = "panelMain";
-            this.panelMain.Size = new System.Drawing.Size(1195, 737);
+            this.panelMain.Size = new System.Drawing.Size(1346, 737);
             this.panelMain.TabIndex = 0;
-            // 
-            // panelAdminControl
-            // 
-            this.panelAdminControl.Controls.Add(this.dataGridView1);
-            this.panelAdminControl.Controls.Add(this.buttonUpdate);
-            this.panelAdminControl.Location = new System.Drawing.Point(819, 92);
-            this.panelAdminControl.Name = "panelAdminControl";
-            this.panelAdminControl.Size = new System.Drawing.Size(375, 642);
-            this.panelAdminControl.TabIndex = 2;
             // 
             // buttonReload
             // 
@@ -83,13 +74,23 @@
             this.buttonReload.UseVisualStyleBackColor = false;
             this.buttonReload.Click += new System.EventHandler(this.buttonReload_Click);
             // 
+            // panelAdminControl
+            // 
+            this.panelAdminControl.Controls.Add(this.dataGridView1);
+            this.panelAdminControl.Controls.Add(this.buttonUpdate);
+            this.panelAdminControl.Location = new System.Drawing.Point(819, 92);
+            this.panelAdminControl.Name = "panelAdminControl";
+            this.panelAdminControl.Size = new System.Drawing.Size(524, 642);
+            this.panelAdminControl.TabIndex = 2;
+            // 
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(3, 171);
+            this.dataGridView1.Location = new System.Drawing.Point(0, 44);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(361, 150);
+            this.dataGridView1.Size = new System.Drawing.Size(524, 601);
             this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.Click += new System.EventHandler(this.dataGridView1_Click);
             // 
             // buttonUpdate
             // 
@@ -100,7 +101,7 @@
             this.buttonUpdate.ForeColor = System.Drawing.Color.White;
             this.buttonUpdate.Location = new System.Drawing.Point(3, 3);
             this.buttonUpdate.Name = "buttonUpdate";
-            this.buttonUpdate.Size = new System.Drawing.Size(372, 35);
+            this.buttonUpdate.Size = new System.Drawing.Size(518, 35);
             this.buttonUpdate.TabIndex = 31;
             this.buttonUpdate.Text = "ADD NEW COMPUTER";
             this.buttonUpdate.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
@@ -147,7 +148,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1195, 737);
+            this.ClientSize = new System.Drawing.Size(1346, 737);
             this.Controls.Add(this.panelMain);
             this.Name = "ComputerRoomManageForm";
             this.Text = "ComputerRoomManageForm";

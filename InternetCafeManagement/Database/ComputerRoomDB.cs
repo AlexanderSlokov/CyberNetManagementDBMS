@@ -5,6 +5,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace InternetCafeManagement.Database
 {
@@ -39,15 +40,28 @@ namespace InternetCafeManagement.Database
         }
 
         // Hàm thêm thông tin phòng máy tính vào DB, trả về true nếu thêm thành công, false nếu thêm không thành công
-        public bool AddNewComputerRoom(int roomID, int floor, int compNum, string status, int max_comp_num)
+        public bool AddNewComputerRoom(int roomID, int floor, int compNum, int max_comp_num)
         {
             SqlCommand command = new SqlCommand("INSERT INTO computer_room (id, floor, compNum, status, max_comp_num)"
                 + " VALUES (@id, @floor, @compNum, @status, @max_comp_num)", connection.getConnection);
-
+            if(roomID == 0)
+            {
+                MessageBox.Show("Please Enter Room ID", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
             command.Parameters.Add("@id", SqlDbType.Int).Value = roomID;
+            if (floor == 0)
+            {
+                MessageBox.Show("Please Enter Floor", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
             command.Parameters.Add("@floor", SqlDbType.Int).Value = floor;
             command.Parameters.Add("@compNum", SqlDbType.VarChar).Value = compNum;
-            command.Parameters.Add("@status", SqlDbType.VarChar).Value = status;
+            if (max_comp_num == 0)
+            {
+                MessageBox.Show("Please Enter Room Capacity", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
             command.Parameters.Add("@max_comp_num", SqlDbType.Int).Value = max_comp_num;
             connection.openConnection();
             try

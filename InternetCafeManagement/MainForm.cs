@@ -22,8 +22,7 @@ namespace InternetCafeManagement
 
         private void buttonProfile_Click(object sender, EventArgs e)
         {
-            formProfile fProfile = new formProfile();
-            fProfile.Show(this);
+            Profile fProfile = new Profile();
         }
 
         private void Manager_Click(object sender, EventArgs e)

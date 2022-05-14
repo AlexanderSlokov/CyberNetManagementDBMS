@@ -40,14 +40,18 @@ namespace InternetCafeManagement.Database
             }
             if (role == null)
             {
-                role = CurrentUser.LoginRequest;
-                if (role == "user")
+                
+                if (CurrentUser.LoginRequest == "user")
                 {
                     ExecuteEnableUserAppRole();
                 }
-                else if (role == "employee")
+                else if (CurrentUser.LoginRequest == "employee")
                 {
                     ExecuteEnableEmployeeAppRole();
+                }
+                else if (CurrentUser.LoginRequest == "manager")
+                {
+                    ExecuteEnableManagerAppRole();
                 }
             }
         }
@@ -150,7 +154,7 @@ namespace InternetCafeManagement.Database
             SqlParameter paramAppRolePwd = new SqlParameter();
             paramAppRolePwd.Direction = ParameterDirection.Input;
             paramAppRolePwd.ParameterName = "@password";
-            paramAppRolePwd.Value = "12345";
+            paramAppRolePwd.Value = "employee12345";
             cmd.Parameters.Add(paramAppRolePwd);
 
             SqlParameter paramCreateCookie = new SqlParameter();
@@ -199,7 +203,7 @@ namespace InternetCafeManagement.Database
             SqlParameter paramAppRolePwd = new SqlParameter();
             paramAppRolePwd.Direction = ParameterDirection.Input;
             paramAppRolePwd.ParameterName = "@password";
-            paramAppRolePwd.Value = "12345";
+            paramAppRolePwd.Value = "manager123456789";
             cmd.Parameters.Add(paramAppRolePwd);
 
             SqlParameter paramCreateCookie = new SqlParameter();

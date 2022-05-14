@@ -85,7 +85,7 @@
             this.buttonLogin.FlatAppearance.BorderSize = 0;
             this.buttonLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonLogin.ForeColor = System.Drawing.Color.White;
-            this.buttonLogin.Location = new System.Drawing.Point(37, 336);
+            this.buttonLogin.Location = new System.Drawing.Point(37, 346);
             this.buttonLogin.Name = "buttonLogin";
             this.buttonLogin.Size = new System.Drawing.Size(216, 35);
             this.buttonLogin.TabIndex = 15;

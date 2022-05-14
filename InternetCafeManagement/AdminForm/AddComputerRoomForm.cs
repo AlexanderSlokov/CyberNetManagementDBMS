@@ -53,7 +53,7 @@ namespace InternetCafeManagement.AdminForm
         }
         private bool AddRoom(int roomId, int floor, int max_comp_num)
         {
-            return computerRoomDB.AddNewComputerRoom(roomId, floor, 0, Status.available, max_comp_num);   
+            return computerRoomDB.AddNewComputerRoom(roomId, floor, 0, max_comp_num);   
         }
 
         private void labelExit_Click(object sender, EventArgs e)

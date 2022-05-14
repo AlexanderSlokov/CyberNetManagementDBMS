@@ -73,9 +73,29 @@ namespace InternetCafeManagement.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap check {
+            get {
+                object obj = ResourceManager.GetObject("check", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap free_computer {
             get {
                 object obj = ResourceManager.GetObject("free_computer", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap gear {
+            get {
+                object obj = ResourceManager.GetObject("gear", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -93,6 +113,16 @@ namespace InternetCafeManagement.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap red_x {
+            get {
+                object obj = ResourceManager.GetObject("red_x", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap reload {
             get {
                 object obj = ResourceManager.GetObject("reload", resourceCulture);
@@ -101,11 +131,12 @@ namespace InternetCafeManagement.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to {&quot;icon&quot;:{&quot;id&quot;:&quot;XMpWLL82RuKb&quot;,&quot;name&quot;:&quot;System Report&quot;,&quot;commonName&quot;:&quot;system-report&quot;,&quot;category&quot;:&quot;Programming&quot;,&quot;platform&quot;:&quot;fluent&quot;},&quot;id&quot;:&quot;XMpWLL82RuKb&quot;}.
+        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
         /// </summary>
-        internal static string String {
+        internal static System.Drawing.Icon user {
             get {
-                return ResourceManager.GetString("String", resourceCulture);
+                object obj = ResourceManager.GetObject("user", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
             }
         }
     }

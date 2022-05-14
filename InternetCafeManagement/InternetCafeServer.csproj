@@ -78,11 +78,11 @@
     <Compile Include="Account Form\Password Update Form.Designer.cs">
       <DependentUpon>Password Update Form.cs</DependentUpon>
     </Compile>
-    <Compile Include="Account Form\Profile Form.cs">
+    <Compile Include="Account Form\Profile.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Account Form\Profile Form.Designer.cs">
-      <DependentUpon>Profile Form.cs</DependentUpon>
+    <Compile Include="Account Form\Profile.Designer.cs">
+      <DependentUpon>Profile.cs</DependentUpon>
     </Compile>
     <Compile Include="Account Form\Register Form.cs">
       <SubType>Form</SubType>
@@ -129,6 +129,7 @@
     <Compile Include="Database\AccountDB.cs" />
     <Compile Include="Database\ComputerDB.cs" />
     <Compile Include="Database\ComputerRoomDB.cs" />
+    <Compile Include="Database\UserUsingComputerDB.cs" />
     <Compile Include="Employee Form\Employees Timekeeping Form.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -137,7 +138,25 @@
     </Compile>
     <Compile Include="Model\Computer.cs" />
     <Compile Include="Model\Employee.cs" />
-    <Compile Include="Utility\CurrentPC.cs" />
+    <Compile Include="User Form\Profile.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User Form\Profile.Designer.cs">
+      <DependentUpon>Profile.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User Form\UserDashBoard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User Form\UserDashBoard.Designer.cs">
+      <DependentUpon>UserDashBoard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User Form\UserMainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="User Form\UserMainForm.Designer.cs">
+      <DependentUpon>UserMainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Utility\CurrentPCGetter.cs" />
     <Compile Include="Utility\CurrentUser.cs" />
     <Compile Include="Utility\DataValidate.cs" />
     <Compile Include="Database\DBConnection.cs" />
@@ -152,6 +171,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utility\MacAddressGetter.cs" />
     <Compile Include="Utility\Status.cs" />
     <EmbeddedResource Include="Account Form\Login Form.aa.resx">
       <DependentUpon>Login Form.cs</DependentUpon>
@@ -165,8 +185,8 @@
     <EmbeddedResource Include="Account Form\Password Update Form.resx">
       <DependentUpon>Password Update Form.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Account Form\Profile Form.resx">
-      <DependentUpon>Profile Form.cs</DependentUpon>
+    <EmbeddedResource Include="Account Form\Profile.resx">
+      <DependentUpon>Profile.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Account Form\Register Form.resx">
       <DependentUpon>Register Form.cs</DependentUpon>
@@ -205,6 +225,15 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="User Form\Profile.resx">
+      <DependentUpon>Profile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User Form\UserDashBoard.resx">
+      <DependentUpon>UserDashBoard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User Form\UserMainForm.resx">
+      <DependentUpon>UserMainForm.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -238,7 +267,11 @@
     <None Include="Resources\workstation.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\check.png" />
+    <None Include="Resources\red-x.png" />
+    <None Include="Resources\gear.png" />
     <Content Include="Resources\reload.png" />
+    <None Include="Resources\user.ico" />
     <Content Include="SQL Scripts\account.sql" />
     <Content Include="SQL Scripts\ALL_TABLES.sql" />
     <Content Include="SQL Scripts\computer.sql" />
@@ -250,13 +283,13 @@
     <Content Include="SQL Scripts\service.sql" />
     <Content Include="SQL Scripts\shift.sql" />
     <Content Include="SQL Scripts\User Permission.sql" />
+    <Content Include="SQL Scripts\user_using_computer.sql" />
     <Content Include="SQL Scripts\working_schedule.sql" />
     <Content Include="Triggers\tr_computer_ForDelete.sql" />
     <Content Include="Triggers\tr_computer_ForInsert.sql" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Testing Form\" />
-    <Folder Include="User Form\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

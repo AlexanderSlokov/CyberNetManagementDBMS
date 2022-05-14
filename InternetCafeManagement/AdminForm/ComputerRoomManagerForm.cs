@@ -28,25 +28,39 @@ namespace InternetCafeManagement.AdminForm
 
         private void buttonDeleteRoom_Click(object sender, EventArgs e)
         {
-            int id = Int32.Parse(comboBoxComputerRoomId.Text);
-            if (computerRoomDB.DeleteComputerRoom(id))
+            try
             {
-                MessageBox.Show("Successfully Delete Room", "", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
-            }
-            else
-            {
-                MessageBox.Show("Failed To Delete Room", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                int id = Int32.Parse(comboBoxComputerRoomId.Text);
+                if (computerRoomDB.DeleteComputerRoom(id))
+                {
+                    MessageBox.Show("Successfully Delete Room", "", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                }
+                else
+                {
+                    MessageBox.Show("Failed To Delete Room", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
+                }
+                LoadData();
             }
-            LoadData();
+            catch
+            {
+                 
+            }
         }
 
         private void buttonManage_Click(object sender, EventArgs e)
         {
-            int id = Int32.Parse(comboBoxComputerRoomId.Text);
-            transit_room_id = id;
-            ComputerRoomManageForm computerRoomManageForm = new ComputerRoomManageForm();
-            computerRoomManageForm.Show(this);
+            try
+            {
+                int id = Int32.Parse(comboBoxComputerRoomId.Text);
+                transit_room_id = id;
+                ComputerRoomManageForm computerRoomManageForm = new ComputerRoomManageForm();
+                computerRoomManageForm.Show(this);
+            }
+            catch
+            {
+
+            }
         }
 
         private void ComputerRoomManagerForm_Load(object sender, EventArgs e)

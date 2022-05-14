@@ -65,7 +65,21 @@ namespace InternetCafeManagement.AdminForm
 
         private void buttonMakeBusy_Click(object sender, EventArgs e)
         {
-
+            if (computerDB.GetComputerStatus(current_computer_id) == Status.available)
+            {
+                computerDB.MakeBusy(current_computer_id);
+                LoadData();
+            }
+            else if (computerDB.GetComputerStatus(current_computer_id) == Status.in_use)
+            {
+                computerDB.MakeBusy(current_computer_id);
+                LoadData();
+            }
+            else if (computerDB.GetComputerStatus(current_computer_id) == Status.busy)
+            {
+                computerDB.MakeAvailable(current_computer_id);
+                LoadData();
+            }
         }
 
         private void buttonDelete_Click(object sender, EventArgs e)
@@ -98,7 +112,39 @@ namespace InternetCafeManagement.AdminForm
             labelRoomID.Text = "Room: " + current_room_id.ToString();
             textBoxInfo.Text = computerDB.GetComputerInfo(current_computer_id);
             textBoxFee.Text = (computerDB.GetComputerFeePerHour(current_computer_id)).ToString();
-            labelLoginTime.Text = CurrentUser.LoginTime.ToString();  
+            labelLoginTime.Text = CurrentUser.LoginTime.ToString();
+
+            if(computerDB.GetComputerStatus(current_computer_id) == Status.available)
+            {
+                Image bigImage = Properties.Resources.check;
+                this.buttonDisplayStatus.Image = (Image)(new Bitmap(bigImage, new Size(20, 20)));
+                buttonDisplayStatus.Text = "AVAILABLE";
+                buttonDisplayStatus.BackColor = Color.FromArgb(192, 255, 192);
+                buttonDisplayStatus.ForeColor = Color.Black;
+                buttonChangeStatus.Text = "SHOW DOWN";
+            }
+            else
+            if (computerDB.GetComputerStatus(current_computer_id) == Status.busy)
+            {
+                Image bigImage = Properties.Resources.red_x;
+                this.buttonDisplayStatus.Image = (Image)(new Bitmap(bigImage, new Size(20, 20)));
+                buttonDisplayStatus.Text = "Busy".ToUpper();
+                buttonDisplayStatus.BackColor = Color.White;
+                buttonDisplayStatus.ForeColor = Color.Red;
+                buttonChangeStatus.Text = "TURN ON";
+                buttonChangeStatus.ForeColor = Color.FromArgb(192, 255, 192);
+            }
+            else
+            if (computerDB.GetComputerStatus(current_computer_id) == Status.in_use)
+            {
+                Image bigImage = Properties.Resources.gear;
+                this.buttonDisplayStatus.Image = (Image)(new Bitmap(bigImage, new Size(20, 20)));
+                buttonDisplayStatus.Text = "In Use".ToUpper();
+                buttonDisplayStatus.BackColor = Color.FromArgb(192, 255, 192);
+                buttonDisplayStatus.ForeColor = Color.Black;
+                buttonChangeStatus.Text = "TURN ON";
+                buttonChangeStatus.ForeColor = Color.FromArgb(192, 255, 192);
+            }
         }
     }
 }

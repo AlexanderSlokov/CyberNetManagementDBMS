@@ -106,7 +106,16 @@ namespace InternetCafeManagement.Database
                     employee.Gender = reader["gender"].ToString();
                     employee.PhoneNum = reader["phoneNum"].ToString();
                     employee.Email = reader["email"].ToString();
-                    employee.Image = Image.FromStream((MemoryStream)reader["image"]);
+                    try
+                    {
+                        MemoryStream stream = new MemoryStream((byte[])reader["image"]);
+                        Image RetImage = Image.FromStream(stream);
+                        employee.Image = RetImage;
+                    }
+                    catch (Exception ex)
+                    {
+                        employee.Image = null;
+                    }
                     employee.Salary_per_hour = float.Parse(reader["salary_per_hour"].ToString());
                     employee.Username = reader["username"].ToString();
                     employee.Password = reader["password"].ToString();

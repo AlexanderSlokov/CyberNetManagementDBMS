@@ -15,7 +15,7 @@ namespace InternetCafeManagement.AdminForm
 {
     public partial class ComputerRoomManageForm : System.Windows.Forms.Form
     {
-        ComputerRoomDB computerRoom = new ComputerRoomDB();   
+        ComputerRoomDB computerRoom = new ComputerRoomDB();
         ComputerDB computerDB = new ComputerDB();
         public ComputerRoomManageForm()
         {
@@ -37,14 +37,14 @@ namespace InternetCafeManagement.AdminForm
 
             for (int i = 0; i < buttonNumber; i++)
             {
-                
+
                 // properties
                 Image buttonImage = Properties.Resources.in_use_computer;
                 Button button = new Button();
                 button.Width = 150;
                 button.Height = 100;
                 button.Name = buttonName + buttonID.ToString();
-                
+
                 button.TabStop = false;
                 button.Image = buttonImage;
                 string status = "Ready!!!";
@@ -70,7 +70,7 @@ namespace InternetCafeManagement.AdminForm
                 // events
                 button.Click += new EventHandler(button_Click);
                 button.Location = new Point(xpos, ypos);
-                
+
                 // Added
                 panelComputerGrid.Controls.Add(button);
 
@@ -92,7 +92,7 @@ namespace InternetCafeManagement.AdminForm
             Button button = (Button)sender;
             ComputerDetailForm computerDetailForm = new ComputerDetailForm();
             computerDetailForm.Show(this);
-            
+
         }
         public void AddAllButtons(List<Computer> computersList)
         {
@@ -104,7 +104,7 @@ namespace InternetCafeManagement.AdminForm
             int loopCount = 0;
 
             //loop
-            foreach(Computer computer in computersList)
+            foreach (Computer computer in computersList)
             {
                 // properties
                 Image buttonImage = Properties.Resources.in_use_computer;
@@ -157,22 +157,38 @@ namespace InternetCafeManagement.AdminForm
         }
         public void button_Click(object sender, EventArgs e)
         {
-            Button button = (Button) sender;
+            Button button = (Button)sender;
             ComputerDetailForm computerDetailForm = new ComputerDetailForm();
             computerDetailForm.ShowDialog(this);
-            
+
         }
         private void ComputerRoomManageForm_Load(object sender, EventArgs e)
         {
             LoadData();
-            dataGridView1.DataSource = computerDB.GetDataTableAllComputer(current_room_id);
+            FillGrid();
+        }
+        private void FillGrid()
+        {
+            dataGridView1.RowHeadersVisible = false;
+            dataGridView1.AllowUserToAddRows = false;
+            dataGridView1.DataSource = computerDB.GetDataTableAllComputerByRoomID(current_room_id);
+
+            dataGridView1.Columns["id"].Width = 70;
+            dataGridView1.Columns["id"].HeaderText = "Computer ID";
+            dataGridView1.Columns["info"].Width = 100;
+            dataGridView1.Columns["info"].HeaderText = "Description";
+            dataGridView1.Columns["roomID"].Width = 70;
+            dataGridView1.Columns["roomID"].HeaderText = "Room ID";
+            dataGridView1.Columns["fee_per_hour"].Width = 70;
+            dataGridView1.Columns["fee_per_hour"].HeaderText = "Fee(VND per hour)";
+            dataGridView1.Columns["macAddress"].HeaderText = "Mac Address";
         }
         public void LoadData()
         {
             try
             {
                 ComputerRoomManagerForm computerRoomManagerForm = (ComputerRoomManagerForm)(this.Owner);
-                if(computerRoomManagerForm != null)
+                if (computerRoomManagerForm != null)
                 {
                     current_room_id = computerRoomManagerForm.transit_room_id;
                     labelRoomID.Text = "Room 0" + current_room_id.ToString();
@@ -192,7 +208,7 @@ namespace InternetCafeManagement.AdminForm
                 labelComputerNumber.Text = "Computers Number: " + computerDB.ComputerCountByID(current_room_id).ToString();
                 AddAllButtons(computerDB.GetAllComputersByRoomID(current_room_id));
             }
-            
+
         }
         private void buttonUpdate_Click(object sender, EventArgs e)
         {
@@ -202,14 +218,43 @@ namespace InternetCafeManagement.AdminForm
 
         private void buttonReload_Click(object sender, EventArgs e)
         {
-            
+
             ComputerRoomManageForm computerRoomManageForm = new ComputerRoomManageForm();
-            
+
             computerRoomManageForm.current_room_id = this.current_room_id;
             this.Close();
             computerRoomManageForm.Show();
             LoadData();
-            
+
+        }
+
+        private void dataGridView1_Click(object sender, EventArgs e)
+        {
+            GetDataFromGridView(sender, e);
+        }
+        public void grid_click(object sender, EventArgs e, int computer_id)
+        {
+            transit_computer_id = computer_id;
+            DataGridView dataGrid = (DataGridView) sender;
+            ComputerDetailForm computerDetailForm = new ComputerDetailForm();
+            computerDetailForm.Show(this);
+
+        }
+        public void GetDataFromGridView(object sender, EventArgs e)
+        {
+            try
+            {
+                if (dataGridView1.CurrentRow != null)
+                {
+                    int id = (int)Int32.Parse(dataGridView1.CurrentRow.Cells["id"].Value.ToString());
+                    grid_click(sender, e, id);
+                }
+
+            }
+            catch (Exception ex)
+            {
+            }
+
         }
     }
 }
