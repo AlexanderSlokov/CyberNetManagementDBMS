@@ -70,16 +70,19 @@ namespace InternetCafeManagement.Account_Form
                         CurrentPCGetter pcGetter = CurrentPCGetter.GetCurrentPCGetter();
                         if (computerRoomDB.IsComputerRoomExistsByID(1) == true)
                         {
-                            
-                            computerDB.AddNewComputer(1, "", Status.available, 5000, macAddress);
-                            loginComputer = new Computer();
-                            loginComputer.Status = Status.available;
-                            loginComputer.Fee_per_hour = 5000;
-                            loginComputer.MacAddress = macAddress;
-                            loginComputer.Id = computerDB.GetComputerByMacAddress(macAddress).Id;
+                            if(computerDB.IsComputerExistsByMacAddess() == true)
+                            {
+                                computerDB.AddNewComputer(1, "", Status.available, 5000, macAddress);
+                                loginComputer = new Computer();
+                                loginComputer.Status = Status.available;
+                                loginComputer.Fee_per_hour = 5000;
+                                loginComputer.MacAddress = macAddress;
+                                loginComputer.Id = computerDB.GetComputerByMacAddress(macAddress).Id;
 
-                            pcGetter.SetCurrentComputer(loginComputer);
-                            CurrentUser.LoginRequest = "user";
+                                pcGetter.SetCurrentComputer(loginComputer);
+                                CurrentUser.LoginRequest = "user";
+                            }
+                            
 
                         }
                         else
@@ -101,13 +104,18 @@ namespace InternetCafeManagement.Account_Form
                     }
                     else if(loginComputer != null)
                     {
-                        
+                        CurrentPCGetter pcGetter = CurrentPCGetter.GetCurrentPCGetter();
+                        pcGetter.SetCurrentComputer(loginComputer);
+
                     }
-                    UserUsingComputerDB userUsage = new UserUsingComputerDB();
-                    //userUsage.InsertUsage()
+                    
                     CurrentUser.Id = accountDB.getUserID(username);
                     CurrentUser.LoginTime = DateTime.Now;
                     CurrentUser.Role = "user";
+
+                    UserUsingComputerDB userUsage = new UserUsingComputerDB();
+                    userUsage.InsertUsage(loginComputer.Id, CurrentUser.Id, CurrentUser.LoginTime);
+
                     UserMainForm userMainForm = new UserMainForm();
                     userMainForm.Show(this);
                     this.Hide();
