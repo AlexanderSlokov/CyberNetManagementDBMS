@@ -11,11 +11,10 @@ namespace InternetCafeManagement.Utility
     {
         private static CurrentPCGetter _instance;
 
-        private Computer computer; 
-        private CurrentPCGetter(Computer computer)
-        {
-            this.computer = computer;
-        }
+        private static Computer computer;
+
+        public static Computer Computer { get => computer; set => computer = value; }
+
         private CurrentPCGetter()
         {
         }
@@ -32,11 +31,11 @@ namespace InternetCafeManagement.Utility
         }
         public void SetCurrentComputer(Computer computer)
         {
-            this.computer = computer;
+            Computer = computer;
         }
         public Computer GetCurrentComputer()
         {
-            return computer;
+            return Computer;
         }
     }
 }

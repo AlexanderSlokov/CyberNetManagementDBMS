@@ -39,9 +39,32 @@ namespace InternetCafeManagement.Database
                 return false;
             }
         }
-
+        public bool isComputerExistsByMacAddress(string macAddress)
+        {
+            SqlCommand command = new SqlCommand("SELECT * FROM computer WHERE macAddress = @macAddress", connection.getConnection);
+            command.Parameters.Add("@macAddress", SqlDbType.NVarChar).Value = macAddress;
+            connection.openConnection();
+            try
+            {
+                if (command.ExecuteScalar() == null)
+                {
+                    connection.closeConnection();
+                    return false;
+                }
+                else
+                {
+                    connection.closeConnection();
+                    return true;
+                }
+            }
+            catch
+            {
+                connection.closeConnection();
+                return false;
+            }
+        }
         // Hàm thêm thông tin máy tính vào DB, trả về true nếu thêm thành công, false nếu thêm không thành công
-        
+
         public bool AddNewComputer(int roomID, string info, string status, float fee)
         {
             SqlCommand command = new SqlCommand("INSERT INTO computer (info, roomID, status, fee_per_hour)"
@@ -439,8 +462,16 @@ namespace InternetCafeManagement.Database
 
                 }
                 reader.Close();
-                connection.closeConnection();
-                return computer;
+                if( computer.Id != 0)
+                {
+                    connection.closeConnection();
+                    return computer;
+                }
+                else
+                {
+                    connection.closeConnection();
+                    return null;
+                }
             }
             catch
             {

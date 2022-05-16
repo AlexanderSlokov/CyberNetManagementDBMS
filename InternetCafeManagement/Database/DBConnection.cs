@@ -121,6 +121,13 @@ namespace InternetCafeManagement.Database
             paramEncrypt.Value = "none";
             cmd.Parameters.Add(paramEncrypt);
 
+            SqlParameter paramEnableCookie = new SqlParameter();
+            paramEnableCookie.ParameterName = "@cookie";
+            paramEnableCookie.DbType = DbType.Binary;
+            paramEnableCookie.Direction = ParameterDirection.Output;
+            paramEnableCookie.Size = 1000;
+            cmd.Parameters.Add(paramEnableCookie);
+
             try
             {
                 cmd.ExecuteNonQuery();
@@ -169,6 +176,13 @@ namespace InternetCafeManagement.Database
             paramEncrypt.ParameterName = "@encrypt";
             paramEncrypt.Value = "none";
             cmd.Parameters.Add(paramEncrypt);
+
+            SqlParameter paramEnableCookie = new SqlParameter();
+            paramEnableCookie.ParameterName = "@cookie";
+            paramEnableCookie.DbType = DbType.Binary;
+            paramEnableCookie.Direction = ParameterDirection.Output;
+            paramEnableCookie.Size = 1000;
+            cmd.Parameters.Add(paramEnableCookie);
 
             try
             {

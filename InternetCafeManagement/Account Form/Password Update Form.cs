@@ -64,7 +64,7 @@ namespace InternetCafeManagement.Account_Form
             confirmPass = textBoxConfirmPassword.Text;
             if(!account.passwordCheck(CurrentUser.Id, oldPass))
             {
-                MessageBox.Show("You entered wrong password", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("You entered wrong old password", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
             if (!DataValidate.doublePasswordValidate(newPass, confirmPass))

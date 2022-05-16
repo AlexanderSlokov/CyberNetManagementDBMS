@@ -409,5 +409,108 @@ namespace InternetCafeManagement.Database
                 return null;
             }
         }
+        public float GetUserBalance()
+        {
+            float balance = 0;
+            try
+            {
+                SqlCommand command = new SqlCommand("SELECT * FROM account WHERE id = @id", connection.getConnection);
+                command.Parameters.Add("@id", SqlDbType.Real).Value = CurrentUser.Id;
+
+                connection.openConnection();
+                SqlDataReader reader = command.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    balance = float.Parse(reader["balance"].ToString());
+                }
+                reader.Close();
+                connection.closeConnection();
+                return balance;
+            }
+            catch
+            {
+                return 0;
+            }
+        }
+        // Hàm cập nhật thông tin căn bản của người dùng
+        public bool ChargeBalance(int ID, float amount)
+        {
+            try
+            {
+                SqlCommand command = new SqlCommand("UPDATE account SET balance = account.balance + @ammount WHERE id = @id", connection.getConnection);
+
+                command.Parameters.Add("@id", SqlDbType.Int).Value = ID;
+                command.Parameters.Add("@ammount", SqlDbType.VarChar).Value = amount;
+
+                connection.openConnection();
+                if ((command.ExecuteNonQuery() == 1))
+                {
+                    connection.closeConnection();
+                    return true;
+                }
+                else
+                {
+                    connection.closeConnection();
+                    return false;
+                }
+            }
+            catch
+            {
+                return false;
+            }
+        }
+        // Hàm cập nhật thông tin căn bản của người dùng
+        public bool DischargeBalance(int ID, float amount)
+        {
+            try
+            {
+                SqlCommand command = new SqlCommand("UPDATE account SET balance = account.balance - @ammount WHERE id = @id", connection.getConnection);
+
+                command.Parameters.Add("@id", SqlDbType.Int).Value = ID;
+                command.Parameters.Add("@ammount", SqlDbType.VarChar).Value = amount;
+
+                connection.openConnection();
+                if ((command.ExecuteNonQuery() == 1))
+                {
+                    connection.closeConnection();
+                    return true;
+                }
+                else
+                {
+                    connection.closeConnection();
+                    return false;
+                }
+            }
+            catch
+            {
+                return false;
+            }
+        }
+        public bool MakeBalanceZero(int ID)
+        {
+            try
+            {
+                SqlCommand command = new SqlCommand("UPDATE account SET balance = 0 WHERE id = @id", connection.getConnection);
+
+                command.Parameters.Add("@id", SqlDbType.Int).Value = ID;
+
+                connection.openConnection();
+                if ((command.ExecuteNonQuery() == 1))
+                {
+                    connection.closeConnection();
+                    return true;
+                }
+                else
+                {
+                    connection.closeConnection();
+                    return false;
+                }
+            }
+            catch
+            {
+                return false;
+            }
+        }
     }
 }

@@ -51,6 +51,8 @@ namespace InternetCafeManagement.Account_Form
         {
             string username = textBoxUsername.Text;
             string password = textBoxPassword.Text;
+
+            CurrentPCGetter pcGetter = CurrentPCGetter.GetCurrentPCGetter();
             if (radioButtonUser.Checked)
             {
                 CurrentUser.LoginRequest = "user";
@@ -67,30 +69,29 @@ namespace InternetCafeManagement.Account_Form
                     if(loginComputer == null)
                     {
                         CurrentUser.LoginRequest = "manager";
-                        CurrentPCGetter pcGetter = CurrentPCGetter.GetCurrentPCGetter();
+                        pcGetter = CurrentPCGetter.GetCurrentPCGetter();
                         if (computerRoomDB.IsComputerRoomExistsByID(1) == true)
                         {
-                            if(computerDB.IsComputerExistsByMacAddess() == true)
+                            if(computerDB.isComputerExistsByMacAddress(macAddress) == false)
                             {
                                 computerDB.AddNewComputer(1, "", Status.available, 5000, macAddress);
-                                loginComputer = new Computer();
-                                loginComputer.Status = Status.available;
-                                loginComputer.Fee_per_hour = 5000;
-                                loginComputer.MacAddress = macAddress;
-                                loginComputer.Id = computerDB.GetComputerByMacAddress(macAddress).Id;
-
-                                pcGetter.SetCurrentComputer(loginComputer);
-                                CurrentUser.LoginRequest = "user";
                             }
-                            
+                            loginComputer = new Computer();
+                            loginComputer.Status = Status.available;
+                            loginComputer.Fee_per_hour = 5000;
+                            loginComputer.MacAddress = macAddress;
+                            loginComputer.Id = computerDB.GetComputerByMacAddress(macAddress).Id;
 
+                            pcGetter.SetCurrentComputer(loginComputer);
+                            CurrentUser.LoginRequest = "user";
                         }
                         else
                         {
-
                             computerRoomDB.AddNewComputerRoom(1, 1, 0, 30);
-
-                            computerDB.AddNewComputer(1, "", Status.available, 5000, macAddress);
+                            if (computerDB.isComputerExistsByMacAddress(macAddress) == false)
+                            {
+                                computerDB.AddNewComputer(1, "", Status.available, 5000, macAddress);
+                            }
 
                             loginComputer.Status = Status.available;
                             loginComputer.Fee_per_hour = 5000;
@@ -104,17 +105,24 @@ namespace InternetCafeManagement.Account_Form
                     }
                     else if(loginComputer != null)
                     {
-                        CurrentPCGetter pcGetter = CurrentPCGetter.GetCurrentPCGetter();
+
                         pcGetter.SetCurrentComputer(loginComputer);
 
                     }
                     
                     CurrentUser.Id = accountDB.getUserID(username);
                     CurrentUser.LoginTime = DateTime.Now;
-                    CurrentUser.Role = "user";
+                    CurrentUser.Name = accountDB.getUserFullName();
+                    CurrentUser.Balance = accountDB.GetUserBalance();
+
+                    Computer currentComputer = pcGetter.GetCurrentComputer();
 
                     UserUsingComputerDB userUsage = new UserUsingComputerDB();
-                    userUsage.InsertUsage(loginComputer.Id, CurrentUser.Id, CurrentUser.LoginTime);
+                    if(userUsage.isLogin(currentComputer.Id, CurrentUser.Id) == false)
+                    {
+                        userUsage.InsertUsage(loginComputer.Id, CurrentUser.Id, CurrentUser.LoginTime);
+                    }
+                    CurrentUser.Role = "user";
 
                     UserMainForm userMainForm = new UserMainForm();
                     userMainForm.Show(this);

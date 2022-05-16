@@ -31,6 +31,12 @@ namespace InternetCafeManagement.Account_Form
                 textBoxConfirmPassword.PasswordChar = '•';
             }
         }
+
+        private void formRegister_Load(object sender, EventArgs e)
+        {
+
+        }
+
         private void buttonClear_Click(object sender, EventArgs e)
         {
             textBoxUsername.Text = "";

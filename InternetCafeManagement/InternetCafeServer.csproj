@@ -53,6 +53,10 @@
       <HintPath>..\packages\SimpleTCP.1.0.24\lib\net45\SimpleTCP.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Annotations, Version=4.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ComponentModel.Annotations.5.0.0\lib\net461\System.ComponentModel.Annotations.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -270,6 +274,7 @@
     <None Include="Resources\check.png" />
     <None Include="Resources\red-x.png" />
     <None Include="Resources\gear.png" />
+    <None Include="Resources\logout.png" />
     <Content Include="Resources\reload.png" />
     <None Include="Resources\user.ico" />
     <Content Include="SQL Scripts\account.sql" />

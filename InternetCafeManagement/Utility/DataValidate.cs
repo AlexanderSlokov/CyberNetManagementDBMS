@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -104,24 +105,19 @@ namespace InternetCafeManagement.Utility
         }
         public static bool emailValidate(string email)
         {
-            AccountDB account = new AccountDB();
-            if (email == String.Empty)
+            if (email == null)
             {
                 return false;
             }
-            if (email.Length < 3)
+            if (new EmailAddressAttribute().IsValid(email))
             {
+                return true;
+            }
+            else
+            {
+
                 return false;
             }
-            if (!emailCheck(email))
-            {
-                return false;
-            }
-            if (containSpace(email))
-            {
-                return false;
-            }
-            return true;
         }
         public static bool passwordValidate(string password)
         {

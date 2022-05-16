@@ -53,10 +53,10 @@
             this.textBoxPhone.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(231)))), ((int)(((byte)(233)))));
             this.textBoxPhone.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBoxPhone.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxPhone.Location = new System.Drawing.Point(441, 174);
+            this.textBoxPhone.Location = new System.Drawing.Point(447, 173);
             this.textBoxPhone.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxPhone.Name = "textBoxPhone";
-            this.textBoxPhone.Size = new System.Drawing.Size(385, 24);
+            this.textBoxPhone.Size = new System.Drawing.Size(276, 24);
             this.textBoxPhone.TabIndex = 36;
             // 
             // labelPhone
@@ -64,7 +64,7 @@
             this.labelPhone.AutoSize = true;
             this.labelPhone.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.labelPhone.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(165)))), ((int)(((byte)(169)))));
-            this.labelPhone.Location = new System.Drawing.Point(441, 136);
+            this.labelPhone.Location = new System.Drawing.Point(447, 135);
             this.labelPhone.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelPhone.Name = "labelPhone";
             this.labelPhone.Size = new System.Drawing.Size(47, 17);
@@ -76,10 +76,10 @@
             this.textBoxEmail.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(231)))), ((int)(((byte)(233)))));
             this.textBoxEmail.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBoxEmail.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxEmail.Location = new System.Drawing.Point(19, 251);
+            this.textBoxEmail.Location = new System.Drawing.Point(132, 251);
             this.textBoxEmail.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxEmail.Name = "textBoxEmail";
-            this.textBoxEmail.Size = new System.Drawing.Size(385, 24);
+            this.textBoxEmail.Size = new System.Drawing.Size(272, 24);
             this.textBoxEmail.TabIndex = 34;
             // 
             // labelEmail
@@ -87,7 +87,7 @@
             this.labelEmail.AutoSize = true;
             this.labelEmail.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.labelEmail.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(165)))), ((int)(((byte)(169)))));
-            this.labelEmail.Location = new System.Drawing.Point(15, 225);
+            this.labelEmail.Location = new System.Drawing.Point(129, 221);
             this.labelEmail.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelEmail.Name = "labelEmail";
             this.labelEmail.Size = new System.Drawing.Size(42, 17);
@@ -99,10 +99,10 @@
             this.textBoxName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(231)))), ((int)(((byte)(233)))));
             this.textBoxName.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBoxName.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxName.Location = new System.Drawing.Point(19, 169);
+            this.textBoxName.Location = new System.Drawing.Point(132, 169);
             this.textBoxName.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxName.Name = "textBoxName";
-            this.textBoxName.Size = new System.Drawing.Size(385, 24);
+            this.textBoxName.Size = new System.Drawing.Size(272, 24);
             this.textBoxName.TabIndex = 32;
             // 
             // labelName
@@ -110,7 +110,7 @@
             this.labelName.AutoSize = true;
             this.labelName.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.labelName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(165)))), ((int)(((byte)(169)))));
-            this.labelName.Location = new System.Drawing.Point(21, 136);
+            this.labelName.Location = new System.Drawing.Point(135, 132);
             this.labelName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelName.Name = "labelName";
             this.labelName.Size = new System.Drawing.Size(71, 17);
@@ -124,10 +124,10 @@
             this.buttonUpdate.FlatAppearance.BorderSize = 0;
             this.buttonUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonUpdate.ForeColor = System.Drawing.Color.White;
-            this.buttonUpdate.Location = new System.Drawing.Point(444, 311);
+            this.buttonUpdate.Location = new System.Drawing.Point(442, 311);
             this.buttonUpdate.Margin = new System.Windows.Forms.Padding(4);
             this.buttonUpdate.Name = "buttonUpdate";
-            this.buttonUpdate.Size = new System.Drawing.Size(385, 46);
+            this.buttonUpdate.Size = new System.Drawing.Size(276, 46);
             this.buttonUpdate.TabIndex = 30;
             this.buttonUpdate.Text = "UPDATE";
             this.buttonUpdate.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
@@ -167,10 +167,10 @@
             this.buttonUpdatePassword.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonUpdatePassword.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonUpdatePassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(86)))), ((int)(((byte)(174)))));
-            this.buttonUpdatePassword.Location = new System.Drawing.Point(18, 311);
+            this.buttonUpdatePassword.Location = new System.Drawing.Point(138, 311);
             this.buttonUpdatePassword.Margin = new System.Windows.Forms.Padding(4);
             this.buttonUpdatePassword.Name = "buttonUpdatePassword";
-            this.buttonUpdatePassword.Size = new System.Drawing.Size(385, 46);
+            this.buttonUpdatePassword.Size = new System.Drawing.Size(271, 46);
             this.buttonUpdatePassword.TabIndex = 24;
             this.buttonUpdatePassword.Text = "CHANGE PASSWORD";
             this.buttonUpdatePassword.UseVisualStyleBackColor = false;
@@ -180,12 +180,11 @@
             // 
             this.textBoxUsername.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(231)))), ((int)(((byte)(233)))));
             this.textBoxUsername.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBoxUsername.Enabled = false;
             this.textBoxUsername.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxUsername.Location = new System.Drawing.Point(19, 80);
+            this.textBoxUsername.Location = new System.Drawing.Point(132, 80);
             this.textBoxUsername.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxUsername.Name = "textBoxUsername";
-            this.textBoxUsername.Size = new System.Drawing.Size(385, 24);
+            this.textBoxUsername.Size = new System.Drawing.Size(272, 24);
             this.textBoxUsername.TabIndex = 20;
             // 
             // label2
@@ -193,7 +192,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(165)))), ((int)(((byte)(169)))));
-            this.label2.Location = new System.Drawing.Point(21, 59);
+            this.label2.Location = new System.Drawing.Point(135, 55);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(69, 17);
@@ -218,10 +217,10 @@
             this.comboBoxGender.Items.AddRange(new object[] {
             "Male",
             "Female"});
-            this.comboBoxGender.Location = new System.Drawing.Point(441, 80);
+            this.comboBoxGender.Location = new System.Drawing.Point(447, 79);
             this.comboBoxGender.Margin = new System.Windows.Forms.Padding(4);
             this.comboBoxGender.Name = "comboBoxGender";
-            this.comboBoxGender.Size = new System.Drawing.Size(380, 25);
+            this.comboBoxGender.Size = new System.Drawing.Size(271, 25);
             this.comboBoxGender.TabIndex = 54;
             // 
             // label6
@@ -229,7 +228,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(165)))), ((int)(((byte)(169)))));
-            this.label6.Location = new System.Drawing.Point(441, 58);
+            this.label6.Location = new System.Drawing.Point(447, 57);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(52, 17);
@@ -239,7 +238,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(550, 299);
+            this.label7.Location = new System.Drawing.Point(556, 298);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(0, 17);
@@ -248,7 +247,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(550, 206);
+            this.label8.Location = new System.Drawing.Point(556, 205);
             this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(0, 17);

@@ -10,6 +10,8 @@ namespace InternetCafeManagement.Utility
     static public class CurrentUser
     {
         private static int id;
+        private static string name;
+        private static float balance;
         private static string role;
         private static DateTime loginTime;
         private static DateTime lastLoginTime;
@@ -23,5 +25,7 @@ namespace InternetCafeManagement.Utility
         public static DateTime LastLoginTime { get => lastLoginTime; set => lastLoginTime = value; }
         public static bool IsLoggedIn { get => isLoggedIn; set => isLoggedIn = value; }
         public static string LoginRequest { get => loginRequest; set => loginRequest = value; }
+        public static string Name { get => name; set => name = value; }
+        public static float Balance { get => balance; set => balance = value; }
     }
 }
