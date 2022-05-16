@@ -130,6 +130,12 @@
     <Compile Include="AdminForm\Manage EmployeeForm.Designer.cs">
       <DependentUpon>Manage EmployeeForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="AdminForm\ShiftManagement.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AdminForm\ShiftManagement.Designer.cs">
+      <DependentUpon>ShiftManagement.cs</DependentUpon>
+    </Compile>
     <Compile Include="Database\AccountDB.cs" />
     <Compile Include="Database\ComputerDB.cs" />
     <Compile Include="Database\ComputerRoomDB.cs" />

@@ -42,8 +42,8 @@ namespace InternetCafeManagement.Database
         // Hàm thêm thông tin phòng máy tính vào DB, trả về true nếu thêm thành công, false nếu thêm không thành công
         public bool AddNewComputerRoom(int roomID, int floor, int compNum, int max_comp_num)
         {
-            SqlCommand command = new SqlCommand("INSERT INTO computer_room (id, floor, compNum, status, max_comp_num)"
-                + " VALUES (@id, @floor, @compNum, @status, @max_comp_num)", connection.getConnection);
+            SqlCommand command = new SqlCommand("INSERT INTO computer_room (id, floor, compNum, max_comp_num)"
+                + " VALUES (@id, @floor, @compNum, @max_comp_num)", connection.getConnection);
             if(roomID == 0)
             {
                 MessageBox.Show("Please Enter Room ID", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
