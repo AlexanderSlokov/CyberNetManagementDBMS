@@ -15,8 +15,8 @@ GO
 CREATE TABLE [shift]
 (
 	[id] int NOT NULL,
-	[startTime] time(7) NOT NULL,
-	[endTime] time(7) NOT NULL,
+	[startTime] DateTime NOT NULL,
+	[endTime] DateTime NOT NULL,
 	[week_date] nvarchar(50) NOT NULL,
 	[shift_type] nvarchar(50) NOT NULL
 )
