@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using InternetCafeManagement.Account_Form;
+using InternetCafeManagement.AdminForm;
 using InternetCafeManagement.Database;
 using InternetCafeManagement.Model;
 using InternetCafeManagement.Utility;
@@ -199,6 +200,15 @@ namespace InternetCafeManagement.User_Form
                 formLogin.Show();
                 this.Close();
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            ShiftManagement shiftManagement = new ShiftManagement();
+            shiftManagement.Dock = DockStyle.Fill;
+            panelContainer.Controls.Add(shiftManagement);
+            shiftManagement.Show();
+            shiftManagement.BringToFront();
         }
     }
 }

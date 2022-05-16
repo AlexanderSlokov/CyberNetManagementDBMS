@@ -51,8 +51,8 @@ namespace InternetCafeManagement
 
         private void button6_Click(object sender, EventArgs e)
         {
-            ShiftManagement shiftManagement = new ShiftManagement();
-            shiftManagement.Show();
+            //ShiftManagement shiftManagement = new ShiftManagement();
+            //shiftManagement.Show(this);
         }
     }
 }

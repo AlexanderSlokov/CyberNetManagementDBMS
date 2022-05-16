@@ -43,8 +43,8 @@
             this.buttonUpdateShift = new System.Windows.Forms.Button();
             this.buttonNewShift = new System.Windows.Forms.Button();
             this.buttonChangeStatus = new System.Windows.Forms.Button();
-            this.dateTimePickerStart = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePickerEnd = new System.Windows.Forms.DateTimePicker();
+            this.labelStartTime = new System.Windows.Forms.Label();
+            this.labelEndTime = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewShift)).BeginInit();
             this.SuspendLayout();
             // 
@@ -130,10 +130,16 @@
             "Evening Shift",
             "Night Shift"});
             this.comboBoxShiftType.FormattingEnabled = true;
+            this.comboBoxShiftType.Items.AddRange(new object[] {
+            "Morning Shift",
+            "Noon Shift",
+            "Afternoon Shift",
+            "Nigh Shift"});
             this.comboBoxShiftType.Location = new System.Drawing.Point(336, 122);
             this.comboBoxShiftType.Name = "comboBoxShiftType";
             this.comboBoxShiftType.Size = new System.Drawing.Size(164, 21);
             this.comboBoxShiftType.TabIndex = 18;
+            this.comboBoxShiftType.SelectedIndexChanged += new System.EventHandler(this.comboBoxShiftType_SelectedIndexChanged);
             // 
             // label5
             // 
@@ -149,6 +155,14 @@
             // comboBoxWeekDate
             // 
             this.comboBoxWeekDate.FormattingEnabled = true;
+            this.comboBoxWeekDate.Items.AddRange(new object[] {
+            "Monday",
+            "TuesDay",
+            "Wednesday",
+            "Thursday",
+            "Friday",
+            "Saturday",
+            "Sunday"});
             this.comboBoxWeekDate.Location = new System.Drawing.Point(102, 122);
             this.comboBoxWeekDate.Name = "comboBoxWeekDate";
             this.comboBoxWeekDate.Size = new System.Drawing.Size(121, 21);
@@ -157,7 +171,7 @@
             // dataGridViewShift
             // 
             this.dataGridViewShift.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewShift.Location = new System.Drawing.Point(653, 3);
+            this.dataGridViewShift.Location = new System.Drawing.Point(506, 0);
             this.dataGridViewShift.Name = "dataGridViewShift";
             this.dataGridViewShift.Size = new System.Drawing.Size(389, 362);
             this.dataGridViewShift.TabIndex = 22;
@@ -230,27 +244,39 @@
             this.buttonChangeStatus.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.buttonChangeStatus.UseVisualStyleBackColor = false;
             // 
-            // dateTimePickerStart
+            // labelStartTime
             // 
-            this.dateTimePickerStart.Location = new System.Drawing.Point(336, 27);
-            this.dateTimePickerStart.Name = "dateTimePickerStart";
-            this.dateTimePickerStart.Size = new System.Drawing.Size(164, 20);
-            this.dateTimePickerStart.TabIndex = 102;
+            this.labelStartTime.AllowDrop = true;
+            this.labelStartTime.AutoSize = true;
+            this.labelStartTime.Font = new System.Drawing.Font("Nirmala UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelStartTime.ForeColor = System.Drawing.Color.Teal;
+            this.labelStartTime.Location = new System.Drawing.Point(345, 27);
+            this.labelStartTime.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelStartTime.Name = "labelStartTime";
+            this.labelStartTime.Size = new System.Drawing.Size(88, 25);
+            this.labelStartTime.TabIndex = 118;
+            this.labelStartTime.Text = "20:20:00";
             // 
-            // dateTimePickerEnd
+            // labelEndTime
             // 
-            this.dateTimePickerEnd.Location = new System.Drawing.Point(336, 67);
-            this.dateTimePickerEnd.Name = "dateTimePickerEnd";
-            this.dateTimePickerEnd.Size = new System.Drawing.Size(164, 20);
-            this.dateTimePickerEnd.TabIndex = 103;
+            this.labelEndTime.AllowDrop = true;
+            this.labelEndTime.AutoSize = true;
+            this.labelEndTime.Font = new System.Drawing.Font("Nirmala UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelEndTime.ForeColor = System.Drawing.Color.Teal;
+            this.labelEndTime.Location = new System.Drawing.Point(348, 65);
+            this.labelEndTime.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelEndTime.Name = "labelEndTime";
+            this.labelEndTime.Size = new System.Drawing.Size(88, 25);
+            this.labelEndTime.TabIndex = 119;
+            this.labelEndTime.Text = "20:20:00";
             // 
             // ShiftManagement
             // 
             this.AllowDrop = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.dateTimePickerEnd);
-            this.Controls.Add(this.dateTimePickerStart);
+            this.Controls.Add(this.labelEndTime);
+            this.Controls.Add(this.labelStartTime);
             this.Controls.Add(this.buttonDeleteShift);
             this.Controls.Add(this.buttonUpdateShift);
             this.Controls.Add(this.buttonNewShift);
@@ -292,7 +318,7 @@
         private System.Windows.Forms.Button buttonUpdateShift;
         private System.Windows.Forms.Button buttonNewShift;
         private System.Windows.Forms.Button buttonChangeStatus;
-        private System.Windows.Forms.DateTimePicker dateTimePickerStart;
-        private System.Windows.Forms.DateTimePicker dateTimePickerEnd;
+        public System.Windows.Forms.Label labelStartTime;
+        public System.Windows.Forms.Label labelEndTime;
     }
 }

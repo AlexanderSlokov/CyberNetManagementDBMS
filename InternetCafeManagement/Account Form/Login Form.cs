@@ -122,11 +122,16 @@ namespace InternetCafeManagement.Account_Form
                     {
                         userUsage.InsertUsage(loginComputer.Id, CurrentUser.Id, CurrentUser.LoginTime);
                     }
-                    CurrentUser.Role = "user";
+                    CurrentUser.Role = "manager";
 
                     UserMainForm userMainForm = new UserMainForm();
                     userMainForm.Show(this);
                     this.Hide();
+
+                    //CurrentUser.Role = "manager";
+                    //formMain dashBoard = new formMain();
+                    //dashBoard.Show(this);
+                    //this.Hide();
                 }
                 else
                 {
