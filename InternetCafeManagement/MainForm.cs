@@ -48,5 +48,11 @@ namespace InternetCafeManagement
             EmployeeManagementForm employeeManagementForm = new EmployeeManagementForm();
             employeeManagementForm.Show(this);
         }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            ShiftManagement shiftManagement = new ShiftManagement();
+            shiftManagement.Show();
+        }
     }
 }
