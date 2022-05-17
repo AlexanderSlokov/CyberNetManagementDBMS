@@ -438,7 +438,16 @@ namespace InternetCafeManagement.Database
                     employee.Gender = reader["gender"].ToString();
                     employee.PhoneNum = reader["phoneNum"].ToString();
                     employee.Email = reader["email"].ToString();
-                    employee.Image = Image.FromStream((MemoryStream)reader["image"]);
+                    try
+                    {
+                        MemoryStream stream = new MemoryStream((byte[])reader["image"]);
+                        Image RetImage = Image.FromStream(stream);
+                        employee.Image = RetImage;
+                    }
+                    catch (Exception ex)
+                    {
+                        employee.Image = null;
+                    }
                     employee.Salary_per_hour = float.Parse(reader["salary_per_hour"].ToString());
                     employee.Username = reader["username"].ToString();
                     employee.Password = reader["password"].ToString();
@@ -447,6 +456,98 @@ namespace InternetCafeManagement.Database
                 reader.Close();
                 connection.closeConnection();
                 return employeeList;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return null;
+            }
+        }
+        public List<Employee> GetEmployeesList()
+        {
+            List<Employee> employeeList = new List<Employee>();
+            try
+            {
+                SqlCommand command = new SqlCommand("pr_GetEmployeesList", connection.getConnection);
+                command.Parameters.Add("@position", SqlDbType.NVarChar).Value = "employee";
+                command.CommandType = CommandType.StoredProcedure;
+                connection.openConnection();
+                SqlDataReader reader = command.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    Employee employee = new Employee();
+                    employee.Id = Int32.Parse(reader["id"].ToString());
+                    employee.Name = reader["name"].ToString();
+                    employee.Position = reader["position"].ToString();
+                    employee.BirthDate = DateTime.Parse(reader["birthDate"].ToString());
+                    employee.Gender = reader["gender"].ToString();
+                    employee.PhoneNum = reader["phoneNum"].ToString();
+                    employee.Email = reader["email"].ToString();
+                    try
+                    {
+                        MemoryStream stream = new MemoryStream((byte[])reader["image"]);
+                        Image RetImage = Image.FromStream(stream);
+                        employee.Image = RetImage;
+                    }
+                    catch (Exception ex)
+                    {
+                        employee.Image = null;
+                    }
+                    employee.Salary_per_hour = float.Parse(reader["salary_per_hour"].ToString());
+                    employee.Username = reader["username"].ToString();
+                    employee.Password = reader["password"].ToString();
+                    employeeList.Add(employee);
+                }
+                reader.Close();
+                connection.closeConnection();
+                return employeeList;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return null;
+            }
+        }
+        public Stack<Employee> GetEmployeesStack()
+        {
+            Stack<Employee> employeesStack = new Stack<Employee>();
+            try
+            {
+                SqlCommand command = new SqlCommand("pr_GetEmployeesList", connection.getConnection);
+                command.Parameters.Add("@position", SqlDbType.NVarChar).Value = "employee";
+                command.CommandType = CommandType.StoredProcedure;
+                connection.openConnection();
+                SqlDataReader reader = command.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    Employee employee = new Employee();
+                    employee.Id = Int32.Parse(reader["id"].ToString());
+                    employee.Name = reader["name"].ToString();
+                    employee.Position = reader["position"].ToString();
+                    employee.BirthDate = DateTime.Parse(reader["birthDate"].ToString());
+                    employee.Gender = reader["gender"].ToString();
+                    employee.PhoneNum = reader["phoneNum"].ToString();
+                    employee.Email = reader["email"].ToString();
+                    try
+                    {
+                        MemoryStream stream = new MemoryStream((byte[])reader["image"]);
+                        Image RetImage = Image.FromStream(stream);
+                        employee.Image = RetImage;
+                    }
+                    catch (Exception ex)
+                    {
+                        employee.Image = null;
+                    }
+                    employee.Salary_per_hour = float.Parse(reader["salary_per_hour"].ToString());
+                    employee.Username = reader["username"].ToString();
+                    employee.Password = reader["password"].ToString();
+                    employeesStack.Push(employee);
+                }
+                reader.Close();
+                connection.closeConnection();
+                return employeesStack;
             }
             catch (Exception ex)
             {

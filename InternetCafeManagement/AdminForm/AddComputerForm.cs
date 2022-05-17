@@ -40,7 +40,7 @@ namespace InternetCafeManagement.AdminForm
             int room_id = current_room_id;
             for (int i = 0; i < num; i++)
             {
-                computerDB.AddNewComputer(room_id, info, Status.available, 0);
+                computerDB.AddNewComputer(room_id, info, Status.available, 5000);
             }
         }
         private void buttonAdd_Click(object sender, EventArgs e)

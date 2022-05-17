@@ -77,8 +77,9 @@
             this.dataGridViewEmployee.Name = "dataGridViewEmployee";
             this.dataGridViewEmployee.RowHeadersWidth = 51;
             this.dataGridViewEmployee.RowTemplate.Height = 80;
-            this.dataGridViewEmployee.Size = new System.Drawing.Size(658, 585);
+            this.dataGridViewEmployee.Size = new System.Drawing.Size(889, 585);
             this.dataGridViewEmployee.TabIndex = 0;
+            this.dataGridViewEmployee.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewEmployee_CellContentClick);
             this.dataGridViewEmployee.Click += new System.EventHandler(this.dataGridViewEmployee_Click);
             // 
             // label2
@@ -527,7 +528,7 @@
             this.Controls.Add(this.label2);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "EmployeeManagementForm";
-            this.Size = new System.Drawing.Size(1245, 707);
+            this.Size = new System.Drawing.Size(1501, 707);
             this.Load += new System.EventHandler(this.EmployeeManagementForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEmployee)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxEMPLOYEE)).EndInit();

@@ -1,0 +1,3 @@
+CREATE PROCEDURE pr_DeleteAllSchedules
+AS
+DELETE FROM schedule

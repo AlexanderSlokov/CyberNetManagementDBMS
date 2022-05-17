@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ComputerRoomManagerForm));
             this.comboBoxComputerRoomId = new System.Windows.Forms.ComboBox();
             this.textBoxComputerRoomID = new System.Windows.Forms.Label();
             this.buttonAddRoom = new System.Windows.Forms.Button();
@@ -113,7 +114,7 @@
             // 
             this.buttonReload.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.buttonReload.BackColor = System.Drawing.Color.Gainsboro;
-            this.buttonReload.BackgroundImage = global::InternetCafeManagement.Properties.Resources.reload;
+            this.buttonReload.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonReload.BackgroundImage")));
             this.buttonReload.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.buttonReload.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonReload.FlatAppearance.BorderSize = 0;

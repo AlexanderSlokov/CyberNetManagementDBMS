@@ -1,4 +1,6 @@
 ﻿using InternetCafeManagement.Database;
+using InternetCafeManagement.Model;
+using InternetCafeManagement.Utility;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -264,6 +266,11 @@ namespace InternetCafeManagement.AdminForm
             }
         }
 
+        private void buttonClearSchedules_Click(object sender, EventArgs e)
+        {
+            shiftDB.DeleteAllShifts();
+            LoadData();
+        }
 
         private void buttonUpdate_Click(object sender, EventArgs e)
         {
@@ -276,6 +283,96 @@ namespace InternetCafeManagement.AdminForm
 
         private void buttonAutoAssign_Click(object sender, EventArgs e)
         {
+            Stack<Employee> employeeList = employeeDB.GetEmployeesStack();
+            Stack<Employee> employeeCloneList = employeeDB.GetEmployeesStack();
+            List<int>  roomIdList = computerRoomDB.GetRoomIDList();
+            string weekDate = "Monday";
+            string shift_type = "Morning Shift";
+            string endTime = String.Empty, startTime = String.Empty;
+
+            foreach (int roomID in roomIdList)
+            {
+
+                for (int i = 1; i <= 7; i++)
+                {
+                    switch (i)
+                    {
+                        case 1:
+                            weekDate = WeekDate.Monday;
+                            break;
+                        case 2:
+                            weekDate = WeekDate.Tuesday;
+                            break;
+                        case 3:
+                            weekDate = WeekDate.Wednesday;
+                            break;
+                        case 4:
+                            weekDate = WeekDate.Thursday;
+                            break;
+                        case 5:
+                            weekDate = WeekDate.Friday;
+                            break;
+                        case 6:
+                            weekDate = WeekDate.Saturday;
+                            break;
+                        case 7:
+                            weekDate = WeekDate.Sunday;
+                            break;
+                    }
+                    for (int j = 1; j <= 3; j++)
+                    {
+                        switch (j)
+                        {
+                            case 1:
+                                shift_type = "Morning Shift";
+                                break;
+                            case 2:
+                                shift_type = "Noon Shift";
+                                break;
+                            case 3:
+                                shift_type = "Afternoon Shift";
+                                break;
+                            case 4:
+                                shift_type = "Night Shift";
+                                break;
+                        }
+                        if (shift_type == "Morning Shift")
+                        {
+                            startTime = "6:00:00";
+                            endTime = "12:00:00";
+                        }
+                        else if (shift_type == "Noon Shift")
+                        {
+                            startTime = "12:00:00";
+                            endTime = "18:00:00";
+                        }
+                        else if (shift_type == "Afternoon Shift")
+                        {
+                            startTime = "18:00:00";
+                            endTime = "23:00:00";
+                        }
+                        else
+                        {
+                            startTime = "23:00:00";
+                            endTime = "3:00:00";
+                        }
+                        Employee employee;
+                        if (employeeCloneList.Count <= 0)
+                        {
+                            employeeCloneList = employeeDB.GetEmployeesStack();
+                        }
+                        employee = employeeCloneList.Pop();
+
+                        if (shiftDB.isShiftExists(employee.Id, roomID, TimeSpan.Parse(startTime), TimeSpan.Parse(endTime), weekDate) == false)
+                        {
+                            shiftDB.InsertShift(employee.Id, roomID, TimeSpan.Parse(startTime), TimeSpan.Parse(endTime), weekDate, shift_type);
+                        }
+                    }
+
+                }
+            }
+            LoadData();
+
 
         }
         

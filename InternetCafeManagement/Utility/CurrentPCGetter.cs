@@ -18,6 +18,10 @@ namespace InternetCafeManagement.Utility
         private CurrentPCGetter()
         {
         }
+        public void StopPC()
+        {
+            computer = null;
+        }
         public static CurrentPCGetter GetCurrentPCGetter()
         {
             if( _instance == null)

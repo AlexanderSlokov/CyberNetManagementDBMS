@@ -28,18 +28,21 @@ namespace InternetCafeManagement.AdminForm
         string inTable;
         private void EmployeeManagementForm_Load(object sender, EventArgs e)
         {
+            pictureBoxEMPLOYEE.SizeMode = PictureBoxSizeMode.StretchImage;
             Init();
             FillGrid();
         }
         void Init()
         {
+            pictureBoxEMPLOYEE.SizeMode = PictureBoxSizeMode.StretchImage;
             dateTimePicker.Value = new DateTime(1999, 1, 1);
             dataGridViewEmployee.DataSource = employeeDB.GetEmployeesDataTable();
             inTable = "Employee";
         }
         void FillGrid()
         {
-            if(inTable == "Employee")
+            pictureBoxEMPLOYEE.SizeMode = PictureBoxSizeMode.StretchImage;
+            if (inTable == "Employee")
             {
                 dataGridViewEmployee.DataSource = employeeDB.GetEmployeesDataTable();
             }
@@ -320,6 +323,11 @@ namespace InternetCafeManagement.AdminForm
         private void dataGridViewEmployee_Click(object sender, EventArgs e)
         {
             GetDataFromGridView();
+        }
+
+        private void dataGridViewEmployee_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

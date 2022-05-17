@@ -31,11 +31,10 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserMainForm));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.buttonRecharge = new System.Windows.Forms.Button();
             this.buttonLogOut = new System.Windows.Forms.Button();
             this.buttonProfile = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.buttonViewOrders = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.buttonService = new System.Windows.Forms.Button();
             this.buttonDashBoard = new System.Windows.Forms.Button();
             this.panelContainer = new System.Windows.Forms.Panel();
             this.timerUsingTime = new System.Windows.Forms.Timer(this.components);
@@ -46,17 +45,34 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
+            this.panel1.Controls.Add(this.buttonRecharge);
             this.panel1.Controls.Add(this.buttonLogOut);
             this.panel1.Controls.Add(this.buttonProfile);
-            this.panel1.Controls.Add(this.button1);
-            this.panel1.Controls.Add(this.buttonViewOrders);
-            this.panel1.Controls.Add(this.button3);
+            this.panel1.Controls.Add(this.buttonService);
             this.panel1.Controls.Add(this.buttonDashBoard);
             this.panel1.Location = new System.Drawing.Point(1, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(167, 509);
+            this.panel1.Size = new System.Drawing.Size(167, 661);
             this.panel1.TabIndex = 0;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // buttonRecharge
+            // 
+            this.buttonRecharge.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
+            this.buttonRecharge.FlatAppearance.BorderSize = 0;
+            this.buttonRecharge.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonRecharge.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonRecharge.ForeColor = System.Drawing.Color.White;
+            this.buttonRecharge.Image = global::InternetCafeManagement.Properties.Resources.dollar;
+            this.buttonRecharge.Location = new System.Drawing.Point(4, 255);
+            this.buttonRecharge.Name = "buttonRecharge";
+            this.buttonRecharge.Size = new System.Drawing.Size(163, 79);
+            this.buttonRecharge.TabIndex = 119;
+            this.buttonRecharge.Text = "Recharge";
+            this.buttonRecharge.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.buttonRecharge.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.buttonRecharge.UseVisualStyleBackColor = false;
+            this.buttonRecharge.Click += new System.EventHandler(this.button1_Click);
             // 
             // buttonLogOut
             // 
@@ -66,7 +82,7 @@
             this.buttonLogOut.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonLogOut.ForeColor = System.Drawing.Color.White;
             this.buttonLogOut.Image = global::InternetCafeManagement.Properties.Resources.logout;
-            this.buttonLogOut.Location = new System.Drawing.Point(0, 425);
+            this.buttonLogOut.Location = new System.Drawing.Point(1, 579);
             this.buttonLogOut.Name = "buttonLogOut";
             this.buttonLogOut.Size = new System.Drawing.Size(163, 79);
             this.buttonLogOut.TabIndex = 115;
@@ -94,57 +110,23 @@
             this.buttonProfile.UseVisualStyleBackColor = false;
             this.buttonProfile.Click += new System.EventHandler(this.buttonProfile_Click);
             // 
-            // button1
+            // buttonService
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.Location = new System.Drawing.Point(0, 170);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(163, 79);
-            this.button1.TabIndex = 117;
-            this.button1.Text = "Sellers";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // buttonViewOrders
-            // 
-            this.buttonViewOrders.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
-            this.buttonViewOrders.FlatAppearance.BorderSize = 0;
-            this.buttonViewOrders.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonViewOrders.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonViewOrders.ForeColor = System.Drawing.Color.White;
-            this.buttonViewOrders.Image = ((System.Drawing.Image)(resources.GetObject("buttonViewOrders.Image")));
-            this.buttonViewOrders.Location = new System.Drawing.Point(1, 255);
-            this.buttonViewOrders.Name = "buttonViewOrders";
-            this.buttonViewOrders.Size = new System.Drawing.Size(163, 79);
-            this.buttonViewOrders.TabIndex = 113;
-            this.buttonViewOrders.Text = "Tasks";
-            this.buttonViewOrders.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.buttonViewOrders.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.buttonViewOrders.UseVisualStyleBackColor = false;
-            // 
-            // button3
-            // 
-            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
-            this.button3.Location = new System.Drawing.Point(0, 340);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(163, 79);
-            this.button3.TabIndex = 114;
-            this.button3.Text = "Calender";
-            this.button3.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.button3.UseVisualStyleBackColor = false;
+            this.buttonService.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
+            this.buttonService.FlatAppearance.BorderSize = 0;
+            this.buttonService.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonService.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonService.ForeColor = System.Drawing.Color.White;
+            this.buttonService.Image = global::InternetCafeManagement.Properties.Resources.food_icon;
+            this.buttonService.Location = new System.Drawing.Point(0, 170);
+            this.buttonService.Name = "buttonService";
+            this.buttonService.Size = new System.Drawing.Size(163, 79);
+            this.buttonService.TabIndex = 113;
+            this.buttonService.Text = "Service";
+            this.buttonService.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.buttonService.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.buttonService.UseVisualStyleBackColor = false;
+            this.buttonService.Click += new System.EventHandler(this.buttonService_Click);
             // 
             // buttonDashBoard
             // 
@@ -168,7 +150,7 @@
             // 
             this.panelContainer.Location = new System.Drawing.Point(164, 0);
             this.panelContainer.Name = "panelContainer";
-            this.panelContainer.Size = new System.Drawing.Size(866, 509);
+            this.panelContainer.Size = new System.Drawing.Size(1074, 661);
             this.panelContainer.TabIndex = 1;
             // 
             // timerUsingTime
@@ -185,7 +167,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1030, 510);
+            this.ClientSize = new System.Drawing.Size(1241, 659);
             this.Controls.Add(this.panelContainer);
             this.Controls.Add(this.panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -202,13 +184,12 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button buttonProfile;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button buttonDashBoard;
         private System.Windows.Forms.Panel panelContainer;
-        private System.Windows.Forms.Button buttonViewOrders;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button buttonService;
         private System.Windows.Forms.Button buttonLogOut;
         private System.Windows.Forms.Timer timerUsingTime;
         private System.Windows.Forms.Timer timerHour;
+        private System.Windows.Forms.Button buttonRecharge;
     }
 }

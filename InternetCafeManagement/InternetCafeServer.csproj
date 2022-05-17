@@ -136,6 +136,18 @@
     <Compile Include="AdminForm\Manage EmployeeForm.Designer.cs">
       <DependentUpon>Manage EmployeeForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="AdminForm\Dashboard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AdminForm\Dashboard.Designer.cs">
+      <DependentUpon>Dashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminForm\Service.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AdminForm\Service.Designer.cs">
+      <DependentUpon>Service.cs</DependentUpon>
+    </Compile>
     <Compile Include="AdminForm\ShiftManagement.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -145,13 +157,33 @@
     <Compile Include="Database\AccountDB.cs" />
     <Compile Include="Database\ComputerDB.cs" />
     <Compile Include="Database\ComputerRoomDB.cs" />
+    <Compile Include="Database\OrderDB.cs" />
+    <Compile Include="Database\RechargeDB.cs" />
     <Compile Include="Database\ShiftDB.cs" />
     <Compile Include="Database\UserUsingComputerDB.cs" />
+    <Compile Include="Employee Form\EmployeeDashboard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Employee Form\EmployeeDashboard.Designer.cs">
+      <DependentUpon>EmployeeDashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Employee Form\EmployeeMainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Employee Form\EmployeeMainForm.Designer.cs">
+      <DependentUpon>EmployeeMainForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Employee Form\Employees Timekeeping Form.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Employee Form\Employees Timekeeping Form.Designer.cs">
       <DependentUpon>Employees Timekeeping Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Employee Form\ServiceManagement.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Employee Form\ServiceManagement.Designer.cs">
+      <DependentUpon>ServiceManagement.cs</DependentUpon>
     </Compile>
     <Compile Include="Model\Computer.cs" />
     <Compile Include="Model\Employee.cs" />
@@ -160,6 +192,12 @@
     </Compile>
     <Compile Include="User Form\Profile.Designer.cs">
       <DependentUpon>Profile.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User Form\Recharge.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="User Form\Recharge.Designer.cs">
+      <DependentUpon>Recharge.cs</DependentUpon>
     </Compile>
     <Compile Include="User Form\UserDashBoard.cs">
       <SubType>UserControl</SubType>
@@ -173,13 +211,18 @@
     <Compile Include="User Form\UserMainForm.Designer.cs">
       <DependentUpon>UserMainForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="User Form\UserService.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User Form\UserService.Designer.cs">
+      <DependentUpon>UserService.cs</DependentUpon>
+    </Compile>
     <Compile Include="Utility\CurrentPCGetter.cs" />
     <Compile Include="Utility\CurrentUser.cs" />
     <Compile Include="Utility\DataValidate.cs" />
     <Compile Include="Database\DBConnection.cs" />
     <Compile Include="Database\EmployeeDB.cs" />
     <Compile Include="Database\ServiceDB.cs" />
-    <Compile Include="Database\TaskDB.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utility\MacAddressGetter.cs" />
@@ -224,11 +267,26 @@
     <EmbeddedResource Include="AdminForm\Manage EmployeeForm.resx">
       <DependentUpon>Manage EmployeeForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AdminForm\Dashboard.resx">
+      <DependentUpon>Dashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminForm\Service.resx">
+      <DependentUpon>Service.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AdminForm\ShiftManagement.resx">
       <DependentUpon>ShiftManagement.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Employee Form\EmployeeDashboard.resx">
+      <DependentUpon>EmployeeDashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Employee Form\EmployeeMainForm.resx">
+      <DependentUpon>EmployeeMainForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Employee Form\Employees Timekeeping Form.resx">
       <DependentUpon>Employees Timekeeping Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Employee Form\ServiceManagement.resx">
+      <DependentUpon>ServiceManagement.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -243,11 +301,17 @@
     <EmbeddedResource Include="User Form\Profile.resx">
       <DependentUpon>Profile.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="User Form\Recharge.resx">
+      <DependentUpon>Recharge.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="User Form\UserDashBoard.resx">
       <DependentUpon>UserDashBoard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="User Form\UserMainForm.resx">
       <DependentUpon>UserMainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User Form\UserService.resx">
+      <DependentUpon>UserService.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -287,11 +351,28 @@
     <None Include="Resources\gear.png" />
     <None Include="Resources\logout.png" />
     <None Include="Resources\computer.png" />
-    <Content Include="Procedures\pr_DeleteSchedule.sql" />
-    <Content Include="Procedures\pr_InsertSchedule.sql" />
-    <Content Include="Procedures\pr_isScheduleExsists.sql" />
-    <Content Include="Procedures\pr_SelectAllSchedules.sql" />
-    <Content Include="Procedures\pr_UpdateSchedule.sql" />
+    <Content Include="Procedures\order\pr_DeleteOrder.sql" />
+    <Content Include="Procedures\order\pr_InsertOrder.sql" />
+    <Content Include="Procedures\order\pr_isOrderExsists.sql" />
+    <Content Include="Procedures\order\pr_SelectAllOrders.sql" />
+    <Content Include="Procedures\order\pr_SelectAllOrdersOfUser.sql" />
+    <Content Include="Procedures\recharge\pr_DeleteRecharge.sql" />
+    <Content Include="Procedures\recharge\pr_GetAllRechargeRequests.sql" />
+    <Content Include="Procedures\recharge\pr_InsertRecharge.sql" />
+    <Content Include="Procedures\recharge\pr_RechargeForUser.sql" />
+    <Content Include="Procedures\schedule\pr_DeleteAllSchedules.sql" />
+    <Content Include="Procedures\schedule\pr_DeleteSchedule.sql" />
+    <Content Include="Procedures\schedule\pr_GetScheduleOfAllEmployees.sql" />
+    <Content Include="Procedures\schedule\pr_InsertSchedule.sql" />
+    <Content Include="Procedures\schedule\pr_isScheduleExsists.sql" />
+    <Content Include="Procedures\schedule\pr_SelectAllSchedules.sql" />
+    <Content Include="Procedures\schedule\pr_UpdateSchedule.sql" />
+    <None Include="Resources\dollar.png" />
+    <None Include="Resources\food_icon.png" />
+    <Content Include="Procedures\service\pr_DeleteService.sql" />
+    <Content Include="Procedures\service\pr_InsertService.sql" />
+    <Content Include="Procedures\service\pr_isServiceExsists.sql" />
+    <Content Include="Procedures\service\pr_SelectAllServices.sql" />
     <Content Include="Resources\reload.png" />
     <None Include="Resources\user.ico" />
     <Content Include="SQL Scripts\account.sql" />
@@ -301,7 +382,8 @@
     <Content Include="SQL Scripts\Employee Permission.sql" />
     <Content Include="SQL Scripts\employee.sql" />
     <Content Include="SQL Scripts\Manager Permission.sql" />
-    <Content Include="SQL Scripts\order.sql" />
+    <Content Include="SQL Scripts\order_list.sql" />
+    <Content Include="SQL Scripts\recharge.sql" />
     <Content Include="SQL Scripts\schedule.sql" />
     <Content Include="SQL Scripts\service.sql" />
     <Content Include="SQL Scripts\User Permission.sql" />
@@ -310,7 +392,6 @@
     <Content Include="Triggers\tr_computer_ForInsert.sql" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Procedure\" />
     <Folder Include="Testing Form\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

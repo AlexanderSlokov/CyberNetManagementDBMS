@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ShiftManagement));
             this.labeLQ = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -45,6 +46,7 @@
             this.comboBoxEmployee = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.comboBoxRoom = new System.Windows.Forms.ComboBox();
+            this.buttonClearSchedules = new System.Windows.Forms.Button();
             this.buttonReload = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewShift)).BeginInit();
             this.SuspendLayout();
@@ -104,7 +106,7 @@
             // dataGridViewShift
             // 
             this.dataGridViewShift.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewShift.Location = new System.Drawing.Point(522, 12);
+            this.dataGridViewShift.Location = new System.Drawing.Point(522, 18);
             this.dataGridViewShift.Name = "dataGridViewShift";
             this.dataGridViewShift.Size = new System.Drawing.Size(817, 448);
             this.dataGridViewShift.TabIndex = 22;
@@ -118,7 +120,7 @@
             this.buttonDeleteShift.FlatAppearance.BorderSize = 0;
             this.buttonDeleteShift.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonDeleteShift.ForeColor = System.Drawing.Color.White;
-            this.buttonDeleteShift.Location = new System.Drawing.Point(309, 382);
+            this.buttonDeleteShift.Location = new System.Drawing.Point(308, 382);
             this.buttonDeleteShift.Name = "buttonDeleteShift";
             this.buttonDeleteShift.Size = new System.Drawing.Size(183, 38);
             this.buttonDeleteShift.TabIndex = 101;
@@ -287,18 +289,34 @@
             this.comboBoxRoom.Size = new System.Drawing.Size(121, 21);
             this.comboBoxRoom.TabIndex = 137;
             // 
+            // buttonClearSchedules
+            // 
+            this.buttonClearSchedules.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.buttonClearSchedules.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonClearSchedules.FlatAppearance.BorderSize = 0;
+            this.buttonClearSchedules.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonClearSchedules.ForeColor = System.Drawing.Color.White;
+            this.buttonClearSchedules.Location = new System.Drawing.Point(162, 426);
+            this.buttonClearSchedules.Name = "buttonClearSchedules";
+            this.buttonClearSchedules.Size = new System.Drawing.Size(183, 38);
+            this.buttonClearSchedules.TabIndex = 140;
+            this.buttonClearSchedules.Text = "CLEAR ALL SCHEDULES";
+            this.buttonClearSchedules.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.buttonClearSchedules.UseVisualStyleBackColor = false;
+            this.buttonClearSchedules.Click += new System.EventHandler(this.buttonClearSchedules_Click);
+            // 
             // buttonReload
             // 
             this.buttonReload.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.buttonReload.BackColor = System.Drawing.Color.Gainsboro;
-            this.buttonReload.BackgroundImage = global::InternetCafeManagement.Properties.Resources.reload;
+            this.buttonReload.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonReload.BackgroundImage")));
             this.buttonReload.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.buttonReload.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonReload.FlatAppearance.BorderSize = 0;
             this.buttonReload.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonReload.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonReload.ForeColor = System.Drawing.Color.RosyBrown;
-            this.buttonReload.Location = new System.Drawing.Point(484, 12);
+            this.buttonReload.Location = new System.Drawing.Point(484, 14);
             this.buttonReload.Margin = new System.Windows.Forms.Padding(4);
             this.buttonReload.Name = "buttonReload";
             this.buttonReload.Size = new System.Drawing.Size(31, 23);
@@ -311,6 +329,7 @@
             this.AllowDrop = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.buttonClearSchedules);
             this.Controls.Add(this.buttonReload);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.comboBoxRoom);
@@ -357,5 +376,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox comboBoxRoom;
         private System.Windows.Forms.Button buttonReload;
+        private System.Windows.Forms.Button buttonClearSchedules;
     }
 }

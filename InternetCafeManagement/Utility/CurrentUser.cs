@@ -27,5 +27,15 @@ namespace InternetCafeManagement.Utility
         public static string LoginRequest { get => loginRequest; set => loginRequest = value; }
         public static string Name { get => name; set => name = value; }
         public static float Balance { get => balance; set => balance = value; }
+        public static void destroyUser()
+        {
+            Id = 0;
+            Role = null;
+            Balance = 0;
+            LoginRequest = null;
+            LoginTime = DateTime.MinValue;
+            isLoggedIn = false;
+            loginRequest = null;
+        }
     }
 }

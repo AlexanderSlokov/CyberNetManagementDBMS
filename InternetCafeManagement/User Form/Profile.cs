@@ -22,6 +22,7 @@ namespace InternetCafeManagement.User_Form
 
         string username, gender, fullname, email, phone;
         AccountDB account = new AccountDB();
+        OrderDB orderDB = new OrderDB();
         private void formProfile_Load(object sender, EventArgs e)
         {
             loadData();
@@ -46,6 +47,20 @@ namespace InternetCafeManagement.User_Form
             textBoxEmail.Text = email;
             textBoxPhone.Text = phone;
             comboBoxGender.Text = gender;
+
+            dataGridViewOrderList.DataSource = orderDB.GetDataTableAllOrdersOfUser(CurrentUser.Id);
+
+            dataGridViewOrderList.RowTemplate.Height = 50;
+            dataGridViewOrderList.RowHeadersVisible = false;
+            dataGridViewOrderList.AllowUserToAddRows = false;
+
+            //dataGridViewOrderList.Columns["service_id"].Width = 50;
+            //dataGridViewOrderList.Columns[0].HeaderText = "Service ID";
+            //dataGridViewOrderList.Columns[1].Width = 100;
+            //dataGridViewOrderList.Columns[1].HeaderText = "Name";
+            //dataGridViewOrderList.Columns[2].Width = 70;
+            //dataGridViewOrderList.Columns[2].HeaderText = "Position";
+            //dataGridViewOrderList.Columns[3].Width = 70;
         }
         private void buttonUpdate_Click(object sender, EventArgs e)
         {

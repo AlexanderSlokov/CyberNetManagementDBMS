@@ -7,6 +7,7 @@ using InternetCafeManagement.Utility;
 using InternetCafeManagement.Model;
 using InternetCafeManagement.User_Form;
 using InternetCafeManagement.AdminForm;
+using InternetCafeManagement.Employee_Form;
 
 namespace InternetCafeManagement.Account_Form
 {
@@ -127,16 +128,16 @@ namespace InternetCafeManagement.Account_Form
                     {
                         userUsage.InsertUsage(loginComputer.Id, CurrentUser.Id, CurrentUser.LoginTime);
                     }
-                    //CurrentUser.Role = "user";
+                    CurrentUser.Role = "user";
 
-                    //UserMainForm userMainForm = new UserMainForm();
-                    //userMainForm.Show(this);
-                    //this.Hide();
-
-                    CurrentUser.Role = "manager";
-                    AdminMainForm adminMainForm = new AdminMainForm();
-                    adminMainForm.Show(this);
+                    UserMainForm userMainForm = new UserMainForm();
+                    userMainForm.Show(this);
                     this.Hide();
+
+                    //CurrentUser.Role = "manager";
+                    //AdminMainForm adminMainForm = new AdminMainForm();
+                    //adminMainForm.Show(this);
+                    //this.Hide();
                 }
                 else
                 {
@@ -197,7 +198,7 @@ namespace InternetCafeManagement.Account_Form
 
                         }
 
-                        // Xe nguoi dung
+                        // Xet nguoi dung
                         this.DialogResult = DialogResult.OK;
                         MessageBox.Show("Login Success");
                         
@@ -214,8 +215,8 @@ namespace InternetCafeManagement.Account_Form
                             CurrentUser.Name = loginEmployee.Name;
                             CurrentUser.LoginTime = DateTime.Now;
                             CurrentUser.Role = "employee";
-                            AdminMainForm adminMainForm = new AdminMainForm();
-                            adminMainForm.Show(this);
+                            EmployeeMainForm employeeMainForm = new EmployeeMainForm();
+                            employeeMainForm.Show(this);
                             this.Hide();
                         }
                         else

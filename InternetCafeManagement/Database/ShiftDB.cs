@@ -201,5 +201,47 @@ namespace InternetCafeManagement.Database
                 return false;
             }
         }
+        public bool DeleteAllShifts()
+        {
+            try
+            {
+                SqlCommand command = new SqlCommand("pr_DeleteAllSchedules", connection.getConnection);
+
+                command.CommandType = CommandType.StoredProcedure;
+                connection.openConnection();
+                if ((command.ExecuteNonQuery() >= 1))
+                {
+                    connection.closeConnection();
+                    return true;
+                }
+                else
+                {
+                    connection.closeConnection();
+                    return false;
+                }
+            }
+            catch
+            {
+                return false;
+            }
+        }
+        public DataTable GetScheduleOfAllEmployees(string weekDate)
+        {
+            SqlCommand command = new SqlCommand("pr_GetScheduleOfAllEmployees", connection.getConnection);
+            command.Parameters.Add("@weekDate", SqlDbType.NVarChar).Value = weekDate;
+            command.CommandType = CommandType.StoredProcedure;
+
+            command.Connection = connection.getConnection;
+            connection.openConnection();
+            SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(command);
+            DataSet dataSet = new DataSet();
+            System.Data.DataTable dataTable = new System.Data.DataTable();
+            sqlDataAdapter.Fill(dataSet, "schedule");
+
+            dataTable = dataSet.Tables["schedule"];
+
+            connection.closeConnection();
+            return dataTable;
+        }
     }
 }

@@ -117,6 +117,9 @@ namespace InternetCafeManagement.User_Form
             timerUsingTime.Stop();
             timerHour.Stop();
 
+            CurrentUser.destroyUser();
+
+            pcGetter.StopPC();
             formLogin formLogin = new formLogin();
             formLogin.Show();
             this.Close();
@@ -204,11 +207,18 @@ namespace InternetCafeManagement.User_Form
 
         private void button1_Click(object sender, EventArgs e)
         {
-            ShiftManagement shiftManagement = new ShiftManagement();
-            shiftManagement.Dock = DockStyle.Fill;
-            panelContainer.Controls.Add(shiftManagement);
-            shiftManagement.Show();
-            shiftManagement.BringToFront();
+            Recharge recharge = new Recharge();
+            recharge.ShowDialog(this);
+        }
+
+        private void buttonService_Click(object sender, EventArgs e)
+        {
+            
+            UserService userService = new UserService();
+            userService.Dock = DockStyle.Fill;
+            panelContainer.Controls.Add(userService);
+            userService.Show();
+            userService.BringToFront();
         }
     }
 }

@@ -83,8 +83,16 @@ namespace InternetCafeManagement.AdminForm
             computerRoomManagerForm.Show(this);
             //LoadComputerRoomManage();
         }
+        private void buttonDashBoard_Click(object sender, EventArgs e)
+        {
+            Dashboard schedule = new Dashboard();
+            schedule.Dock = DockStyle.Fill;
+            panelContainer.Controls.Add(schedule);
+            schedule.Show();
+            schedule.BringToFront();
+        }
 
-        private void buttonShift_Click(object sender, EventArgs e)
+        private void buttonSchedule_Click_1(object sender, EventArgs e)
         {
             ShiftManagement shiftManagement = new ShiftManagement();
             shiftManagement.Dock = DockStyle.Fill;
@@ -93,9 +101,13 @@ namespace InternetCafeManagement.AdminForm
             shiftManagement.BringToFront();
         }
 
-        private void buttonSchedule_Click(object sender, EventArgs e)
+        private void buttonService_Click(object sender, EventArgs e)
         {
-
+            Service service = new Service();
+            service.Dock = DockStyle.Fill;
+            panelContainer.Controls.Add(service);
+            service.Show();
+            service.BringToFront();
         }
     }
 }

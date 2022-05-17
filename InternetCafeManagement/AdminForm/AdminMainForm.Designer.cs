@@ -32,11 +32,11 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminMainForm));
             this.panelContainer = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.buttonSchedule = new System.Windows.Forms.Button();
             this.buttonLogOut = new System.Windows.Forms.Button();
             this.buttonEmployeeManage = new System.Windows.Forms.Button();
             this.buttonComputerRoom = new System.Windows.Forms.Button();
-            this.buttonShift = new System.Windows.Forms.Button();
-            this.buttonSchedule = new System.Windows.Forms.Button();
+            this.buttonService = new System.Windows.Forms.Button();
             this.buttonDashBoard = new System.Windows.Forms.Button();
             this.timerUsingTime = new System.Windows.Forms.Timer(this.components);
             this.timerHour = new System.Windows.Forms.Timer(this.components);
@@ -54,16 +54,34 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
+            this.panel1.Controls.Add(this.buttonSchedule);
             this.panel1.Controls.Add(this.buttonLogOut);
             this.panel1.Controls.Add(this.buttonEmployeeManage);
             this.panel1.Controls.Add(this.buttonComputerRoom);
-            this.panel1.Controls.Add(this.buttonShift);
-            this.panel1.Controls.Add(this.buttonSchedule);
+            this.panel1.Controls.Add(this.buttonService);
             this.panel1.Controls.Add(this.buttonDashBoard);
             this.panel1.Location = new System.Drawing.Point(2, -1);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(167, 667);
             this.panel1.TabIndex = 2;
+            // 
+            // buttonSchedule
+            // 
+            this.buttonSchedule.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
+            this.buttonSchedule.FlatAppearance.BorderSize = 0;
+            this.buttonSchedule.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonSchedule.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonSchedule.ForeColor = System.Drawing.Color.White;
+            this.buttonSchedule.Image = ((System.Drawing.Image)(resources.GetObject("buttonSchedule.Image")));
+            this.buttonSchedule.Location = new System.Drawing.Point(0, 340);
+            this.buttonSchedule.Name = "buttonSchedule";
+            this.buttonSchedule.Size = new System.Drawing.Size(163, 79);
+            this.buttonSchedule.TabIndex = 119;
+            this.buttonSchedule.Text = "Schedule";
+            this.buttonSchedule.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.buttonSchedule.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.buttonSchedule.UseVisualStyleBackColor = false;
+            this.buttonSchedule.Click += new System.EventHandler(this.buttonSchedule_Click_1);
             // 
             // buttonLogOut
             // 
@@ -72,7 +90,7 @@
             this.buttonLogOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonLogOut.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonLogOut.ForeColor = System.Drawing.Color.White;
-            this.buttonLogOut.Image = global::InternetCafeManagement.Properties.Resources.logout;
+            this.buttonLogOut.Image = ((System.Drawing.Image)(resources.GetObject("buttonLogOut.Image")));
             this.buttonLogOut.Location = new System.Drawing.Point(0, 425);
             this.buttonLogOut.Name = "buttonLogOut";
             this.buttonLogOut.Size = new System.Drawing.Size(163, 79);
@@ -107,7 +125,7 @@
             this.buttonComputerRoom.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonComputerRoom.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonComputerRoom.ForeColor = System.Drawing.Color.White;
-            this.buttonComputerRoom.Image = global::InternetCafeManagement.Properties.Resources.computer;
+            this.buttonComputerRoom.Image = ((System.Drawing.Image)(resources.GetObject("buttonComputerRoom.Image")));
             this.buttonComputerRoom.Location = new System.Drawing.Point(0, 170);
             this.buttonComputerRoom.Name = "buttonComputerRoom";
             this.buttonComputerRoom.Size = new System.Drawing.Size(163, 79);
@@ -118,41 +136,23 @@
             this.buttonComputerRoom.UseVisualStyleBackColor = false;
             this.buttonComputerRoom.Click += new System.EventHandler(this.buttonComputerRoom_Click);
             // 
-            // buttonShift
+            // buttonService
             // 
-            this.buttonShift.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
-            this.buttonShift.FlatAppearance.BorderSize = 0;
-            this.buttonShift.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonShift.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonShift.ForeColor = System.Drawing.Color.White;
-            this.buttonShift.Image = ((System.Drawing.Image)(resources.GetObject("buttonShift.Image")));
-            this.buttonShift.Location = new System.Drawing.Point(1, 255);
-            this.buttonShift.Name = "buttonShift";
-            this.buttonShift.Size = new System.Drawing.Size(163, 79);
-            this.buttonShift.TabIndex = 113;
-            this.buttonShift.Text = "Manage Shift";
-            this.buttonShift.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.buttonShift.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.buttonShift.UseVisualStyleBackColor = false;
-            this.buttonShift.Click += new System.EventHandler(this.buttonShift_Click);
-            // 
-            // buttonSchedule
-            // 
-            this.buttonSchedule.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
-            this.buttonSchedule.FlatAppearance.BorderSize = 0;
-            this.buttonSchedule.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonSchedule.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonSchedule.ForeColor = System.Drawing.Color.White;
-            this.buttonSchedule.Image = ((System.Drawing.Image)(resources.GetObject("buttonSchedule.Image")));
-            this.buttonSchedule.Location = new System.Drawing.Point(0, 340);
-            this.buttonSchedule.Name = "buttonSchedule";
-            this.buttonSchedule.Size = new System.Drawing.Size(163, 79);
-            this.buttonSchedule.TabIndex = 114;
-            this.buttonSchedule.Text = "Schedule";
-            this.buttonSchedule.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.buttonSchedule.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.buttonSchedule.UseVisualStyleBackColor = false;
-            this.buttonSchedule.Click += new System.EventHandler(this.buttonSchedule_Click);
+            this.buttonService.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
+            this.buttonService.FlatAppearance.BorderSize = 0;
+            this.buttonService.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonService.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonService.ForeColor = System.Drawing.Color.White;
+            this.buttonService.Image = global::InternetCafeManagement.Properties.Resources.food_icon;
+            this.buttonService.Location = new System.Drawing.Point(0, 255);
+            this.buttonService.Name = "buttonService";
+            this.buttonService.Size = new System.Drawing.Size(163, 79);
+            this.buttonService.TabIndex = 114;
+            this.buttonService.Text = "Service";
+            this.buttonService.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.buttonService.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.buttonService.UseVisualStyleBackColor = false;
+            this.buttonService.Click += new System.EventHandler(this.buttonService_Click);
             // 
             // buttonDashBoard
             // 
@@ -170,6 +170,7 @@
             this.buttonDashBoard.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.buttonDashBoard.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.buttonDashBoard.UseVisualStyleBackColor = false;
+            this.buttonDashBoard.Click += new System.EventHandler(this.buttonDashBoard_Click);
             // 
             // timerUsingTime
             // 
@@ -201,10 +202,10 @@
         private System.Windows.Forms.Button buttonLogOut;
         private System.Windows.Forms.Button buttonEmployeeManage;
         private System.Windows.Forms.Button buttonComputerRoom;
-        private System.Windows.Forms.Button buttonShift;
-        private System.Windows.Forms.Button buttonSchedule;
+        private System.Windows.Forms.Button buttonService;
         private System.Windows.Forms.Button buttonDashBoard;
         private System.Windows.Forms.Timer timerUsingTime;
         private System.Windows.Forms.Timer timerHour;
+        private System.Windows.Forms.Button buttonSchedule;
     }
 }

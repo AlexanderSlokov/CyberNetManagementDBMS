@@ -86,8 +86,9 @@ namespace InternetCafeManagement.Database
         // Trả về một data table của quan hệ computer_room
         public DataTable GetAllRooms()
         {
-            SqlCommand command = new SqlCommand("SELECT * FROM computer_room", connection.getConnection);
+            SqlCommand command = new SqlCommand("pr_GetAllRooms", connection.getConnection);
             connection.openConnection();
+            command.CommandType = CommandType.StoredProcedure;
             SqlDataAdapter adapter = new SqlDataAdapter(command);
             DataTable table = new DataTable();
 
@@ -95,8 +96,23 @@ namespace InternetCafeManagement.Database
             connection.closeConnection();
             return table;
         }
-        // Hàm trả về số phòng trong db
 
+        // Hàm trả về số phòng trong db
+        public List<int> GetRoomIDList()
+        {
+            List<int> roomIDList = new List<int>();
+            SqlCommand command = new SqlCommand("pr_GetAllRooms", connection.getConnection);
+            command.CommandType = CommandType.StoredProcedure;
+            connection.openConnection();
+            SqlDataReader reader = command.ExecuteReader();
+            while (reader.Read())
+            {
+                int id = Int32.Parse(reader["id"].ToString());
+                roomIDList.Add(id);
+            }
+            connection.closeConnection();
+            return roomIDList;
+        }
         public int RoomCount()
         {
             SqlCommand command = new SqlCommand("SELECT count(*) FROM computer_room", connection.getConnection);
