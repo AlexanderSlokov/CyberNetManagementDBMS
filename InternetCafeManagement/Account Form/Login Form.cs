@@ -6,6 +6,7 @@ using InternetCafeManagement.Database;
 using InternetCafeManagement.Utility;
 using InternetCafeManagement.Model;
 using InternetCafeManagement.User_Form;
+using InternetCafeManagement.AdminForm;
 
 namespace InternetCafeManagement.Account_Form
 {
@@ -19,6 +20,10 @@ namespace InternetCafeManagement.Account_Form
         EmployeeDB employeeDB = new EmployeeDB();
         ComputerDB computerDB = new ComputerDB();
         ComputerRoomDB computerRoomDB = new ComputerRoomDB();
+        UserUsingComputerDB userUsage = new UserUsingComputerDB();
+
+        CurrentPCGetter pcGetter = CurrentPCGetter.GetCurrentPCGetter();
+        MacAddressGetter macAddressGetter = MacAddressGetter.getMacGetter();
         private void buttonClear_Click(object sender, EventArgs e)
         {
             textBoxUsername.Text = "";
@@ -52,7 +57,11 @@ namespace InternetCafeManagement.Account_Form
             string username = textBoxUsername.Text;
             string password = textBoxPassword.Text;
 
-            CurrentPCGetter pcGetter = CurrentPCGetter.GetCurrentPCGetter();
+
+            string macAddress = macAddressGetter.GetMacAddress();
+            Computer loginComputer = computerDB.GetComputerByMacAddress(macAddress);
+            pcGetter = CurrentPCGetter.GetCurrentPCGetter();
+
             if (radioButtonUser.Checked)
             {
                 CurrentUser.LoginRequest = "user";
@@ -62,14 +71,11 @@ namespace InternetCafeManagement.Account_Form
                     this.DialogResult = DialogResult.OK;
                     MessageBox.Show("Login Success");
 
-                    MacAddressGetter macAddressGetter =  MacAddressGetter.getMacGetter();
-                    string macAddress = macAddressGetter.GetMacAddress();
-                    Computer loginComputer = computerDB.GetComputerByMacAddress(macAddress);
                     
                     if(loginComputer == null)
                     {
                         CurrentUser.LoginRequest = "manager";
-                        pcGetter = CurrentPCGetter.GetCurrentPCGetter();
+                        
                         if (computerRoomDB.IsComputerRoomExistsByID(1) == true)
                         {
                             if(computerDB.isComputerExistsByMacAddress(macAddress) == false)
@@ -92,7 +98,7 @@ namespace InternetCafeManagement.Account_Form
                             {
                                 computerDB.AddNewComputer(1, "", Status.available, 5000, macAddress);
                             }
-
+                            loginComputer = new Computer();
                             loginComputer.Status = Status.available;
                             loginComputer.Fee_per_hour = 5000;
                             loginComputer.MacAddress = macAddress;
@@ -109,7 +115,7 @@ namespace InternetCafeManagement.Account_Form
                         pcGetter.SetCurrentComputer(loginComputer);
 
                     }
-                    
+                    //Set User va computer
                     CurrentUser.Id = accountDB.getUserID(username);
                     CurrentUser.LoginTime = DateTime.Now;
                     CurrentUser.Name = accountDB.getUserFullName();
@@ -117,21 +123,20 @@ namespace InternetCafeManagement.Account_Form
 
                     Computer currentComputer = pcGetter.GetCurrentComputer();
 
-                    UserUsingComputerDB userUsage = new UserUsingComputerDB();
                     if(userUsage.isLogin(currentComputer.Id, CurrentUser.Id) == false)
                     {
                         userUsage.InsertUsage(loginComputer.Id, CurrentUser.Id, CurrentUser.LoginTime);
                     }
-                    CurrentUser.Role = "manager";
+                    //CurrentUser.Role = "user";
 
-                    UserMainForm userMainForm = new UserMainForm();
-                    userMainForm.Show(this);
-                    this.Hide();
-
-                    //CurrentUser.Role = "manager";
-                    //formMain dashBoard = new formMain();
-                    //dashBoard.Show(this);
+                    //UserMainForm userMainForm = new UserMainForm();
+                    //userMainForm.Show(this);
                     //this.Hide();
+
+                    CurrentUser.Role = "manager";
+                    AdminMainForm adminMainForm = new AdminMainForm();
+                    adminMainForm.Show(this);
+                    this.Hide();
                 }
                 else
                 {
@@ -143,19 +148,74 @@ namespace InternetCafeManagement.Account_Form
                 if (radioButtonEmployee.Checked)
                 {
                     CurrentUser.LoginRequest = "manager";
+
+
                     if (employeeDB.login(username, password))
                     {
+                        //Set maytinh
+                        if (loginComputer == null)
+                        {
+                            // Them phong va may tinh bang dia chi mac
+                            CurrentUser.LoginRequest = "manager";
 
+                            if (computerRoomDB.IsComputerRoomExistsByID(1) == true)
+                            {
+                                if (computerDB.isComputerExistsByMacAddress(macAddress) == false)
+                                {
+                                    computerDB.AddNewComputer(1, "", Status.available, 5000, macAddress);
+                                }
+                                loginComputer = new Computer();
+                                loginComputer.Status = Status.available;
+                                loginComputer.Fee_per_hour = 5000;
+                                loginComputer.MacAddress = macAddress;
+                                loginComputer.Id = computerDB.GetComputerByMacAddress(macAddress).Id;
+
+                                pcGetter.SetCurrentComputer(loginComputer);
+                                CurrentUser.LoginRequest = "user";
+                            }
+                            else
+                            {
+                                computerRoomDB.AddNewComputerRoom(1, 1, 0, 30);
+                                if (computerDB.isComputerExistsByMacAddress(macAddress) == false)
+                                {
+                                    computerDB.AddNewComputer(1, "", Status.available, 5000, macAddress);
+                                }
+                                loginComputer = new Computer();
+                                loginComputer.Status = Status.available;
+                                loginComputer.Fee_per_hour = 5000;
+                                loginComputer.MacAddress = macAddress;
+                                loginComputer.Id = computerDB.GetComputerByMacAddress(macAddress).Id;
+
+                                pcGetter.SetCurrentComputer(loginComputer);
+                                CurrentUser.LoginRequest = "user";
+                            }
+
+                        }
+                        else if (loginComputer != null)
+                        {
+                            pcGetter.SetCurrentComputer(loginComputer);
+
+                        }
+
+                        // Xe nguoi dung
                         this.DialogResult = DialogResult.OK;
                         MessageBox.Show("Login Success");
+                        
+            
                         Employee loginEmployee = employeeDB.GetEmployeeByUsername(username);
+
+                        // La employee
                         if(loginEmployee.Position == "employee")
                         {
+                            
+
+                            // Set user and computer
                             CurrentUser.Id = loginEmployee.Id;
+                            CurrentUser.Name = loginEmployee.Name;
                             CurrentUser.LoginTime = DateTime.Now;
                             CurrentUser.Role = "employee";
-                            formMain dashBoard = new formMain();
-                            dashBoard.Show(this);
+                            AdminMainForm adminMainForm = new AdminMainForm();
+                            adminMainForm.Show(this);
                             this.Hide();
                         }
                         else
@@ -163,14 +223,16 @@ namespace InternetCafeManagement.Account_Form
                             if (loginEmployee.Position == "manager")
                             {
                                 CurrentUser.Id = loginEmployee.Id;
+                                CurrentUser.Name = loginEmployee.Name;
                                 CurrentUser.LoginTime = DateTime.Now;
                                 CurrentUser.Role = "manager";
-                                formMain dashBoard = new formMain();
-                                dashBoard.Show(this);
+                                AdminMainForm adminMainForm = new AdminMainForm();
+                                adminMainForm.Show(this);
                                 this.Hide();
                             }
-                                
+                          
                         }
+
                     }
                     else
                     {

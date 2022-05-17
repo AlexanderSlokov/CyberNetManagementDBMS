@@ -35,7 +35,7 @@ namespace InternetCafeManagement.AdminForm
         {
             string info = textBoxInfo.Text;
             float fee = float.Parse(textBoxFee.Text);
-            if(computerDB.UpdateInfo(current_computer_id, info) == false)
+            if (computerDB.UpdateInfo(current_computer_id, info) == false)
             {
 
             }
@@ -55,7 +55,7 @@ namespace InternetCafeManagement.AdminForm
             {
                 MessageBox.Show("Input valid currency number", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            
+
 
         }
         private void buttonServiceList_Click(object sender, EventArgs e)
@@ -114,7 +114,7 @@ namespace InternetCafeManagement.AdminForm
             textBoxFee.Text = (computerDB.GetComputerFeePerHour(current_computer_id)).ToString();
             labelLoginTime.Text = CurrentUser.LoginTime.ToString();
 
-            if(computerDB.GetComputerStatus(current_computer_id) == Status.available)
+            if (computerDB.GetComputerStatus(current_computer_id) == Status.available)
             {
                 Image bigImage = Properties.Resources.check;
                 this.buttonDisplayStatus.Image = (Image)(new Bitmap(bigImage, new Size(20, 20)));

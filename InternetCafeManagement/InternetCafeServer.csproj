@@ -106,6 +106,12 @@
     <Compile Include="AdminForm\AddComputerRoomForm.Designer.cs">
       <DependentUpon>AddComputerRoomForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="AdminForm\AdminMainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminForm\AdminMainForm.Designer.cs">
+      <DependentUpon>AdminMainForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="AdminForm\ComputerDetailForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -125,7 +131,7 @@
       <DependentUpon>ComputerRoomManagerForm.cs</DependentUpon>
     </Compile>
     <Compile Include="AdminForm\Manage EmployeeForm.cs">
-      <SubType>Form</SubType>
+      <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="AdminForm\Manage EmployeeForm.Designer.cs">
       <DependentUpon>Manage EmployeeForm.cs</DependentUpon>
@@ -174,12 +180,6 @@
     <Compile Include="Database\EmployeeDB.cs" />
     <Compile Include="Database\ServiceDB.cs" />
     <Compile Include="Database\TaskDB.cs" />
-    <Compile Include="MainForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MainForm.Designer.cs">
-      <DependentUpon>MainForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utility\MacAddressGetter.cs" />
@@ -209,6 +209,9 @@
     <EmbeddedResource Include="AdminForm\AddComputerRoomForm.resx">
       <DependentUpon>AddComputerRoomForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AdminForm\AdminMainForm.resx">
+      <DependentUpon>AdminMainForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AdminForm\ComputerDetailForm.resx">
       <DependentUpon>ComputerDetailForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -226,9 +229,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Employee Form\Employees Timekeeping Form.resx">
       <DependentUpon>Employees Timekeeping Form.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MainForm.resx">
-      <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -286,6 +286,12 @@
     <None Include="Resources\red-x.png" />
     <None Include="Resources\gear.png" />
     <None Include="Resources\logout.png" />
+    <None Include="Resources\computer.png" />
+    <Content Include="Procedures\pr_DeleteSchedule.sql" />
+    <Content Include="Procedures\pr_InsertSchedule.sql" />
+    <Content Include="Procedures\pr_isScheduleExsists.sql" />
+    <Content Include="Procedures\pr_SelectAllSchedules.sql" />
+    <Content Include="Procedures\pr_UpdateSchedule.sql" />
     <Content Include="Resources\reload.png" />
     <None Include="Resources\user.ico" />
     <Content Include="SQL Scripts\account.sql" />
@@ -296,11 +302,10 @@
     <Content Include="SQL Scripts\employee.sql" />
     <Content Include="SQL Scripts\Manager Permission.sql" />
     <Content Include="SQL Scripts\order.sql" />
+    <Content Include="SQL Scripts\schedule.sql" />
     <Content Include="SQL Scripts\service.sql" />
-    <Content Include="SQL Scripts\shift.sql" />
     <Content Include="SQL Scripts\User Permission.sql" />
     <Content Include="SQL Scripts\user_using_computer.sql" />
-    <Content Include="SQL Scripts\working_schedule.sql" />
     <Content Include="Triggers\tr_computer_ForDelete.sql" />
     <Content Include="Triggers\tr_computer_ForInsert.sql" />
   </ItemGroup>

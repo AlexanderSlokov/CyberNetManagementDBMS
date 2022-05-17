@@ -77,7 +77,7 @@
             this.dataGridViewEmployee.Name = "dataGridViewEmployee";
             this.dataGridViewEmployee.RowHeadersWidth = 51;
             this.dataGridViewEmployee.RowTemplate.Height = 80;
-            this.dataGridViewEmployee.Size = new System.Drawing.Size(714, 651);
+            this.dataGridViewEmployee.Size = new System.Drawing.Size(658, 585);
             this.dataGridViewEmployee.TabIndex = 0;
             this.dataGridViewEmployee.Click += new System.EventHandler(this.dataGridViewEmployee_Click);
             // 
@@ -363,7 +363,7 @@
             this.buttonDelete.FlatAppearance.BorderSize = 0;
             this.buttonDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonDelete.ForeColor = System.Drawing.Color.White;
-            this.buttonDelete.Location = new System.Drawing.Point(296, 460);
+            this.buttonDelete.Location = new System.Drawing.Point(299, 475);
             this.buttonDelete.Name = "buttonDelete";
             this.buttonDelete.Size = new System.Drawing.Size(135, 38);
             this.buttonDelete.TabIndex = 101;
@@ -379,7 +379,7 @@
             this.buttonUpdateInformation.FlatAppearance.BorderSize = 0;
             this.buttonUpdateInformation.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonUpdateInformation.ForeColor = System.Drawing.Color.Black;
-            this.buttonUpdateInformation.Location = new System.Drawing.Point(154, 460);
+            this.buttonUpdateInformation.Location = new System.Drawing.Point(157, 475);
             this.buttonUpdateInformation.Name = "buttonUpdateInformation";
             this.buttonUpdateInformation.Size = new System.Drawing.Size(136, 38);
             this.buttonUpdateInformation.TabIndex = 100;
@@ -395,7 +395,7 @@
             this.buttonAddEmployee.FlatAppearance.BorderSize = 0;
             this.buttonAddEmployee.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonAddEmployee.ForeColor = System.Drawing.Color.Linen;
-            this.buttonAddEmployee.Location = new System.Drawing.Point(12, 460);
+            this.buttonAddEmployee.Location = new System.Drawing.Point(15, 475);
             this.buttonAddEmployee.Name = "buttonAddEmployee";
             this.buttonAddEmployee.Size = new System.Drawing.Size(136, 38);
             this.buttonAddEmployee.TabIndex = 99;
@@ -436,7 +436,7 @@
             this.buttonRefreshList.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonRefreshList.BackgroundImage")));
             this.buttonRefreshList.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.buttonRefreshList.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonRefreshList.Location = new System.Drawing.Point(437, 460);
+            this.buttonRefreshList.Location = new System.Drawing.Point(440, 475);
             this.buttonRefreshList.Name = "buttonRefreshList";
             this.buttonRefreshList.Size = new System.Drawing.Size(136, 38);
             this.buttonRefreshList.TabIndex = 106;
@@ -462,7 +462,7 @@
             this.buttonSwitchEmployee.ForeColor = System.Drawing.Color.Snow;
             this.buttonSwitchEmployee.Location = new System.Drawing.Point(585, 40);
             this.buttonSwitchEmployee.Name = "buttonSwitchEmployee";
-            this.buttonSwitchEmployee.Size = new System.Drawing.Size(353, 38);
+            this.buttonSwitchEmployee.Size = new System.Drawing.Size(324, 38);
             this.buttonSwitchEmployee.TabIndex = 110;
             this.buttonSwitchEmployee.Text = "EMPLOYEE";
             this.buttonSwitchEmployee.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
@@ -476,9 +476,9 @@
             this.buttonSwitchManagers.FlatAppearance.BorderSize = 0;
             this.buttonSwitchManagers.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonSwitchManagers.ForeColor = System.Drawing.Color.Linen;
-            this.buttonSwitchManagers.Location = new System.Drawing.Point(946, 40);
+            this.buttonSwitchManagers.Location = new System.Drawing.Point(915, 40);
             this.buttonSwitchManagers.Name = "buttonSwitchManagers";
-            this.buttonSwitchManagers.Size = new System.Drawing.Size(353, 38);
+            this.buttonSwitchManagers.Size = new System.Drawing.Size(324, 38);
             this.buttonSwitchManagers.TabIndex = 111;
             this.buttonSwitchManagers.Text = "MANAGERS";
             this.buttonSwitchManagers.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
@@ -490,7 +490,6 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Moccasin;
-            this.ClientSize = new System.Drawing.Size(1331, 755);
             this.Controls.Add(this.buttonSwitchEmployee);
             this.Controls.Add(this.buttonSwitchManagers);
             this.Controls.Add(this.buttonRefreshList);
@@ -528,7 +527,7 @@
             this.Controls.Add(this.label2);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "EmployeeManagementForm";
-            this.Text = "Employee Management";
+            this.Size = new System.Drawing.Size(1245, 707);
             this.Load += new System.EventHandler(this.EmployeeManagementForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEmployee)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxEMPLOYEE)).EndInit();

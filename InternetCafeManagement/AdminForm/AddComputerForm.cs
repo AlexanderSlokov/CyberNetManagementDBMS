@@ -38,14 +38,14 @@ namespace InternetCafeManagement.AdminForm
         {
             string info = textBoxInfo.Text;
             int room_id = current_room_id;
-            for(int i = 0; i < num; i++)
+            for (int i = 0; i < num; i++)
             {
                 computerDB.AddNewComputer(room_id, info, Status.available, 0);
             }
         }
         private void buttonAdd_Click(object sender, EventArgs e)
         {
-            if(comboBoxBulkAdd.Text != String.Empty)
+            if (comboBoxBulkAdd.Text != String.Empty)
             {
                 int bulk_add_num = Int32.Parse(comboBoxBulkAdd.Text);
                 BulkAddNewComputer(bulk_add_num);
@@ -53,7 +53,7 @@ namespace InternetCafeManagement.AdminForm
             else
                 AddNewComputer();
 
-            
+
             this.Close();
         }
 

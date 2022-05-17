@@ -235,7 +235,7 @@ namespace InternetCafeManagement.AdminForm
         public void grid_click(object sender, EventArgs e, int computer_id)
         {
             transit_computer_id = computer_id;
-            DataGridView dataGrid = (DataGridView) sender;
+            DataGridView dataGrid = (DataGridView)sender;
             ComputerDetailForm computerDetailForm = new ComputerDetailForm();
             computerDetailForm.Show(this);
 

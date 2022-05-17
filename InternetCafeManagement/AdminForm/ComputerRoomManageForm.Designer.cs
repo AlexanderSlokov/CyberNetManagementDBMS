@@ -148,10 +148,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1346, 737);
             this.Controls.Add(this.panelMain);
             this.Name = "ComputerRoomManageForm";
-            this.Text = "ComputerRoomManageForm";
+            this.Size = new System.Drawing.Size(1346, 737);
             this.Load += new System.EventHandler(this.ComputerRoomManageForm_Load);
             this.panelMain.ResumeLayout(false);
             this.panelAdminControl.ResumeLayout(false);

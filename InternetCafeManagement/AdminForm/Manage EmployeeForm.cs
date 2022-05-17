@@ -15,7 +15,7 @@ using InternetCafeManagement.Model;
 
 namespace InternetCafeManagement.AdminForm
 {
-    public partial class EmployeeManagementForm : System.Windows.Forms.Form
+    public partial class EmployeeManagementForm : UserControl
     {
         public EmployeeManagementForm()
         {
@@ -51,7 +51,7 @@ namespace InternetCafeManagement.AdminForm
             dataGridViewEmployee.AllowUserToAddRows = false;
 
             dataGridViewEmployee.Columns[0].Width = 70;
-            dataGridViewEmployee.Columns[0].HeaderText = "Student ID";
+            dataGridViewEmployee.Columns[0].HeaderText = "ID";
             dataGridViewEmployee.Columns[1].Width = 100;
             dataGridViewEmployee.Columns[1].HeaderText = "Name";
             dataGridViewEmployee.Columns[2].Width = 70;
