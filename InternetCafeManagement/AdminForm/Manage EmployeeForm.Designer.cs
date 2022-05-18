@@ -72,12 +72,12 @@
             // 
             this.dataGridViewEmployee.BackgroundColor = System.Drawing.Color.Bisque;
             this.dataGridViewEmployee.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewEmployee.Location = new System.Drawing.Point(585, 93);
+            this.dataGridViewEmployee.Location = new System.Drawing.Point(486, 95);
             this.dataGridViewEmployee.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridViewEmployee.Name = "dataGridViewEmployee";
             this.dataGridViewEmployee.RowHeadersWidth = 51;
             this.dataGridViewEmployee.RowTemplate.Height = 80;
-            this.dataGridViewEmployee.Size = new System.Drawing.Size(889, 585);
+            this.dataGridViewEmployee.Size = new System.Drawing.Size(1106, 585);
             this.dataGridViewEmployee.TabIndex = 0;
             this.dataGridViewEmployee.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewEmployee_CellContentClick);
             this.dataGridViewEmployee.Click += new System.EventHandler(this.dataGridViewEmployee_Click);
@@ -99,7 +99,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Nirmala UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(165)))), ((int)(((byte)(169)))));
-            this.label3.Location = new System.Drawing.Point(347, 398);
+            this.label3.Location = new System.Drawing.Point(282, 350);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(41, 20);
@@ -135,7 +135,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Nirmala UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(165)))), ((int)(((byte)(169)))));
-            this.label6.Location = new System.Drawing.Point(347, 304);
+            this.label6.Location = new System.Drawing.Point(21, 448);
             this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(57, 20);
@@ -147,7 +147,7 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Nirmala UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(165)))), ((int)(((byte)(169)))));
-            this.label7.Location = new System.Drawing.Point(346, 349);
+            this.label7.Location = new System.Drawing.Point(19, 494);
             this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(51, 20);
@@ -159,7 +159,7 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Nirmala UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(165)))), ((int)(((byte)(169)))));
-            this.label8.Location = new System.Drawing.Point(282, 48);
+            this.label8.Location = new System.Drawing.Point(282, 54);
             this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(62, 20);
@@ -169,7 +169,7 @@
             // pictureBoxEMPLOYEE
             // 
             this.pictureBoxEMPLOYEE.BackColor = System.Drawing.Color.Linen;
-            this.pictureBoxEMPLOYEE.Location = new System.Drawing.Point(365, 78);
+            this.pictureBoxEMPLOYEE.Location = new System.Drawing.Point(286, 121);
             this.pictureBoxEMPLOYEE.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBoxEMPLOYEE.Name = "pictureBoxEMPLOYEE";
             this.pictureBoxEMPLOYEE.Size = new System.Drawing.Size(186, 197);
@@ -179,7 +179,7 @@
             // 
             // textBoxPhone
             // 
-            this.textBoxPhone.Location = new System.Drawing.Point(409, 303);
+            this.textBoxPhone.Location = new System.Drawing.Point(125, 448);
             this.textBoxPhone.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxPhone.Name = "textBoxPhone";
             this.textBoxPhone.Size = new System.Drawing.Size(141, 20);
@@ -190,7 +190,7 @@
             this.buttonUploadImage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(86)))), ((int)(((byte)(174)))));
             this.buttonUploadImage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonUploadImage.ForeColor = System.Drawing.Color.White;
-            this.buttonUploadImage.Location = new System.Drawing.Point(365, 44);
+            this.buttonUploadImage.Location = new System.Drawing.Point(286, 87);
             this.buttonUploadImage.Margin = new System.Windows.Forms.Padding(2);
             this.buttonUploadImage.Name = "buttonUploadImage";
             this.buttonUploadImage.Size = new System.Drawing.Size(185, 30);
@@ -243,7 +243,7 @@
             // 
             // textBoxAge
             // 
-            this.textBoxAge.Location = new System.Drawing.Point(409, 398);
+            this.textBoxAge.Location = new System.Drawing.Point(330, 350);
             this.textBoxAge.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxAge.Name = "textBoxAge";
             this.textBoxAge.ReadOnly = true;
@@ -264,7 +264,7 @@
             // 
             // textBoxEMAIL
             // 
-            this.textBoxEMAIL.Location = new System.Drawing.Point(409, 348);
+            this.textBoxEMAIL.Location = new System.Drawing.Point(125, 493);
             this.textBoxEMAIL.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxEMAIL.Name = "textBoxEMAIL";
             this.textBoxEMAIL.Size = new System.Drawing.Size(141, 20);
@@ -364,7 +364,7 @@
             this.buttonDelete.FlatAppearance.BorderSize = 0;
             this.buttonDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonDelete.ForeColor = System.Drawing.Color.White;
-            this.buttonDelete.Location = new System.Drawing.Point(299, 475);
+            this.buttonDelete.Location = new System.Drawing.Point(21, 585);
             this.buttonDelete.Name = "buttonDelete";
             this.buttonDelete.Size = new System.Drawing.Size(135, 38);
             this.buttonDelete.TabIndex = 101;
@@ -380,7 +380,7 @@
             this.buttonUpdateInformation.FlatAppearance.BorderSize = 0;
             this.buttonUpdateInformation.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonUpdateInformation.ForeColor = System.Drawing.Color.Black;
-            this.buttonUpdateInformation.Location = new System.Drawing.Point(157, 475);
+            this.buttonUpdateInformation.Location = new System.Drawing.Point(176, 585);
             this.buttonUpdateInformation.Name = "buttonUpdateInformation";
             this.buttonUpdateInformation.Size = new System.Drawing.Size(136, 38);
             this.buttonUpdateInformation.TabIndex = 100;
@@ -396,7 +396,7 @@
             this.buttonAddEmployee.FlatAppearance.BorderSize = 0;
             this.buttonAddEmployee.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonAddEmployee.ForeColor = System.Drawing.Color.Linen;
-            this.buttonAddEmployee.Location = new System.Drawing.Point(15, 475);
+            this.buttonAddEmployee.Location = new System.Drawing.Point(21, 541);
             this.buttonAddEmployee.Name = "buttonAddEmployee";
             this.buttonAddEmployee.Size = new System.Drawing.Size(136, 38);
             this.buttonAddEmployee.TabIndex = 99;
@@ -437,7 +437,7 @@
             this.buttonRefreshList.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonRefreshList.BackgroundImage")));
             this.buttonRefreshList.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.buttonRefreshList.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonRefreshList.Location = new System.Drawing.Point(440, 475);
+            this.buttonRefreshList.Location = new System.Drawing.Point(176, 541);
             this.buttonRefreshList.Name = "buttonRefreshList";
             this.buttonRefreshList.Size = new System.Drawing.Size(136, 38);
             this.buttonRefreshList.TabIndex = 106;
@@ -461,7 +461,7 @@
             this.buttonSwitchEmployee.FlatAppearance.BorderSize = 0;
             this.buttonSwitchEmployee.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonSwitchEmployee.ForeColor = System.Drawing.Color.Snow;
-            this.buttonSwitchEmployee.Location = new System.Drawing.Point(585, 40);
+            this.buttonSwitchEmployee.Location = new System.Drawing.Point(486, 52);
             this.buttonSwitchEmployee.Name = "buttonSwitchEmployee";
             this.buttonSwitchEmployee.Size = new System.Drawing.Size(324, 38);
             this.buttonSwitchEmployee.TabIndex = 110;
@@ -477,7 +477,7 @@
             this.buttonSwitchManagers.FlatAppearance.BorderSize = 0;
             this.buttonSwitchManagers.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonSwitchManagers.ForeColor = System.Drawing.Color.Linen;
-            this.buttonSwitchManagers.Location = new System.Drawing.Point(915, 40);
+            this.buttonSwitchManagers.Location = new System.Drawing.Point(816, 52);
             this.buttonSwitchManagers.Name = "buttonSwitchManagers";
             this.buttonSwitchManagers.Size = new System.Drawing.Size(324, 38);
             this.buttonSwitchManagers.TabIndex = 111;
@@ -528,7 +528,7 @@
             this.Controls.Add(this.label2);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "EmployeeManagementForm";
-            this.Size = new System.Drawing.Size(1501, 707);
+            this.Size = new System.Drawing.Size(1555, 707);
             this.Load += new System.EventHandler(this.EmployeeManagementForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEmployee)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxEMPLOYEE)).EndInit();

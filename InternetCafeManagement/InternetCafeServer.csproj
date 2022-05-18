@@ -161,6 +161,18 @@
     <Compile Include="Database\RechargeDB.cs" />
     <Compile Include="Database\ShiftDB.cs" />
     <Compile Include="Database\UserUsingComputerDB.cs" />
+    <Compile Include="Employee Form\E_ComputerDetailForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Employee Form\E_ComputerDetailForm.designer.cs">
+      <DependentUpon>E_ComputerDetailForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Employee Form\ComputerRoomManage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Employee Form\ComputerRoomManage.Designer.cs">
+      <DependentUpon>ComputerRoomManage.cs</DependentUpon>
+    </Compile>
     <Compile Include="Employee Form\EmployeeDashboard.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -187,6 +199,7 @@
     </Compile>
     <Compile Include="Model\Computer.cs" />
     <Compile Include="Model\Employee.cs" />
+    <Compile Include="Model\Schedule.cs" />
     <Compile Include="User Form\Profile.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -276,6 +289,12 @@
     <EmbeddedResource Include="AdminForm\ShiftManagement.resx">
       <DependentUpon>ShiftManagement.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Employee Form\E_ComputerDetailForm.resx">
+      <DependentUpon>E_ComputerDetailForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Employee Form\ComputerRoomManage.resx">
+      <DependentUpon>ComputerRoomManage.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Employee Form\EmployeeDashboard.resx">
       <DependentUpon>EmployeeDashboard.cs</DependentUpon>
     </EmbeddedResource>
@@ -313,6 +332,7 @@
     <EmbeddedResource Include="User Form\UserService.resx">
       <DependentUpon>UserService.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="InternetCafeBackUp" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -351,6 +371,10 @@
     <None Include="Resources\gear.png" />
     <None Include="Resources\logout.png" />
     <None Include="Resources\computer.png" />
+    <Content Include="Diagram.png" />
+    <Content Include="Procedures\Account\pr_register.sql" />
+    <Content Include="Procedures\Computer_room\pr_GetAllRooms.sql" />
+    <Content Include="Procedures\employee\pr_GetEmployeesList.sql" />
     <Content Include="Procedures\order\pr_DeleteOrder.sql" />
     <Content Include="Procedures\order\pr_InsertOrder.sql" />
     <Content Include="Procedures\order\pr_isOrderExsists.sql" />
@@ -364,8 +388,13 @@
     <Content Include="Procedures\schedule\pr_DeleteSchedule.sql" />
     <Content Include="Procedures\schedule\pr_GetScheduleOfAllEmployees.sql" />
     <Content Include="Procedures\schedule\pr_InsertSchedule.sql" />
+    <Content Include="Procedures\schedule\pr_IsEmployeeCheckIn.sql" />
     <Content Include="Procedures\schedule\pr_isScheduleExsists.sql" />
+    <Content Include="Procedures\schedule\pr_MakeCheckIn.sql" />
+    <Content Include="Procedures\schedule\pr_SelectAllScheduleOfEmployee.sql" />
     <Content Include="Procedures\schedule\pr_SelectAllSchedules.sql" />
+    <Content Include="Procedures\schedule\pr_SelectAllSchedulesOfEmployee.sql" />
+    <Content Include="Procedures\schedule\pr_SelectCurrentSchedulesOfEmployee.sql" />
     <Content Include="Procedures\schedule\pr_UpdateSchedule.sql" />
     <None Include="Resources\dollar.png" />
     <None Include="Resources\food_icon.png" />
