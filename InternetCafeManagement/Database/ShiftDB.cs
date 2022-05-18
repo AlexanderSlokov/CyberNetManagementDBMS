@@ -309,7 +309,7 @@ namespace InternetCafeManagement.Database
         }
         public DataTable GetScheduleOfAllEmployees(string weekDate)
         {
-            SqlCommand command = new SqlCommand("pr_GetSchedulesOfAllEmployees", connection.getConnection);
+            SqlCommand command = new SqlCommand("pr_GetShiftOfAllEmployees", connection.getConnection);
             command.Parameters.Add("@weekDate", SqlDbType.NVarChar).Value = weekDate;
             command.CommandType = CommandType.StoredProcedure;
 

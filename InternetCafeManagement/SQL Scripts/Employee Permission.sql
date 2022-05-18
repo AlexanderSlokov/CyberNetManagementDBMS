@@ -4,19 +4,19 @@ CREATE APPLICATION ROLE [employee] WITH DEFAULT_SCHEMA = [dbo], PASSWORD = N'emp
 GO
 use [InternetCafe]
 GO
-GRANT DELETE ON [dbo].[order] TO [employee]
+GRANT DELETE ON [dbo].[order_list] TO [employee]
 GO
 use [InternetCafe]
 GO
-GRANT INSERT ON [dbo].[order] TO [employee]
+GRANT INSERT ON [dbo].[order_list] TO [employee]
 GO
 use [InternetCafe]
 GO
-GRANT SELECT ON [dbo].[order] TO [employee]
+GRANT SELECT ON [dbo].[order_list] TO [employee]
 GO
 use [InternetCafe]
 GO
-GRANT UPDATE ON [dbo].[order] TO [employee]
+GRANT UPDATE ON [dbo].[order_list] TO [employee]
 GO
 use [InternetCafe]
 GO

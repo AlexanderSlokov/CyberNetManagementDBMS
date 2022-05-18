@@ -20,19 +20,19 @@ GRANT UPDATE ON [dbo].[account] TO [user]
 GO
 use [InternetCafe]
 GO
-GRANT DELETE ON [dbo].[order] TO [user]
+GRANT DELETE ON [dbo].[order_list] TO [user]
 GO
 use [InternetCafe]
 GO
-GRANT INSERT ON [dbo].[order] TO [user]
+GRANT INSERT ON [dbo].[order_list] TO [user]
 GO
 use [InternetCafe]
 GO
-GRANT SELECT ON [dbo].[order] TO [user]
+GRANT SELECT ON [dbo].[order_list] TO [user]
 GO
 use [InternetCafe]
 GO
-GRANT UPDATE ON [dbo].[order] TO [user]
+GRANT UPDATE ON [dbo].[order_list] TO [user]
 GO
 use [InternetCafe]
 GO

@@ -332,7 +332,6 @@
     <EmbeddedResource Include="User Form\UserService.resx">
       <DependentUpon>UserService.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="InternetCafeBackUp" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -386,7 +385,7 @@
     <Content Include="Procedures\recharge\pr_RechargeForUser.sql" />
     <Content Include="Procedures\schedule\pr_DeleteAllSchedules.sql" />
     <Content Include="Procedures\schedule\pr_DeleteSchedule.sql" />
-    <Content Include="Procedures\schedule\pr_GetScheduleOfAllEmployees.sql" />
+    <Content Include="Procedures\schedule\pr_GetShiftOfAllEmployees.sql" />
     <Content Include="Procedures\schedule\pr_InsertSchedule.sql" />
     <Content Include="Procedures\schedule\pr_IsEmployeeCheckIn.sql" />
     <Content Include="Procedures\schedule\pr_isScheduleExsists.sql" />

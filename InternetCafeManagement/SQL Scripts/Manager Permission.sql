@@ -117,17 +117,17 @@ GRANT UPDATE ON [dbo].[computer] TO [manager]
 GO
 use [InternetCafe]
 GO
-GRANT DELETE ON [dbo].[order] TO [manager]
+GRANT DELETE ON [dbo].[order_list] TO [manager]
 GO
 use [InternetCafe]
 GO
-GRANT INSERT ON [dbo].[order] TO [manager]
+GRANT INSERT ON [dbo].[order_list] TO [manager]
 GO
 use [InternetCafe]
 GO
-GRANT SELECT ON [dbo].[order] TO [manager]
+GRANT SELECT ON [dbo].[order_list]TO [manager]
 GO
 use [InternetCafe]
 GO
-GRANT UPDATE ON [dbo].[order] TO [manager]
+GRANT UPDATE ON [dbo].[order_list] TO [manager]
 GO
