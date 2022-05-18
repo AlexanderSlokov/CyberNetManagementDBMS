@@ -483,8 +483,10 @@
     <Content Include="SQL Scripts\ALL_TABLES.sql" />
     <Content Include="SQL Scripts\computer.sql" />
     <Content Include="SQL Scripts\computer_room.sql" />
+    <Content Include="SQL Scripts\Delete All.sql" />
     <Content Include="SQL Scripts\Employee Permission.sql" />
     <Content Include="SQL Scripts\employee.sql" />
+    <Content Include="SQL Scripts\Insert Salary.sql" />
     <Content Include="SQL Scripts\Manager Permission.sql" />
     <Content Include="SQL Scripts\order_list.sql" />
     <Content Include="SQL Scripts\recharge.sql" />

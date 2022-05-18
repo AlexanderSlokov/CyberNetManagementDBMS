@@ -174,6 +174,7 @@ namespace InternetCafeManagement.Database
             connection.closeConnection();
             return dataTable;
         }
+        // Lay schedule cua 1 employee
         public DataTable GetDataTableSchedulesOfEmployee(string weekDate, int employee_id)
         {
             SqlCommand command = new SqlCommand("pr_SelectAllSchedulesOfEmployee", connection.getConnection);
@@ -375,7 +376,7 @@ namespace InternetCafeManagement.Database
             }
         }
         public bool MakeCheckInForEmployee(int employee_id, int roomID, 
-            TimeSpan startTime, TimeSpan endTime, string weekDate, DateTime check_in_date_time)
+            TimeSpan startTime, TimeSpan endTime, string weekDate, DateTime check_in_date_time, string shift_type)
         {
             SqlCommand command = new SqlCommand("pr_MakeCheckIn", connection.getConnection);
             if (employee_id == 0)
@@ -397,6 +398,7 @@ namespace InternetCafeManagement.Database
                 return false;
             }
             command.Parameters.Add("@weekDate", SqlDbType.NVarChar).Value = weekDate;
+            command.Parameters.Add("@shift_type", SqlDbType.NVarChar).Value = shift_type;
             command.Parameters.Add("@startTime", SqlDbType.Time).Value = startTime;
             command.Parameters.Add("@endTime", SqlDbType.Time).Value = endTime;
             command.Parameters.Add("@check_in", SqlDbType.DateTime).Value = check_in_date_time;

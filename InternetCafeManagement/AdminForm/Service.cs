@@ -57,7 +57,7 @@ namespace InternetCafeManagement.AdminForm
             textBoxServiceName.ReadOnly = false;
 
             dataGridViewService.DataSource = serviceDB.GetDataTableAllServices();
-            dataGridViewService.RowTemplate.Height = 50;
+            dataGridViewService.RowTemplate.Height = 200;
             dataGridViewService.RowHeadersVisible = false;
             dataGridViewService.AllowUserToAddRows = false;
 

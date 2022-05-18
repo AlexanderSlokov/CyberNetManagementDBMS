@@ -48,7 +48,7 @@ namespace InternetCafeManagement.Employee_Form
             dataGridViewSchedule.DataSource = shiftDB.GetDataTableSchedulesOfEmployee(weekDate, CurrentUser.Id);
 
             Schedule currentSchedule = shiftDB.GetSchedulesOfEmployee(CurrentUser.Id, weekDate, loginTime);
-            if (loginTime >= currentSchedule.StartTime && loginTime <= currentSchedule.EndTime)
+            if ( true /*loginTime >= currentSchedule.StartTime && loginTime <= currentSchedule.EndTime */)
             {
                 if (shiftDB.IsEmployeeCheckIn(CurrentUser.Id, currentSchedule.RoomID, currentSchedule.StartTime, currentSchedule.EndTime, currentSchedule.WeekDate) == true)
                 {
@@ -93,9 +93,9 @@ namespace InternetCafeManagement.Employee_Form
             TimeSpan startTime = TimeSpan.Parse(labelStartTime.Text);
             TimeSpan endTime = TimeSpan.Parse(labelCheckOutTime.Text);
             DateTime check_in_date_time = DateTime.Now;
-
+            string shift_type = textBoxShiftType.Text;
             
-            shiftDB.MakeCheckInForEmployee(CurrentUser.Id, roomID, startTime, endTime, weekDate, check_in_date_time);
+            shiftDB.MakeCheckInForEmployee(CurrentUser.Id, roomID, startTime, endTime, weekDate, check_in_date_time, shift_type);
             buttonCheckIn.Text = "Checked";
             buttonCheckIn.Enabled = false;
         }

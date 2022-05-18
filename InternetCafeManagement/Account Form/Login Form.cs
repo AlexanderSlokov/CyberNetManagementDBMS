@@ -127,16 +127,16 @@ namespace InternetCafeManagement.Account_Form
                     {
                         userUsage.InsertUsage(loginComputer.Id, CurrentUser.Id, CurrentUser.LoginTime);
                     }
-                    CurrentUser.Role = "user";
+                    //CurrentUser.Role = "user";
 
-                    UserMainForm userMainForm = new UserMainForm();
-                    userMainForm.Show(this);
-                    this.Hide();
-
-                    //CurrentUser.Role = "manager";
-                    //AdminMainForm adminMainForm = new AdminMainForm();
-                    //adminMainForm.Show(this);
+                    //UserMainForm userMainForm = new UserMainForm();
+                    //userMainForm.Show(this);
                     //this.Hide();
+
+                    CurrentUser.Role = "manager";
+                    AdminMainForm adminMainForm = new AdminMainForm();
+                    adminMainForm.Show(this);
+                    this.Hide();
                 }
                 else
                 {
@@ -251,8 +251,8 @@ namespace InternetCafeManagement.Account_Form
         private void formLogin_Load(object sender, EventArgs e)
         {
             textBoxUsername.Select();
-            textBoxUsername.Text = "admin";
-            textBoxPassword.Text = "12345";
+            textBoxUsername.Text = "";
+            textBoxPassword.Text = "";
         }
 
         private void radioButtonEmployee_CheckedChanged(object sender, EventArgs e)

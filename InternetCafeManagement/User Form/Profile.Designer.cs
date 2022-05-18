@@ -187,6 +187,7 @@
             this.textBoxUsername.Location = new System.Drawing.Point(87, 74);
             this.textBoxUsername.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxUsername.Name = "textBoxUsername";
+            this.textBoxUsername.ReadOnly = true;
             this.textBoxUsername.Size = new System.Drawing.Size(272, 24);
             this.textBoxUsername.TabIndex = 20;
             // 

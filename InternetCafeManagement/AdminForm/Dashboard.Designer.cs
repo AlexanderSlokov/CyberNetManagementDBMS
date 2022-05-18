@@ -38,6 +38,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.labelManagers = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSchedule)).BeginInit();
             this.SuspendLayout();
             // 
@@ -82,7 +83,7 @@
             this.labelTotalPayment.AutoSize = true;
             this.labelTotalPayment.Font = new System.Drawing.Font("Nirmala UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelTotalPayment.ForeColor = System.Drawing.Color.Teal;
-            this.labelTotalPayment.Location = new System.Drawing.Point(79, 76);
+            this.labelTotalPayment.Location = new System.Drawing.Point(118, 76);
             this.labelTotalPayment.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelTotalPayment.Name = "labelTotalPayment";
             this.labelTotalPayment.Size = new System.Drawing.Size(33, 37);
@@ -161,10 +162,24 @@
             this.label7.TabIndex = 104;
             this.label7.Text = "Number of Managers";
             // 
+            // label1
+            // 
+            this.label1.AllowDrop = true;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Nirmala UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Teal;
+            this.label1.Location = new System.Drawing.Point(22, 76);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(76, 37);
+            this.label1.TabIndex = 106;
+            this.label1.Text = "VND";
+            // 
             // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.labelManagers);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.labelUsers);
@@ -196,5 +211,6 @@
         private System.Windows.Forms.Label label5;
         public System.Windows.Forms.Label labelManagers;
         private System.Windows.Forms.Label label7;
+        public System.Windows.Forms.Label label1;
     }
 }
