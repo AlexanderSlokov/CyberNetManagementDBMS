@@ -49,7 +49,7 @@
             // dataGridViewRechargeRequest
             // 
             this.dataGridViewRechargeRequest.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewRechargeRequest.Location = new System.Drawing.Point(427, 391);
+            this.dataGridViewRechargeRequest.Location = new System.Drawing.Point(558, 379);
             this.dataGridViewRechargeRequest.Name = "dataGridViewRechargeRequest";
             this.dataGridViewRechargeRequest.Size = new System.Drawing.Size(387, 204);
             this.dataGridViewRechargeRequest.TabIndex = 0;
@@ -58,7 +58,7 @@
             // dataGridViewSchedule
             // 
             this.dataGridViewSchedule.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewSchedule.Location = new System.Drawing.Point(427, 56);
+            this.dataGridViewSchedule.Location = new System.Drawing.Point(558, 44);
             this.dataGridViewSchedule.Name = "dataGridViewSchedule";
             this.dataGridViewSchedule.Size = new System.Drawing.Size(387, 266);
             this.dataGridViewSchedule.TabIndex = 1;
@@ -68,7 +68,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("MS UI Gothic", 20.25F, System.Drawing.FontStyle.Bold);
             this.label1.ForeColor = System.Drawing.Color.BlueViolet;
-            this.label1.Location = new System.Drawing.Point(491, 345);
+            this.label1.Location = new System.Drawing.Point(622, 333);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(249, 27);
             this.label1.TabIndex = 7;
@@ -79,7 +79,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("MS UI Gothic", 20.25F, System.Drawing.FontStyle.Bold);
             this.label2.ForeColor = System.Drawing.Color.BlueViolet;
-            this.label2.Location = new System.Drawing.Point(480, 10);
+            this.label2.Location = new System.Drawing.Point(611, -2);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(280, 27);
             this.label2.TabIndex = 8;

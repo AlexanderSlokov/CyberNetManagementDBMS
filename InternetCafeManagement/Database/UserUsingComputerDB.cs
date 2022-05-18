@@ -14,9 +14,8 @@ namespace InternetCafeManagement.Database
         DBConnection connection = new DBConnection();
         public bool InsertUsage(int computer_id, int user_id, DateTime starting_time)
         {
-            SqlCommand command = new SqlCommand("INSERT INTO user_using_computer (computer_id, user_id, starting_time)"
-                + " VALUES (@computer_id, @user_id, @starting_time)", connection.getConnection);
-
+            SqlCommand command = new SqlCommand("pr_InsertUsage", connection.getConnection);
+            command.CommandType = CommandType.StoredProcedure;
             command.Parameters.Add("@computer_id", SqlDbType.Int).Value = computer_id;
             command.Parameters.Add("@user_id", SqlDbType.Int).Value = user_id;
             command.Parameters.Add("@starting_time", SqlDbType.DateTime).Value = starting_time;
@@ -41,7 +40,8 @@ namespace InternetCafeManagement.Database
         }
         public bool isLogin(int computer_id, int user_id)
         {
-            SqlCommand command = new SqlCommand("SELECT * FROM user_using_computer WHERE computer_id = @computer_id AND user_id = @user_id", connection.getConnection);
+            SqlCommand command = new SqlCommand("pr_isLogin", connection.getConnection);
+            command.CommandType = CommandType.StoredProcedure;
             command.Parameters.Add("@computer_id", SqlDbType.Int).Value = computer_id;
             command.Parameters.Add("@user_id", SqlDbType.Int).Value = user_id;
             connection.openConnection();
@@ -68,8 +68,8 @@ namespace InternetCafeManagement.Database
         {
             try
             {
-                SqlCommand command = new SqlCommand("DELETE FROM user_using_computer WHERE computer_id = @computer_id", connection.getConnection);
-
+                SqlCommand command = new SqlCommand("pr_DeleteUsage", connection.getConnection);
+                command.CommandType = CommandType.StoredProcedure;
                 command.Parameters.Add("@computer_id", SqlDbType.Int).Value = computer_id;
 
                 connection.openConnection();

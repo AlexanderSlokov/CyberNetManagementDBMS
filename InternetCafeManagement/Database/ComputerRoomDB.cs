@@ -16,8 +16,9 @@ namespace InternetCafeManagement.Database
         // Nhận ID và kiểm tra phòng máy tính có tồn tại với Id đó hay không, nếu có trả về true, nếu không trả về false
         public bool IsComputerRoomExistsByID(int id)
         {
-            SqlCommand command = new SqlCommand("SELECT * FROM computer_room WHERE id = @id", connection.getConnection);
-            command.Parameters.Add("@id", SqlDbType.Int).Value = id;
+            SqlCommand command = new SqlCommand("pr_IsComputerRoomExistsByID", connection.getConnection);
+            command.Parameters.Add("@id", SqlDbType.Int).Value = id; 
+            command.CommandType = CommandType.StoredProcedure;
             connection.openConnection();
             try
             {
@@ -42,8 +43,7 @@ namespace InternetCafeManagement.Database
         // Hàm thêm thông tin phòng máy tính vào DB, trả về true nếu thêm thành công, false nếu thêm không thành công
         public bool AddNewComputerRoom(int roomID, int floor, int compNum, int max_comp_num)
         {
-            SqlCommand command = new SqlCommand("INSERT INTO computer_room (id, floor, compNum, max_comp_num)"
-                + " VALUES (@id, @floor, @compNum, @max_comp_num)", connection.getConnection);
+            SqlCommand command = new SqlCommand("pr_AddNewComputerRoom", connection.getConnection);
             if(roomID == 0)
             {
                 MessageBox.Show("Please Enter Room ID", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -63,6 +63,7 @@ namespace InternetCafeManagement.Database
                 return false;
             }
             command.Parameters.Add("@max_comp_num", SqlDbType.Int).Value = max_comp_num;
+            command.CommandType = CommandType.StoredProcedure;
             connection.openConnection();
             try
             {
@@ -115,7 +116,8 @@ namespace InternetCafeManagement.Database
         }
         public int RoomCount()
         {
-            SqlCommand command = new SqlCommand("SELECT count(*) FROM computer_room", connection.getConnection);
+            SqlCommand command = new SqlCommand("pr_RoomCount", connection.getConnection);
+            command.CommandType = CommandType.StoredProcedure;
             connection.openConnection();
             int count = Convert.ToInt32(command.ExecuteScalar());
             connection.closeConnection();
@@ -126,8 +128,9 @@ namespace InternetCafeManagement.Database
 
         public bool DeleteComputerRoom(int id)
         {
-            SqlCommand command = new SqlCommand("DELETE FROM computer_room WHERE id = @id", connection.getConnection);
+            SqlCommand command = new SqlCommand("pr_DeleteComputerRoom", connection.getConnection);
             command.Parameters.Add("@id", SqlDbType.Int).Value = id;
+            command.CommandType = CommandType.StoredProcedure;
             connection.openConnection();
 
             if (command.ExecuteNonQuery() == 1)
@@ -149,9 +152,9 @@ namespace InternetCafeManagement.Database
             int capacity = 0;
             try
             {
-                SqlCommand command = new SqlCommand("SELECT * FROM computer_room WHERE id = @id", connection.getConnection);
+                SqlCommand command = new SqlCommand("pr_GetMaxComputerCapacity", connection.getConnection);
                 command.Parameters.Add("@id", SqlDbType.Int).Value = id;
-
+                command.CommandType = CommandType.StoredProcedure;
                 connection.openConnection();
                 SqlDataReader reader = command.ExecuteReader();
 
@@ -175,9 +178,9 @@ namespace InternetCafeManagement.Database
             int count = 0;
             try
             {
-                SqlCommand command = new SqlCommand("SELECT * FROM computer_room WHERE id = @id", connection.getConnection);
+                SqlCommand command = new SqlCommand("pr_GetComputerCount", connection.getConnection);
                 command.Parameters.Add("@id", SqlDbType.Int).Value = id;
-
+                command.CommandType = CommandType.StoredProcedure;
                 connection.openConnection();
                 SqlDataReader reader = command.ExecuteReader();
 

@@ -117,6 +117,7 @@
             this.textBoxPassword.PasswordChar = '•';
             this.textBoxPassword.Size = new System.Drawing.Size(216, 28);
             this.textBoxPassword.TabIndex = 11;
+            this.textBoxPassword.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBoxPassword_KeyDown);
             // 
             // label3
             // 
@@ -137,6 +138,7 @@
             this.textBoxUsername.Name = "textBoxUsername";
             this.textBoxUsername.Size = new System.Drawing.Size(216, 28);
             this.textBoxUsername.TabIndex = 12;
+            this.textBoxUsername.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBoxUsername_KeyDown);
             // 
             // label2
             // 
@@ -207,6 +209,7 @@
             this.Name = "formLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.formLogin_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.formLogin_KeyDown);
             this.ResumeLayout(false);
             this.PerformLayout();
 

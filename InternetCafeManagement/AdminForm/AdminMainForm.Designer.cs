@@ -32,6 +32,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminMainForm));
             this.panelContainer = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.buttonSalary = new System.Windows.Forms.Button();
             this.buttonSchedule = new System.Windows.Forms.Button();
             this.buttonLogOut = new System.Windows.Forms.Button();
             this.buttonEmployeeManage = new System.Windows.Forms.Button();
@@ -54,6 +55,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
+            this.panel1.Controls.Add(this.buttonSalary);
             this.panel1.Controls.Add(this.buttonSchedule);
             this.panel1.Controls.Add(this.buttonLogOut);
             this.panel1.Controls.Add(this.buttonEmployeeManage);
@@ -64,6 +66,24 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(167, 667);
             this.panel1.TabIndex = 2;
+            // 
+            // buttonSalary
+            // 
+            this.buttonSalary.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
+            this.buttonSalary.FlatAppearance.BorderSize = 0;
+            this.buttonSalary.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonSalary.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonSalary.ForeColor = System.Drawing.Color.White;
+            this.buttonSalary.Image = global::InternetCafeManagement.Properties.Resources.dollar;
+            this.buttonSalary.Location = new System.Drawing.Point(0, 425);
+            this.buttonSalary.Name = "buttonSalary";
+            this.buttonSalary.Size = new System.Drawing.Size(163, 79);
+            this.buttonSalary.TabIndex = 120;
+            this.buttonSalary.Text = "Salary";
+            this.buttonSalary.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.buttonSalary.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.buttonSalary.UseVisualStyleBackColor = false;
+            this.buttonSalary.Click += new System.EventHandler(this.buttonSalary_Click);
             // 
             // buttonSchedule
             // 
@@ -91,7 +111,7 @@
             this.buttonLogOut.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonLogOut.ForeColor = System.Drawing.Color.White;
             this.buttonLogOut.Image = ((System.Drawing.Image)(resources.GetObject("buttonLogOut.Image")));
-            this.buttonLogOut.Location = new System.Drawing.Point(0, 425);
+            this.buttonLogOut.Location = new System.Drawing.Point(3, 588);
             this.buttonLogOut.Name = "buttonLogOut";
             this.buttonLogOut.Size = new System.Drawing.Size(163, 79);
             this.buttonLogOut.TabIndex = 115;
@@ -99,6 +119,7 @@
             this.buttonLogOut.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.buttonLogOut.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.buttonLogOut.UseVisualStyleBackColor = false;
+            this.buttonLogOut.Click += new System.EventHandler(this.buttonLogOut_Click);
             // 
             // buttonEmployeeManage
             // 
@@ -207,5 +228,6 @@
         private System.Windows.Forms.Timer timerUsingTime;
         private System.Windows.Forms.Timer timerHour;
         private System.Windows.Forms.Button buttonSchedule;
+        private System.Windows.Forms.Button buttonSalary;
     }
 }

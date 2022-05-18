@@ -32,7 +32,6 @@
             this.buttonReload = new System.Windows.Forms.Button();
             this.panelAdminControl = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.buttonUpdate = new System.Windows.Forms.Button();
             this.panelComputerGrid = new System.Windows.Forms.Panel();
             this.panelRoomInformation = new System.Windows.Forms.Panel();
             this.labelComputerNumber = new System.Windows.Forms.Label();
@@ -77,7 +76,6 @@
             // panelAdminControl
             // 
             this.panelAdminControl.Controls.Add(this.dataGridView1);
-            this.panelAdminControl.Controls.Add(this.buttonUpdate);
             this.panelAdminControl.Location = new System.Drawing.Point(819, 92);
             this.panelAdminControl.Name = "panelAdminControl";
             this.panelAdminControl.Size = new System.Drawing.Size(524, 642);
@@ -86,27 +84,11 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 44);
+            this.dataGridView1.Location = new System.Drawing.Point(0, 3);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(524, 601);
+            this.dataGridView1.Size = new System.Drawing.Size(524, 642);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.Click += new System.EventHandler(this.dataGridView1_Click);
-            // 
-            // buttonUpdate
-            // 
-            this.buttonUpdate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(86)))), ((int)(((byte)(174)))));
-            this.buttonUpdate.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonUpdate.FlatAppearance.BorderSize = 0;
-            this.buttonUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonUpdate.ForeColor = System.Drawing.Color.White;
-            this.buttonUpdate.Location = new System.Drawing.Point(3, 3);
-            this.buttonUpdate.Name = "buttonUpdate";
-            this.buttonUpdate.Size = new System.Drawing.Size(518, 35);
-            this.buttonUpdate.TabIndex = 31;
-            this.buttonUpdate.Text = "ADD NEW COMPUTER";
-            this.buttonUpdate.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.buttonUpdate.UseVisualStyleBackColor = false;
-            this.buttonUpdate.Click += new System.EventHandler(this.buttonUpdate_Click);
             // 
             // panelComputerGrid
             // 
@@ -169,7 +151,6 @@
         private System.Windows.Forms.Label labelRoomID;
         private System.Windows.Forms.Panel panelComputerGrid;
         private System.Windows.Forms.Panel panelAdminControl;
-        private System.Windows.Forms.Button buttonUpdate;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button buttonReload;
     }

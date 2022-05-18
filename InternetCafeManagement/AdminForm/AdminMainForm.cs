@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using InternetCafeManagement.Account_Form;
+using InternetCafeManagement.Utility;
 
 namespace InternetCafeManagement.AdminForm
 {
@@ -17,6 +19,7 @@ namespace InternetCafeManagement.AdminForm
             InitializeComponent();
         }
         static AdminMainForm adminMainForm;
+        CurrentPCGetter pCGetter = CurrentPCGetter.GetCurrentPCGetter();
         public static AdminMainForm GetAdminMainForm {
             get
             {
@@ -64,6 +67,12 @@ namespace InternetCafeManagement.AdminForm
         }
         public void LoadData()
         {
+            Dashboard schedule = new Dashboard();
+            schedule.Dock = DockStyle.Fill;
+            panelContainer.Controls.Add(schedule);
+            schedule.Show();
+            schedule.BringToFront();
+
             Image logOutImage = Properties.Resources.logout;
             this.buttonLogOut.Image = (Image)(new Bitmap(logOutImage, new Size(20, 20)));
             Image computerRoomImage = Properties.Resources.computer;
@@ -108,6 +117,25 @@ namespace InternetCafeManagement.AdminForm
             panelContainer.Controls.Add(service);
             service.Show();
             service.BringToFront();
+        }
+
+        private void buttonSalary_Click(object sender, EventArgs e)
+        {
+            SalaryUC salary = new SalaryUC();
+            salary.Dock = DockStyle.Fill;
+            panelContainer.Controls.Add(salary);
+            salary.Show();
+            salary.BringToFront();
+        }
+
+        private void buttonLogOut_Click(object sender, EventArgs e)
+        {
+            CurrentUser.destroyUser();
+
+            pCGetter.StopPC();
+            formLogin login = new formLogin();
+            login.Show();
+            this.Close();
         }
     }
 }

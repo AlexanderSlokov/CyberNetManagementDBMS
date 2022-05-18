@@ -95,11 +95,6 @@ namespace InternetCafeManagement.User_Form
                 MessageBox.Show("Re-Enter fullname with no spaces and more than 3 characters", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
-            if (!DataValidate.emailValidate(email))
-            {
-                MessageBox.Show("Re-Enter a valid email with no spaces and contain '@'", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return false;
-            }
             if (!DataValidate.phoneValidate(phone))
             {
                 MessageBox.Show("Re-Enter valid phone number", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);

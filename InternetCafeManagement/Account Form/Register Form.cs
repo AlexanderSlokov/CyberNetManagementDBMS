@@ -37,6 +37,11 @@ namespace InternetCafeManagement.Account_Form
 
         }
 
+        private void formRegister_KeyDown(object sender, KeyEventArgs e)
+        {
+            buttonRegister_Click( sender,  e);
+        }
+
         private void buttonClear_Click(object sender, EventArgs e)
         {
             textBoxUsername.Text = "";

@@ -23,7 +23,8 @@ namespace InternetCafeManagement.Database
 
             DataTable table = new DataTable();
 
-            SqlCommand command = new SqlCommand("SELECT * FROM employee WHERE username = @User AND password = @Pass", connection.getConnection);
+            SqlCommand command = new SqlCommand("pr_EmployeeLogin", connection.getConnection);
+            command.CommandType = CommandType.StoredProcedure;
             command.Parameters.Add("@User", SqlDbType.VarChar).Value = username;
             command.Parameters.Add("@Pass", SqlDbType.VarChar).Value = password;
             adapter.SelectCommand = command;
@@ -46,7 +47,8 @@ namespace InternetCafeManagement.Database
             Employee employee = new Employee();
             try
             {
-                SqlCommand command = new SqlCommand("SELECT * FROM employee WHERE id = @id", connection.getConnection);
+                SqlCommand command = new SqlCommand("pr_GetEmployeeByID", connection.getConnection);
+                command.CommandType = CommandType.StoredProcedure;
                 command.Parameters.Add("@id", SqlDbType.Int).Value = id;
                 connection.openConnection();
                 SqlDataReader reader = command.ExecuteReader();
@@ -91,9 +93,9 @@ namespace InternetCafeManagement.Database
             Employee employee = new Employee();
             try
             {
-                SqlCommand command = new SqlCommand("SELECT * FROM employee WHERE username = @username", connection.getConnection);
+                SqlCommand command = new SqlCommand("pr_GetEmployeeByUsername", connection.getConnection);
                 command.Parameters.Add("@username", SqlDbType.NVarChar).Value = username;
-
+                command.CommandType = CommandType.StoredProcedure;
                 connection.openConnection();
                 SqlDataReader reader = command.ExecuteReader();
 
@@ -146,10 +148,9 @@ namespace InternetCafeManagement.Database
             else if(employee.Id == oldID)
             {
                 // Update
-                SqlCommand command = new SqlCommand("UPDATE employee SET name = @name, position = @position, " +
-                            "birthDate = @birthDate, gender = @gender, phoneNum = @phoneNum, email = @email, image = @image, " +
-                            "salary_per_hour = @salary_per_hour, username = @username, password = @password WHERE id = @id", connection.getConnection);
+                SqlCommand command = new SqlCommand("pr_UpdateEmployee", connection.getConnection);
                 command.Parameters.Add("@id", SqlDbType.Int).Value = employee.Id;
+                command.CommandType = CommandType.StoredProcedure;
                 if (employee.Name == String.Empty || employee.Name == null)
                 {
                     MessageBox.Show("Please Enter Name", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -246,9 +247,8 @@ namespace InternetCafeManagement.Database
 
         public bool AddEmployee(Employee employee)
         {
-            SqlCommand command = new SqlCommand("INSERT INTO employee (id, name, position, birthDate, gender, phoneNum, email, image, salary_per_hour, username, password)"
-                + " VALUES (@id, @name, @position, @birthDate, @gender, @phoneNum, @email, @image, @salary_per_hour, @username, @password)", connection.getConnection);
-
+            SqlCommand command = new SqlCommand("pr_AddEmployee", connection.getConnection);
+            command.CommandType = CommandType.StoredProcedure;
             if (employee.Id == 0)
             {
                 MessageBox.Show("Please Enter ID", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -351,8 +351,9 @@ namespace InternetCafeManagement.Database
 
             DataTable table = new DataTable();
 
-            SqlCommand command = new SqlCommand("SELECT * FROM employee WHERE id = @id", connection.getConnection);
+            SqlCommand command = new SqlCommand("pr_IsEmployeeExistByID", connection.getConnection);
             command.Parameters.Add("@id", SqlDbType.Int).Value = id;
+            command.CommandType = CommandType.StoredProcedure;
             connection.openConnection();
             adapter.SelectCommand = command;
             adapter.Fill(table);
@@ -375,7 +376,8 @@ namespace InternetCafeManagement.Database
 
             DataTable table = new DataTable();
 
-            SqlCommand command = new SqlCommand("SELECT * FROM employee WHERE username = @username", connection.getConnection);
+            SqlCommand command = new SqlCommand("pr_IsEmployeeExistByUsername", connection.getConnection);
+            command.CommandType = CommandType.StoredProcedure;
             command.Parameters.Add("@username", SqlDbType.NVarChar).Value = username;
             adapter.SelectCommand = command;
             connection.openConnection();
@@ -394,7 +396,8 @@ namespace InternetCafeManagement.Database
         }
         public DataTable GetEmployeesDataTable()
         {
-            SqlCommand command = new SqlCommand("SELECT * FROM employee WHERE position = @position", connection.getConnection);
+            SqlCommand command = new SqlCommand("pr_GetEmployeesDataTable", connection.getConnection);
+            command.CommandType = CommandType.StoredProcedure;
             command.Parameters.Add("@position", SqlDbType.NVarChar).Value = "employee";
             connection.openConnection();
             SqlDataAdapter adapter = new SqlDataAdapter(command);
@@ -407,7 +410,8 @@ namespace InternetCafeManagement.Database
         public DataTable GetManagersDataTable()
         {
 
-            SqlCommand command = new SqlCommand("SELECT * FROM employee WHERE position = @position", connection.getConnection);
+            SqlCommand command = new SqlCommand("pr_GetManagersDataTable", connection.getConnection);
+            command.CommandType = CommandType.StoredProcedure;
             command.Parameters.Add("@position", SqlDbType.NVarChar).Value = "manager";
             connection.openConnection();
             SqlDataAdapter adapter = new SqlDataAdapter(command);
@@ -422,7 +426,8 @@ namespace InternetCafeManagement.Database
             List<Employee> employeeList = new List<Employee>();
             try
             {
-                SqlCommand command = new SqlCommand("SELECT * FROM employee WHERE position = @position", connection.getConnection);
+                SqlCommand command = new SqlCommand("pr_GetManagersList", connection.getConnection);
+                command.CommandType = CommandType.StoredProcedure;
                 command.Parameters.Add("@position", SqlDbType.NVarChar).Value = "manager";
 
                 connection.openConnection();
@@ -469,6 +474,7 @@ namespace InternetCafeManagement.Database
             try
             {
                 SqlCommand command = new SqlCommand("pr_GetEmployeesList", connection.getConnection);
+                command.CommandType = CommandType.StoredProcedure;
                 command.Parameters.Add("@position", SqlDbType.NVarChar).Value = "employee";
                 command.CommandType = CommandType.StoredProcedure;
                 connection.openConnection();
@@ -515,6 +521,7 @@ namespace InternetCafeManagement.Database
             try
             {
                 SqlCommand command = new SqlCommand("pr_GetEmployeesList", connection.getConnection);
+                command.CommandType = CommandType.StoredProcedure;
                 command.Parameters.Add("@position", SqlDbType.NVarChar).Value = "employee";
                 command.CommandType = CommandType.StoredProcedure;
                 connection.openConnection();
@@ -557,7 +564,8 @@ namespace InternetCafeManagement.Database
         }
         public bool DeleteEmployee(int ID)
         {
-            SqlCommand command = new SqlCommand("DELETE FROM EMPLOYEE WHERE id = @id", connection.getConnection);
+            SqlCommand command = new SqlCommand("pr_DeleteEmployee", connection.getConnection);
+            command.CommandType = CommandType.StoredProcedure;
             command.Parameters.Add("@id", SqlDbType.Int).Value = ID;
             connection.openConnection();
             try
@@ -580,6 +588,55 @@ namespace InternetCafeManagement.Database
             {
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
+            }
+        }
+        public DataTable GetAllSalaryDataTable()
+        {
+
+            SqlCommand command = new SqlCommand("pr_TableAllSalary", connection.getConnection);
+            command.CommandType = CommandType.StoredProcedure;
+            connection.openConnection();
+            SqlDataAdapter adapter = new SqlDataAdapter(command);
+            DataTable table = new DataTable();
+
+            adapter.Fill(table);
+            connection.closeConnection();
+            return table;
+        }
+        public int CountEmployeesNumber()
+        {
+            int count = 0;
+            SqlCommand command = new SqlCommand("pr_NumberOfEmployees", connection.getConnection);
+            command.CommandType = CommandType.StoredProcedure;
+            connection.openConnection();
+            try
+            {
+                count = Int32.Parse(command.ExecuteScalar().ToString());
+                connection.closeConnection();
+                return count;
+            }
+            catch
+            {
+                return 0;
+            }
+        }
+        public int CountManagersNumber()
+        {
+            int count = 0;
+            SqlCommand command = new SqlCommand("pr_NumberOfManagers", connection.getConnection);
+            command.CommandType = CommandType.StoredProcedure;
+            connection.openConnection();
+            try
+            {
+
+                count = Int32.Parse(command.ExecuteScalar().ToString());
+                connection.closeConnection();
+                return count;
+            }
+            catch
+            {
+                connection.closeConnection();
+                return 0;
             }
         }
     }

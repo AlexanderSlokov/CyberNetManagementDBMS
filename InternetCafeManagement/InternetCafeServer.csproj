@@ -142,6 +142,12 @@
     <Compile Include="AdminForm\Dashboard.Designer.cs">
       <DependentUpon>Dashboard.cs</DependentUpon>
     </Compile>
+    <Compile Include="AdminForm\SalaryUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AdminForm\SalaryUC.Designer.cs">
+      <DependentUpon>SalaryUC.cs</DependentUpon>
+    </Compile>
     <Compile Include="AdminForm\Service.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -283,6 +289,9 @@
     <EmbeddedResource Include="AdminForm\Dashboard.resx">
       <DependentUpon>Dashboard.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AdminForm\SalaryUC.resx">
+      <DependentUpon>SalaryUC.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AdminForm\Service.resx">
       <DependentUpon>Service.cs</DependentUpon>
     </EmbeddedResource>
@@ -371,9 +380,19 @@
     <None Include="Resources\logout.png" />
     <None Include="Resources\computer.png" />
     <Content Include="Diagram.png" />
+    <Content Include="Funtions\Scalar-Function\fun_NumberOfEmployees.sql" />
+    <Content Include="Funtions\Scalar-Function\fun_NumberOfManagers.sql" />
+    <Content Include="Funtions\Scalar-Function\fun_NumberOfUsers.sql" />
+    <Content Include="Funtions\Scalar-Function\fun_SumSalaryAllEmployees.sql" />
+    <Content Include="Funtions\Scalar-Function\fun_SumSalaryOfEmployee.sql" />
+    <Content Include="Funtions\Table-Function\fun_salaryAllEmployees.sql" />
+    <Content Include="Procedures\Account\pr_NumberOfUsers.sql" />
     <Content Include="Procedures\Account\pr_register.sql" />
     <Content Include="Procedures\Computer_room\pr_GetAllRooms.sql" />
     <Content Include="Procedures\employee\pr_GetEmployeesList.sql" />
+    <Content Include="Procedures\employee\pr_NumberOfEmployees.sql" />
+    <Content Include="Procedures\employee\pr_NumberOfManagers.sql" />
+    <Content Include="Procedures\employee\pr_TableAllSalary.sql" />
     <Content Include="Procedures\order\pr_DeleteOrder.sql" />
     <Content Include="Procedures\order\pr_InsertOrder.sql" />
     <Content Include="Procedures\order\pr_isOrderExsists.sql" />
@@ -394,6 +413,7 @@
     <Content Include="Procedures\schedule\pr_SelectAllSchedules.sql" />
     <Content Include="Procedures\schedule\pr_SelectAllSchedulesOfEmployee.sql" />
     <Content Include="Procedures\schedule\pr_SelectCurrentSchedulesOfEmployee.sql" />
+    <Content Include="Procedures\schedule\pr_SumSalaryAllEmployees.sql" />
     <Content Include="Procedures\schedule\pr_UpdateSchedule.sql" />
     <None Include="Resources\dollar.png" />
     <None Include="Resources\food_icon.png" />

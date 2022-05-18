@@ -82,14 +82,14 @@ namespace InternetCafeManagement.Database
         {
             try
             {
-                SqlCommand command = new SqlCommand("UPDATE account SET name = @name, gender = @gender, email = @email, phone = @phone WHERE id = @id", connection.getConnection);
+                SqlCommand command = new SqlCommand("pr_updateUserData", connection.getConnection);
 
                 command.Parameters.Add("@id", SqlDbType.Int).Value = ID;
                 command.Parameters.Add("@name", SqlDbType.VarChar).Value = fullname;
                 command.Parameters.Add("@gender", SqlDbType.VarChar).Value = gender;
                 command.Parameters.Add("@phone", SqlDbType.VarChar).Value = phone;
                 command.Parameters.Add("@email", SqlDbType.VarChar).Value = email;
-
+                command.CommandType = CommandType.StoredProcedure;
                 connection.openConnection();
                 if ((command.ExecuteNonQuery() == 1))
                 {
@@ -112,11 +112,11 @@ namespace InternetCafeManagement.Database
         {
             try
             {
-                SqlCommand command = new SqlCommand("UPDATE account SET password = @password WHERE id = @id", connection.getConnection);
+                SqlCommand command = new SqlCommand("pr_updatePassword", connection.getConnection);
 
                 command.Parameters.Add("@id", SqlDbType.Int).Value = id;
                 command.Parameters.Add("@password", SqlDbType.VarChar).Value = password;
-
+                command.CommandType = CommandType.StoredProcedure;
                 connection.openConnection();
                 if ((command.ExecuteNonQuery() == 1))
                 {
@@ -142,9 +142,10 @@ namespace InternetCafeManagement.Database
 
             DataTable table = new DataTable();
 
-            SqlCommand command = new SqlCommand("SELECT * FROM account WHERE username = @User AND password = @Pass", connection.getConnection);
+            SqlCommand command = new SqlCommand("pr_login", connection.getConnection);
             command.Parameters.Add("@User", SqlDbType.VarChar).Value = username;
             command.Parameters.Add("@Pass", SqlDbType.VarChar).Value = password;
+            command.CommandType = CommandType.StoredProcedure;
             connection.openConnection();
             adapter.SelectCommand = command;
             adapter.Fill(table);
@@ -167,9 +168,9 @@ namespace InternetCafeManagement.Database
             int id = 0;
             try
             {
-                SqlCommand command = new SqlCommand("SELECT * FROM account WHERE username = @username", connection.getConnection);
+                SqlCommand command = new SqlCommand("pr_getUserID", connection.getConnection);
                 command.Parameters.Add("@username", SqlDbType.NVarChar).Value = username;
-
+                command.CommandType = CommandType.StoredProcedure;
                 connection.openConnection();
                 SqlDataReader reader = command.ExecuteReader();
 
@@ -191,9 +192,9 @@ namespace InternetCafeManagement.Database
             string username = String.Empty;
             try
             {
-                SqlCommand command = new SqlCommand("SELECT * FROM account WHERE id = @id", connection.getConnection);
+                SqlCommand command = new SqlCommand("pr_getUserFullName", connection.getConnection);
                 command.Parameters.Add("@id", SqlDbType.Int).Value = CurrentUser.Id;
-
+                command.CommandType = CommandType.StoredProcedure;
                 connection.openConnection();
                 SqlDataReader reader = command.ExecuteReader();
 
@@ -215,9 +216,9 @@ namespace InternetCafeManagement.Database
             string phone = String.Empty;
             try
             {
-                SqlCommand command = new SqlCommand("SELECT * FROM account WHERE id = @id", connection.getConnection);
+                SqlCommand command = new SqlCommand("pr_getUserPhone", connection.getConnection);
                 command.Parameters.Add("@id", SqlDbType.Int).Value = CurrentUser.Id;
-
+                command.CommandType = CommandType.StoredProcedure;
                 connection.openConnection();
                 SqlDataReader reader = command.ExecuteReader();
 
@@ -239,9 +240,9 @@ namespace InternetCafeManagement.Database
             string email = String.Empty;
             try
             {
-                SqlCommand command = new SqlCommand("SELECT * FROM account WHERE id = @id", connection.getConnection);
+                SqlCommand command = new SqlCommand("pr_getUserEmail", connection.getConnection);
                 command.Parameters.Add("@id", SqlDbType.Int).Value = CurrentUser.Id;
-
+                command.CommandType = CommandType.StoredProcedure;
                 connection.openConnection();
                 SqlDataReader reader = command.ExecuteReader();
 
@@ -263,9 +264,9 @@ namespace InternetCafeManagement.Database
             string username = String.Empty;
             try
             {
-                SqlCommand command = new SqlCommand("SELECT * FROM account WHERE id = @id", connection.getConnection);
+                SqlCommand command = new SqlCommand("pr_getUsername", connection.getConnection);
                 command.Parameters.Add("@id", SqlDbType.Int).Value = CurrentUser.Id;
-
+                command.CommandType = CommandType.StoredProcedure;
                 connection.openConnection();
                 SqlDataReader reader = command.ExecuteReader();
 
@@ -287,9 +288,9 @@ namespace InternetCafeManagement.Database
             string password = String.Empty;
             try
             {
-                SqlCommand command = new SqlCommand("SELECT * FROM account WHERE id = @id", connection.getConnection);
+                SqlCommand command = new SqlCommand("pr_getUserPassword", connection.getConnection);
                 command.Parameters.Add("@id", SqlDbType.Int).Value = CurrentUser.Id;
-
+                command.CommandType = CommandType.StoredProcedure;
                 connection.openConnection();
                 SqlDataReader reader = command.ExecuteReader();
 
@@ -309,8 +310,9 @@ namespace InternetCafeManagement.Database
         // Hàm kiểm tra User có tồn tài chưa, bằng cách kiểm tra ID được truyền vào, nếu tồn tại Trả về "TRUE", nếu không tồn tại trả vể "False"
         public bool isUserExist_By_ID(int id)
         {
-            SqlCommand command = new SqlCommand("SELECT * FROM login WHERE id = @id", connection.getConnection);
+            SqlCommand command = new SqlCommand("pr_isUserExist_By_ID", connection.getConnection);
             command.Parameters.Add("@id", SqlDbType.Int).Value = id;
+            command.CommandType = CommandType.StoredProcedure;
             connection.openConnection();
             try
             {
@@ -335,9 +337,9 @@ namespace InternetCafeManagement.Database
         // Hàm kiểm tra User có tồn tài chưa, bằng cách kiểm tra username được truyền vào, nếu tồn tại Trả về "TRUE", nếu không tồn tại trả vể "False"
         public bool isUserExist_By_Username(string username)
         {
-            SqlCommand command = new SqlCommand("SELECT * FROM login WHERE username = @username", connection.getConnection);
+            SqlCommand command = new SqlCommand("pr_isUserExist_By_Username", connection.getConnection);
             command.Parameters.Add("@username", SqlDbType.NVarChar).Value = username;
-
+            command.CommandType = CommandType.StoredProcedure;
             connection.openConnection();
             try
             {
@@ -361,10 +363,10 @@ namespace InternetCafeManagement.Database
         // Hàm kiểm tra mật khẩu của người dùng có số id đó, trả về true nếu nhập đúng mật khẩu, trả về false nếu sai mật khẩu khớp với id đó.
         public bool passwordCheck(int id, string password)
         {
-            SqlCommand command = new SqlCommand("SELECT * FROM account WHERE id = @id and password = @password ", connection.getConnection);
+            SqlCommand command = new SqlCommand("pr_passwordCheck", connection.getConnection);
             command.Parameters.Add("@id", SqlDbType.Int).Value = id;
             command.Parameters.Add("@password", SqlDbType.NVarChar).Value = password;
-
+            command.CommandType = CommandType.StoredProcedure;
             connection.openConnection();
             try
             {
@@ -391,9 +393,9 @@ namespace InternetCafeManagement.Database
             string gender = String.Empty;
             try
             {
-                SqlCommand command = new SqlCommand("SELECT * FROM account WHERE id = @id", connection.getConnection);
+                SqlCommand command = new SqlCommand("pr_GetUserGender", connection.getConnection);
                 command.Parameters.Add("@id", SqlDbType.Int).Value = CurrentUser.Id;
-
+                command.CommandType = CommandType.StoredProcedure;
                 connection.openConnection();
                 SqlDataReader reader = command.ExecuteReader();
 
@@ -415,9 +417,9 @@ namespace InternetCafeManagement.Database
             float balance = 0;
             try
             {
-                SqlCommand command = new SqlCommand("SELECT * FROM account WHERE id = @id", connection.getConnection);
+                SqlCommand command = new SqlCommand("pr_GetUserBalance", connection.getConnection);
                 command.Parameters.Add("@id", SqlDbType.Real).Value = CurrentUser.Id;
-
+                command.CommandType = CommandType.StoredProcedure;
                 connection.openConnection();
                 SqlDataReader reader = command.ExecuteReader();
 
@@ -439,8 +441,8 @@ namespace InternetCafeManagement.Database
         {
             try
             {
-                SqlCommand command = new SqlCommand("UPDATE account SET balance = account.balance + @ammount WHERE id = @id", connection.getConnection);
-
+                SqlCommand command = new SqlCommand("pr_ChargeBalance", connection.getConnection);
+                command.CommandType = CommandType.StoredProcedure;
                 command.Parameters.Add("@id", SqlDbType.Int).Value = ID;
                 command.Parameters.Add("@ammount", SqlDbType.VarChar).Value = amount;
 
@@ -466,8 +468,8 @@ namespace InternetCafeManagement.Database
         {
             try
             {
-                SqlCommand command = new SqlCommand("UPDATE account SET balance = account.balance - @ammount WHERE id = @id", connection.getConnection);
-
+                SqlCommand command = new SqlCommand("pr_DischargeBalance", connection.getConnection);
+                command.CommandType = CommandType.StoredProcedure;
                 command.Parameters.Add("@id", SqlDbType.Int).Value = ID;
                 command.Parameters.Add("@ammount", SqlDbType.VarChar).Value = amount;
 
@@ -492,8 +494,8 @@ namespace InternetCafeManagement.Database
         {
             try
             {
-                SqlCommand command = new SqlCommand("UPDATE account SET balance = 0 WHERE id = @id", connection.getConnection);
-
+                SqlCommand command = new SqlCommand("pr_MakeBalanceZero", connection.getConnection);
+                command.CommandType = CommandType.StoredProcedure;
                 command.Parameters.Add("@id", SqlDbType.Int).Value = ID;
 
                 connection.openConnection();
@@ -513,6 +515,23 @@ namespace InternetCafeManagement.Database
                 return false;
             }
         }
-
+        public int CountUsersNumber()
+        {
+            int count = 0;
+            SqlCommand command = new SqlCommand("pr_NumberOfUsers", connection.getConnection);
+            command.CommandType = CommandType.StoredProcedure;
+            connection.openConnection();
+            try
+            {         
+                count = Int32.Parse(command.ExecuteScalar().ToString());
+                connection.closeConnection();
+                return count;
+            }
+            catch
+            {
+                connection.closeConnection();
+                return 0;
+            }
+        }
     }
 }

@@ -17,8 +17,9 @@ namespace InternetCafeManagement.Database
         // Nhận ID và kiểm tra máy tính có tồn tại với Id đó hay không, nếu có trả về true, nếu không trả về false
         public bool IsComputerExistsByID(int id)
         {
-            SqlCommand command = new SqlCommand("SELECT * FROM computer WHERE id = @id", connection.getConnection);
+            SqlCommand command = new SqlCommand("pr_IsComputerExistsByID", connection.getConnection);
             command.Parameters.Add("@id", SqlDbType.Int).Value = id;
+            command.CommandType = CommandType.StoredProcedure;
             connection.openConnection();
             try
             {
@@ -41,8 +42,9 @@ namespace InternetCafeManagement.Database
         }
         public bool isComputerExistsByMacAddress(string macAddress)
         {
-            SqlCommand command = new SqlCommand("SELECT * FROM computer WHERE macAddress = @macAddress", connection.getConnection);
+            SqlCommand command = new SqlCommand("pr_isComputerExistsByMacAddress", connection.getConnection);
             command.Parameters.Add("@macAddress", SqlDbType.NVarChar).Value = macAddress;
+            command.CommandType = CommandType.StoredProcedure;
             connection.openConnection();
             try
             {
@@ -67,9 +69,8 @@ namespace InternetCafeManagement.Database
 
         public bool AddNewComputer(int roomID, string info, string status, float fee)
         {
-            SqlCommand command = new SqlCommand("INSERT INTO computer (info, roomID, status, fee_per_hour)"
-                + " VALUES (@info, @roomID, @status, @fee_per_hour)", connection.getConnection);
-
+            SqlCommand command = new SqlCommand("pr_AddNewComputer", connection.getConnection);
+            command.CommandType = CommandType.StoredProcedure;
             command.Parameters.Add("@info", SqlDbType.VarChar).Value = info;
             command.Parameters.Add("@roomID", SqlDbType.Int).Value = roomID;
             command.Parameters.Add("@status", SqlDbType.VarChar).Value = status;
@@ -95,9 +96,8 @@ namespace InternetCafeManagement.Database
         }
         public bool AddNewComputer(int roomID, string info, string status, float fee, string macAddress)
         {
-            SqlCommand command = new SqlCommand("INSERT INTO computer (info, roomID, status, fee_per_hour, macAddress)"
-                + " VALUES (@info, @roomID, @status, @fee_per_hour, @macAddress)", connection.getConnection);
-
+            SqlCommand command = new SqlCommand("pr_AddNewComputerWithMac", connection.getConnection);
+            command.CommandType = CommandType.StoredProcedure;
             command.Parameters.Add("@info", SqlDbType.VarChar).Value = info;
             command.Parameters.Add("@roomID", SqlDbType.Int).Value = roomID;
             command.Parameters.Add("@status", SqlDbType.VarChar).Value = status;
@@ -125,8 +125,8 @@ namespace InternetCafeManagement.Database
         // Hàm trả về số máy tính của một phòng
         public int ComputerCountByID(int roomID)
         {
-            SqlCommand command = new SqlCommand("SELECT count(*) FROM computer as c INNER JOIN computer_room as cr " +
-                "ON c.roomID = cr.id WHERE c.roomID = @id", connection.getConnection);
+            SqlCommand command = new SqlCommand("pr_ComputerCountByID", connection.getConnection);
+            command.CommandType = CommandType.StoredProcedure;
             connection.openConnection();
             command.Parameters.Add("@id", SqlDbType.Int).Value = roomID;
             int count = Convert.ToInt32(command.ExecuteScalar());
@@ -139,9 +139,9 @@ namespace InternetCafeManagement.Database
             string info = String.Empty;
             try
             {
-                SqlCommand command = new SqlCommand("SELECT * FROM computer WHERE id = @id", connection.getConnection);
+                SqlCommand command = new SqlCommand("pr_GetComputerInfo", connection.getConnection);
                 command.Parameters.Add("@id", SqlDbType.Int).Value = id;
-
+                command.CommandType = CommandType.StoredProcedure;
                 connection.openConnection();
                 SqlDataReader reader = command.ExecuteReader();
 
@@ -164,9 +164,9 @@ namespace InternetCafeManagement.Database
             int roomID = 0;
             try
             {
-                SqlCommand command = new SqlCommand("SELECT * FROM computer WHERE id = @id", connection.getConnection);
+                SqlCommand command = new SqlCommand("pr_GetComputerRoomID", connection.getConnection);
                 command.Parameters.Add("@id", SqlDbType.Int).Value = id;
-
+                command.CommandType = CommandType.StoredProcedure;
                 connection.openConnection();
                 SqlDataReader reader = command.ExecuteReader();
 
@@ -189,9 +189,9 @@ namespace InternetCafeManagement.Database
             string status = String.Empty;
             try
             {
-                SqlCommand command = new SqlCommand("SELECT * FROM computer WHERE id = @id", connection.getConnection);
+                SqlCommand command = new SqlCommand("pr_GetComputerStatus", connection.getConnection);
                 command.Parameters.Add("@id", SqlDbType.Int).Value = id;
-
+                command.CommandType = CommandType.StoredProcedure;
                 connection.openConnection();
                 SqlDataReader reader = command.ExecuteReader();
 
@@ -214,9 +214,9 @@ namespace InternetCafeManagement.Database
             float fee = 0;
             try
             {
-                SqlCommand command = new SqlCommand("SELECT * FROM computer WHERE id = @id", connection.getConnection);
+                SqlCommand command = new SqlCommand("pr_GetComputerFeePerHour", connection.getConnection);
                 command.Parameters.Add("@id", SqlDbType.Int).Value = id;
-
+                command.CommandType = CommandType.StoredProcedure;
                 connection.openConnection();
                 SqlDataReader reader = command.ExecuteReader();
 
@@ -239,10 +239,9 @@ namespace InternetCafeManagement.Database
             List<Computer> computersList = new List<Computer>();
             try
             {
-                SqlCommand command = new SqlCommand("SELECT c.id, c.info, c.roomID, c.Status, c.fee_per_hour FROM computer as c INNER JOIN computer_room as cr " +
-                    "ON c.roomID = cr.id WHERE c.roomID = @roomID", connection.getConnection);
+                SqlCommand command = new SqlCommand("pr_GetDataTableAllComputerByRoomID", connection.getConnection);
                 command.Parameters.Add("@roomID", SqlDbType.Int).Value = roomID;
-
+                command.CommandType = CommandType.StoredProcedure;
                 connection.openConnection();
                 SqlDataReader reader = command.ExecuteReader();
                 int count = reader.FieldCount;
@@ -270,11 +269,11 @@ namespace InternetCafeManagement.Database
         {
             try
             {
-                SqlCommand command = new SqlCommand("UPDATE computer SET info = @info WHERE id = @id", connection.getConnection);
+                SqlCommand command = new SqlCommand("pr_UpdateInfo", connection.getConnection);
 
                 command.Parameters.Add("@id", SqlDbType.Int).Value = id;
                 command.Parameters.Add("@info", SqlDbType.VarChar).Value = info;
-
+                command.CommandType = CommandType.StoredProcedure;
                 connection.openConnection();
                 if ((command.ExecuteNonQuery() >= 1))
                 {
@@ -297,11 +296,11 @@ namespace InternetCafeManagement.Database
         {
             try
             {
-                SqlCommand command = new SqlCommand("UPDATE computer SET fee_per_hour = @fee WHERE id = @id", connection.getConnection);
+                SqlCommand command = new SqlCommand("pr_UpdateFeePerHour", connection.getConnection);
 
                 command.Parameters.Add("@id", SqlDbType.Int).Value = id;
                 command.Parameters.Add("@fee", SqlDbType.Real).Value = fee;
-
+                command.CommandType = CommandType.StoredProcedure;
                 connection.openConnection();
                 if ((command.ExecuteNonQuery() >= 1))
                 {
@@ -323,8 +322,8 @@ namespace InternetCafeManagement.Database
         {
             try
             {
-                SqlCommand command = new SqlCommand("UPDATE computer SET status = @status WHERE id = @id", connection.getConnection);
-
+                SqlCommand command = new SqlCommand("pr_MakeBusy", connection.getConnection);
+                command.CommandType = CommandType.StoredProcedure;
                 command.Parameters.Add("@id", SqlDbType.Int).Value = id;
                 command.Parameters.Add("@status", SqlDbType.NVarChar).Value = Status.busy;
 
@@ -349,11 +348,11 @@ namespace InternetCafeManagement.Database
         {
             try
             {
-                SqlCommand command = new SqlCommand("UPDATE computer SET status = @status WHERE id = @id", connection.getConnection);
+                SqlCommand command = new SqlCommand("pr_MakeAvailable", connection.getConnection);
 
                 command.Parameters.Add("@id", SqlDbType.Int).Value = id;
                 command.Parameters.Add("@status", SqlDbType.NVarChar).Value = Status.available;
-
+                command.CommandType = CommandType.StoredProcedure;
                 connection.openConnection();
                 if ((command.ExecuteNonQuery() >= 1))
                 {
@@ -375,11 +374,11 @@ namespace InternetCafeManagement.Database
         {
             try
             {
-                SqlCommand command = new SqlCommand("UPDATE computer SET status = @status WHERE id = @id", connection.getConnection);
+                SqlCommand command = new SqlCommand("pr_MakeInUse", connection.getConnection);
 
                 command.Parameters.Add("@id", SqlDbType.Int).Value = id;
                 command.Parameters.Add("@status", SqlDbType.NVarChar).Value = Status.in_use;
-
+                command.CommandType = CommandType.StoredProcedure;
                 connection.openConnection();
                 if ((command.ExecuteNonQuery() >= 1))
                 {
@@ -402,8 +401,8 @@ namespace InternetCafeManagement.Database
         {
             try
             {
-                SqlCommand command = new SqlCommand("DELETE FROM computer WHERE id = @id", connection.getConnection);
-
+                SqlCommand command = new SqlCommand("pr_DeleteComputer", connection.getConnection);
+                command.CommandType = CommandType.StoredProcedure;
                 command.Parameters.Add("@id", SqlDbType.Int).Value = id;
 
                 connection.openConnection();
@@ -425,8 +424,8 @@ namespace InternetCafeManagement.Database
         }
         public DataTable GetDataTableAllComputerByRoomID(int roomID)
         {
-            SqlCommand command = new SqlCommand("SELECT c.id, c.info, c.roomID, c.status, c.fee_per_hour, c.macAddress FROM computer as c INNER JOIN computer_room as cr " +
-                    "ON c.roomID = cr.id WHERE c.roomID = @roomID", connection.getConnection);
+            SqlCommand command = new SqlCommand("pr_GetDataTableAllComputerByRoomID", connection.getConnection);
+            command.CommandType = CommandType.StoredProcedure;
             command.Parameters.Add("@roomID", SqlDbType.Int).Value = roomID;
             command.Connection = connection.getConnection;
             connection.openConnection();
@@ -445,9 +444,9 @@ namespace InternetCafeManagement.Database
             Computer computer = new Computer();
             try
             {
-                SqlCommand command = new SqlCommand("SELECT * FROM computer WHERE macAddress = @macAdress", connection.getConnection);
+                SqlCommand command = new SqlCommand("pr_GetComputerByMacAddress", connection.getConnection);
                 command.Parameters.Add("@macAdress", SqlDbType.NVarChar).Value = macAddress;
-
+                command.CommandType = CommandType.StoredProcedure;
                 connection.openConnection();
                 SqlDataReader reader = command.ExecuteReader();
 

@@ -94,6 +94,7 @@ namespace InternetCafeManagement.User_Form
 
         private void buttonProfile_Click(object sender, EventArgs e)
         {
+            Profile ucprofile = new Profile();
             ucProfile.Dock = DockStyle.Fill;
             panelContainer.Controls.Add(ucProfile);
             ucProfile.Show();

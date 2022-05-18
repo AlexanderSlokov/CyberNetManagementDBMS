@@ -18,14 +18,20 @@ namespace InternetCafeManagement.AdminForm
             InitializeComponent();
         }
         ShiftDB shiftDB = new ShiftDB();
+        AccountDB accountDB = new AccountDB();
+        EmployeeDB employeeDB = new EmployeeDB();
         string current_week_date;
         private void dataGridViewSchedule_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }
-
-        private void Schedule_Load(object sender, EventArgs e)
+        void LoadData()
         {
+            labelTotalPayment.Text = shiftDB.SumAllSalary().ToString();
+            labelUsers.Text = accountDB.CountUsersNumber().ToString();
+            labelEmployees.Text = employeeDB.CountEmployeesNumber().ToString();
+            labelManagers.Text = employeeDB.CountManagersNumber().ToString();
+
             current_week_date = DateTime.Now.DayOfWeek.ToString();
             buttonToday.Text = current_week_date.ToString();
 
@@ -50,13 +56,18 @@ namespace InternetCafeManagement.AdminForm
             dataGridViewSchedule.Columns["startTime"].DisplayIndex = 3;
 
             dataGridViewSchedule.Columns["endTime"].Width = 150;
-            dataGridViewSchedule.Columns["endTime"].HeaderText = "Endinging time";
+            dataGridViewSchedule.Columns["endTime"].HeaderText = "Ending time";
             dataGridViewSchedule.Columns["endTime"].DisplayIndex = 4;
 
             dataGridViewSchedule.Columns["shift_type"].Width = 100;
             dataGridViewSchedule.Columns["shift_type"].HeaderText = "Shift Type";
             dataGridViewSchedule.Columns["shift_type"].DisplayIndex = 5;
 
+        }
+        private void Schedule_Load(object sender, EventArgs e)
+        {
+            LoadData();
+          
         }
     }
 }

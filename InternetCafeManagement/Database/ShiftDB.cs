@@ -424,5 +424,23 @@ namespace InternetCafeManagement.Database
                 return false;
             }
         }
+
+        public float SumAllSalary()
+        {
+            float value;
+            SqlCommand command = new SqlCommand("pr_SumSalaryAllEmployees", connection.getConnection);
+            connection.openConnection();
+            command.CommandType = CommandType.StoredProcedure;
+            try
+            {
+                value = float.Parse(command.ExecuteScalar().ToString());
+                return value;
+            }
+            catch
+            {
+                return 0;
+            }
+        }
+
     }
 }

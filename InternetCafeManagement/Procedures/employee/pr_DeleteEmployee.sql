@@ -1,0 +1,3 @@
+CREATE PROCEDURE pr_DeleteEmployee @id int
+AS
+DELETE FROM EMPLOYEE WHERE id = @id

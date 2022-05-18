@@ -52,8 +52,7 @@ namespace InternetCafeManagement.Account_Form
 
             }
         }
-
-        private void buttonLogin_Click(object sender, EventArgs e)
+        void Login()
         {
             string username = textBoxUsername.Text;
             string password = textBoxPassword.Text;
@@ -72,14 +71,14 @@ namespace InternetCafeManagement.Account_Form
                     this.DialogResult = DialogResult.OK;
                     MessageBox.Show("Login Success");
 
-                    
-                    if(loginComputer == null)
+
+                    if (loginComputer == null)
                     {
                         CurrentUser.LoginRequest = "manager";
-                        
+
                         if (computerRoomDB.IsComputerRoomExistsByID(1) == true)
                         {
-                            if(computerDB.isComputerExistsByMacAddress(macAddress) == false)
+                            if (computerDB.isComputerExistsByMacAddress(macAddress) == false)
                             {
                                 computerDB.AddNewComputer(1, "", Status.available, 5000, macAddress);
                             }
@@ -108,9 +107,9 @@ namespace InternetCafeManagement.Account_Form
                             pcGetter.SetCurrentComputer(loginComputer);
                             CurrentUser.LoginRequest = "user";
                         }
-                        
+
                     }
-                    else if(loginComputer != null)
+                    else if (loginComputer != null)
                     {
 
                         pcGetter.SetCurrentComputer(loginComputer);
@@ -124,7 +123,7 @@ namespace InternetCafeManagement.Account_Form
 
                     Computer currentComputer = pcGetter.GetCurrentComputer();
 
-                    if(userUsage.isLogin(currentComputer.Id, CurrentUser.Id) == false)
+                    if (userUsage.isLogin(currentComputer.Id, CurrentUser.Id) == false)
                     {
                         userUsage.InsertUsage(loginComputer.Id, CurrentUser.Id, CurrentUser.LoginTime);
                     }
@@ -201,14 +200,14 @@ namespace InternetCafeManagement.Account_Form
                         // Xet nguoi dung
                         this.DialogResult = DialogResult.OK;
                         MessageBox.Show("Login Success");
-                        
-            
+
+
                         Employee loginEmployee = employeeDB.GetEmployeeByUsername(username);
 
                         // La employee
-                        if(loginEmployee.Position == "employee")
+                        if (loginEmployee.Position == "employee")
                         {
-                            
+
 
                             // Set user and computer
                             CurrentUser.Id = loginEmployee.Id;
@@ -231,7 +230,7 @@ namespace InternetCafeManagement.Account_Form
                                 adminMainForm.Show(this);
                                 this.Hide();
                             }
-                          
+
                         }
 
                     }
@@ -240,9 +239,13 @@ namespace InternetCafeManagement.Account_Form
                         MessageBox.Show("Invalid Username or Password", "Login Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
-                   
+
             }
-           
+
+        }
+        private void buttonLogin_Click(object sender, EventArgs e)
+        {
+            Login();
         }
 
         private void formLogin_Load(object sender, EventArgs e)
@@ -255,6 +258,37 @@ namespace InternetCafeManagement.Account_Form
         private void radioButtonEmployee_CheckedChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void formLogin_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Enter)
+            {
+                Login();
+                textBoxUsername.Text = "";
+                textBoxPassword.Text = "";
+            }
+        }
+
+
+        private void textBoxUsername_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                Login();
+                textBoxUsername.Text = "";
+                textBoxPassword.Text = "";
+            }
+        }
+
+        private void textBoxPassword_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                Login();
+                textBoxUsername.Text = "";
+                textBoxPassword.Text = "";
+            }
         }
     }
 }

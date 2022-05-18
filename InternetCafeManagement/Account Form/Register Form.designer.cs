@@ -316,6 +316,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.formRegister_FormClosed);
             this.Load += new System.EventHandler(this.formRegister_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.formRegister_KeyDown);
             this.ResumeLayout(false);
             this.PerformLayout();
 

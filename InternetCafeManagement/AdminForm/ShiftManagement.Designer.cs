@@ -96,7 +96,7 @@
             "Morning Shift",
             "Noon Shift",
             "Afternoon Shift",
-            "Nigh Shift"});
+            "Night Shift"});
             this.comboBoxShiftType.Location = new System.Drawing.Point(344, 207);
             this.comboBoxShiftType.Name = "comboBoxShiftType";
             this.comboBoxShiftType.Size = new System.Drawing.Size(121, 21);
