@@ -22,6 +22,7 @@ namespace InternetCafeManagement.Employee_Form
         RechargeDB rechargeDB = new RechargeDB();
         AccountDB accountDB = new AccountDB();
         ShiftDB shiftDB = new ShiftDB();
+        SalaryDB salaryDB = new SalaryDB();
         private void EmployeeDashboard_Load(object sender, EventArgs e)
         {
             LoadData();
@@ -48,26 +49,41 @@ namespace InternetCafeManagement.Employee_Form
             dataGridViewSchedule.DataSource = shiftDB.GetDataTableSchedulesOfEmployee(weekDate, CurrentUser.Id);
 
             Schedule currentSchedule = shiftDB.GetSchedulesOfEmployee(CurrentUser.Id, weekDate, loginTime);
-            if ( true /*loginTime >= currentSchedule.StartTime && loginTime <= currentSchedule.EndTime */)
+            try
             {
-                if (shiftDB.IsEmployeeCheckIn(CurrentUser.Id, currentSchedule.RoomID, currentSchedule.StartTime, currentSchedule.EndTime, currentSchedule.WeekDate) == true)
+                if (loginTime >= currentSchedule.StartTime && loginTime <= currentSchedule.EndTime)
                 {
-                    buttonCheckIn.Enabled = true;
-                    buttonCheckIn.Text = "Checked";
+                    if (salaryDB.IsEmployeeCheckIn(CurrentUser.Id, DateTime.Now.TimeOfDay) == false)
+                    {
+                        
+                        buttonCheckIn.Enabled = true;
+                        
+
+                    }
+                    else
+                    {
+                        buttonCheckIn.Text = "Checked";
+                        buttonCheckIn.Enabled = false;
+                    }
+
+                    labelShiftAnnouncement.Text = "Shift Info";
+                    textBoxRoomID.Text = currentSchedule.RoomID.ToString();
+                    labelStartTime.Text = currentSchedule.StartTime.ToString();
+                    labelCheckOutTime.Text = currentSchedule.EndTime.ToString();
+                    textBoxShiftType.Text = currentSchedule.Shift_type.ToString();
                 }
                 else
                 {
                     buttonCheckIn.Enabled = false;
+                    buttonCheckIn.Text = "Not In Current Ship";
+                    labelShiftAnnouncement.Text = "You don't have any shift currently!";
+                    textBoxRoomID.Visible = false;
+                    labelStartTime.Visible = false;
+                    labelCheckOutTime.Visible = false;
+                    textBoxShiftType.Visible = false;
                 }
-                
-                buttonCheckIn.Text = "CHECK IN";
-                labelShiftAnnouncement.Text = "Shift Info";
-                textBoxRoomID.Text = currentSchedule.RoomID.ToString();
-                labelStartTime.Text = currentSchedule.StartTime.ToString();
-                labelCheckOutTime.Text = currentSchedule.EndTime.ToString();
-                textBoxShiftType.Text = currentSchedule.Shift_type.ToString();
             }
-            else
+            catch
             {
                 buttonCheckIn.Enabled = false;
                 buttonCheckIn.Text = "Not In Current Ship";
@@ -94,10 +110,55 @@ namespace InternetCafeManagement.Employee_Form
             TimeSpan endTime = TimeSpan.Parse(labelCheckOutTime.Text);
             DateTime check_in_date_time = DateTime.Now;
             string shift_type = textBoxShiftType.Text;
-            
-            shiftDB.MakeCheckInForEmployee(CurrentUser.Id, roomID, startTime, endTime, weekDate, check_in_date_time, shift_type);
+
+            salaryDB.MakeCheckInForEmployee(CurrentUser.Id, roomID, startTime, endTime, weekDate, check_in_date_time);
             buttonCheckIn.Text = "Checked";
             buttonCheckIn.Enabled = false;
+        }
+
+        private void buttonSubmit_Click(object sender, EventArgs e)
+        {
+            int user_id;
+            try
+            {
+                user_id = Int32.Parse(textBoxUserID.Text);
+            }
+            catch
+            {
+                user_id = 0;
+            }
+
+            float amount;
+            try
+            {
+                amount = float.Parse(textBoxRecharge.Text);
+            }
+            catch
+            {
+                amount = 0;
+            }
+
+
+            if (MessageBox.Show("Confirm Recharge At ID =" + user_id + " with amount = " + amount, "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                rechargeDB.RechargeForUser(user_id, amount);
+                LoadData();
+                MessageBox.Show("Successfully Recharging");
+            }
+            else
+            {
+                // user clicked no
+            }
+        }
+
+        private void textBoxRecharge_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void labelBalance_Click(object sender, EventArgs e)
+        {
+
         }
 
         private void dataGridViewRechargeRequest_CellClick(object sender, DataGridViewCellEventArgs e)

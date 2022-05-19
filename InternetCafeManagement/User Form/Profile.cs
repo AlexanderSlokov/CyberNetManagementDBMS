@@ -19,13 +19,17 @@ namespace InternetCafeManagement.User_Form
         {
             InitializeComponent();
         }
+        static UCProfile instance;
 
         string username, gender, fullname, email, phone;
         AccountDB account = new AccountDB();
         OrderDB orderDB = new OrderDB();
+
+        public static UCProfile ucprofile { get => instance; set => instance = value; }
+
         private void formProfile_Load(object sender, EventArgs e)
         {
-            loadData();
+            LoadData();
         }
 
         private void buttonUpdatePassword_Click(object sender, EventArgs e)
@@ -35,8 +39,9 @@ namespace InternetCafeManagement.User_Form
         }
 
       
-        private void loadData()
+        public void LoadData()
         {
+            ucprofile = this;
             username = account.getUsername();
             fullname = account.getUserFullName();
             gender = account.GetUserGender();
@@ -50,7 +55,7 @@ namespace InternetCafeManagement.User_Form
 
             dataGridViewOrderList.DataSource = orderDB.GetDataTableAllOrdersOfUser(CurrentUser.Id);
 
-            dataGridViewOrderList.RowTemplate.Height = 50;
+            dataGridViewOrderList.RowTemplate.Height = 200;
             dataGridViewOrderList.RowHeadersVisible = false;
             dataGridViewOrderList.AllowUserToAddRows = false;
 
@@ -75,7 +80,7 @@ namespace InternetCafeManagement.User_Form
                 account.updateUserData(CurrentUser.Id, fullname, gender, phone, email);
                 MessageBox.Show("Information Updated", "", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
             }
-            loadData();
+            LoadData();
         }
 
         public bool dataValidate()

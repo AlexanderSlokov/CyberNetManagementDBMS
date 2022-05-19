@@ -165,6 +165,7 @@
     <Compile Include="Database\ComputerRoomDB.cs" />
     <Compile Include="Database\OrderDB.cs" />
     <Compile Include="Database\RechargeDB.cs" />
+    <Compile Include="Database\SalaryDB.cs" />
     <Compile Include="Database\ShiftDB.cs" />
     <Compile Include="Database\UserUsingComputerDB.cs" />
     <Compile Include="Employee Form\E_ComputerDetailForm.cs">
@@ -444,7 +445,7 @@
     <Content Include="Procedures\employee\pr_IsEmployeeExistByUsername.sql" />
     <Content Include="Procedures\employee\pr_NumberOfEmployees.sql" />
     <Content Include="Procedures\employee\pr_NumberOfManagers.sql" />
-    <Content Include="Procedures\employee\pr_TableAllSalary.sql" />
+    <Content Include="Procedures\Salary\pr_TableAllSalary.sql" />
     <Content Include="Procedures\employee\pr_UpdateEmployee.sql" />
     <Content Include="Procedures\order\pr_DeleteOrder.sql" />
     <Content Include="Procedures\order\pr_InsertOrder.sql" />
@@ -459,14 +460,14 @@
     <Content Include="Procedures\schedule\pr_DeleteSchedule.sql" />
     <Content Include="Procedures\schedule\pr_GetShiftOfAllEmployees.sql" />
     <Content Include="Procedures\schedule\pr_InsertSchedule.sql" />
-    <Content Include="Procedures\schedule\pr_IsEmployeeCheckIn.sql" />
+    <Content Include="Procedures\Salary\pr_IsEmployeeCheckIn.sql" />
     <Content Include="Procedures\schedule\pr_isScheduleExsists.sql" />
-    <Content Include="Procedures\schedule\pr_MakeCheckIn.sql" />
+    <Content Include="Procedures\Salary\pr_CheckIn.sql" />
     <Content Include="Procedures\schedule\pr_SelectAllScheduleOfEmployee.sql" />
     <Content Include="Procedures\schedule\pr_SelectAllSchedules.sql" />
     <Content Include="Procedures\schedule\pr_SelectAllSchedulesOfEmployee.sql" />
     <Content Include="Procedures\schedule\pr_SelectCurrentSchedulesOfEmployee.sql" />
-    <Content Include="Procedures\schedule\pr_SumSalaryAllEmployees.sql" />
+    <Content Include="Procedures\Salary\pr_SumSalaryAllEmployees.sql" />
     <Content Include="Procedures\schedule\pr_UpdateSchedule.sql" />
     <None Include="Resources\dollar.png" />
     <None Include="Resources\food_icon.png" />
@@ -490,6 +491,7 @@
     <Content Include="SQL Scripts\Manager Permission.sql" />
     <Content Include="SQL Scripts\order_list.sql" />
     <Content Include="SQL Scripts\recharge.sql" />
+    <Content Include="SQL Scripts\salary.sql" />
     <Content Include="SQL Scripts\schedule.sql" />
     <Content Include="SQL Scripts\service.sql" />
     <Content Include="SQL Scripts\User Permission.sql" />

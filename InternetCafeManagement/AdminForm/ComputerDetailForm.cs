@@ -42,7 +42,7 @@ namespace InternetCafeManagement.AdminForm
             if (DataValidate.TextBoxNumInputCheck(textBoxFee.Text))
             {
                 fee = float.Parse(textBoxFee.Text);
-                if (computerDB.UpdateFeePerHour(current_room_id, fee) == false)
+                if (computerDB.UpdateFeePerHour(current_computer_id, fee) == false)
                 {
                     MessageBox.Show("Updating New Computer Failed", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }

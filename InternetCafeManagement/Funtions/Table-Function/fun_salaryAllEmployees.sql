@@ -21,5 +21,7 @@ BEGIN
 		email as 'Email'
 	FROM
 		dbo.employee
+	WHERE position = 'employee'
+
 	RETURN;
 END;

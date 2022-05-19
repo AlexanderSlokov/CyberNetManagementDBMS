@@ -296,11 +296,10 @@ namespace InternetCafeManagement.Database
         {
             try
             {
-                SqlCommand command = new SqlCommand("pr_UpdateFeePerHour", connection.getConnection);
+                SqlCommand command = new SqlCommand("UPDATE computer SET fee_per_hour = @fee WHERE id = @id", connection.getConnection);
 
                 command.Parameters.Add("@id", SqlDbType.Int).Value = id;
                 command.Parameters.Add("@fee", SqlDbType.Real).Value = fee;
-                command.CommandType = CommandType.StoredProcedure;
                 connection.openConnection();
                 if ((command.ExecuteNonQuery() >= 1))
                 {
@@ -325,7 +324,7 @@ namespace InternetCafeManagement.Database
                 SqlCommand command = new SqlCommand("pr_MakeBusy", connection.getConnection);
                 command.CommandType = CommandType.StoredProcedure;
                 command.Parameters.Add("@id", SqlDbType.Int).Value = id;
-                command.Parameters.Add("@status", SqlDbType.NVarChar).Value = Status.busy;
+                command.Parameters.Add("@status", SqlDbType.NVarChar).Value = "Busy";
 
                 connection.openConnection();
                 if ((command.ExecuteNonQuery() >= 1))

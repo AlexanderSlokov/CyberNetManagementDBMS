@@ -101,7 +101,7 @@ namespace InternetCafeManagement.Employee_Form
         {
             transit_computer_id = computer_id;
             Button button = (Button)sender;
-            ComputerDetailForm computerDetailForm = new ComputerDetailForm();
+            E_ComputerDetailForm computerDetailForm = new E_ComputerDetailForm();
             computerDetailForm.Show(this);
 
         }
@@ -169,7 +169,7 @@ namespace InternetCafeManagement.Employee_Form
         public void button_Click(object sender, EventArgs e)
         {
             Button button = (Button)sender;
-            ComputerDetailForm computerDetailForm = new ComputerDetailForm();
+            E_ComputerDetailForm computerDetailForm = new E_ComputerDetailForm();
             computerDetailForm.ShowDialog(this);
 
         }
@@ -255,7 +255,7 @@ namespace InternetCafeManagement.Employee_Form
         {
             transit_computer_id = computer_id;
             DataGridView dataGrid = (DataGridView)sender;
-            ComputerDetailForm computerDetailForm = new ComputerDetailForm();
+            E_ComputerDetailForm computerDetailForm = new E_ComputerDetailForm();
             computerDetailForm.Show(this);
 
         }

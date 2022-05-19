@@ -47,7 +47,7 @@
             this.dataGridViewSchedule.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewSchedule.Location = new System.Drawing.Point(616, 76);
             this.dataGridViewSchedule.Name = "dataGridViewSchedule";
-            this.dataGridViewSchedule.Size = new System.Drawing.Size(496, 502);
+            this.dataGridViewSchedule.Size = new System.Drawing.Size(625, 502);
             this.dataGridViewSchedule.TabIndex = 23;
             this.dataGridViewSchedule.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewSchedule_CellContentClick);
             // 
@@ -61,7 +61,7 @@
             this.buttonToday.Location = new System.Drawing.Point(616, 4);
             this.buttonToday.Margin = new System.Windows.Forms.Padding(4);
             this.buttonToday.Name = "buttonToday";
-            this.buttonToday.Size = new System.Drawing.Size(496, 65);
+            this.buttonToday.Size = new System.Drawing.Size(624, 65);
             this.buttonToday.TabIndex = 86;
             this.buttonToday.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.buttonToday.UseVisualStyleBackColor = false;
@@ -168,7 +168,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Nirmala UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Teal;
-            this.label1.Location = new System.Drawing.Point(22, 76);
+            this.label1.Location = new System.Drawing.Point(34, 76);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(76, 37);
@@ -191,7 +191,7 @@
             this.Controls.Add(this.buttonToday);
             this.Controls.Add(this.dataGridViewSchedule);
             this.Name = "Dashboard";
-            this.Size = new System.Drawing.Size(1180, 581);
+            this.Size = new System.Drawing.Size(1244, 581);
             this.Load += new System.EventHandler(this.Schedule_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSchedule)).EndInit();
             this.ResumeLayout(false);

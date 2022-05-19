@@ -13,9 +13,9 @@ using InternetCafeManagement.Utility;
 
 namespace InternetCafeManagement.Employee_Form
 {
-    public partial class ComputerDetailForm : System.Windows.Forms.Form
+    public partial class E_ComputerDetailForm : System.Windows.Forms.Form
     {
-        public ComputerDetailForm()
+        public E_ComputerDetailForm()
         {
             InitializeComponent();
         }

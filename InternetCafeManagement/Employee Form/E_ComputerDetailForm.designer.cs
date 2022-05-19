@@ -1,6 +1,6 @@
 ﻿namespace InternetCafeManagement.Employee_Form
 {
-    partial class ComputerDetailForm
+    partial class E_ComputerDetailForm
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ComputerDetailForm));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(E_ComputerDetailForm));
             this.buttonChangeStatus = new System.Windows.Forms.Button();
             this.label23 = new System.Windows.Forms.Label();
             this.textBoxInfo = new System.Windows.Forms.TextBox();
@@ -297,7 +297,7 @@
             this.buttonDisplayStatus.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.buttonDisplayStatus.UseVisualStyleBackColor = false;
             // 
-            // ComputerDetailForm
+            // E_ComputerDetailForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -321,7 +321,7 @@
             this.Controls.Add(this.label23);
             this.Controls.Add(this.buttonChangeStatus);
             this.Margin = new System.Windows.Forms.Padding(2);
-            this.Name = "ComputerDetailForm";
+            this.Name = "E_ComputerDetailForm";
             this.Text = "Computer Detail";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.ComputerDetailForm_FormClosed);
             this.Load += new System.EventHandler(this.ComputerDetailForm_Load);

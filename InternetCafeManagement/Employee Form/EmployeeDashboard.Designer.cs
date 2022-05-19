@@ -42,6 +42,12 @@
             this.labelStartTime = new System.Windows.Forms.Label();
             this.labelCheckOutTime = new System.Windows.Forms.Label();
             this.buttonCheckIn = new System.Windows.Forms.Button();
+            this.buttonSubmit = new System.Windows.Forms.Button();
+            this.textBoxRecharge = new System.Windows.Forms.TextBox();
+            this.labelBalance = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.textBoxUserID = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewRechargeRequest)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSchedule)).BeginInit();
             this.SuspendLayout();
@@ -122,7 +128,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.label5.Location = new System.Drawing.Point(23, 231);
+            this.label5.Location = new System.Drawing.Point(23, 216);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(72, 17);
             this.label5.TabIndex = 105;
@@ -133,7 +139,7 @@
             this.textBoxShiftType.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(231)))), ((int)(((byte)(233)))));
             this.textBoxShiftType.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBoxShiftType.Font = new System.Drawing.Font("MS UI Gothic", 18F);
-            this.textBoxShiftType.Location = new System.Drawing.Point(150, 394);
+            this.textBoxShiftType.Location = new System.Drawing.Point(150, 318);
             this.textBoxShiftType.Multiline = true;
             this.textBoxShiftType.Name = "textBoxShiftType";
             this.textBoxShiftType.Size = new System.Drawing.Size(216, 28);
@@ -143,7 +149,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.label6.Location = new System.Drawing.Point(23, 313);
+            this.label6.Location = new System.Drawing.Point(23, 278);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(106, 17);
             this.label6.TabIndex = 107;
@@ -153,7 +159,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.label7.Location = new System.Drawing.Point(23, 405);
+            this.label7.Location = new System.Drawing.Point(23, 329);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(70, 17);
             this.label7.TabIndex = 109;
@@ -165,7 +171,7 @@
             this.labelStartTime.AutoSize = true;
             this.labelStartTime.Font = new System.Drawing.Font("Nirmala UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelStartTime.ForeColor = System.Drawing.Color.Teal;
-            this.labelStartTime.Location = new System.Drawing.Point(186, 231);
+            this.labelStartTime.Location = new System.Drawing.Point(186, 216);
             this.labelStartTime.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelStartTime.Name = "labelStartTime";
             this.labelStartTime.Size = new System.Drawing.Size(127, 37);
@@ -178,7 +184,7 @@
             this.labelCheckOutTime.AutoSize = true;
             this.labelCheckOutTime.Font = new System.Drawing.Font("Nirmala UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelCheckOutTime.ForeColor = System.Drawing.Color.Teal;
-            this.labelCheckOutTime.Location = new System.Drawing.Point(186, 313);
+            this.labelCheckOutTime.Location = new System.Drawing.Point(186, 262);
             this.labelCheckOutTime.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelCheckOutTime.Name = "labelCheckOutTime";
             this.labelCheckOutTime.Size = new System.Drawing.Size(127, 37);
@@ -208,10 +214,86 @@
             this.buttonCheckIn.UseVisualStyleBackColor = false;
             this.buttonCheckIn.Click += new System.EventHandler(this.buttonCheckIn_Click);
             // 
+            // buttonSubmit
+            // 
+            this.buttonSubmit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.buttonSubmit.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonSubmit.FlatAppearance.BorderSize = 0;
+            this.buttonSubmit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonSubmit.ForeColor = System.Drawing.Color.White;
+            this.buttonSubmit.Location = new System.Drawing.Point(147, 545);
+            this.buttonSubmit.Name = "buttonSubmit";
+            this.buttonSubmit.Size = new System.Drawing.Size(219, 38);
+            this.buttonSubmit.TabIndex = 125;
+            this.buttonSubmit.Text = "Add Amount To User Balance";
+            this.buttonSubmit.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.buttonSubmit.UseVisualStyleBackColor = false;
+            this.buttonSubmit.Click += new System.EventHandler(this.buttonSubmit_Click);
+            // 
+            // textBoxRecharge
+            // 
+            this.textBoxRecharge.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(231)))), ((int)(((byte)(233)))));
+            this.textBoxRecharge.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxRecharge.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxRecharge.Location = new System.Drawing.Point(147, 492);
+            this.textBoxRecharge.Name = "textBoxRecharge";
+            this.textBoxRecharge.Size = new System.Drawing.Size(219, 24);
+            this.textBoxRecharge.TabIndex = 124;
+            this.textBoxRecharge.TextChanged += new System.EventHandler(this.textBoxRecharge_TextChanged);
+            // 
+            // labelBalance
+            // 
+            this.labelBalance.AutoSize = true;
+            this.labelBalance.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold);
+            this.labelBalance.ForeColor = System.Drawing.Color.Red;
+            this.labelBalance.Location = new System.Drawing.Point(25, 421);
+            this.labelBalance.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelBalance.Name = "labelBalance";
+            this.labelBalance.Size = new System.Drawing.Size(84, 17);
+            this.labelBalance.TabIndex = 123;
+            this.labelBalance.Text = "Reecharge +";
+            this.labelBalance.Click += new System.EventHandler(this.labelBalance_Click);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold);
+            this.label4.Location = new System.Drawing.Point(25, 461);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(53, 17);
+            this.label4.TabIndex = 126;
+            this.label4.Text = "User ID";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold);
+            this.label8.Location = new System.Drawing.Point(25, 499);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(70, 17);
+            this.label8.TabIndex = 128;
+            this.label8.Text = "Ammount";
+            // 
+            // textBoxUserID
+            // 
+            this.textBoxUserID.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(231)))), ((int)(((byte)(233)))));
+            this.textBoxUserID.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxUserID.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxUserID.Location = new System.Drawing.Point(147, 454);
+            this.textBoxUserID.Name = "textBoxUserID";
+            this.textBoxUserID.Size = new System.Drawing.Size(219, 24);
+            this.textBoxUserID.TabIndex = 127;
+            // 
             // EmployeeDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.textBoxUserID);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.buttonSubmit);
+            this.Controls.Add(this.textBoxRecharge);
+            this.Controls.Add(this.labelBalance);
             this.Controls.Add(this.labelCheckOutTime);
             this.Controls.Add(this.labelStartTime);
             this.Controls.Add(this.label7);
@@ -252,5 +334,11 @@
         private System.Windows.Forms.Label label7;
         public System.Windows.Forms.Label labelStartTime;
         public System.Windows.Forms.Label labelCheckOutTime;
+        private System.Windows.Forms.Button buttonSubmit;
+        private System.Windows.Forms.TextBox textBoxRecharge;
+        private System.Windows.Forms.Label labelBalance;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox textBoxUserID;
     }
 }
