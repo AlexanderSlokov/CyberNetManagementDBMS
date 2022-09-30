@@ -4,4 +4,4 @@ INSERT INTO computer (info, roomID, status, fee_per_hour, macAddress)
 VALUES (@info, @roomID, @status, @fee_per_hour, @macAddress)
 
 
-
+/* aaa */
