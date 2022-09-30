@@ -4,3 +4,6 @@ AS
 BEGIN
 	RETURN (SELECT COUNT(id) from employee WHERE position = 'employee')
 END;
+/*
+dqwdqw
+*/	
