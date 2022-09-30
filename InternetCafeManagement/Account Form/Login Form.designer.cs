@@ -50,7 +50,7 @@
             this.labelCreateAccount.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(86)))), ((int)(((byte)(174)))));
             this.labelCreateAccount.Location = new System.Drawing.Point(95, 464);
             this.labelCreateAccount.Name = "labelCreateAccount";
-            this.labelCreateAccount.Size = new System.Drawing.Size(101, 17);
+            this.labelCreateAccount.Size = new System.Drawing.Size(132, 23);
             this.labelCreateAccount.TabIndex = 16;
             this.labelCreateAccount.Text = "Create Account";
             this.labelCreateAccount.Click += new System.EventHandler(this.labelCreateAccount_Click);
@@ -60,7 +60,7 @@
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(72, 438);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(147, 17);
+            this.label5.Size = new System.Drawing.Size(189, 23);
             this.label5.TabIndex = 17;
             this.label5.Text = "Dont Have an Account";
             // 
@@ -98,9 +98,9 @@
             this.checkBoxShowPassword.AutoSize = true;
             this.checkBoxShowPassword.Cursor = System.Windows.Forms.Cursors.Hand;
             this.checkBoxShowPassword.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.checkBoxShowPassword.Location = new System.Drawing.Point(134, 235);
+            this.checkBoxShowPassword.Location = new System.Drawing.Point(102, 243);
             this.checkBoxShowPassword.Name = "checkBoxShowPassword";
-            this.checkBoxShowPassword.Size = new System.Drawing.Size(119, 21);
+            this.checkBoxShowPassword.Size = new System.Drawing.Size(151, 27);
             this.checkBoxShowPassword.TabIndex = 13;
             this.checkBoxShowPassword.Text = "Show Password";
             this.checkBoxShowPassword.UseVisualStyleBackColor = true;
@@ -124,7 +124,7 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(34, 181);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(66, 17);
+            this.label3.Size = new System.Drawing.Size(84, 23);
             this.label3.TabIndex = 8;
             this.label3.Text = "Password";
             // 
@@ -145,7 +145,7 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(34, 116);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(69, 17);
+            this.label2.Size = new System.Drawing.Size(89, 23);
             this.label2.TabIndex = 9;
             this.label2.Text = "Username";
             // 
@@ -156,7 +156,7 @@
             this.label1.ForeColor = System.Drawing.Color.BlueViolet;
             this.label1.Location = new System.Drawing.Point(32, 69);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(155, 27);
+            this.label1.Size = new System.Drawing.Size(194, 34);
             this.label1.TabIndex = 6;
             this.label1.Text = "Get Started";
             // 
@@ -166,7 +166,7 @@
             this.radioButtonUser.Checked = true;
             this.radioButtonUser.Location = new System.Drawing.Point(37, 276);
             this.radioButtonUser.Name = "radioButtonUser";
-            this.radioButtonUser.Size = new System.Drawing.Size(53, 21);
+            this.radioButtonUser.Size = new System.Drawing.Size(66, 27);
             this.radioButtonUser.TabIndex = 18;
             this.radioButtonUser.TabStop = true;
             this.radioButtonUser.Text = "User";
@@ -177,7 +177,7 @@
             this.radioButtonEmployee.AutoSize = true;
             this.radioButtonEmployee.Location = new System.Drawing.Point(146, 276);
             this.radioButtonEmployee.Name = "radioButtonEmployee";
-            this.radioButtonEmployee.Size = new System.Drawing.Size(86, 21);
+            this.radioButtonEmployee.Size = new System.Drawing.Size(109, 27);
             this.radioButtonEmployee.TabIndex = 19;
             this.radioButtonEmployee.Text = "Employee";
             this.radioButtonEmployee.UseVisualStyleBackColor = true;
@@ -186,7 +186,7 @@
             // formLogin
             // 
             this.AllowDrop = true;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(289, 519);
