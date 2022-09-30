@@ -5,6 +5,3 @@ VALUES (@info, @roomID, @status, @fee_per_hour, @macAddress)
 
 
 
-/*
-Add a new computer with MAC address
-*/
