@@ -12,12 +12,12 @@ namespace CyberGamingManagement.Database
 {
     class DBConnection
     {
-        private const string connectionString = "Data Source=DESKTOP-OB2KPUE;Initial Catalog=InternetCafe;Integrated Security=True";
+        private const string connectionString = "Data Source=DESKTOP-CA3ARHV;Initial Catalog=CyberGamingManagement;Integrated Security=True";
         private string role;
         private byte[] _appRoleEnableCookie;
 
         // Phần data source này các bạn MySQL server lấy tên của server  máy local để vào dưới, mỗi máy khác nhau
-        private SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-OB2KPUE;Initial Catalog=InternetCafe;Integrated Security=True");
+        private SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-CA3ARHV;Initial Catalog=CyberGamingManagement;Integrated Security=True");
 
         public DBConnection()
         {
