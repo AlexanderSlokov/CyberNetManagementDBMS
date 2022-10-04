@@ -187,6 +187,7 @@ namespace CyberGamingManagement.Database
                 return id;
             }
         }
+        // Hàm lấy họ tên đầy đủ của user hiện tại
         public string getUserFullName()
         {
             string username = String.Empty;
@@ -211,6 +212,7 @@ namespace CyberGamingManagement.Database
                 return username;
             }
         }
+        // Hàm lấy ra số điện thoại của User
         public string getUserPhone()
         {
             string phone = String.Empty;
@@ -235,6 +237,8 @@ namespace CyberGamingManagement.Database
                 return phone;
             }
         }
+
+        // Hàm lấy ra email của User
         public string getUserEmail()
         {
             string email = String.Empty;
@@ -259,6 +263,8 @@ namespace CyberGamingManagement.Database
                 return email;
             }
         }
+
+        //// Hàm lấy ra username của User
         public string getUsername()
         {
             string username = String.Empty;
@@ -283,6 +289,7 @@ namespace CyberGamingManagement.Database
                 return username;
             }
         }
+        //// Hàm lấy ra password của User
         public string getUserPassword()
         {
             string password = String.Empty;
@@ -307,6 +314,7 @@ namespace CyberGamingManagement.Database
                 return password;
             }
         }
+
         // Hàm kiểm tra User có tồn tài chưa, bằng cách kiểm tra ID được truyền vào, nếu tồn tại Trả về "TRUE", nếu không tồn tại trả vể "False"
         public bool isUserExist_By_ID(int id)
         {
@@ -334,6 +342,7 @@ namespace CyberGamingManagement.Database
             }
 
         }
+
         // Hàm kiểm tra User có tồn tài chưa, bằng cách kiểm tra username được truyền vào, nếu tồn tại Trả về "TRUE", nếu không tồn tại trả vể "False"
         public bool isUserExist_By_Username(string username)
         {
@@ -360,6 +369,7 @@ namespace CyberGamingManagement.Database
                 return false;
             }
         }
+
         // Hàm kiểm tra mật khẩu của người dùng có số id đó, trả về true nếu nhập đúng mật khẩu, trả về false nếu sai mật khẩu khớp với id đó.
         public bool passwordCheck(int id, string password)
         {
@@ -387,6 +397,7 @@ namespace CyberGamingManagement.Database
                 return false;
             }
         }
+
         // Hàm lấy giới tính của người dùng bằng ID hiện tại
         public string GetUserGender()
         {
@@ -412,6 +423,7 @@ namespace CyberGamingManagement.Database
                 return null;
             }
         }
+
         public float GetUserBalance()
         {
             float balance = 0;
