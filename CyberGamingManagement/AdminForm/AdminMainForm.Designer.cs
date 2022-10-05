@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminMainForm));
             this.panelContainer = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.buttonSalary = new System.Windows.Forms.Button();
@@ -46,9 +45,10 @@
             // 
             // panelContainer
             // 
-            this.panelContainer.Location = new System.Drawing.Point(165, -1);
+            this.panelContainer.Location = new System.Drawing.Point(220, -1);
+            this.panelContainer.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panelContainer.Name = "panelContainer";
-            this.panelContainer.Size = new System.Drawing.Size(1227, 667);
+            this.panelContainer.Size = new System.Drawing.Size(1636, 821);
             this.panelContainer.TabIndex = 3;
             this.panelContainer.Paint += new System.Windows.Forms.PaintEventHandler(this.panelContainer_Paint);
             // 
@@ -62,10 +62,12 @@
             this.panel1.Controls.Add(this.buttonComputerRoom);
             this.panel1.Controls.Add(this.buttonService);
             this.panel1.Controls.Add(this.buttonDashBoard);
-            this.panel1.Location = new System.Drawing.Point(2, -1);
+            this.panel1.Location = new System.Drawing.Point(3, -1);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(167, 667);
+            this.panel1.Size = new System.Drawing.Size(223, 821);
             this.panel1.TabIndex = 2;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // buttonSalary
             // 
@@ -74,10 +76,10 @@
             this.buttonSalary.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonSalary.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonSalary.ForeColor = System.Drawing.Color.White;
-            this.buttonSalary.Image = global::CyberGamingManagement.Properties.Resources.dollar;
-            this.buttonSalary.Location = new System.Drawing.Point(0, 425);
+            this.buttonSalary.Location = new System.Drawing.Point(0, 523);
+            this.buttonSalary.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.buttonSalary.Name = "buttonSalary";
-            this.buttonSalary.Size = new System.Drawing.Size(163, 79);
+            this.buttonSalary.Size = new System.Drawing.Size(217, 97);
             this.buttonSalary.TabIndex = 120;
             this.buttonSalary.Text = "Salary";
             this.buttonSalary.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -92,10 +94,10 @@
             this.buttonSchedule.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonSchedule.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonSchedule.ForeColor = System.Drawing.Color.White;
-            this.buttonSchedule.Image = ((System.Drawing.Image)(resources.GetObject("buttonSchedule.Image")));
-            this.buttonSchedule.Location = new System.Drawing.Point(0, 340);
+            this.buttonSchedule.Location = new System.Drawing.Point(0, 418);
+            this.buttonSchedule.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.buttonSchedule.Name = "buttonSchedule";
-            this.buttonSchedule.Size = new System.Drawing.Size(163, 79);
+            this.buttonSchedule.Size = new System.Drawing.Size(217, 97);
             this.buttonSchedule.TabIndex = 119;
             this.buttonSchedule.Text = "Schedule";
             this.buttonSchedule.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -110,12 +112,12 @@
             this.buttonLogOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonLogOut.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonLogOut.ForeColor = System.Drawing.Color.White;
-            this.buttonLogOut.Image = ((System.Drawing.Image)(resources.GetObject("buttonLogOut.Image")));
-            this.buttonLogOut.Location = new System.Drawing.Point(3, 588);
+            this.buttonLogOut.Location = new System.Drawing.Point(4, 683);
+            this.buttonLogOut.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.buttonLogOut.Name = "buttonLogOut";
-            this.buttonLogOut.Size = new System.Drawing.Size(163, 79);
+            this.buttonLogOut.Size = new System.Drawing.Size(217, 134);
             this.buttonLogOut.TabIndex = 115;
-            this.buttonLogOut.Text = "LogOut";
+            this.buttonLogOut.Text = "LOG OUT";
             this.buttonLogOut.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.buttonLogOut.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.buttonLogOut.UseVisualStyleBackColor = false;
@@ -128,10 +130,10 @@
             this.buttonEmployeeManage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonEmployeeManage.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonEmployeeManage.ForeColor = System.Drawing.Color.White;
-            this.buttonEmployeeManage.Image = ((System.Drawing.Image)(resources.GetObject("buttonEmployeeManage.Image")));
-            this.buttonEmployeeManage.Location = new System.Drawing.Point(0, 85);
+            this.buttonEmployeeManage.Location = new System.Drawing.Point(0, 105);
+            this.buttonEmployeeManage.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.buttonEmployeeManage.Name = "buttonEmployeeManage";
-            this.buttonEmployeeManage.Size = new System.Drawing.Size(163, 79);
+            this.buttonEmployeeManage.Size = new System.Drawing.Size(217, 97);
             this.buttonEmployeeManage.TabIndex = 118;
             this.buttonEmployeeManage.Text = "Employee";
             this.buttonEmployeeManage.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -146,10 +148,10 @@
             this.buttonComputerRoom.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonComputerRoom.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonComputerRoom.ForeColor = System.Drawing.Color.White;
-            this.buttonComputerRoom.Image = ((System.Drawing.Image)(resources.GetObject("buttonComputerRoom.Image")));
-            this.buttonComputerRoom.Location = new System.Drawing.Point(0, 170);
+            this.buttonComputerRoom.Location = new System.Drawing.Point(0, 209);
+            this.buttonComputerRoom.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.buttonComputerRoom.Name = "buttonComputerRoom";
-            this.buttonComputerRoom.Size = new System.Drawing.Size(163, 79);
+            this.buttonComputerRoom.Size = new System.Drawing.Size(217, 97);
             this.buttonComputerRoom.TabIndex = 117;
             this.buttonComputerRoom.Text = "Computer Room";
             this.buttonComputerRoom.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -164,10 +166,10 @@
             this.buttonService.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonService.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonService.ForeColor = System.Drawing.Color.White;
-            this.buttonService.Image = global::CyberGamingManagement.Properties.Resources.food_icon;
-            this.buttonService.Location = new System.Drawing.Point(0, 255);
+            this.buttonService.Location = new System.Drawing.Point(0, 314);
+            this.buttonService.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.buttonService.Name = "buttonService";
-            this.buttonService.Size = new System.Drawing.Size(163, 79);
+            this.buttonService.Size = new System.Drawing.Size(217, 97);
             this.buttonService.TabIndex = 114;
             this.buttonService.Text = "Service";
             this.buttonService.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -182,10 +184,10 @@
             this.buttonDashBoard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonDashBoard.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonDashBoard.ForeColor = System.Drawing.Color.White;
-            this.buttonDashBoard.Image = ((System.Drawing.Image)(resources.GetObject("buttonDashBoard.Image")));
             this.buttonDashBoard.Location = new System.Drawing.Point(0, 0);
+            this.buttonDashBoard.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.buttonDashBoard.Name = "buttonDashBoard";
-            this.buttonDashBoard.Size = new System.Drawing.Size(163, 79);
+            this.buttonDashBoard.Size = new System.Drawing.Size(217, 97);
             this.buttonDashBoard.TabIndex = 116;
             this.buttonDashBoard.Text = "Dashboard";
             this.buttonDashBoard.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -203,11 +205,12 @@
             // 
             // AdminMainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1394, 667);
+            this.ClientSize = new System.Drawing.Size(1859, 833);
             this.Controls.Add(this.panelContainer);
             this.Controls.Add(this.panel1);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "AdminMainForm";
             this.Text = "AdminMainForm";
             this.Load += new System.EventHandler(this.AdminMainForm_Load);
