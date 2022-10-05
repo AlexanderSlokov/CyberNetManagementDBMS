@@ -103,6 +103,7 @@ namespace CyberGamingManagement.AdminForm
 
         }
 
+      
         public void LoadData()
         {
             computerRoomManageForm = (ComputerRoomManageForm)(this.Owner);
