@@ -46,9 +46,9 @@
             this.panel1.Controls.Add(this.buttonComputerRoom);
             this.panel1.Controls.Add(this.buttonDashBoard);
             this.panel1.Location = new System.Drawing.Point(3, 2);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(223, 501);
+            this.panel1.Size = new System.Drawing.Size(223, 641);
             this.panel1.TabIndex = 3;
             // 
             // buttonLogOut
@@ -58,8 +58,8 @@
             this.buttonLogOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonLogOut.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonLogOut.ForeColor = System.Drawing.Color.White;
-            this.buttonLogOut.Location = new System.Drawing.Point(0, 358);
-            this.buttonLogOut.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonLogOut.Location = new System.Drawing.Point(2, 540);
+            this.buttonLogOut.Margin = new System.Windows.Forms.Padding(4);
             this.buttonLogOut.Name = "buttonLogOut";
             this.buttonLogOut.Size = new System.Drawing.Size(217, 97);
             this.buttonLogOut.TabIndex = 115;
@@ -78,7 +78,7 @@
             this.buttonServiceManagement.ForeColor = System.Drawing.Color.White;
             this.buttonServiceManagement.Image = ((System.Drawing.Image)(resources.GetObject("buttonServiceManagement.Image")));
             this.buttonServiceManagement.Location = new System.Drawing.Point(0, 105);
-            this.buttonServiceManagement.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonServiceManagement.Margin = new System.Windows.Forms.Padding(4);
             this.buttonServiceManagement.Name = "buttonServiceManagement";
             this.buttonServiceManagement.Size = new System.Drawing.Size(217, 97);
             this.buttonServiceManagement.TabIndex = 118;
@@ -96,7 +96,7 @@
             this.buttonComputerRoom.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonComputerRoom.ForeColor = System.Drawing.Color.White;
             this.buttonComputerRoom.Location = new System.Drawing.Point(0, 209);
-            this.buttonComputerRoom.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonComputerRoom.Margin = new System.Windows.Forms.Padding(4);
             this.buttonComputerRoom.Name = "buttonComputerRoom";
             this.buttonComputerRoom.Size = new System.Drawing.Size(217, 97);
             this.buttonComputerRoom.TabIndex = 117;
@@ -115,7 +115,7 @@
             this.buttonDashBoard.ForeColor = System.Drawing.Color.White;
             this.buttonDashBoard.Image = ((System.Drawing.Image)(resources.GetObject("buttonDashBoard.Image")));
             this.buttonDashBoard.Location = new System.Drawing.Point(0, 0);
-            this.buttonDashBoard.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonDashBoard.Margin = new System.Windows.Forms.Padding(4);
             this.buttonDashBoard.Name = "buttonDashBoard";
             this.buttonDashBoard.Size = new System.Drawing.Size(217, 97);
             this.buttonDashBoard.TabIndex = 116;
@@ -128,19 +128,19 @@
             // panelContainer
             // 
             this.panelContainer.Location = new System.Drawing.Point(234, 2);
-            this.panelContainer.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelContainer.Margin = new System.Windows.Forms.Padding(4);
             this.panelContainer.Name = "panelContainer";
-            this.panelContainer.Size = new System.Drawing.Size(1021, 501);
+            this.panelContainer.Size = new System.Drawing.Size(1192, 641);
             this.panelContainer.TabIndex = 4;
             // 
             // EmployeeMainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1262, 509);
+            this.ClientSize = new System.Drawing.Size(1439, 656);
             this.Controls.Add(this.panelContainer);
             this.Controls.Add(this.panel1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "EmployeeMainForm";
             this.Text = "EmployeeMainForm";
             this.Load += new System.EventHandler(this.EmployeeMainForm_Load);
