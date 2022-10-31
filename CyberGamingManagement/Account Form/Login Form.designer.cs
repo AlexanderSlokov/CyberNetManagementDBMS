@@ -188,7 +188,6 @@
             this.radioButtonEmployee.TabIndex = 19;
             this.radioButtonEmployee.Text = "Employee";
             this.radioButtonEmployee.UseVisualStyleBackColor = true;
-            this.radioButtonEmployee.CheckedChanged += new System.EventHandler(this.radioButtonEmployee_CheckedChanged);
             // 
             // label4
             // 

@@ -244,6 +244,8 @@ namespace CyberGamingManagement.Account_Form
             }
 
         }
+
+        #region button click
         private void buttonLogin_Click(object sender, EventArgs e)
         {
             Login();
@@ -256,11 +258,6 @@ namespace CyberGamingManagement.Account_Form
             textBoxPassword.Text = "";
         }
 
-        private void radioButtonEmployee_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void formLogin_KeyDown(object sender, KeyEventArgs e)
         {
             if(e.KeyCode == Keys.Enter)
@@ -270,7 +267,6 @@ namespace CyberGamingManagement.Account_Form
                 textBoxPassword.Text = "";
             }
         }
-
 
         private void textBoxUsername_KeyDown(object sender, KeyEventArgs e)
         {
@@ -291,5 +287,6 @@ namespace CyberGamingManagement.Account_Form
                 textBoxPassword.Text = "";
             }
         }
+    #endregion
     }
 }
