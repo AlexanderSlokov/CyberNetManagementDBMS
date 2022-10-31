@@ -45,9 +45,10 @@
             this.panel1.Controls.Add(this.buttonServiceManagement);
             this.panel1.Controls.Add(this.buttonComputerRoom);
             this.panel1.Controls.Add(this.buttonDashBoard);
-            this.panel1.Location = new System.Drawing.Point(2, 2);
+            this.panel1.Location = new System.Drawing.Point(3, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(167, 710);
+            this.panel1.Size = new System.Drawing.Size(223, 501);
             this.panel1.TabIndex = 3;
             // 
             // buttonLogOut
@@ -57,10 +58,10 @@
             this.buttonLogOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonLogOut.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonLogOut.ForeColor = System.Drawing.Color.White;
-            this.buttonLogOut.Image = ((System.Drawing.Image)(resources.GetObject("buttonLogOut.Image")));
-            this.buttonLogOut.Location = new System.Drawing.Point(0, 425);
+            this.buttonLogOut.Location = new System.Drawing.Point(0, 358);
+            this.buttonLogOut.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.buttonLogOut.Name = "buttonLogOut";
-            this.buttonLogOut.Size = new System.Drawing.Size(163, 79);
+            this.buttonLogOut.Size = new System.Drawing.Size(217, 97);
             this.buttonLogOut.TabIndex = 115;
             this.buttonLogOut.Text = "LogOut";
             this.buttonLogOut.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -76,9 +77,10 @@
             this.buttonServiceManagement.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonServiceManagement.ForeColor = System.Drawing.Color.White;
             this.buttonServiceManagement.Image = ((System.Drawing.Image)(resources.GetObject("buttonServiceManagement.Image")));
-            this.buttonServiceManagement.Location = new System.Drawing.Point(0, 85);
+            this.buttonServiceManagement.Location = new System.Drawing.Point(0, 105);
+            this.buttonServiceManagement.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.buttonServiceManagement.Name = "buttonServiceManagement";
-            this.buttonServiceManagement.Size = new System.Drawing.Size(163, 79);
+            this.buttonServiceManagement.Size = new System.Drawing.Size(217, 97);
             this.buttonServiceManagement.TabIndex = 118;
             this.buttonServiceManagement.Text = "User Services";
             this.buttonServiceManagement.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -93,10 +95,10 @@
             this.buttonComputerRoom.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonComputerRoom.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonComputerRoom.ForeColor = System.Drawing.Color.White;
-            this.buttonComputerRoom.Image = ((System.Drawing.Image)(resources.GetObject("buttonComputerRoom.Image")));
-            this.buttonComputerRoom.Location = new System.Drawing.Point(0, 170);
+            this.buttonComputerRoom.Location = new System.Drawing.Point(0, 209);
+            this.buttonComputerRoom.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.buttonComputerRoom.Name = "buttonComputerRoom";
-            this.buttonComputerRoom.Size = new System.Drawing.Size(163, 79);
+            this.buttonComputerRoom.Size = new System.Drawing.Size(217, 97);
             this.buttonComputerRoom.TabIndex = 117;
             this.buttonComputerRoom.Text = "Computer Room";
             this.buttonComputerRoom.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -113,8 +115,9 @@
             this.buttonDashBoard.ForeColor = System.Drawing.Color.White;
             this.buttonDashBoard.Image = ((System.Drawing.Image)(resources.GetObject("buttonDashBoard.Image")));
             this.buttonDashBoard.Location = new System.Drawing.Point(0, 0);
+            this.buttonDashBoard.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.buttonDashBoard.Name = "buttonDashBoard";
-            this.buttonDashBoard.Size = new System.Drawing.Size(163, 79);
+            this.buttonDashBoard.Size = new System.Drawing.Size(217, 97);
             this.buttonDashBoard.TabIndex = 116;
             this.buttonDashBoard.Text = "Dashboard";
             this.buttonDashBoard.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -124,18 +127,20 @@
             // 
             // panelContainer
             // 
-            this.panelContainer.Location = new System.Drawing.Point(171, 2);
+            this.panelContainer.Location = new System.Drawing.Point(234, 2);
+            this.panelContainer.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panelContainer.Name = "panelContainer";
-            this.panelContainer.Size = new System.Drawing.Size(1274, 710);
+            this.panelContainer.Size = new System.Drawing.Size(1021, 501);
             this.panelContainer.TabIndex = 4;
             // 
             // EmployeeMainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1445, 718);
+            this.ClientSize = new System.Drawing.Size(1262, 509);
             this.Controls.Add(this.panelContainer);
             this.Controls.Add(this.panel1);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "EmployeeMainForm";
             this.Text = "EmployeeMainForm";
             this.Load += new System.EventHandler(this.EmployeeMainForm_Load);

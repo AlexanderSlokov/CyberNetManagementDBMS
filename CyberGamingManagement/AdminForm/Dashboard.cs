@@ -27,7 +27,7 @@ namespace CyberGamingManagement.AdminForm
         }
         void LoadData()
         {
-            labelTotalPayment.Text = shiftDB.SumAllSalary().ToString();
+            labelTotalPayment.Text = shiftDB.TotalSumOfSalary().ToString();
             labelUsers.Text = accountDB.CountUsersNumber().ToString();
             labelEmployees.Text = employeeDB.CountEmployeesNumber().ToString();
             labelManagers.Text = employeeDB.CountManagersNumber().ToString();
@@ -39,6 +39,8 @@ namespace CyberGamingManagement.AdminForm
             dataGridViewSchedule.AllowUserToAddRows = false;
 
             dataGridViewSchedule.DataSource = shiftDB.GetScheduleOfAllEmployees(current_week_date);
+
+            #region Config and display table columns
             dataGridViewSchedule.Columns["id"].Width = 50;
             dataGridViewSchedule.Columns["id"].HeaderText = "Employee ID";
             dataGridViewSchedule.Columns["id"].DisplayIndex = 0;
@@ -62,7 +64,7 @@ namespace CyberGamingManagement.AdminForm
             dataGridViewSchedule.Columns["shift_type"].Width = 100;
             dataGridViewSchedule.Columns["shift_type"].HeaderText = "Shift Type";
             dataGridViewSchedule.Columns["shift_type"].DisplayIndex = 5;
-
+            #endregion
         }
         private void Schedule_Load(object sender, EventArgs e)
         {

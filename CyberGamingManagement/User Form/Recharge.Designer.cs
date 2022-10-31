@@ -39,9 +39,10 @@
             this.textBoxRecharge.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(231)))), ((int)(((byte)(233)))));
             this.textBoxRecharge.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBoxRecharge.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxRecharge.Location = new System.Drawing.Point(16, 88);
+            this.textBoxRecharge.Location = new System.Drawing.Point(13, 85);
+            this.textBoxRecharge.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBoxRecharge.Name = "textBoxRecharge";
-            this.textBoxRecharge.Size = new System.Drawing.Size(235, 24);
+            this.textBoxRecharge.Size = new System.Drawing.Size(313, 30);
             this.textBoxRecharge.TabIndex = 121;
             // 
             // labelBalance
@@ -49,10 +50,10 @@
             this.labelBalance.AutoSize = true;
             this.labelBalance.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.labelBalance.ForeColor = System.Drawing.Color.Red;
-            this.labelBalance.Location = new System.Drawing.Point(13, 45);
-            this.labelBalance.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelBalance.Location = new System.Drawing.Point(9, 32);
+            this.labelBalance.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.labelBalance.Name = "labelBalance";
-            this.labelBalance.Size = new System.Drawing.Size(84, 17);
+            this.labelBalance.Size = new System.Drawing.Size(110, 23);
             this.labelBalance.TabIndex = 120;
             this.labelBalance.Text = "Reecharge +";
             // 
@@ -63,9 +64,10 @@
             this.buttonSubmit.FlatAppearance.BorderSize = 0;
             this.buttonSubmit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonSubmit.ForeColor = System.Drawing.Color.White;
-            this.buttonSubmit.Location = new System.Drawing.Point(16, 136);
+            this.buttonSubmit.Location = new System.Drawing.Point(13, 144);
+            this.buttonSubmit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.buttonSubmit.Name = "buttonSubmit";
-            this.buttonSubmit.Size = new System.Drawing.Size(304, 38);
+            this.buttonSubmit.Size = new System.Drawing.Size(405, 47);
             this.buttonSubmit.TabIndex = 122;
             this.buttonSubmit.Text = "Submit";
             this.buttonSubmit.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
@@ -77,24 +79,26 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.label1.ForeColor = System.Drawing.Color.Red;
-            this.label1.Location = new System.Drawing.Point(282, 95);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(371, 92);
+            this.label1.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(37, 17);
+            this.label1.Size = new System.Drawing.Size(47, 23);
             this.label1.TabIndex = 123;
             this.label1.Text = "VND";
             // 
             // Recharge
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(332, 209);
+            this.ClientSize = new System.Drawing.Size(436, 211);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.buttonSubmit);
             this.Controls.Add(this.textBoxRecharge);
             this.Controls.Add(this.labelBalance);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Recharge";
             this.Text = "Recharge";
+            this.Load += new System.EventHandler(this.Recharge_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -22,17 +22,20 @@ namespace CyberGamingManagement.AdminForm
             InitializeComponent();
             
         }
+        #region create variables
         EmployeeDB employeeDB = new EmployeeDB();
         int oldID;
         string oldUsername;
         string inTable;
+        #endregion
         private void EmployeeManagementForm_Load(object sender, EventArgs e)
         {
             pictureBoxEMPLOYEE.SizeMode = PictureBoxSizeMode.StretchImage;
-            Init();
+            Initiate();
             FillGrid();
         }
-        void Init()
+        #region method assist for frogram running
+        void Initiate()
         {
             pictureBoxEMPLOYEE.SizeMode = PictureBoxSizeMode.StretchImage;
             dateTimePicker.Value = new DateTime(1999, 1, 1);
@@ -52,7 +55,7 @@ namespace CyberGamingManagement.AdminForm
             }
             dataGridViewEmployee.RowHeadersVisible = false;
             dataGridViewEmployee.AllowUserToAddRows = false;
-
+            #region setup columns width and its properties
             dataGridViewEmployee.Columns[0].Width = 70;
             dataGridViewEmployee.Columns[0].HeaderText = "ID";
             dataGridViewEmployee.Columns[1].Width = 100;
@@ -77,7 +80,7 @@ namespace CyberGamingManagement.AdminForm
             dataGridViewEmployee.Columns[10].Width = 100;
             dataGridViewEmployee.Columns[10].HeaderText = "Password";
             dataGridViewEmployee.Columns["password"].Visible = false;
-
+            #endregion
             dataGridViewEmployee.Sort(dataGridViewEmployee.Columns[0], ListSortDirection.Ascending);
         }
         void AddEmployee()
@@ -129,6 +132,27 @@ namespace CyberGamingManagement.AdminForm
 
             employeeDB.AddEmployee(employee);
         }
+        public void DeleteEmployee()
+        {
+            if (dataGridViewEmployee.CurrentRow != null)
+            {
+                Employee employee = employeeDB.GetEmployeeByID(Int32.Parse(dataGridViewEmployee.CurrentRow.Cells["id"].Value.ToString()));
+                if (employee.Id != oldID)
+                {
+                    MessageBox.Show("Please select a row in the table to delete", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    if (employeeDB.DeleteEmployee(oldID))
+                    {
+                        MessageBox.Show("Delete Successfully", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        FillGrid();
+
+                    }
+                }
+            }
+
+        }
         void UpdateEmployee()
         {
             Employee employee = new Employee();
@@ -178,16 +202,6 @@ namespace CyberGamingManagement.AdminForm
 
             employeeDB.UpdateEmployee(employee, oldID, oldUsername);
         }
-        private void buttonAddEmployee_Click(object sender, EventArgs e)
-        {
-            AddEmployee();
-            FillGrid();
-        }
-
-        private void buttonUploadImage_Click(object sender, EventArgs e)
-        {
-            UploadImage();
-        }
         private void UploadImage()
         {
             OpenFileDialog opf = new OpenFileDialog();
@@ -201,20 +215,28 @@ namespace CyberGamingManagement.AdminForm
                 pictureBoxEMPLOYEE.Image = null;
             }
         }
+        #endregion
 
+        #region Button events
+        private void buttonAddEmployee_Click(object sender, EventArgs e)
+        {
+            AddEmployee();
+            FillGrid();
+        }
+        private void buttonUploadImage_Click(object sender, EventArgs e)
+        {
+            UploadImage();
+        }
         private void buttonSwitchEmployee_Click(object sender, EventArgs e)
         {
             dataGridViewEmployee.DataSource = employeeDB.GetEmployeesDataTable();
             inTable = "Employee";
         }
-
         private void buttonSwitchManagers_Click(object sender, EventArgs e)
         {
             dataGridViewEmployee.DataSource = employeeDB.GetManagersDataTable();
             inTable = "Manager";
         }
-
-       
         private void checkBoxShowPassword_CheckedChanged(object sender, EventArgs e)
         {
             if (checkBoxShowPassword.Checked)
@@ -228,7 +250,6 @@ namespace CyberGamingManagement.AdminForm
 
             }
         }
-
         private void buttonUpdateInformation_Click(object sender, EventArgs e)
         {
             try
@@ -252,44 +273,23 @@ namespace CyberGamingManagement.AdminForm
 
             }
         }
-        public void DeleteEmployee()
-        {
-            if(dataGridViewEmployee.CurrentRow != null)
-            {
-                Employee employee = employeeDB.GetEmployeeByID(Int32.Parse(dataGridViewEmployee.CurrentRow.Cells["id"].Value.ToString()));
-                if (employee.Id != oldID)
-                {
-                    MessageBox.Show("Please select a row in the table to delete", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-                else
-                {
-                    if (employeeDB.DeleteEmployee(oldID))
-                    {
-                        MessageBox.Show("Delete Successfully", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        FillGrid();
-
-                    }
-                }
-            }
-            
-        }
         private void buttonDelete_Click(object sender, EventArgs e)
         {
             DeleteEmployee();
             FillGrid();
         }
-
         private void buttonRefreshList_Click(object sender, EventArgs e)
         {
-            Init();
+            Initiate();
         }
-        public void GetDataFromGridView()
+        public void  GetDataFromGridView()
         {
             try
             {
                 if(dataGridViewEmployee.CurrentRow != null)
                 {
                     Employee employee = employeeDB.GetEmployeeByID(Int32.Parse(dataGridViewEmployee.CurrentRow.Cells["id"].Value.ToString()));
+                    #region Textbox to string
                     oldID = employee.Id;
                     textBoxID.Text = employee.Id.ToString();
                     textBoxFullName.Text = employee.Name.ToString();
@@ -310,6 +310,7 @@ namespace CyberGamingManagement.AdminForm
                     dateTimePicker.Value = employee.BirthDate;
                     textBoxSalary.Text = employee.Salary_per_hour.ToString();
                     textBoxAge.Text = employee.Age.ToString();
+                    #endregion
                     pictureBoxEMPLOYEE.Image = employee.Image;
                 }
                 
@@ -324,11 +325,7 @@ namespace CyberGamingManagement.AdminForm
         {
             GetDataFromGridView();
         }
-
-        private void dataGridViewEmployee_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
+        #endregion
     }
 }
 

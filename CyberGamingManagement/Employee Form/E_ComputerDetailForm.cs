@@ -122,14 +122,14 @@ namespace CyberGamingManagement.Employee_Form
                 buttonDisplayStatus.Text = "AVAILABLE";
                 buttonDisplayStatus.BackColor = Color.FromArgb(192, 255, 192);
                 buttonDisplayStatus.ForeColor = Color.Black;
-                buttonChangeStatus.Text = "SHOW DOWN";
+                buttonChangeStatus.Text = "SHUT DOWN";
             }
             else
             if (computerDB.GetComputerStatus(current_computer_id) == Status.busy)
             {
                 Image bigImage = Properties.Resources.red_x;
                 this.buttonDisplayStatus.Image = (Image)(new Bitmap(bigImage, new Size(20, 20)));
-                buttonDisplayStatus.Text = "Busy".ToUpper();
+                buttonDisplayStatus.Text = "BUSY".ToUpper();
                 buttonDisplayStatus.BackColor = Color.White;
                 buttonDisplayStatus.ForeColor = Color.Red;
                 buttonChangeStatus.Text = "TURN ON";

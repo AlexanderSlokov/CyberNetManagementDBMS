@@ -58,9 +58,10 @@
             this.buttonChangeStatus.FlatAppearance.BorderSize = 0;
             this.buttonChangeStatus.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonChangeStatus.ForeColor = System.Drawing.Color.White;
-            this.buttonChangeStatus.Location = new System.Drawing.Point(307, 408);
+            this.buttonChangeStatus.Location = new System.Drawing.Point(480, 504);
+            this.buttonChangeStatus.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.buttonChangeStatus.Name = "buttonChangeStatus";
-            this.buttonChangeStatus.Size = new System.Drawing.Size(93, 38);
+            this.buttonChangeStatus.Size = new System.Drawing.Size(137, 47);
             this.buttonChangeStatus.TabIndex = 22;
             this.buttonChangeStatus.Text = "CHANGE STATUS";
             this.buttonChangeStatus.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
@@ -72,10 +73,10 @@
             this.label23.AutoSize = true;
             this.label23.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.label23.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(165)))), ((int)(((byte)(169)))));
-            this.label23.Location = new System.Drawing.Point(9, 158);
-            this.label23.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label23.Location = new System.Drawing.Point(9, 212);
+            this.label23.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(103, 17);
+            this.label23.Size = new System.Drawing.Size(133, 23);
             this.label23.TabIndex = 84;
             this.label23.Text = "PC Description:";
             // 
@@ -84,10 +85,11 @@
             this.textBoxInfo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(231)))), ((int)(((byte)(233)))));
             this.textBoxInfo.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBoxInfo.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxInfo.Location = new System.Drawing.Point(12, 187);
+            this.textBoxInfo.Location = new System.Drawing.Point(14, 239);
+            this.textBoxInfo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBoxInfo.Multiline = true;
             this.textBoxInfo.Name = "textBoxInfo";
-            this.textBoxInfo.Size = new System.Drawing.Size(390, 137);
+            this.textBoxInfo.Size = new System.Drawing.Size(603, 169);
             this.textBoxInfo.TabIndex = 85;
             // 
             // labelComputerID
@@ -95,10 +97,10 @@
             this.labelComputerID.AutoSize = true;
             this.labelComputerID.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.labelComputerID.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(165)))), ((int)(((byte)(169)))));
-            this.labelComputerID.Location = new System.Drawing.Point(7, 9);
-            this.labelComputerID.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelComputerID.Location = new System.Drawing.Point(9, 11);
+            this.labelComputerID.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.labelComputerID.Name = "labelComputerID";
-            this.labelComputerID.Size = new System.Drawing.Size(48, 17);
+            this.labelComputerID.Size = new System.Drawing.Size(61, 23);
             this.labelComputerID.TabIndex = 86;
             this.labelComputerID.Text = "PC no:";
             // 
@@ -107,10 +109,10 @@
             this.labelRoomID.AutoSize = true;
             this.labelRoomID.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.labelRoomID.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(165)))), ((int)(((byte)(169)))));
-            this.labelRoomID.Location = new System.Drawing.Point(7, 40);
-            this.labelRoomID.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelRoomID.Location = new System.Drawing.Point(9, 49);
+            this.labelRoomID.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.labelRoomID.Name = "labelRoomID";
-            this.labelRoomID.Size = new System.Drawing.Size(52, 17);
+            this.labelRoomID.Size = new System.Drawing.Size(67, 23);
             this.labelRoomID.TabIndex = 87;
             this.labelRoomID.Text = "Room: ";
             // 
@@ -119,10 +121,10 @@
             this.labelUserFullName.AutoSize = true;
             this.labelUserFullName.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.labelUserFullName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(165)))), ((int)(((byte)(169)))));
-            this.labelUserFullName.Location = new System.Drawing.Point(422, 9);
-            this.labelUserFullName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelUserFullName.Location = new System.Drawing.Point(9, 83);
+            this.labelUserFullName.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.labelUserFullName.Name = "labelUserFullName";
-            this.labelUserFullName.Size = new System.Drawing.Size(44, 17);
+            this.labelUserFullName.Size = new System.Drawing.Size(56, 23);
             this.labelUserFullName.TabIndex = 88;
             this.labelUserFullName.Text = "User: ";
             // 
@@ -131,10 +133,10 @@
             this.labelBalance.AutoSize = true;
             this.labelBalance.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.labelBalance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(165)))), ((int)(((byte)(169)))));
-            this.labelBalance.Location = new System.Drawing.Point(613, 9);
-            this.labelBalance.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelBalance.Location = new System.Drawing.Point(9, 110);
+            this.labelBalance.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.labelBalance.Name = "labelBalance";
-            this.labelBalance.Size = new System.Drawing.Size(63, 17);
+            this.labelBalance.Size = new System.Drawing.Size(81, 23);
             this.labelBalance.TabIndex = 89;
             this.labelBalance.Text = "Balance: ";
             // 
@@ -145,9 +147,10 @@
             this.buttonServiceList.FlatAppearance.BorderSize = 0;
             this.buttonServiceList.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonServiceList.ForeColor = System.Drawing.Color.White;
-            this.buttonServiceList.Location = new System.Drawing.Point(208, 408);
+            this.buttonServiceList.Location = new System.Drawing.Point(319, 504);
+            this.buttonServiceList.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.buttonServiceList.Name = "buttonServiceList";
-            this.buttonServiceList.Size = new System.Drawing.Size(93, 38);
+            this.buttonServiceList.Size = new System.Drawing.Size(153, 47);
             this.buttonServiceList.TabIndex = 90;
             this.buttonServiceList.Text = "SERVICE REQUIRED";
             this.buttonServiceList.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
@@ -159,10 +162,10 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(165)))), ((int)(((byte)(169)))));
-            this.label1.Location = new System.Drawing.Point(422, 87);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(512, 9);
+            this.label1.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(82, 17);
+            this.label1.Size = new System.Drawing.Size(105, 23);
             this.label1.TabIndex = 91;
             this.label1.Text = "Login Time:";
             // 
@@ -171,12 +174,12 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(165)))), ((int)(((byte)(169)))));
-            this.label2.Location = new System.Drawing.Point(613, 87);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(512, 83);
+            this.label2.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(78, 17);
+            this.label2.Size = new System.Drawing.Size(105, 23);
             this.label2.TabIndex = 92;
-            this.label2.Text = "Using Time";
+            this.label2.Text = "Using Time:";
             // 
             // labelLoginTime
             // 
@@ -184,10 +187,10 @@
             this.labelLoginTime.AutoSize = true;
             this.labelLoginTime.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.labelLoginTime.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(165)))), ((int)(((byte)(169)))));
-            this.labelLoginTime.Location = new System.Drawing.Point(422, 113);
-            this.labelLoginTime.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelLoginTime.Location = new System.Drawing.Point(512, 41);
+            this.labelLoginTime.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.labelLoginTime.Name = "labelLoginTime";
-            this.labelLoginTime.Size = new System.Drawing.Size(58, 17);
+            this.labelLoginTime.Size = new System.Drawing.Size(80, 23);
             this.labelLoginTime.TabIndex = 93;
             this.labelLoginTime.Text = "20:20:00";
             // 
@@ -196,10 +199,10 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(165)))), ((int)(((byte)(169)))));
-            this.label3.Location = new System.Drawing.Point(15, 338);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(20, 416);
+            this.label3.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(93, 17);
+            this.label3.Size = new System.Drawing.Size(118, 23);
             this.label3.TabIndex = 94;
             this.label3.Text = "Fee Per Hour:";
             // 
@@ -208,9 +211,10 @@
             this.textBoxFee.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(231)))), ((int)(((byte)(233)))));
             this.textBoxFee.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBoxFee.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxFee.Location = new System.Drawing.Point(12, 367);
+            this.textBoxFee.Location = new System.Drawing.Point(16, 452);
+            this.textBoxFee.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBoxFee.Name = "textBoxFee";
-            this.textBoxFee.Size = new System.Drawing.Size(390, 24);
+            this.textBoxFee.Size = new System.Drawing.Size(601, 30);
             this.textBoxFee.TabIndex = 95;
             // 
             // buttonUpdateInformation
@@ -220,9 +224,10 @@
             this.buttonUpdateInformation.FlatAppearance.BorderSize = 0;
             this.buttonUpdateInformation.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonUpdateInformation.ForeColor = System.Drawing.Color.Black;
-            this.buttonUpdateInformation.Location = new System.Drawing.Point(8, 408);
+            this.buttonUpdateInformation.Location = new System.Drawing.Point(14, 504);
+            this.buttonUpdateInformation.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.buttonUpdateInformation.Name = "buttonUpdateInformation";
-            this.buttonUpdateInformation.Size = new System.Drawing.Size(93, 38);
+            this.buttonUpdateInformation.Size = new System.Drawing.Size(140, 47);
             this.buttonUpdateInformation.TabIndex = 96;
             this.buttonUpdateInformation.Text = "UPDATE INFORMATION";
             this.buttonUpdateInformation.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
@@ -236,9 +241,10 @@
             this.buttonDelete.FlatAppearance.BorderSize = 0;
             this.buttonDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonDelete.ForeColor = System.Drawing.Color.White;
-            this.buttonDelete.Location = new System.Drawing.Point(109, 408);
+            this.buttonDelete.Location = new System.Drawing.Point(162, 504);
+            this.buttonDelete.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.buttonDelete.Name = "buttonDelete";
-            this.buttonDelete.Size = new System.Drawing.Size(93, 38);
+            this.buttonDelete.Size = new System.Drawing.Size(149, 47);
             this.buttonDelete.TabIndex = 97;
             this.buttonDelete.Text = "DELETE";
             this.buttonDelete.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
@@ -251,10 +257,10 @@
             this.labelUsingTime.AutoSize = true;
             this.labelUsingTime.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.labelUsingTime.ForeColor = System.Drawing.Color.Teal;
-            this.labelUsingTime.Location = new System.Drawing.Point(613, 113);
-            this.labelUsingTime.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelUsingTime.Location = new System.Drawing.Point(512, 115);
+            this.labelUsingTime.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.labelUsingTime.Name = "labelUsingTime";
-            this.labelUsingTime.Size = new System.Drawing.Size(58, 17);
+            this.labelUsingTime.Size = new System.Drawing.Size(80, 23);
             this.labelUsingTime.TabIndex = 98;
             this.labelUsingTime.Text = "20:20:00";
             // 
@@ -268,10 +274,10 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(165)))), ((int)(((byte)(169)))));
-            this.label4.Location = new System.Drawing.Point(7, 93);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Location = new System.Drawing.Point(9, 139);
+            this.label4.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(50, 17);
+            this.label4.Size = new System.Drawing.Size(64, 23);
             this.label4.TabIndex = 99;
             this.label4.Text = "Status:";
             // 
@@ -286,11 +292,11 @@
             this.buttonDisplayStatus.ForeColor = System.Drawing.Color.Red;
             this.buttonDisplayStatus.Image = ((System.Drawing.Image)(resources.GetObject("buttonDisplayStatus.Image")));
             this.buttonDisplayStatus.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonDisplayStatus.Location = new System.Drawing.Point(10, 113);
-            this.buttonDisplayStatus.Margin = new System.Windows.Forms.Padding(90);
+            this.buttonDisplayStatus.Location = new System.Drawing.Point(11, 167);
+            this.buttonDisplayStatus.Margin = new System.Windows.Forms.Padding(120, 111, 120, 111);
             this.buttonDisplayStatus.Name = "buttonDisplayStatus";
-            this.buttonDisplayStatus.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
-            this.buttonDisplayStatus.Size = new System.Drawing.Size(390, 28);
+            this.buttonDisplayStatus.Padding = new System.Windows.Forms.Padding(40, 0, 0, 0);
+            this.buttonDisplayStatus.Size = new System.Drawing.Size(606, 34);
             this.buttonDisplayStatus.TabIndex = 100;
             this.buttonDisplayStatus.Text = "AVAILABLE";
             this.buttonDisplayStatus.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -299,9 +305,9 @@
             // 
             // E_ComputerDetailForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(815, 458);
+            this.ClientSize = new System.Drawing.Size(655, 564);
             this.Controls.Add(this.buttonDisplayStatus);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.labelUsingTime);
@@ -320,7 +326,7 @@
             this.Controls.Add(this.textBoxInfo);
             this.Controls.Add(this.label23);
             this.Controls.Add(this.buttonChangeStatus);
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "E_ComputerDetailForm";
             this.Text = "Computer Detail";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.ComputerDetailForm_FormClosed);

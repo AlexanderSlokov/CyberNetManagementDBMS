@@ -192,12 +192,6 @@
     <Compile Include="Employee Form\EmployeeMainForm.Designer.cs">
       <DependentUpon>EmployeeMainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Employee Form\Employees Timekeeping Form.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Employee Form\Employees Timekeeping Form.Designer.cs">
-      <DependentUpon>Employees Timekeeping Form.cs</DependentUpon>
-    </Compile>
     <Compile Include="Employee Form\ServiceManagement.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -311,9 +305,6 @@
     <EmbeddedResource Include="Employee Form\EmployeeMainForm.resx">
       <DependentUpon>EmployeeMainForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Employee Form\Employees Timekeeping Form.resx">
-      <DependentUpon>Employees Timekeeping Form.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Employee Form\ServiceManagement.resx">
       <DependentUpon>ServiceManagement.cs</DependentUpon>
     </EmbeddedResource>
@@ -425,6 +416,7 @@
     <Content Include="Procedures\computer\pr_MakeInUse.sql" />
     <Content Include="Procedures\computer\pr_UpdateFeePerHour.sql" />
     <Content Include="Procedures\computer\pr_UpdateInfo.sql" />
+    <Content Include="Procedures\computer\pr_updatePassword.sql" />
     <Content Include="Procedures\Computer_room\pr_AddNewComputerRoom.sql" />
     <Content Include="Procedures\Computer_room\pr_DeleteComputerRoom.sql" />
     <Content Include="Procedures\Computer_room\pr_GetAllRooms.sql" />
@@ -499,8 +491,6 @@
     <Content Include="Triggers\tr_computer_ForDelete.sql" />
     <Content Include="Triggers\tr_computer_ForInsert.sql" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Testing Form\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

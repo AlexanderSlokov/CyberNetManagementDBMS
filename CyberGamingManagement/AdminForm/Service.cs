@@ -76,7 +76,6 @@ namespace CyberGamingManagement.AdminForm
             dataGridViewService.Columns["picture"].Width = 300;
             dataGridViewService.Columns["picture"].HeaderText = "Image";
         }
-
         private void buttonDelete_Click(object sender, EventArgs e)
         {
             
@@ -94,7 +93,6 @@ namespace CyberGamingManagement.AdminForm
             LoadData();
 
         }
-
         private void Service_Load(object sender, EventArgs e)
         {
             pictureBoxService.SizeMode = PictureBoxSizeMode.StretchImage;

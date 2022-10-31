@@ -51,8 +51,9 @@
             this.panel1.Controls.Add(this.buttonService);
             this.panel1.Controls.Add(this.buttonDashBoard);
             this.panel1.Location = new System.Drawing.Point(1, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(167, 661);
+            this.panel1.Size = new System.Drawing.Size(223, 651);
             this.panel1.TabIndex = 0;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
@@ -63,10 +64,10 @@
             this.buttonRecharge.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonRecharge.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonRecharge.ForeColor = System.Drawing.Color.White;
-            this.buttonRecharge.Image = global::CyberGamingManagement.Properties.Resources.dollar;
-            this.buttonRecharge.Location = new System.Drawing.Point(4, 255);
+            this.buttonRecharge.Location = new System.Drawing.Point(5, 314);
+            this.buttonRecharge.Margin = new System.Windows.Forms.Padding(4);
             this.buttonRecharge.Name = "buttonRecharge";
-            this.buttonRecharge.Size = new System.Drawing.Size(163, 79);
+            this.buttonRecharge.Size = new System.Drawing.Size(217, 97);
             this.buttonRecharge.TabIndex = 119;
             this.buttonRecharge.Text = "Recharge";
             this.buttonRecharge.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -81,10 +82,10 @@
             this.buttonLogOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonLogOut.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonLogOut.ForeColor = System.Drawing.Color.White;
-            this.buttonLogOut.Image = global::CyberGamingManagement.Properties.Resources.logout;
-            this.buttonLogOut.Location = new System.Drawing.Point(1, 579);
+            this.buttonLogOut.Location = new System.Drawing.Point(2, 419);
+            this.buttonLogOut.Margin = new System.Windows.Forms.Padding(4);
             this.buttonLogOut.Name = "buttonLogOut";
-            this.buttonLogOut.Size = new System.Drawing.Size(163, 79);
+            this.buttonLogOut.Size = new System.Drawing.Size(217, 185);
             this.buttonLogOut.TabIndex = 115;
             this.buttonLogOut.Text = "LogOut";
             this.buttonLogOut.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -99,10 +100,10 @@
             this.buttonProfile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonProfile.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonProfile.ForeColor = System.Drawing.Color.White;
-            this.buttonProfile.Image = ((System.Drawing.Image)(resources.GetObject("buttonProfile.Image")));
-            this.buttonProfile.Location = new System.Drawing.Point(0, 85);
+            this.buttonProfile.Location = new System.Drawing.Point(0, 105);
+            this.buttonProfile.Margin = new System.Windows.Forms.Padding(4);
             this.buttonProfile.Name = "buttonProfile";
-            this.buttonProfile.Size = new System.Drawing.Size(163, 79);
+            this.buttonProfile.Size = new System.Drawing.Size(217, 97);
             this.buttonProfile.TabIndex = 118;
             this.buttonProfile.Text = "Profile";
             this.buttonProfile.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -117,10 +118,10 @@
             this.buttonService.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonService.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonService.ForeColor = System.Drawing.Color.White;
-            this.buttonService.Image = global::CyberGamingManagement.Properties.Resources.food_icon;
-            this.buttonService.Location = new System.Drawing.Point(0, 170);
+            this.buttonService.Location = new System.Drawing.Point(0, 209);
+            this.buttonService.Margin = new System.Windows.Forms.Padding(4);
             this.buttonService.Name = "buttonService";
-            this.buttonService.Size = new System.Drawing.Size(163, 79);
+            this.buttonService.Size = new System.Drawing.Size(217, 97);
             this.buttonService.TabIndex = 113;
             this.buttonService.Text = "Service";
             this.buttonService.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -135,10 +136,10 @@
             this.buttonDashBoard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonDashBoard.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonDashBoard.ForeColor = System.Drawing.Color.White;
-            this.buttonDashBoard.Image = ((System.Drawing.Image)(resources.GetObject("buttonDashBoard.Image")));
             this.buttonDashBoard.Location = new System.Drawing.Point(0, 0);
+            this.buttonDashBoard.Margin = new System.Windows.Forms.Padding(4);
             this.buttonDashBoard.Name = "buttonDashBoard";
-            this.buttonDashBoard.Size = new System.Drawing.Size(163, 79);
+            this.buttonDashBoard.Size = new System.Drawing.Size(217, 97);
             this.buttonDashBoard.TabIndex = 116;
             this.buttonDashBoard.Text = "Dashboard";
             this.buttonDashBoard.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -148,9 +149,10 @@
             // 
             // panelContainer
             // 
-            this.panelContainer.Location = new System.Drawing.Point(164, 0);
+            this.panelContainer.Location = new System.Drawing.Point(219, 0);
+            this.panelContainer.Margin = new System.Windows.Forms.Padding(4);
             this.panelContainer.Name = "panelContainer";
-            this.panelContainer.Size = new System.Drawing.Size(1074, 661);
+            this.panelContainer.Size = new System.Drawing.Size(1432, 655);
             this.panelContainer.TabIndex = 1;
             // 
             // timerUsingTime
@@ -165,12 +167,13 @@
             // 
             // UserMainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1241, 659);
+            this.ClientSize = new System.Drawing.Size(1655, 668);
             this.Controls.Add(this.panelContainer);
             this.Controls.Add(this.panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "UserMainForm";
             this.Text = "Hello User";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.UserMainForm_FormClosing);

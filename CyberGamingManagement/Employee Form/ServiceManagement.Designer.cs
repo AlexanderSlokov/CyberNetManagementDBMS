@@ -36,32 +36,35 @@
             // dataGridViewOrderList
             // 
             this.dataGridViewOrderList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewOrderList.Location = new System.Drawing.Point(14, 97);
+            this.dataGridViewOrderList.Location = new System.Drawing.Point(4, 106);
+            this.dataGridViewOrderList.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dataGridViewOrderList.Name = "dataGridViewOrderList";
-            this.dataGridViewOrderList.Size = new System.Drawing.Size(1183, 502);
+            this.dataGridViewOrderList.RowHeadersWidth = 51;
+            this.dataGridViewOrderList.Size = new System.Drawing.Size(636, 685);
             this.dataGridViewOrderList.TabIndex = 56;
             this.dataGridViewOrderList.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewOrderList_CellClick);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("MS UI Gothic", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(86)))), ((int)(((byte)(174)))));
-            this.label3.Location = new System.Drawing.Point(520, 28);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.label3.Location = new System.Drawing.Point(225, 34);
+            this.label3.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(136, 27);
+            this.label3.Size = new System.Drawing.Size(177, 46);
             this.label3.TabIndex = 57;
             this.label3.Text = "Order List";
             // 
             // ServiceManagement
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.dataGridViewOrderList);
             this.Controls.Add(this.label3);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "ServiceManagement";
-            this.Size = new System.Drawing.Size(1227, 646);
+            this.Size = new System.Drawing.Size(644, 795);
             this.Load += new System.EventHandler(this.ServiceManagement_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewOrderList)).EndInit();
             this.ResumeLayout(false);

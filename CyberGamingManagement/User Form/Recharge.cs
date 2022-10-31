@@ -36,5 +36,10 @@ namespace CyberGamingManagement.User_Form
                 this.Close();
             }
         }
+
+        private void Recharge_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

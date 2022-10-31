@@ -49,77 +49,80 @@
             // dataGridViewService
             // 
             this.dataGridViewService.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewService.Location = new System.Drawing.Point(527, 18);
+            this.dataGridViewService.Location = new System.Drawing.Point(569, 16);
+            this.dataGridViewService.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dataGridViewService.Name = "dataGridViewService";
-            this.dataGridViewService.Size = new System.Drawing.Size(622, 570);
+            this.dataGridViewService.RowHeadersWidth = 51;
+            this.dataGridViewService.Size = new System.Drawing.Size(829, 570);
             this.dataGridViewService.TabIndex = 0;
             this.dataGridViewService.Click += new System.EventHandler(this.dataGridViewService_Click);
             // 
             // labelName
             // 
             this.labelName.AutoSize = true;
-            this.labelName.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelName.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(86)))), ((int)(((byte)(174)))));
-            this.labelName.Location = new System.Drawing.Point(115, 18);
-            this.labelName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelName.Location = new System.Drawing.Point(23, 26);
+            this.labelName.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.labelName.Name = "labelName";
-            this.labelName.Size = new System.Drawing.Size(87, 16);
+            this.labelName.Size = new System.Drawing.Size(121, 31);
             this.labelName.TabIndex = 21;
             this.labelName.Text = "Service ID";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(86)))), ((int)(((byte)(174)))));
-            this.label2.Location = new System.Drawing.Point(115, 84);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(23, 76);
+            this.label2.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(113, 16);
+            this.label2.Size = new System.Drawing.Size(160, 31);
             this.label2.TabIndex = 23;
             this.label2.Text = "Service Name";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(86)))), ((int)(((byte)(174)))));
-            this.label3.Location = new System.Drawing.Point(115, 146);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(23, 396);
+            this.label3.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(157, 16);
+            this.label3.Size = new System.Drawing.Size(221, 31);
             this.label3.TabIndex = 25;
             this.label3.Text = "Service Description";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(86)))), ((int)(((byte)(174)))));
-            this.label4.Location = new System.Drawing.Point(115, 288);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Location = new System.Drawing.Point(23, 128);
+            this.label4.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(47, 16);
+            this.label4.Size = new System.Drawing.Size(67, 31);
             this.label4.TabIndex = 27;
             this.label4.Text = "Price";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(86)))), ((int)(((byte)(174)))));
-            this.label5.Location = new System.Drawing.Point(115, 352);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Location = new System.Drawing.Point(23, 171);
+            this.label5.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(63, 16);
+            this.label5.Size = new System.Drawing.Size(90, 31);
             this.label5.TabIndex = 29;
             this.label5.Text = "Picture";
             // 
             // pictureBoxService
             // 
-            this.pictureBoxService.Location = new System.Drawing.Point(280, 352);
+            this.pictureBoxService.Location = new System.Drawing.Point(243, 171);
+            this.pictureBoxService.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBoxService.Name = "pictureBoxService";
-            this.pictureBoxService.Size = new System.Drawing.Size(220, 121);
+            this.pictureBoxService.Size = new System.Drawing.Size(293, 149);
             this.pictureBoxService.TabIndex = 30;
             this.pictureBoxService.TabStop = false;
             // 
@@ -130,9 +133,10 @@
             this.buttonNewService.FlatAppearance.BorderSize = 0;
             this.buttonNewService.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonNewService.ForeColor = System.Drawing.Color.White;
-            this.buttonNewService.Location = new System.Drawing.Point(118, 528);
+            this.buttonNewService.Location = new System.Drawing.Point(9, 539);
+            this.buttonNewService.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.buttonNewService.Name = "buttonNewService";
-            this.buttonNewService.Size = new System.Drawing.Size(154, 35);
+            this.buttonNewService.Size = new System.Drawing.Size(223, 43);
             this.buttonNewService.TabIndex = 31;
             this.buttonNewService.Text = "NEW SERVICE";
             this.buttonNewService.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
@@ -146,9 +150,10 @@
             this.buttonDelete.FlatAppearance.BorderSize = 0;
             this.buttonDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonDelete.ForeColor = System.Drawing.Color.White;
-            this.buttonDelete.Location = new System.Drawing.Point(280, 528);
+            this.buttonDelete.Location = new System.Drawing.Point(243, 539);
+            this.buttonDelete.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.buttonDelete.Name = "buttonDelete";
-            this.buttonDelete.Size = new System.Drawing.Size(220, 38);
+            this.buttonDelete.Size = new System.Drawing.Size(293, 47);
             this.buttonDelete.TabIndex = 98;
             this.buttonDelete.Text = "DELETE";
             this.buttonDelete.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
@@ -163,9 +168,10 @@
             this.buttonUpdateInformation.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonUpdateInformation.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonUpdateInformation.ForeColor = System.Drawing.Color.Black;
-            this.buttonUpdateInformation.Location = new System.Drawing.Point(118, 435);
+            this.buttonUpdateInformation.Location = new System.Drawing.Point(243, 328);
+            this.buttonUpdateInformation.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.buttonUpdateInformation.Name = "buttonUpdateInformation";
-            this.buttonUpdateInformation.Size = new System.Drawing.Size(120, 38);
+            this.buttonUpdateInformation.Size = new System.Drawing.Size(293, 43);
             this.buttonUpdateInformation.TabIndex = 101;
             this.buttonUpdateInformation.Text = "INSERT PICTURE";
             this.buttonUpdateInformation.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
@@ -178,10 +184,10 @@
             this.textBoxServiceID.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(231)))), ((int)(((byte)(233)))));
             this.textBoxServiceID.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBoxServiceID.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxServiceID.Location = new System.Drawing.Point(280, 10);
-            this.textBoxServiceID.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxServiceID.Location = new System.Drawing.Point(243, 16);
+            this.textBoxServiceID.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.textBoxServiceID.Name = "textBoxServiceID";
-            this.textBoxServiceID.Size = new System.Drawing.Size(220, 24);
+            this.textBoxServiceID.Size = new System.Drawing.Size(293, 30);
             this.textBoxServiceID.TabIndex = 102;
             // 
             // textBoxServiceName
@@ -190,10 +196,10 @@
             this.textBoxServiceName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(231)))), ((int)(((byte)(233)))));
             this.textBoxServiceName.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBoxServiceName.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxServiceName.Location = new System.Drawing.Point(280, 76);
-            this.textBoxServiceName.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxServiceName.Location = new System.Drawing.Point(243, 67);
+            this.textBoxServiceName.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.textBoxServiceName.Name = "textBoxServiceName";
-            this.textBoxServiceName.Size = new System.Drawing.Size(220, 24);
+            this.textBoxServiceName.Size = new System.Drawing.Size(293, 30);
             this.textBoxServiceName.TabIndex = 103;
             // 
             // textBoxDescription
@@ -202,11 +208,11 @@
             this.textBoxDescription.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(231)))), ((int)(((byte)(233)))));
             this.textBoxDescription.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBoxDescription.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxDescription.Location = new System.Drawing.Point(280, 146);
-            this.textBoxDescription.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxDescription.Location = new System.Drawing.Point(243, 395);
+            this.textBoxDescription.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.textBoxDescription.Multiline = true;
             this.textBoxDescription.Name = "textBoxDescription";
-            this.textBoxDescription.Size = new System.Drawing.Size(220, 67);
+            this.textBoxDescription.Size = new System.Drawing.Size(293, 82);
             this.textBoxDescription.TabIndex = 104;
             // 
             // textBoxPrice
@@ -215,15 +221,15 @@
             this.textBoxPrice.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(231)))), ((int)(((byte)(233)))));
             this.textBoxPrice.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBoxPrice.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxPrice.Location = new System.Drawing.Point(280, 281);
-            this.textBoxPrice.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxPrice.Location = new System.Drawing.Point(243, 119);
+            this.textBoxPrice.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.textBoxPrice.Name = "textBoxPrice";
-            this.textBoxPrice.Size = new System.Drawing.Size(220, 24);
+            this.textBoxPrice.Size = new System.Drawing.Size(293, 30);
             this.textBoxPrice.TabIndex = 105;
             // 
             // Service
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.textBoxPrice);
             this.Controls.Add(this.textBoxDescription);
@@ -239,8 +245,9 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.labelName);
             this.Controls.Add(this.dataGridViewService);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Service";
-            this.Size = new System.Drawing.Size(1236, 597);
+            this.Size = new System.Drawing.Size(1414, 605);
             this.Load += new System.EventHandler(this.Service_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewService)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxService)).EndInit();

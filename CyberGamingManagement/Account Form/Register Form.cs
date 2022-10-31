@@ -65,7 +65,7 @@ namespace CyberGamingManagement.Account_Form
             this.Hide();
         }
 
-        bool verif(string input)
+        bool verification(string input)
         {
             if ((input.Trim()) == "")
             {
@@ -80,6 +80,7 @@ namespace CyberGamingManagement.Account_Form
         {
             bool usernameCheck = false, passwordCheck = false;
             bool passwordTyped = false, passwordConfirmed = false;
+
             name = textBoxName.Text;
             gender = comboBoxGender.Text;
             email = textBoxEmail.Text;
@@ -87,7 +88,8 @@ namespace CyberGamingManagement.Account_Form
             username = textBoxUsername.Text;
             password = textBoxPassword.Text;
             passwordConfirm = textBoxConfirmPassword.Text;
-            if (!verif(username))
+
+            if (!verification(username))
             {
                 labelErrorUsername.Visible = true;
                 labelErrorUsername.Text = ("Please enter valid username");

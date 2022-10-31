@@ -178,7 +178,7 @@ namespace CyberGamingManagement.AdminForm
         }
         void LoadData()
         {
-
+            #region setting the data grid view
             dataGridViewShift.DataSource = shiftDB.GetDataTableAllSchedules();
 
             dataGridViewShift.RowHeadersVisible = false;
@@ -237,8 +237,8 @@ namespace CyberGamingManagement.AdminForm
             comboBoxEmployee.DataSource = employeeDB.GetEmployeesDataTable();
             comboBoxEmployee.DisplayMember = "name";
             comboBoxEmployee.ValueMember = "id";
+            #endregion
 
-            
         }
 
         private void comboBoxShiftType_SelectedIndexChanged(object sender, EventArgs e)
@@ -283,18 +283,21 @@ namespace CyberGamingManagement.AdminForm
 
         private void buttonAutoAssign_Click(object sender, EventArgs e)
         {
+            #region setup stacks and variables
             Stack<Employee> employeeList = employeeDB.GetEmployeesStack();
             Stack<Employee> employeeCloneList = employeeDB.GetEmployeesStack();
             List<int>  roomIdList = computerRoomDB.GetRoomIDList();
             string weekDate = "Monday";
             string shift_type = "Morning Shift";
             string endTime = String.Empty, startTime = String.Empty;
+            #endregion
 
             foreach (int roomID in roomIdList)
             {
 
                 for (int i = 1; i <= 7; i++)
                 {
+                    #region switch cases of weekdays
                     switch (i)
                     {
                         case 1:
@@ -319,8 +322,11 @@ namespace CyberGamingManagement.AdminForm
                             weekDate = WeekDate.Sunday;
                             break;
                     }
+                    #endregion
+
                     for (int j = 1; j <= 3; j++)
                     {
+                        #region switch cases of shift and times
                         switch (j)
                         {
                             case 1:
@@ -356,6 +362,8 @@ namespace CyberGamingManagement.AdminForm
                             startTime = "23:00:00";
                             endTime = "3:00:00";
                         }
+                        #endregion
+
                         Employee employee;
                         if (employeeCloneList.Count <= 0)
                         {
@@ -382,6 +390,7 @@ namespace CyberGamingManagement.AdminForm
             {
                 if(dataGridViewShift.CurrentRow != null)
                 {
+                    #region plush datas to textbow when click on gridview
                     comboBoxEmployee.SelectedValue = dataGridViewShift.CurrentRow.Cells["id"].Value.ToString();
                     comboBoxRoom.Text = dataGridViewShift.CurrentRow.Cells["roomID"].Value.ToString();
                     comboBoxWeekDate.Text = dataGridViewShift.CurrentRow.Cells["weekDate"].Value.ToString();
@@ -395,6 +404,7 @@ namespace CyberGamingManagement.AdminForm
                     insert_shiftType = dataGridViewShift.CurrentRow.Cells["shift_type"].Value.ToString();
                     insert_startTime = dataGridViewShift.CurrentRow.Cells["startTime"].Value.ToString();
                     insert_endTime = dataGridViewShift.CurrentRow.Cells["endTime"].Value.ToString();
+                    #endregion
                 }
             }
             catch

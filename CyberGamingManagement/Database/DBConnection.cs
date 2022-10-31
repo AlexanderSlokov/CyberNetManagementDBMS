@@ -16,7 +16,7 @@ namespace CyberGamingManagement.Database
         private string role;
         private byte[] _appRoleEnableCookie;
 
-        // Phần data source này các bạn MySQL server lấy tên của server  máy local để vào dưới, mỗi máy khác nhau
+       
         private SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-CA3ARHV;Initial Catalog=CyberGamingManagement;Integrated Security=True");
 
         public DBConnection()

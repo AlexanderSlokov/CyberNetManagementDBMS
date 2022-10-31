@@ -53,10 +53,11 @@
             this.textBoxFee.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(231)))), ((int)(((byte)(233)))));
             this.textBoxFee.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBoxFee.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxFee.Location = new System.Drawing.Point(486, 419);
+            this.textBoxFee.Location = new System.Drawing.Point(670, 178);
+            this.textBoxFee.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBoxFee.Name = "textBoxFee";
             this.textBoxFee.ReadOnly = true;
-            this.textBoxFee.Size = new System.Drawing.Size(326, 24);
+            this.textBoxFee.Size = new System.Drawing.Size(372, 30);
             this.textBoxFee.TabIndex = 113;
             // 
             // label3
@@ -64,10 +65,10 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(165)))), ((int)(((byte)(169)))));
-            this.label3.Location = new System.Drawing.Point(421, 369);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(523, 187);
+            this.label3.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(93, 17);
+            this.label3.Size = new System.Drawing.Size(118, 23);
             this.label3.TabIndex = 112;
             this.label3.Text = "Fee Per Hour:";
             // 
@@ -75,12 +76,12 @@
             // 
             this.labelLoginTime.AllowDrop = true;
             this.labelLoginTime.AutoSize = true;
-            this.labelLoginTime.Font = new System.Drawing.Font("Nirmala UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelLoginTime.Font = new System.Drawing.Font("Nirmala UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelLoginTime.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(165)))), ((int)(((byte)(169)))));
-            this.labelLoginTime.Location = new System.Drawing.Point(177, 418);
-            this.labelLoginTime.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelLoginTime.Location = new System.Drawing.Point(242, 219);
+            this.labelLoginTime.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.labelLoginTime.Name = "labelLoginTime";
-            this.labelLoginTime.Size = new System.Drawing.Size(88, 25);
+            this.labelLoginTime.Size = new System.Drawing.Size(158, 46);
             this.labelLoginTime.TabIndex = 111;
             this.labelLoginTime.Text = "20:20:00";
             // 
@@ -89,22 +90,22 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(165)))), ((int)(((byte)(169)))));
-            this.label2.Location = new System.Drawing.Point(38, 228);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(523, 229);
+            this.label2.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(78, 17);
+            this.label2.Size = new System.Drawing.Size(105, 23);
             this.label2.TabIndex = 110;
-            this.label2.Text = "Using Time";
+            this.label2.Text = "Using Time:";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(165)))), ((int)(((byte)(169)))));
-            this.label1.Location = new System.Drawing.Point(38, 369);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(51, 238);
+            this.label1.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(82, 17);
+            this.label1.Size = new System.Drawing.Size(105, 23);
             this.label1.TabIndex = 109;
             this.label1.Text = "Login Time:";
             // 
@@ -113,10 +114,10 @@
             this.labelBalance.AutoSize = true;
             this.labelBalance.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.labelBalance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(165)))), ((int)(((byte)(169)))));
-            this.labelBalance.Location = new System.Drawing.Point(38, 130);
-            this.labelBalance.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelBalance.Location = new System.Drawing.Point(51, 95);
+            this.labelBalance.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.labelBalance.Name = "labelBalance";
-            this.labelBalance.Size = new System.Drawing.Size(63, 17);
+            this.labelBalance.Size = new System.Drawing.Size(81, 23);
             this.labelBalance.TabIndex = 107;
             this.labelBalance.Text = "Balance: ";
             // 
@@ -125,10 +126,10 @@
             this.labelUserFullName.AutoSize = true;
             this.labelUserFullName.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.labelUserFullName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(165)))), ((int)(((byte)(169)))));
-            this.labelUserFullName.Location = new System.Drawing.Point(38, 39);
-            this.labelUserFullName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelUserFullName.Location = new System.Drawing.Point(51, 48);
+            this.labelUserFullName.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.labelUserFullName.Name = "labelUserFullName";
-            this.labelUserFullName.Size = new System.Drawing.Size(44, 17);
+            this.labelUserFullName.Size = new System.Drawing.Size(56, 23);
             this.labelUserFullName.TabIndex = 106;
             this.labelUserFullName.Text = "User: ";
             // 
@@ -137,10 +138,10 @@
             this.labelRoomID.AutoSize = true;
             this.labelRoomID.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.labelRoomID.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(165)))), ((int)(((byte)(169)))));
-            this.labelRoomID.Location = new System.Drawing.Point(421, 130);
-            this.labelRoomID.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelRoomID.Location = new System.Drawing.Point(51, 187);
+            this.labelRoomID.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.labelRoomID.Name = "labelRoomID";
-            this.labelRoomID.Size = new System.Drawing.Size(52, 17);
+            this.labelRoomID.Size = new System.Drawing.Size(67, 23);
             this.labelRoomID.TabIndex = 105;
             this.labelRoomID.Text = "Room: ";
             // 
@@ -149,10 +150,10 @@
             this.labelComputerID.AutoSize = true;
             this.labelComputerID.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.labelComputerID.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(165)))), ((int)(((byte)(169)))));
-            this.labelComputerID.Location = new System.Drawing.Point(421, 39);
-            this.labelComputerID.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelComputerID.Location = new System.Drawing.Point(51, 138);
+            this.labelComputerID.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.labelComputerID.Name = "labelComputerID";
-            this.labelComputerID.Size = new System.Drawing.Size(48, 17);
+            this.labelComputerID.Size = new System.Drawing.Size(61, 23);
             this.labelComputerID.TabIndex = 104;
             this.labelComputerID.Text = "PC no:";
             // 
@@ -161,11 +162,12 @@
             this.textBoxInfo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(231)))), ((int)(((byte)(233)))));
             this.textBoxInfo.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBoxInfo.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxInfo.Location = new System.Drawing.Point(531, 213);
+            this.textBoxInfo.Location = new System.Drawing.Point(670, 48);
+            this.textBoxInfo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBoxInfo.Multiline = true;
             this.textBoxInfo.Name = "textBoxInfo";
             this.textBoxInfo.ReadOnly = true;
-            this.textBoxInfo.Size = new System.Drawing.Size(279, 137);
+            this.textBoxInfo.Size = new System.Drawing.Size(372, 113);
             this.textBoxInfo.TabIndex = 103;
             // 
             // label23
@@ -173,10 +175,10 @@
             this.label23.AutoSize = true;
             this.label23.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.label23.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(165)))), ((int)(((byte)(169)))));
-            this.label23.Location = new System.Drawing.Point(421, 213);
-            this.label23.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label23.Location = new System.Drawing.Point(523, 48);
+            this.label23.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(103, 17);
+            this.label23.Size = new System.Drawing.Size(133, 23);
             this.label23.TabIndex = 102;
             this.label23.Text = "PC Description:";
             // 
@@ -186,10 +188,10 @@
             this.labelUsingTime.AutoSize = true;
             this.labelUsingTime.Font = new System.Drawing.Font("Nirmala UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelUsingTime.ForeColor = System.Drawing.Color.Teal;
-            this.labelUsingTime.Location = new System.Drawing.Point(174, 228);
-            this.labelUsingTime.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelUsingTime.Location = new System.Drawing.Point(770, 212);
+            this.labelUsingTime.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.labelUsingTime.Name = "labelUsingTime";
-            this.labelUsingTime.Size = new System.Drawing.Size(146, 45);
+            this.labelUsingTime.Size = new System.Drawing.Size(183, 54);
             this.labelUsingTime.TabIndex = 116;
             this.labelUsingTime.Text = "20:20:00";
             // 
@@ -198,10 +200,11 @@
             this.textBoxPcID.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(231)))), ((int)(((byte)(233)))));
             this.textBoxPcID.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBoxPcID.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxPcID.Location = new System.Drawing.Point(486, 39);
+            this.textBoxPcID.Location = new System.Drawing.Point(148, 131);
+            this.textBoxPcID.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBoxPcID.Name = "textBoxPcID";
             this.textBoxPcID.ReadOnly = true;
-            this.textBoxPcID.Size = new System.Drawing.Size(324, 24);
+            this.textBoxPcID.Size = new System.Drawing.Size(349, 30);
             this.textBoxPcID.TabIndex = 117;
             // 
             // textBoxRoomID
@@ -209,10 +212,11 @@
             this.textBoxRoomID.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(231)))), ((int)(((byte)(233)))));
             this.textBoxRoomID.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBoxRoomID.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxRoomID.Location = new System.Drawing.Point(486, 123);
+            this.textBoxRoomID.Location = new System.Drawing.Point(148, 180);
+            this.textBoxRoomID.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBoxRoomID.Name = "textBoxRoomID";
             this.textBoxRoomID.ReadOnly = true;
-            this.textBoxRoomID.Size = new System.Drawing.Size(322, 24);
+            this.textBoxRoomID.Size = new System.Drawing.Size(350, 30);
             this.textBoxRoomID.TabIndex = 118;
             // 
             // textBoxBalance
@@ -220,10 +224,11 @@
             this.textBoxBalance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(231)))), ((int)(((byte)(233)))));
             this.textBoxBalance.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBoxBalance.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxBalance.Location = new System.Drawing.Point(112, 123);
+            this.textBoxBalance.Location = new System.Drawing.Point(149, 86);
+            this.textBoxBalance.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBoxBalance.Name = "textBoxBalance";
             this.textBoxBalance.ReadOnly = true;
-            this.textBoxBalance.Size = new System.Drawing.Size(262, 24);
+            this.textBoxBalance.Size = new System.Drawing.Size(349, 30);
             this.textBoxBalance.TabIndex = 119;
             this.textBoxBalance.TextChanged += new System.EventHandler(this.textBoxBalance_TextChanged);
             // 
@@ -232,10 +237,11 @@
             this.textBoxUserFullName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(231)))), ((int)(((byte)(233)))));
             this.textBoxUserFullName.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBoxUserFullName.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxUserFullName.Location = new System.Drawing.Point(112, 39);
+            this.textBoxUserFullName.Location = new System.Drawing.Point(149, 48);
+            this.textBoxUserFullName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBoxUserFullName.Name = "textBoxUserFullName";
             this.textBoxUserFullName.ReadOnly = true;
-            this.textBoxUserFullName.Size = new System.Drawing.Size(262, 24);
+            this.textBoxUserFullName.Size = new System.Drawing.Size(349, 30);
             this.textBoxUserFullName.TabIndex = 120;
             this.textBoxUserFullName.TextChanged += new System.EventHandler(this.textBoxUserFullName_TextChanged);
             // 
@@ -246,7 +252,7 @@
             // 
             // UserDashBoard
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.textBoxUserFullName);
             this.Controls.Add(this.textBoxBalance);
@@ -264,8 +270,9 @@
             this.Controls.Add(this.labelComputerID);
             this.Controls.Add(this.textBoxInfo);
             this.Controls.Add(this.label23);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "UserDashBoard";
-            this.Size = new System.Drawing.Size(878, 529);
+            this.Size = new System.Drawing.Size(1171, 323);
             this.Load += new System.EventHandler(this.UserDashBoard_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

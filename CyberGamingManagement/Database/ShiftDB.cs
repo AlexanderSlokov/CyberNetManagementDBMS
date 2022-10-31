@@ -318,7 +318,7 @@ namespace CyberGamingManagement.Database
         
        
 
-        public float SumAllSalary()
+        public float TotalSumOfSalary()
         {
             float value;
             SqlCommand command = new SqlCommand("pr_SumSalaryAllEmployees", connection.getConnection);

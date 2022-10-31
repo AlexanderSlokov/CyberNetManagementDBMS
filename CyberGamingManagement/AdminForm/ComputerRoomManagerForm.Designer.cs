@@ -42,7 +42,7 @@
             // 
             this.comboBoxComputerRoomId.FormattingEnabled = true;
             this.comboBoxComputerRoomId.Location = new System.Drawing.Point(18, 57);
-            this.comboBoxComputerRoomId.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboBoxComputerRoomId.Margin = new System.Windows.Forms.Padding(4);
             this.comboBoxComputerRoomId.Name = "comboBoxComputerRoomId";
             this.comboBoxComputerRoomId.Size = new System.Drawing.Size(435, 24);
             this.comboBoxComputerRoomId.TabIndex = 0;
@@ -66,8 +66,8 @@
             this.buttonAddRoom.FlatAppearance.BorderSize = 0;
             this.buttonAddRoom.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonAddRoom.ForeColor = System.Drawing.Color.White;
-            this.buttonAddRoom.Location = new System.Drawing.Point(190, 90);
-            this.buttonAddRoom.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.buttonAddRoom.Location = new System.Drawing.Point(179, 90);
+            this.buttonAddRoom.Margin = new System.Windows.Forms.Padding(5);
             this.buttonAddRoom.Name = "buttonAddRoom";
             this.buttonAddRoom.Size = new System.Drawing.Size(122, 42);
             this.buttonAddRoom.TabIndex = 85;
@@ -84,7 +84,7 @@
             this.buttonDeleteRoom.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonDeleteRoom.ForeColor = System.Drawing.Color.MistyRose;
             this.buttonDeleteRoom.Location = new System.Drawing.Point(347, 91);
-            this.buttonDeleteRoom.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.buttonDeleteRoom.Margin = new System.Windows.Forms.Padding(5);
             this.buttonDeleteRoom.Name = "buttonDeleteRoom";
             this.buttonDeleteRoom.Size = new System.Drawing.Size(106, 42);
             this.buttonDeleteRoom.TabIndex = 86;
@@ -102,9 +102,9 @@
             this.buttonManage.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonManage.ForeColor = System.Drawing.Color.White;
             this.buttonManage.Location = new System.Drawing.Point(18, 90);
-            this.buttonManage.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.buttonManage.Margin = new System.Windows.Forms.Padding(5);
             this.buttonManage.Name = "buttonManage";
-            this.buttonManage.Size = new System.Drawing.Size(129, 42);
+            this.buttonManage.Size = new System.Drawing.Size(111, 42);
             this.buttonManage.TabIndex = 87;
             this.buttonManage.Text = "MANAGE";
             this.buttonManage.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
@@ -123,7 +123,7 @@
             this.buttonReload.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonReload.ForeColor = System.Drawing.Color.RosyBrown;
             this.buttonReload.Location = new System.Drawing.Point(472, 55);
-            this.buttonReload.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.buttonReload.Margin = new System.Windows.Forms.Padding(5);
             this.buttonReload.Name = "buttonReload";
             this.buttonReload.Size = new System.Drawing.Size(31, 31);
             this.buttonReload.TabIndex = 88;
@@ -155,7 +155,7 @@
             this.Controls.Add(this.buttonAddRoom);
             this.Controls.Add(this.textBoxComputerRoomID);
             this.Controls.Add(this.comboBoxComputerRoomId);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "ComputerRoomManagerForm";
             this.Text = "Room Manager";
             this.Load += new System.EventHandler(this.ComputerRoomManagerForm_Load);

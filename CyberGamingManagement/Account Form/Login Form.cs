@@ -115,7 +115,8 @@ namespace CyberGamingManagement.Account_Form
                         pcGetter.SetCurrentComputer(loginComputer);
 
                     }
-                    //Set User va computer
+
+                    //Set current User and  Computer
                     CurrentUser.Id = accountDB.getUserID(username);
                     CurrentUser.LoginTime = DateTime.Now;
                     CurrentUser.Name = accountDB.getUserFullName();
@@ -152,10 +153,10 @@ namespace CyberGamingManagement.Account_Form
 
                     if (employeeDB.login(username, password))
                     {
-                        //Set maytinh
+                        //Set a computer
                         if (loginComputer == null)
                         {
-                            // Them phong va may tinh bang dia chi mac
+                            // Add computer room and Mac address for that computer
                             CurrentUser.LoginRequest = "manager";
 
                             if (computerRoomDB.IsComputerRoomExistsByID(1) == true)
