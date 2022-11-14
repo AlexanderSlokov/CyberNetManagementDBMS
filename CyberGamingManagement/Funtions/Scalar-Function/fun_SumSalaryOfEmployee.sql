@@ -9,3 +9,9 @@ INNER JOIN salary as sa ON sa.startTime = s.startTime AND sa.endTime = s.endTime
 sa.employee_id = s.employee_id AND sa.roomID = s.roomID AND sa.weekDate = s.weekDate
 WHERE sa.check_in IS NOT null AND e.id = @employee_id)
 END
+
+/*
+Tao function tinh tong so luong cua nhan vien truyen vao @emloyee_id
+Ket qua se tra ve tong so luong cua nhan vien co id trung voi @emloyee_id
+*/
+

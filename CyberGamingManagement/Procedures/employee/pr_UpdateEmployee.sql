@@ -4,3 +4,9 @@ AS
 UPDATE employee SET name = @name, position = @position, birthDate = @birthDate, gender = @gender, phoneNum = @phoneNum, email = @email, image = @image, 
                             salary_per_hour = @salary_per_hour, username = @username, password = @password 
 							WHERE id = @id
+/*
+Tao procedure cap nhat lai thong tin employee voi cac tham so truyen vao
+Ket qua se cap nhat lai tat ca thong tin voi tham so truyen vao.
+Voi User co id trung voi @id truyen vao.
+
+*/

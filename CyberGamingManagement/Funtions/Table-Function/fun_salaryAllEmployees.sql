@@ -25,3 +25,9 @@ BEGIN
 
 	RETURN;
 END;
+
+/*
+Tao function tra ve mot bang tong so luong cua tat ca nhan vien (employee)
+Gom cac cot Salary ( duoc tinh bang function fun_SumSalaryOfEmployee )
+Employee ID, Employee Name, Birth Date, Gender, Phone, Email.
+*/

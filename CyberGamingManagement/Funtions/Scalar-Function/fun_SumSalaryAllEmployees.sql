@@ -9,3 +9,8 @@ ON sa.startTime = s.startTime AND sa.endTime = s.endTime AND
 sa.employee_id = s.employee_id AND sa.roomID = s.roomID AND sa.weekDate = s.weekDate
 WHERE sa.check_in IS NOT null)
 END;
+
+/*
+Tao function tinh tong so luong cua tat ca nhan vien
+Ket qua tra ve la tong so luong cua tat ca nhan vien
+*/

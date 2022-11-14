@@ -3,3 +3,9 @@ CREATE PROCEDURE pr_register @name nvarchar(50), @gender nvarchar(50), @phone nv
 AS
 INSERT INTO account (name, gender, phone, balance, email, username, password)
 VALUES (@name, @gender, @phone, @balance, @email, @username, @password)
+
+/*
+Tao procedure dang ki, truyen vao cac tham so (@name,@gender..@username,@password)
+Ket qua se them mot hang moi vao bang account gom cac cot name, gender, phone, balance, email, username, password
+
+*/

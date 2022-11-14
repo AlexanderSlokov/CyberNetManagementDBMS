@@ -6,5 +6,6 @@ VALUES (@info, @roomID, @status, @fee_per_hour, @macAddress)
 
 
 /*
-Add a new computer with MAC address 
+Tao procedure Addnewcomputer Co dia chi MAC, voi cac tham so truyen vao.
+Ket qua se them mot hang moi vao bang computer voi cac cot info, roomID, status, fee_per_hour, macAddress
 */
