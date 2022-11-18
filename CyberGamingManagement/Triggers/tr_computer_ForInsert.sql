@@ -10,3 +10,7 @@ BEGIN
 	UPDATE computer_room set compNum = compNum + 1 
 	WHERE @roomID = computer_room.id
 END
+
+/*
+Tao mot trigger de them mot computer
+*/

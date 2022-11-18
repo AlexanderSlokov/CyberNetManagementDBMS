@@ -8,7 +8,7 @@
     <OutputType>WinExe</OutputType>
     <RootNamespace>CyberGamingManagement</RootNamespace>
     <AssemblyName>CyberGamingManagement</AssemblyName>
-    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
@@ -367,6 +367,16 @@
     <None Include="Resources\workstation.png" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Triggers\tr_delOfComputer.sql" />
+    <Content Include="Triggers\tr_insOfComputer.sql" />
+    <Content Include="Triggers\tr_thongbao.sql" />
+    <Content Include="View\view_AllOfSalary.sql" />
+    <Content Include="View\view_Employees.sql" />
+    <Content Include="View\view_FeeOfComputer.sql" />
+    <Content Include="View\view_InfoOder.sql" />
+    <Content Include="View\view_Managers.sql" />
+    <Content Include="View\view_ScheduleOfEmployees.sql" />
+    <Content Include="View\view_UsingComputer.sql" />
     <None Include="Resources\check.png" />
     <None Include="Resources\red-x.png" />
     <None Include="Resources\gear.png" />
