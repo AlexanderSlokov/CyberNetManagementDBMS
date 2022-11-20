@@ -367,6 +367,10 @@
     <None Include="Resources\workstation.png" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Transacitons\tra_DeleteAdmin.sql" />
+    <Content Include="Transacitons\tra_DeleteEmployee.sql" />
+    <Content Include="Transacitons\tra_DeleteManager.sql" />
+    <Content Include="Transacitons\tra_User.sql" />
     <Content Include="Triggers\tr_delOfComputer.sql" />
     <Content Include="Triggers\tr_insOfComputer.sql" />
     <Content Include="Triggers\tr_thongbao.sql" />
